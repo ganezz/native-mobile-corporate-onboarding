@@ -16,5 +16,13 @@ pipeline {
                         }
                     }
                 }
+                 stage('cucumber reports') {
+                                    steps {
+                                               cucumber buildStatus:"UNSTABLE",
+                                               fileIncludePattern:"**/cucumber.json",
+                                               jsonReportDirectory:'targer'
+                                        }
+                                    }
+                                }
     }
 }
