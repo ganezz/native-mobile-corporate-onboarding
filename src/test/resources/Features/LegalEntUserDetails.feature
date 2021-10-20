@@ -2,9 +2,9 @@
 Feature: Validating User Contact Details screen in NM_CO
 
   Background: User should able to launch App
-    Given user opens the App batch2
+    Given user opens the App batch3
 
-@sanity
+
   Scenario Outline: Validate + Add A New User Button
     And user in Home screen <testcase>
     When clicks Register Button

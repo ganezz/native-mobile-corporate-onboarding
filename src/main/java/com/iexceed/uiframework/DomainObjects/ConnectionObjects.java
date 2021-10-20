@@ -1,6 +1,7 @@
 package com.iexceed.uiframework.DomainObjects;
 
 import com.iexceed.uiframework.appium.PcloudyConnection;
+import com.iexceed.uiframework.utilites.WaitUtility;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
@@ -12,13 +13,16 @@ public class ConnectionObjects {
 
     PcloudyConnection createConnection;
     public static AppiumDriver driver;
+    private WaitUtility waitUtility;
 
     public ConnectionObjects() {
         createConnection = new PcloudyConnection();
+        waitUtility = new WaitUtility();
     }
 
 
-    public void setRemoteDeviceCapabilities(String pcloudy_username, String pcloudy_apikey, String platform, String version, String deviceName, String automationName, String applicationName, String androidActivity, String androidPackage, String bundleID, String maxDuration, String deviceURL, String orientation, String isTrusted, By targetCompanyName, By trustCompanyName, By trustBtn) throws MalformedURLException, InterruptedException {
+    public void setRemoteDeviceCapabilities(String pcloudy_username, String pcloudy_apikey, String platform, String version, String deviceName, String automationName, String applicationName, String androidActivity, String androidPackage, String bundleID, String maxDuration, String deviceURL, String orientation, String isTrusted, By targetCompanyName, By trustCompanyName, By trustBtn) throws Exception {
+       waitUtility.waitForSeconds(5);
         createConnection.setRemoteDeviceCapabilities(pcloudy_username, pcloudy_apikey, platform, version, deviceName, automationName, applicationName, androidActivity, androidPackage, bundleID, maxDuration, deviceURL, orientation, Boolean.valueOf(isTrusted), targetCompanyName, trustCompanyName, trustBtn);
         driver = appiumDriver;
     }

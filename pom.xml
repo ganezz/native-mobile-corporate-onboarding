@@ -12,6 +12,10 @@
             <url>http://20.80.0.230:8081/artifactory/libs-release</url>
         </repository>
     </distributionManagement>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
     <dependencies> <!--https://mvnrepository.com/artifact/com.github.ralfstuckert.pdfbox-layout/pdfbox2-layout --> <!-- <dependency>--> <!-- <groupId>com.github.ralfstuckert.pdfbox-layout</groupId>--> <!-- <artifactId>pdfbox2-layout</artifactId>--> <!-- <version>1.0.0</version>--> <!-- </dependency>-->
         <dependency>
             <groupId>tech.grasshopper</groupId>
