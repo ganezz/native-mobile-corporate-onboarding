@@ -4,7 +4,7 @@ Feature: Validating Add New User screen in NM_CO
   Background: User should able to launch App
     Given user opens the App batch1
 
-
+  @sanityEntityDetailScreen
 Scenario Outline: Validate Name, mandatory Field with Max 100 characters and special characters are not allowed
   And user in Home screen <testcase>
   When clicks Register Button
