@@ -12,10 +12,10 @@ pipeline {
         stage('test') {
                     steps {
                                 withMaven(maven:'maven'){
-                        sh 'mvn clean test'
+                        sh 'mvn clean test',
                         cucumber buildStatus:"UNSTABLE",
                         fileIncludePattern:"**/cucumber.json",
-                        jsonReportDirectory:'target
+                         jsonReportDirectory:'target'
                         }
                     }
                 }
