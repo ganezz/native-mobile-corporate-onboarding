@@ -1,4 +1,4 @@
-@sanityEntityDetailScreen
+@regressionEntityDetailScreen
 Feature: Validating Add New User screen in NM_CO
 
   Background: User should able to launch App

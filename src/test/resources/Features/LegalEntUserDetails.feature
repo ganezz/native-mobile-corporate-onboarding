@@ -1,4 +1,4 @@
-@SanityUserDetailsScreen
+@regressionUserDetailsScreen
 Feature: Validating User Contact Details screen in NM_CO
 
   Background: User should able to launch App
