@@ -1,4 +1,4 @@
-@regressionHomePage
+@regression   @regressionHomePage
 Feature: Validating buttons in Home screen of APZ_NMCO_ONB
 
   Background: User should able to open App
