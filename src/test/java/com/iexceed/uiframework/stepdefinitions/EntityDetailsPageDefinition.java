@@ -194,6 +194,17 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     }
 
+    @And("clicks on Continue Button$")
+    public void clicks_on_continue_button() throws Exception {
+        entityDetailsPageActions.clickcontinueBtn();
+    }
+
+    @Then("user lands on homepage dueto feaure not yet developed (.+)$")
+    public void user_lands_on_homepage_dueto_feaure_not_yet_developed(String testcase) throws Exception {
+        log.info("user lands on homepage dueto feaure not yet developed");
+        HomePageDefinition homePageDefinition = new HomePageDefinition();
+        homePageDefinition.user_in_home_screen(testcase);
+    }
 }
 
 

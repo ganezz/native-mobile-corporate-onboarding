@@ -46,7 +46,9 @@ public class EntityDetailsPage {
     public By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
     public By okBtn = By.xpath("//*[@text='OK']");
     public By noButton = By.xpath("//android.view.View[3]");
-
+    public By continueBtn = By.xpath("//*[@text='Continue']");
+    public By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
+    public By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
 
     public void clickAddNewuserBtn() {
         genericMethods.waitForVisibility(addNewUsrBtn);
@@ -268,6 +270,22 @@ public class EntityDetailsPage {
 
     public void isAddNewScreen() throws InterruptedException {
         genericMethods.isElementPresent(editField);
+    }
+
+    public void clickContinueBtn() throws Exception {
+        waitUtility.waitForSeconds(2);
+        genericMethods.click(continueBtn);
+
+        try {
+            if (genericMethods.isElementPresent(consultMsg1)) {
+                genericMethods.click(continueBtn);
+                if(genericMethods.isElementPresent(consultMsg2)){
+                    genericMethods.click(continueBtn);
+                }
+            }
+        } catch (Exception e) {
+
+        }
     }
 
 }

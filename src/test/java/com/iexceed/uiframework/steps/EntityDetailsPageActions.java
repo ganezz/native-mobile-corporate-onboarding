@@ -150,4 +150,12 @@ public class EntityDetailsPageActions {
         }
     }
 
+    public void clickcontinueBtn() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iEntityDetailsPage.i_clickContinueBtn();
+        } else {
+            entityDetailsPage.clickContinueBtn();
+        }
+    }
+
 }

@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 
         features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@regression",
+        tags= "@sanity",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",

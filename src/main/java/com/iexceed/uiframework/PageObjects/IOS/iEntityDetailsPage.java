@@ -185,5 +185,12 @@ public class iEntityDetailsPage {
 //        genericMethods.isElementPresent(editField);
     }
 
+    public void i_clickContinueBtn(){
+
+    }
+
+
 }
+
+
 
