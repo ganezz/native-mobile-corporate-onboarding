@@ -6,7 +6,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
     Given user opens the App batch1
 
 
-  Scenario Outline:  Validate Register button
+  Scenario Outline:  Validate Add A New Application button
     And user in Home screen <testcase>
     When clicks Register Button
     Then user will landed on Legal Entity User Details
