@@ -1,4 +1,4 @@
-@sanity
+@sanity_apps
 
 Feature: Validating features for User Contact Details Screen in NM_CO
 
