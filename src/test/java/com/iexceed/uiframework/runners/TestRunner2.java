@@ -4,10 +4,6 @@ package com.iexceed.uiframework.runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceName;
 
 
 //@RunWith(Cucumber.class)
@@ -16,7 +12,7 @@ import static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceN
 
         features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@sanity",
+        tags= "@sanity_apps",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
