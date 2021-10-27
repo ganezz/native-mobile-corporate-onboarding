@@ -1,5 +1,5 @@
-@regression   @regressionEntityDetailScreen
-Feature: Validating Add New User screen in Legal Entity Page
+@regression_apps   @regressionEntityDetailScreen
+Feature: Validating Add New User screen in NM_CO
 
   Background: User should able to launch App
     Given user opens the App batch2

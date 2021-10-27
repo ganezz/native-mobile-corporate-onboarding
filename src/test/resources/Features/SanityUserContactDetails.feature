@@ -1,9 +1,9 @@
-@sanity
+@sanity_apps
 
 Feature: Validating features for User Contact Details Screen in NM_CO
 
   Background: User should able to open App
-    Given user opens the App batch4
+    Given user opens the App batch1
 
 
   Scenario Outline:  Validate Add A New Application button
