@@ -22,6 +22,7 @@ public class HomePageDefinition extends TestBase {
     public static Logger log = LogManager.getLogger(HomePageDefinition.class);
     TestDataHandler testdata = new TestDataHandler();
     public HomePageAction homePageAction = new HomePageAction();
+    public static String DeviceName;
 
     @Given("user opens the App (.+)$")
     public void user_open_the_app_in_device(String testcase) throws Exception {

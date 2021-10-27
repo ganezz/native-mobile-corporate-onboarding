@@ -25,7 +25,8 @@ public class Hooks {
 
     }
     @AfterStep()
-    public  void af(Scenario scenario) throws IOException {
+    public  void af(Scenario scenario) throws IOException, InterruptedException {
+        Thread.sleep(3000);
         File src =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = FileUtils.readFileToByteArray(src);
         scenario.attach(fileContent,"image/png","screenshot");

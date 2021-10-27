@@ -22,8 +22,9 @@ public class ConnectionObjects {
 
 
     public void setRemoteDeviceCapabilities(String pcloudy_username, String pcloudy_apikey, String platform, String version, String deviceName, String automationName, String applicationName, String androidActivity, String androidPackage, String bundleID, String maxDuration, String deviceURL, String orientation, String isTrusted, By targetCompanyName, By trustCompanyName, By trustBtn) throws Exception {
-       waitUtility.waitForSeconds(5);
+       waitUtility.waitForSeconds(6);
         createConnection.setRemoteDeviceCapabilities(pcloudy_username, pcloudy_apikey, platform, version, deviceName, automationName, applicationName, androidActivity, androidPackage, bundleID, maxDuration, deviceURL, orientation, Boolean.valueOf(isTrusted), targetCompanyName, trustCompanyName, trustBtn);
+        waitUtility.waitForSeconds(2);
         driver = appiumDriver;
     }
 

@@ -1,8 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Test-Suite" >
-    <test name="NMCO" >
+<suite name="Test Parallel TestCases" parallel="tests" thread-count="3" >
+    <test name="NMCO Regression"  >
+        <parameter name = "deviceName" value="SAMSUNG_GalaxyTabS6_Android_11.0.0_383e3"/>
         <classes>
             <class name="com.iexceed.uiframework.runners.TestRunner" />
         </classes>
     </test>
+
+    <test name="NMCO Sanity"  >
+        <parameter name = "deviceName" value="SAMSUNG_GalaxyTabS5e_Android_10.0.0_cb1ca"/>
+        <classes>
+            <class name="com.iexceed.uiframework.runners.TestRunner2" />
+        </classes>
+    </test>
 </suite>
+

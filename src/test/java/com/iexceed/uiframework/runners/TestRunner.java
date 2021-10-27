@@ -1,27 +1,27 @@
 package com.iexceed.uiframework.runners;
 
+
 import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import io.cucumber.testng.FeatureWrapper;
-import io.cucumber.testng.PickleWrapper;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
 import org.junit.runner.RunWith;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
+import  static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceName;
 
 
-
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class)
 
 @CucumberOptions(
 
         features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@sanity",
-        plugin= {"pretty",
+        tags = "@regression",
+        plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
+                "json:target/jsonReports/cucumber-reports.json", "html:target/cucumber-ui-reports.html",
                 "rerun:target/failedrerun.txt"
 
 
@@ -30,24 +30,19 @@ import org.testng.annotations.Test;
 
 )
 
-public class TestRunner {
-        private TestNGCucumberRunner testNGCucumberRunner;
+public class TestRunner extends AbstractTestNGCucumberTests {
+    private TestNGCucumberRunner testNGCucumberRunner;
 
-        @Test(dataProvider = "features")
-        public void feature(PickleWrapper eventwrapper, FeatureWrapper cucumberFeature) throws Throwable {
-                //testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-                testNGCucumberRunner.runScenario(eventwrapper.getPickle());
-        }
+//        @DataProvider(parallel = true)
+//        public Object[][] scenarios() {
+//                return super.scenarios();
+//        }
 
-        @DataProvider//(parallel=true)
-        public Object[][] features() {
-                // return testNGCucumberRunner.provideFeatures();
-                return testNGCucumberRunner.provideScenarios();
-        }
-
-        @AfterClass(alwaysRun = true)
-        public void tearDownClass() throws Exception {
-                testNGCucumberRunner.finish();
-        }
+//    @BeforeTest
+//    @Parameters("deviceName")
+//    public void parameterTest(String deviceName) {
+//        System.out.println("Parameterized value deviceName : " + deviceName);
+//            DeviceName=deviceName;
+//    }
 
 }
