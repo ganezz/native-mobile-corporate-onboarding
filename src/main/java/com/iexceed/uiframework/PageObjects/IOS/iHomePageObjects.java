@@ -14,7 +14,7 @@ public class iHomePageObjects {
     IOSUtility iosUtility;
 
 
-    private WaitUtility waitUtility;
+    private final WaitUtility waitUtility;
 
     public iHomePageObjects() {
         genericMethods = new GenericMethods(driver);
@@ -22,11 +22,11 @@ public class iHomePageObjects {
     }
 
 
-    public By userDetailsRegBt = By.xpath("//*[@text='User Contact UI No User']");
-    public By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    public By englishBtn = By.xpath("//*[@text='English']");
-    public By arabicBtn = By.xpath("//*[@text='Arabic']");
-    public By ArabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+     By userDetailsRegBt = By.xpath("//*[@text='User Contact UI No User']");
+     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+     By englishBtn = By.xpath("//*[@text='English']");
+     By arabicBtn = By.xpath("//*[@text='Arabic']");
+     By ArabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
 
 
     public void IOS_isHomePageVisible() {

@@ -21,9 +21,9 @@ public class AndroidUtility {
         genericMethods = new GenericMethods(driver);
     }
 
-    public By okBtn = By.xpath("//*[@text='OK']");
-    public By cancelBtn = By.xpath("//*[@text='Cancel']");
-    public By cancelBtn1 = By.xpath("//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.View/android.view.View/android.view.View/android.view.View[2]");
+    By okBtn = By.xpath("//*[@text='OK']");
+    By cancelBtn = By.xpath("//*[@text='Cancel']");
+    By cancelBtn1 = By.xpath("//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.View/android.view.View/android.view.View/android.view.View[2]");
 
     public int Charactercount(String username) {
         int count = 0;
@@ -52,18 +52,19 @@ public class AndroidUtility {
         for (WebElement name : type) {
             if (name.isDisplayed()) {
                 if ((name.getText()).contains(itemType)) {
-                    System.out.println(name.isDisplayed());
-                    System.out.println("User details " + itemType + " is visible");
+                    log.info(name.isDisplayed());
+                    log.info("User details " + itemType + " is visible");
                     break;
                 }
             } else {
-                System.out.println("User details " + itemType + " is not visible");
+                log.info("User details " + itemType + " is not visible");
+
             }
         }
     }
 
     public void msgConfirmation(String btn) {
-        if (btn == "OK") {
+        if (btn.equalsIgnoreCase("OK")) {
             genericMethods.click(okBtn);
         } else {
             try {

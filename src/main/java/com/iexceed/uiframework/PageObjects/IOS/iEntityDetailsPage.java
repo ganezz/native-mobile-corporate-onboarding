@@ -2,6 +2,8 @@ package com.iexceed.uiframework.PageObjects.IOS;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -13,24 +15,26 @@ import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
 public class iEntityDetailsPage {
 
     GenericMethods genericMethods;
-    private WaitUtility waitUtility;
+    private final WaitUtility waitUtility;
+    private final Logger log;
 
     public iEntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
+        log = LogManager.getLogger(iEntityDetailsPage.class);
     }
 
 
-    public By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    public By editField = By.className("android.widget.EditText");
-    public By editField1 = By.className("android.widget.EditText");
-    public By user_Name = By.xpath("//*[@text='User Name *']");
-    public By email = By.xpath("//*[@text='Email *']");
-    public By confirmBtn = By.xpath("//*[@text='Confirm']");
-    public By validationMSg = By.xpath("//*[@text='Please enter valid field']");
-    public By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
-    public By countryField = By.xpath("//*[@text='+93']");
-    public By countryList = By.xpath("//android.view.View");
+     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+     By editField = By.className("android.widget.EditText");
+     By editField1 = By.className("android.widget.EditText");
+     By user_Name = By.xpath("//*[@text='User Name *']");
+     By email = By.xpath("//*[@text='Email *']");
+     By confirmBtn = By.xpath("//*[@text='Confirm']");
+     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
+     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
+     By countryField = By.xpath("//*[@text='+93']");
+     By countryList = By.xpath("//android.view.View");
 
 
     public void i_clickAddNewuserBtn() {
@@ -44,12 +48,12 @@ public class iEntityDetailsPage {
         driver.findElement(user_Name).click();
         driver.findElement(user_Name).sendKeys(userName);
         int count = Charactercount(userName);
-        System.out.println(count);
+        log.info(count);
         Assert.assertEquals(count, Integer.parseInt(limit));
         if (!userName.isEmpty()) {
-            System.out.println("username is not empty");
+            log.info("username is not empty");
             if (userName.matches("[" + regex + "]+")) {
-                System.out.println("Invalid character in Name field");
+                log.info("Invalid character in Name field");
             }
         }
 
@@ -72,11 +76,7 @@ public class iEntityDetailsPage {
 
     public void i_isValidationMsgPresent() throws InterruptedException {
         genericMethods.waitForVisibility(validationMSg);
-        if (genericMethods.isElementPresent(validationMSg)) {
-            Assert.assertFalse(false);
-        } else {
-            Assert.assertFalse(true);
-        }
+        Assert.assertFalse(!genericMethods.isElementPresent(validationMSg));
     }
 
     public void i_enterEmail(String Email, String limit) {
@@ -85,23 +85,23 @@ public class iEntityDetailsPage {
         genericMethods.sendKeys(email, Email);
         String emailTxt = genericMethods.getText(email);
         int count = Charactercount(emailTxt);
-        System.out.println(count);
+        log.info(count);
 
         if (genericMethods.getText(email).isEmpty()) {
-            System.out.println("email field is empty");
+            log.info("email field is empty");
             genericMethods.click(editField);
         } else {
             if (count <= Integer.parseInt(limit)) {
-                System.out.println("email field is not empty");
+                log.info("email field is not empty");
                 if ((genericMethods.getText(email)).contains("$%&*#!")) {
-                    System.out.println("Invalid character present in email field");
+                    log.info("Invalid character present in email field");
                     genericMethods.click(editField);
                 } else {
-                    System.out.println(" enter  email id is vaild");
+                    log.info(" enter  email id is vaild");
                     genericMethods.click(editField);
                 }
             } else {
-                System.out.println("email id is more then limit value");
+                log.info("email id is more then limit value");
                 genericMethods.click(editField);
             }
         }
@@ -110,7 +110,7 @@ public class iEntityDetailsPage {
 
             genericMethods.hideKeyboard();
         } catch (Exception e) {
-            System.out.println("keyborad is not alive");
+            log.info("keyborad is not alive");
         }
 
 
@@ -119,7 +119,7 @@ public class iEntityDetailsPage {
     public void i_enterCountryCode(String countryCode) throws Exception {
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(2);
-        System.out.println(driver.findElements(countryList).size());
+        log.info(driver.findElements(countryList).size());
         List<WebElement> temoCountryList = (List<WebElement>) driver.findElements(countryList);
         String CountryCodeTemp = "+" + countryCode;
         selectionOfDropdown(CountryCodeTemp, temoCountryList);
@@ -143,15 +143,15 @@ public class iEntityDetailsPage {
 
 
     public void i_clickCancelBtn() {
-
+        log.info("ios method");
     }
 
     public void i_isYES_NOBtnPresentConfirmation() throws InterruptedException {
-
+        log.info("ios method");
     }
 
     public void i_clickYEsBtnValidation() {
-
+        log.info("ios method");
     }
 
     public void i_clicNoBtnValidation() {
@@ -159,34 +159,30 @@ public class iEntityDetailsPage {
     }
 
     public void i_isBottomValidationMsgPresent() throws InterruptedException {
-
+        log.info("ios method");
     }
 
     public void i_validateUserDetails(String userName, String Email, String mobNum) throws Exception {
 
-//        waitUtility.waitForSeconds(2);
-//        System.out.println(driver.findElements(viewDataDetails).size());
-//        List<WebElement> tempUserDetails=driver.findElements(viewDataDetails);
-//        androidUtility.selectionItemVisible(userName,tempUserDetails);
-//        androidUtility.selectionItemVisible(Email,tempUserDetails);
-//        androidUtility.selectionItemVisible(mobNum,tempUserDetails);
+        log.info("ios method");
 
     }
 
     public void i_clickEditBtn() {
-//        genericMethods.click(editButton);
+        log.info("ios method");
     }
 
     public void i_clickDeleteBtn() {
-//        genericMethods.click(deleteButton);
+        log.info("ios method");
     }
 
     public void i_isAddNewScreen() throws InterruptedException {
-//        genericMethods.isElementPresent(editField);
+        log.info("ios method");
     }
 
     public void i_clickContinueBtn(){
 
+        log.info("ios method");
     }
 
 

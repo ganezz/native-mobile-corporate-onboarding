@@ -3,6 +3,8 @@ package com.iexceed.uiframework.PageObjects.Android;
 import com.iexceed.uiframework.DomainObjects.AndroidUtility;
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -15,7 +17,8 @@ public class EntityDetailsPage {
 
     AndroidUtility androidUtility;
     GenericMethods genericMethods;
-    private WaitUtility waitUtility;
+    private final WaitUtility waitUtility;
+    public static Logger log = LogManager.getLogger(AndroidUtility.class);
 
     public EntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
@@ -24,31 +27,31 @@ public class EntityDetailsPage {
     }
 
 
-    public By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    public By editField = By.className("android.widget.EditText");
-    public By editField1 = By.xpath("//android.widget.EditText");
-    public By user_Name = By.xpath("//*[@text='User Name *']");
-    public By email = By.xpath("//*[@text='Email *']");
-    public By confirmBtn = By.xpath("//*[@text='Confirm']");
-    public By validationMSg = By.xpath("//*[@text='Please enter valid field']");
-    public By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
-    public By countryField = By.xpath("//*[@text='+93']");
-    public By countryList = By.xpath("//android.view.View");
-    public By mobNumField = By.xpath("//*[@text='Mobile *']");
-    public By cancelBtn = By.xpath("//*[@text='Cancel']");
-    public By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
-    public By confirmationMsg1 = By.xpath("//*[@text='Do you want to cancel the application ?']");
-    public By validateUseCreationMsg = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
-    public By closeBtn = By.xpath("//*[@text='Close']");
-    public By viewDataDetails = By.xpath("//android.view.View");
-    public By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
-    public By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
-    public By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
-    public By okBtn = By.xpath("//*[@text='OK']");
-    public By noButton = By.xpath("//android.view.View[3]");
-    public By continueBtn = By.xpath("//*[@text='Continue']");
-    public By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
-    public By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
+     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+     By editField = By.className("android.widget.EditText");
+     By editField1 = By.xpath("//android.widget.EditText");
+     By user_Name = By.xpath("//*[@text='User Name *']");
+     By email = By.xpath("//*[@text='Email *']");
+     By confirmBtn = By.xpath("//*[@text='Confirm']");
+     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
+     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
+     By countryField = By.xpath("//*[@text='+93']");
+     By countryList = By.xpath("//android.view.View");
+     By mobNumField = By.xpath("//*[@text='Mobile *']");
+     By cancelBtn = By.xpath("//*[@text='Cancel']");
+     By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
+     By confirmationMsg1 = By.xpath("//*[@text='Do you want to cancel the application ?']");
+     By validateUseCreationMsg = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
+     By closeBtn = By.xpath("//*[@text='Close']");
+     By viewDataDetails = By.xpath("//android.view.View");
+     By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
+     By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
+     By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
+     By okBtn = By.xpath("//*[@text='OK']");
+     By noButton = By.xpath("//android.view.View[3]");
+     By continueBtn = By.xpath("//*[@text='Continue']");
+     By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
+     By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
 
     public void clickAddNewuserBtn() {
         genericMethods.waitForVisibility(addNewUsrBtn);
@@ -64,23 +67,24 @@ public class EntityDetailsPage {
         genericMethods.sendKeys(editField, userName);
         String userNameTxt = genericMethods.getText(editField);
         int count = androidUtility.Charactercount(userNameTxt);
-        System.out.println(count);
+        log.info(count);
+
 
         if (userName.isEmpty()) {
-            System.out.println("user name is empty");
+            log.info("user name is empty");
             clickSomeOtherField();
         } else {
             if (count <= Integer.parseInt(limit)) {
-                System.out.println("username is not empty");
+                log.info("username is not empty");
                 if (userName.contains(regex)) {
-                    System.out.println("Invalid character in Name field");
+                    log.info("Invalid character in Name field");
                     clickSomeOtherField();
                 } else {
-                    System.out.println("user enter valid name");
+                    log.info("user enter valid name");
                     clickSomeOtherField();
                 }
             } else {
-                System.out.println("user name is more then limit value");
+                log.info("user name is more then limit value");
                 clickSomeOtherField();
             }
         }
@@ -88,7 +92,8 @@ public class EntityDetailsPage {
 
             genericMethods.hideKeyboard();
         } catch (Exception e) {
-            System.out.println("keyborad ia not alive");
+            log.info("keyborad ia not alive");
+
         }
     }
 
@@ -98,7 +103,7 @@ public class EntityDetailsPage {
 
 
     public void enterEmail(String Email, String limit) throws Exception {
-        String regex = "@@^[-!@#%&()']*$/";
+//        String regex = "@@^[-!@#%&()']*$/";
         System.out.println(driver.findElements(editField).size());
         editField1.findElements(driver).get(1).click();
         editField1.findElements(driver).get(1).clear();
@@ -108,30 +113,25 @@ public class EntityDetailsPage {
         System.out.println(count);
 
         if (emailIdTxt.isEmpty()) {
-            System.out.println("email field is empty");
+            log.info("email field is empty");
             genericMethods.click(editField);
         } else {
             if (count <= Integer.parseInt(limit)) {
-                System.out.println("email field is not empty");
+                log.info("email field is not empty");
                 if ((genericMethods.getText(email)).contains("@#$%")) {
-                    System.out.println("Invalid character present in email field");
+                    log.info("Invalid character present in email field");
                     genericMethods.click(editField);
                 } else if (emailIdTxt.matches("1234567890@gmail.com")) {
-                    System.out.println(emailIdTxt.matches("1234567890@gmail.com"));
+                    log.info(emailIdTxt.matches("1234567890@gmail.com"));
                     genericMethods.click(editField);
                     waitUtility.waitForSeconds(1);
-                    if (genericMethods.isElementPresent(validationMSg)) {
-                        Assert.assertFalse(false);
-                    } else {
-
-                        Assert.assertFalse(true);
-                    }
+                    Assert.assertFalse(!genericMethods.isElementPresent(validationMSg));
                 } else {
-                    System.out.println(" enter  email id is vaild");
+                    log.info(" enter  email id is vaild");
                     genericMethods.click(editField);
                 }
             } else {
-                System.out.println("email id is more then limit value");
+                log.info("email id is more then limit value");
                 genericMethods.click(editField);
             }
         }
@@ -140,7 +140,8 @@ public class EntityDetailsPage {
 
             genericMethods.hideKeyboard();
         } catch (Exception e) {
-            System.out.println("keyborad is not alive");
+            log.info("keyborad is not alive");
+
         }
 
     }
@@ -149,25 +150,28 @@ public class EntityDetailsPage {
 
         try {
             genericMethods.hideKeyboard();
+            genericMethods.click(confirmBtn);
         } catch (Exception e) {
             System.out.println("keyboard is not alive");
+            genericMethods.click(confirmBtn);
         }
-        genericMethods.click(confirmBtn);
+
     }
 
     public void isValidationMsgPresent(String expectedMsg, String expectedMsg1) throws Exception {
         waitUtility.waitForSeconds(3);
         if (genericMethods.isElementPresent(validationMSg)) {
             Assert.assertEquals(genericMethods.getText(validationMSg), expectedMsg);
-            System.out.println(genericMethods.getText(validationMSg));
+            log.info(genericMethods.getText(validationMSg));
             Assert.assertFalse(false);
         } else if (genericMethods.isElementPresent(validationMSg1)) {
             Assert.assertEquals(genericMethods.getText(validationMSg1), expectedMsg1);
-            System.out.println(genericMethods.getText(validationMSg1));
+            log.info(genericMethods.getText(validationMSg1));
             Assert.assertFalse(false);
 
         } else {
-            System.out.println("Message is not visible-user enter valid input");
+            log.info("Message is not visible-user enter valid input");
+
         }
     }
 
@@ -175,7 +179,7 @@ public class EntityDetailsPage {
     public void enterCountryCode(String countryCode) throws Exception {
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(2);
-        System.out.println(driver.findElements(countryList).size());
+        log.info(driver.findElements(countryList).size());
         List<WebElement> temoCountryList = (List<WebElement>) driver.findElements(countryList);
         String CountryCodeTemp = "+" + countryCode;
         androidUtility.selectionOfDropdown(CountryCodeTemp, temoCountryList);
@@ -183,8 +187,8 @@ public class EntityDetailsPage {
     }
 
     public void enterMobNum(String mob) {
+        log.info(driver.findElements(editField).size());
 
-        System.out.print(driver.findElements(editField).size());
         try {
             if (genericMethods.isElementPresent(editField)) {
                 editField.findElements(driver).get(2).click();
@@ -251,7 +255,7 @@ public class EntityDetailsPage {
     public void validateUserDetails(String userName, String Email, String mobNum) throws Exception {
 
         waitUtility.waitForSeconds(2);
-        System.out.println(driver.findElements(viewDataDetails).size());
+        log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(userName, tempUserDetails);
         androidUtility.selectionItemVisible(Email, tempUserDetails);
@@ -279,7 +283,7 @@ public class EntityDetailsPage {
         try {
             if (genericMethods.isElementPresent(consultMsg1)) {
                 genericMethods.click(continueBtn);
-                if(genericMethods.isElementPresent(consultMsg2)){
+                if (genericMethods.isElementPresent(consultMsg2)) {
                     genericMethods.click(continueBtn);
                 }
             }

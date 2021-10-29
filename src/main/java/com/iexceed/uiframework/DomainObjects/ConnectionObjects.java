@@ -13,7 +13,7 @@ public class ConnectionObjects {
 
     PcloudyConnection createConnection;
     public static AppiumDriver driver;
-    private WaitUtility waitUtility;
+    private final WaitUtility waitUtility;
 
     public ConnectionObjects() {
         createConnection = new PcloudyConnection();
