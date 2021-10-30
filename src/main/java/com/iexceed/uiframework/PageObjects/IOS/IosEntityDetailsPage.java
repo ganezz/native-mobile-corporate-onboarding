@@ -1,5 +1,6 @@
 package com.iexceed.uiframework.PageObjects.IOS;
 
+
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
@@ -12,23 +13,23 @@ import java.util.List;
 
 import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
 
-public class iEntityDetailsPage {
+public class IosEntityDetailsPage {
 
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
-    private final Logger log;
+    private static final Logger log = LogManager.getLogger(IosEntityDetailsPage.class);
 
-    public iEntityDetailsPage() {
+    public IosEntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
-        log = LogManager.getLogger(iEntityDetailsPage.class);
+
     }
 
 
      By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
      By editField = By.className("android.widget.EditText");
      By editField1 = By.className("android.widget.EditText");
-     By user_Name = By.xpath("//*[@text='User Name *']");
+     By username = By.xpath("//*[@text='User Name *']");
      By email = By.xpath("//*[@text='Email *']");
      By confirmBtn = By.xpath("//*[@text='Confirm']");
      By validationMSg = By.xpath("//*[@text='Please enter valid field']");
@@ -37,17 +38,17 @@ public class iEntityDetailsPage {
      By countryList = By.xpath("//android.view.View");
 
 
-    public void i_clickAddNewuserBtn() {
+    public void iClickAddNewuserBtn() {
         genericMethods.waitForVisibility(addNewUsrBtn);
         genericMethods.click(addNewUsrBtn);
 
     }
 
-    public void i_addUserName(String userName, String limit) {
+    public void iAddUserName(String userName, String limit) {
         String regex = "/^[a-zA-Z0-9- ]*$/";
-        driver.findElement(user_Name).click();
-        driver.findElement(user_Name).sendKeys(userName);
-        int count = Charactercount(userName);
+        driver.findElement(username).click();
+        driver.findElement(username).sendKeys(userName);
+        int count = characterCount(userName);
         log.info(count);
         Assert.assertEquals(count, Integer.parseInt(limit));
         if (!userName.isEmpty()) {
@@ -61,7 +62,7 @@ public class iEntityDetailsPage {
     }
 
 
-    public int Charactercount(String username) {
+    public int characterCount(String username) {
         int count = 0;
         for (int i = 0; i < username.length(); i++) {
             if (username.charAt(i) != ' ')
@@ -70,21 +71,21 @@ public class iEntityDetailsPage {
         return count;
     }
 
-    public void i_clickConfirmBtn() {
+    public void iClickConfirmBtn() {
         genericMethods.click(confirmBtn);
     }
 
-    public void i_isValidationMsgPresent() throws InterruptedException {
+    public void iIsValidationMsgPresent() throws InterruptedException {
         genericMethods.waitForVisibility(validationMSg);
         Assert.assertFalse(!genericMethods.isElementPresent(validationMSg));
     }
 
-    public void i_enterEmail(String Email, String limit) {
+    public void iEnterEmail(String Email, String limit) {
         String regex = "@@^[-!@#%&()']*$/";
         genericMethods.click(email);
         genericMethods.sendKeys(email, Email);
         String emailTxt = genericMethods.getText(email);
-        int count = Charactercount(emailTxt);
+        int count = characterCount(emailTxt);
         log.info(count);
 
         if (genericMethods.getText(email).isEmpty()) {
@@ -116,7 +117,7 @@ public class iEntityDetailsPage {
 
     }
 
-    public void i_enterCountryCode(String countryCode) throws Exception {
+    public void iEnterCountryCode(String countryCode) throws Exception {
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(2);
         log.info(driver.findElements(countryList).size());
@@ -135,52 +136,52 @@ public class iEntityDetailsPage {
         }
     }
 
-    public void i_enterMobNum(String mob) {
+    public void iEnterMobNum(String mob) {
 
         editField1.findElements(driver).get(2).click();
         editField1.findElements(driver).get(2).sendKeys(mob);
     }
 
 
-    public void i_clickCancelBtn() {
+    public void iClickCancelBtn() {
         log.info("ios method");
     }
 
-    public void i_isYES_NOBtnPresentConfirmation() throws InterruptedException {
+    public void iIsYesNoBtnPresentConfirmation() throws InterruptedException {
         log.info("ios method");
     }
 
-    public void i_clickYEsBtnValidation() {
+    public void iClickYEsBtnValidation() {
         log.info("ios method");
     }
 
-    public void i_clicNoBtnValidation() {
+    public void iClicNoBtnValidation() {
         genericMethods.back();
     }
 
-    public void i_isBottomValidationMsgPresent() throws InterruptedException {
+    public void iIsBottomValidationMsgPresent() throws InterruptedException {
         log.info("ios method");
     }
 
-    public void i_validateUserDetails(String userName, String Email, String mobNum) throws Exception {
+    public void iValidateUserDetails(String userName, String Email, String mobNum) throws Exception {
 
         log.info("ios method");
 
     }
 
-    public void i_clickEditBtn() {
+    public void iClickEditBtn() {
         log.info("ios method");
     }
 
-    public void i_clickDeleteBtn() {
+    public void iClickDeleteBtn() {
         log.info("ios method");
     }
 
-    public void i_isAddNewScreen() throws InterruptedException {
+    public void iIsAddNewScreen() throws InterruptedException {
         log.info("ios method");
     }
 
-    public void i_clickContinueBtn(){
+    public void iClickContinueBtn(){
 
         log.info("ios method");
     }

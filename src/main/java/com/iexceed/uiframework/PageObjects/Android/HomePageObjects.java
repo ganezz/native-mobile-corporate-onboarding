@@ -15,7 +15,7 @@ public class HomePageObjects {
     AndroidUtility androidUtility = new AndroidUtility();
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
-    public static Logger log = LogManager.getLogger(AndroidUtility.class);
+    private static final Logger log = LogManager.getLogger(HomePageObjects.class);
 
     public HomePageObjects() {
         genericMethods = new GenericMethods(driver);
@@ -27,7 +27,7 @@ public class HomePageObjects {
      By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
      By englishBtn = By.xpath("//*[@text='English']");
      By arabicBtn = By.xpath("//*[@text='Arabic']");
-     By ArabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+     By arabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
 
 
     public void isHomePageVisible() throws Exception {
@@ -68,7 +68,7 @@ public class HomePageObjects {
         genericMethods.waitForVisibility(arabicBtn);
         genericMethods.click(arabicBtn);
         genericMethods.click(userDetailsRegBt);
-        genericMethods.isElementPresent(ArabicaddNewUsrBtn);
+        genericMethods.isElementPresent(arabicaddNewUsrBtn);
     }
 
 

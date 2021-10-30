@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class IOSUtility {
 
     GenericMethods genericMethods;
-    public static Logger log = LogManager.getLogger(IOSUtility.class);
+    private static final Logger log = LogManager.getLogger(AndroidUtility.class);
 
 
     public IOSUtility(GenericMethods genericMethods) {

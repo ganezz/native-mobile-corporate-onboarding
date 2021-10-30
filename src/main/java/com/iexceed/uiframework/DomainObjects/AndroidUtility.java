@@ -14,7 +14,7 @@ import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
 public class AndroidUtility {
 
     GenericMethods genericMethods;
-    public static Logger log = LogManager.getLogger(AndroidUtility.class);
+    private static final Logger log = LogManager.getLogger(AndroidUtility.class);
 
 
     public AndroidUtility() {
@@ -25,7 +25,7 @@ public class AndroidUtility {
     By cancelBtn = By.xpath("//*[@text='Cancel']");
     By cancelBtn1 = By.xpath("//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.View/android.view.View/android.view.View/android.view.View[2]");
 
-    public int Charactercount(String username) {
+    public int characterCount(String username) {
         int count = 0;
         for (int i = 0; i < username.length(); i++) {
             if (username.charAt(i) != ' ')
@@ -48,7 +48,7 @@ public class AndroidUtility {
         driver.findElement(element).clear();
     }
 
-    public void selectionItemVisible(String itemType, List<WebElement> type) throws InterruptedException {
+    public void selectionItemVisible(String itemType, List<WebElement> type){
         for (WebElement name : type) {
             if (name.isDisplayed()) {
                 if ((name.getText()).contains(itemType)) {

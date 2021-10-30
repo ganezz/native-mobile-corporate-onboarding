@@ -1,18 +1,18 @@
 package com.iexceed.uiframework.steps;
 
 import com.iexceed.uiframework.PageObjects.Android.HomePageObjects;
-import com.iexceed.uiframework.PageObjects.IOS.iHomePageObjects;
+import com.iexceed.uiframework.PageObjects.IOS.IosHomePageObjects;
 
 public class HomePageAction {
 
     HomePageObjects homePageObjects = new HomePageObjects();
-    iHomePageObjects ihomePageObjects = new iHomePageObjects();
+    IosHomePageObjects ihomePageObjects = new IosHomePageObjects();
 
 
     public void isHomePageVisible(String platform) throws Exception {
 
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.IOS_isHomePageVisible();
+            ihomePageObjects.iIsHomePageVisible();
         } else {
             homePageObjects.isHomePageVisible();
         }
@@ -21,7 +21,7 @@ public class HomePageAction {
 
     public void clickRegUserBtn(String platform) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.Ios_clickUserRegBtn();
+            ihomePageObjects.iClickUserRegBtn();
         } else {
             homePageObjects.clickUserRegBtn();
         }
@@ -29,7 +29,7 @@ public class HomePageAction {
 
     public void verifyPageNavigation(String platform) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.IOS_verifyPageLanding();
+            ihomePageObjects.iVerifyPageLanding();
         } else {
             homePageObjects.verifyPageLanding();
         }
@@ -37,7 +37,7 @@ public class HomePageAction {
 
     public void verifyLanguageAsEnglish(String platform) throws InterruptedException {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.ios_clickEnglishLangBtn();
+            ihomePageObjects.iClickEnglishLangBtn();
         } else {
             homePageObjects.clickEnglishLangBtn();
         }
@@ -45,7 +45,7 @@ public class HomePageAction {
 
     public void verifyLanguageAsArabic(String platform) throws InterruptedException {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.ios_clickArabicLangBtn();
+            ihomePageObjects.iClickArabicLangBtn();
         } else {
             homePageObjects.clickArabicLangBtn();
         }

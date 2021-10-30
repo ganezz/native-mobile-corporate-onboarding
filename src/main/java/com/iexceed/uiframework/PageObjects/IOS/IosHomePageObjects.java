@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
 
-public class iHomePageObjects {
+public class IosHomePageObjects {
 
 
     GenericMethods genericMethods;
@@ -16,7 +16,7 @@ public class iHomePageObjects {
 
     private final WaitUtility waitUtility;
 
-    public iHomePageObjects() {
+    public IosHomePageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
     }
@@ -26,10 +26,10 @@ public class iHomePageObjects {
      By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
      By englishBtn = By.xpath("//*[@text='English']");
      By arabicBtn = By.xpath("//*[@text='Arabic']");
-     By ArabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+     By arabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
 
 
-    public void IOS_isHomePageVisible() {
+    public void iIsHomePageVisible() {
         try {
             genericMethods.waitForVisibility(englishBtn);
 
@@ -40,28 +40,28 @@ public class iHomePageObjects {
 
     }
 
-    public void Ios_clickUserRegBtn() throws Exception {
+    public void iClickUserRegBtn() throws Exception {
         waitUtility.waitForSeconds(2);
         genericMethods.click(userDetailsRegBt);
     }
 
-    public void IOS_verifyPageLanding() throws Exception {
+    public void iVerifyPageLanding() throws Exception {
         genericMethods.isElementPresent(addNewUsrBtn);
         waitUtility.waitForSeconds(2);
     }
 
-    public void ios_clickEnglishLangBtn() throws InterruptedException {
+    public void iClickEnglishLangBtn() throws InterruptedException {
         genericMethods.waitForVisibility(englishBtn);
         genericMethods.click(englishBtn);
         genericMethods.click(userDetailsRegBt);
         genericMethods.isElementPresent(addNewUsrBtn);
     }
 
-    public void ios_clickArabicLangBtn() throws InterruptedException {
+    public void iClickArabicLangBtn() throws InterruptedException {
         genericMethods.waitForVisibility(arabicBtn);
         genericMethods.click(arabicBtn);
         genericMethods.click(userDetailsRegBt);
-        genericMethods.isElementPresent(ArabicaddNewUsrBtn);
+        genericMethods.isElementPresent(arabicaddNewUsrBtn);
     }
 
 

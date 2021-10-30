@@ -18,7 +18,7 @@ public class EntityDetailsPage {
     AndroidUtility androidUtility;
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
-    public static Logger log = LogManager.getLogger(AndroidUtility.class);
+    private static final Logger log = LogManager.getLogger(EntityDetailsPage.class);
 
     public EntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
@@ -30,7 +30,7 @@ public class EntityDetailsPage {
      By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
      By editField = By.className("android.widget.EditText");
      By editField1 = By.xpath("//android.widget.EditText");
-     By user_Name = By.xpath("//*[@text='User Name *']");
+     By userName = By.xpath("//*[@text='User Name *']");
      By email = By.xpath("//*[@text='Email *']");
      By confirmBtn = By.xpath("//*[@text='Confirm']");
      By validationMSg = By.xpath("//*[@text='Please enter valid field']");
@@ -66,7 +66,7 @@ public class EntityDetailsPage {
         androidUtility.clearText(editField);
         genericMethods.sendKeys(editField, userName);
         String userNameTxt = genericMethods.getText(editField);
-        int count = androidUtility.Charactercount(userNameTxt);
+        int count = androidUtility.characterCount(userNameTxt);
         log.info(count);
 
 
@@ -102,14 +102,14 @@ public class EntityDetailsPage {
     }
 
 
-    public void enterEmail(String Email, String limit) throws Exception {
+    public void enterEmail(String emaill, String limit) throws Exception {
 //        String regex = "@@^[-!@#%&()']*$/";
         System.out.println(driver.findElements(editField).size());
         editField1.findElements(driver).get(1).click();
         editField1.findElements(driver).get(1).clear();
-        editField1.findElements(driver).get(1).sendKeys(Email);
+        editField1.findElements(driver).get(1).sendKeys(emaill);
         String emailIdTxt = editField1.findElements(driver).get(1).getText();
-        int count = androidUtility.Charactercount(emailIdTxt);
+        int count = androidUtility.characterCount(emailIdTxt);
         System.out.println(count);
 
         if (emailIdTxt.isEmpty()) {
@@ -159,12 +159,15 @@ public class EntityDetailsPage {
     }
 
     public void isValidationMsgPresent(String expectedMsg, String expectedMsg1) throws Exception {
-        waitUtility.waitForSeconds(3);
-        if (genericMethods.isElementPresent(validationMSg)) {
+        waitUtility.waitForSeconds(2);
+
+        Boolean b = genericMethods.isElementPresent(validationMSg);
+        Boolean b1 = genericMethods.isElementPresent(validationMSg1);
+        if (Boolean.TRUE.equals(b)) {
             Assert.assertEquals(genericMethods.getText(validationMSg), expectedMsg);
             log.info(genericMethods.getText(validationMSg));
             Assert.assertFalse(false);
-        } else if (genericMethods.isElementPresent(validationMSg1)) {
+        } else if (Boolean.TRUE.equals(b1)) {
             Assert.assertEquals(genericMethods.getText(validationMSg1), expectedMsg1);
             log.info(genericMethods.getText(validationMSg1));
             Assert.assertFalse(false);
@@ -180,17 +183,18 @@ public class EntityDetailsPage {
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(2);
         log.info(driver.findElements(countryList).size());
-        List<WebElement> temoCountryList = (List<WebElement>) driver.findElements(countryList);
-        String CountryCodeTemp = "+" + countryCode;
-        androidUtility.selectionOfDropdown(CountryCodeTemp, temoCountryList);
+        List<WebElement> temoCountryList = driver.findElements(countryList);
+        String countryCodeTemp = "+" + countryCode;
+        androidUtility.selectionOfDropdown(countryCodeTemp, temoCountryList);
 
     }
 
-    public void enterMobNum(String mob) {
+    public void enterMobNum(String mob) throws Exception {
         log.info(driver.findElements(editField).size());
-
+        waitUtility.waitForSeconds(2);
+        Boolean b = genericMethods.isElementPresent(editField);
         try {
-            if (genericMethods.isElementPresent(editField)) {
+            if (Boolean.TRUE.equals(b)) {
                 editField.findElements(driver).get(2).click();
                 editField.findElements(driver).get(2).clear();
                 editField.findElements(driver).get(2).sendKeys(mob);
@@ -211,12 +215,13 @@ public class EntityDetailsPage {
         genericMethods.click(cancelBtn);
     }
 
-    public void isYES_NOBtnPresentConfirmation() throws InterruptedException {
+    public void isYesNoBtnPresentConfirmation() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(confirmationMsg);
 
         try {
-            if (genericMethods.isElementPresent(confirmationMsg)) {
+            if (Boolean.TRUE.equals(b)) {
                 genericMethods.waitForVisibility(confirmationMsg);
-                genericMethods.isElementPresent(confirmationMsg);
+                log.info(genericMethods.isElementPresent(confirmationMsg));
             } else {
                 genericMethods.isElementPresent(deleteConfirmationMsg);
             }
@@ -252,13 +257,13 @@ public class EntityDetailsPage {
         }
     }
 
-    public void validateUserDetails(String userName, String Email, String mobNum) throws Exception {
+    public void validateUserDetails(String userName, String email, String mobNum) throws Exception {
 
         waitUtility.waitForSeconds(2);
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(userName, tempUserDetails);
-        androidUtility.selectionItemVisible(Email, tempUserDetails);
+        androidUtility.selectionItemVisible(email, tempUserDetails);
         androidUtility.selectionItemVisible(mobNum, tempUserDetails);
 
     }
@@ -279,11 +284,13 @@ public class EntityDetailsPage {
     public void clickContinueBtn() throws Exception {
         waitUtility.waitForSeconds(2);
         genericMethods.click(continueBtn);
+        Boolean b = genericMethods.isElementPresent(consultMsg1);
 
         try {
-            if (genericMethods.isElementPresent(consultMsg1)) {
+            if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(continueBtn);
-                if (genericMethods.isElementPresent(consultMsg2)) {
+                Boolean b1 = genericMethods.isElementPresent(consultMsg2);
+                if (Boolean.TRUE.equals(b1)) {
                     genericMethods.click(continueBtn);
                 }
             }
