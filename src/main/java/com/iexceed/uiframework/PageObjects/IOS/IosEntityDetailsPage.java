@@ -1,6 +1,5 @@
 package com.iexceed.uiframework.PageObjects.IOS;
 
-
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
@@ -8,9 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.util.List;
-
 import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
 
 public class IosEntityDetailsPage {
@@ -18,7 +15,7 @@ public class IosEntityDetailsPage {
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(IosEntityDetailsPage.class);
-
+    public String stringmsg;
     public IosEntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
@@ -26,16 +23,16 @@ public class IosEntityDetailsPage {
     }
 
 
-     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-     By editField = By.className("android.widget.EditText");
-     By editField1 = By.className("android.widget.EditText");
-     By username = By.xpath("//*[@text='User Name *']");
-     By email = By.xpath("//*[@text='Email *']");
-     By confirmBtn = By.xpath("//*[@text='Confirm']");
-     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
-     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
-     By countryField = By.xpath("//*[@text='+93']");
-     By countryList = By.xpath("//android.view.View");
+    By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+    By editField = By.className("android.widget.EditText");
+    By editField1 = By.className("android.widget.EditText");
+    By username = By.xpath("//*[@text='User Name *']");
+    By email = By.xpath("//*[@text='Email *']");
+    By confirmBtn = By.xpath("//*[@text='Confirm']");
+    By validationMSg = By.xpath("//*[@text='Please enter valid field']");
+    By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
+    By countryField = By.xpath("//*[@text='+93']");
+    By countryList = By.xpath("//android.view.View");
 
 
     public void iClickAddNewuserBtn() {
@@ -45,7 +42,7 @@ public class IosEntityDetailsPage {
     }
 
     public void iAddUserName(String userName, String limit) {
-        String regex = "/^[a-zA-Z0-9- ]*$/";
+        String regex = "^[a-zA-Z0-9- ]*$/";
         driver.findElement(username).click();
         driver.findElement(username).sendKeys(userName);
         int count = characterCount(userName);
@@ -81,7 +78,7 @@ public class IosEntityDetailsPage {
     }
 
     public void iEnterEmail(String Email, String limit) {
-        String regex = "@@^[-!@#%&()']*$/";
+
         genericMethods.click(email);
         genericMethods.sendKeys(email, Email);
         String emailTxt = genericMethods.getText(email);
@@ -144,46 +141,46 @@ public class IosEntityDetailsPage {
 
 
     public void iClickCancelBtn() {
-        log.info("ios method");
+        log.info("ios method9");
     }
 
-    public void iIsYesNoBtnPresentConfirmation() throws InterruptedException {
-        log.info("ios method");
+    public void iIsYesNoBtnPresentConfirmation()  {
+        log.info("ios method7");
     }
 
     public void iClickYEsBtnValidation() {
-        log.info("ios method");
+        log.info("ios 6method");
     }
 
     public void iClicNoBtnValidation() {
         genericMethods.back();
     }
 
-    public void iIsBottomValidationMsgPresent() throws InterruptedException {
-        log.info("ios method");
+    public void iIsBottomValidationMsgPresent(){
+        log.info("ios method6");
     }
 
-    public void iValidateUserDetails(String userName, String Email, String mobNum) throws Exception {
-
-        log.info("ios method");
+    public void iValidateUserDetails(String userName, String Email, String mobNum) {
+        stringmsg=String.format("elements are %s %s %s", userName, Email, mobNum);
+        log.info("ios method5: {}",stringmsg);
 
     }
 
     public void iClickEditBtn() {
-        log.info("ios method");
+        log.info("ios method4");
     }
 
     public void iClickDeleteBtn() {
-        log.info("ios method");
+        log.info("ios method3");
     }
 
-    public void iIsAddNewScreen() throws InterruptedException {
-        log.info("ios method");
+    public void iIsAddNewScreen() {
+        log.info("ios method2");
     }
 
-    public void iClickContinueBtn(){
+    public void iClickContinueBtn() {
 
-        log.info("ios method");
+        log.info("ios method1");
     }
 
 

@@ -27,31 +27,31 @@ public class EntityDetailsPage {
     }
 
 
-     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-     By editField = By.className("android.widget.EditText");
-     By editField1 = By.xpath("//android.widget.EditText");
-     By userName = By.xpath("//*[@text='User Name *']");
-     By email = By.xpath("//*[@text='Email *']");
-     By confirmBtn = By.xpath("//*[@text='Confirm']");
-     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
-     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
-     By countryField = By.xpath("//*[@text='+93']");
-     By countryList = By.xpath("//android.view.View");
-     By mobNumField = By.xpath("//*[@text='Mobile *']");
-     By cancelBtn = By.xpath("//*[@text='Cancel']");
-     By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
-     By confirmationMsg1 = By.xpath("//*[@text='Do you want to cancel the application ?']");
-     By validateUseCreationMsg = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
-     By closeBtn = By.xpath("//*[@text='Close']");
-     By viewDataDetails = By.xpath("//android.view.View");
-     By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
-     By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
-     By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
-     By okBtn = By.xpath("//*[@text='OK']");
-     By noButton = By.xpath("//android.view.View[3]");
-     By continueBtn = By.xpath("//*[@text='Continue']");
-     By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
-     By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
+    By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+    By editField = By.className("android.widget.EditText");
+    By editField1 = By.xpath("//android.widget.EditText");
+    By userName = By.xpath("//*[@text='User Name *']");
+    By email = By.xpath("//*[@text='Email *']");
+    By confirmBtn = By.xpath("//*[@text='Confirm']");
+    By validationMSg = By.xpath("//*[@text='Please enter valid field']");
+    By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
+    By countryField = By.xpath("//*[@text='+93']");
+    By countryList = By.xpath("//android.view.View");
+    By mobNumField = By.xpath("//*[@text='Mobile *']");
+    By cancelBtn = By.xpath("//*[@text='Cancel']");
+    By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
+    By confirmationMsg1 = By.xpath("//*[@text='Do you want to cancel the application ?']");
+    By validateUseCreationMsg = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
+    By closeBtn = By.xpath("//*[@text='Close']");
+    By viewDataDetails = By.xpath("//android.view.View");
+    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
+    By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
+    By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
+    By okBtn = By.xpath("//*[@text='OK']");
+    By noButton = By.xpath("//android.view.View[3]");
+    By continueBtn = By.xpath("//*[@text='Continue']");
+    By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
+    By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
 
     public void clickAddNewuserBtn() {
         genericMethods.waitForVisibility(addNewUsrBtn);
@@ -103,14 +103,13 @@ public class EntityDetailsPage {
 
 
     public void enterEmail(String emaill, String limit) throws Exception {
-//        String regex = "@@^[-!@#%&()']*$/";
-        System.out.println(driver.findElements(editField).size());
+        log.debug(driver.findElements(editField).size());
         editField1.findElements(driver).get(1).click();
         editField1.findElements(driver).get(1).clear();
         editField1.findElements(driver).get(1).sendKeys(emaill);
         String emailIdTxt = editField1.findElements(driver).get(1).getText();
         int count = androidUtility.characterCount(emailIdTxt);
-        System.out.println(count);
+        log.debug(count);
 
         if (emailIdTxt.isEmpty()) {
             log.info("email field is empty");
@@ -152,7 +151,7 @@ public class EntityDetailsPage {
             genericMethods.hideKeyboard();
             genericMethods.click(confirmBtn);
         } catch (Exception e) {
-            System.out.println("keyboard is not alive");
+            log.debug("keyboard is not alive");
             genericMethods.click(confirmBtn);
         }
 
@@ -226,6 +225,7 @@ public class EntityDetailsPage {
                 genericMethods.isElementPresent(deleteConfirmationMsg);
             }
         } catch (Exception e) {
+            Thread.currentThread().interrupt();
             genericMethods.waitForVisibility(confirmationMsg1);
             genericMethods.isElementPresent(confirmationMsg1);
         }
@@ -246,14 +246,16 @@ public class EntityDetailsPage {
         }
     }
 
-    public void isBottomValidationMsgPresent() throws InterruptedException {
+    public void isBottomValidationMsgPresent(){
 
         try {
             genericMethods.waitForVisibility(validateUseCreationMsg);
             genericMethods.isElementPresent(validateUseCreationMsg);
             genericMethods.click(closeBtn);
         } catch (Exception e) {
-            genericMethods.click(closeBtn);
+//            Thread.currentThread().interrupt();
+//            genericMethods.click(closeBtn);
+
         }
     }
 
@@ -295,7 +297,8 @@ public class EntityDetailsPage {
                 }
             }
         } catch (Exception e) {
-
+            log.info(e);
+            Thread.currentThread().interrupt();
         }
     }
 

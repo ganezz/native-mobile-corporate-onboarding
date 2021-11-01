@@ -16,7 +16,7 @@ public class HomePageObjects {
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(HomePageObjects.class);
-
+    String stringmsg;
     public HomePageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
@@ -36,7 +36,9 @@ public class HomePageObjects {
             genericMethods.isElementPresent(englishBtn);
 
         } catch (Exception e) {
+
             genericMethods.isElementPresent(userDetailsRegBt);
+            Thread.currentThread().interrupt();
         }
 
     }
@@ -53,7 +55,9 @@ public class HomePageObjects {
             genericMethods.isElementPresent(addNewUsrBtn);
 
         } catch (Exception e) {
-            log.info("Page is not navigating to add new user screen");
+            stringmsg=String.format(" %s",e);
+            Thread.currentThread().interrupt();
+            log.info("Page is not navigating to add new user screen:{}",stringmsg);
         }
     }
 

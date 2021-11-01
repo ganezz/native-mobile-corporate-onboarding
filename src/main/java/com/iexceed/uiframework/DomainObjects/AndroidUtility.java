@@ -15,7 +15,7 @@ public class AndroidUtility {
 
     GenericMethods genericMethods;
     private static final Logger log = LogManager.getLogger(AndroidUtility.class);
-
+    public String stringmsg;
 
     public AndroidUtility() {
         genericMethods = new GenericMethods(driver);
@@ -48,16 +48,18 @@ public class AndroidUtility {
         driver.findElement(element).clear();
     }
 
-    public void selectionItemVisible(String itemType, List<WebElement> type){
+    public void selectionItemVisible(String itemType, List<WebElement> type) {
         for (WebElement name : type) {
             if (name.isDisplayed()) {
                 if ((name.getText()).contains(itemType)) {
                     log.info(name.isDisplayed());
-                    log.info("User details " + itemType + " is visible");
+                    stringmsg=String.format(" %s",itemType);
+                    log.debug("User details is visible {}",stringmsg);
                     break;
                 }
             } else {
-                log.info("User details " + itemType + " is not visible");
+
+                log.debug("User details is not visible {}",stringmsg);
 
             }
         }

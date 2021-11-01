@@ -4,6 +4,7 @@ import com.iexceed.uiframework.appium.PcloudyConnection;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
@@ -11,8 +12,9 @@ import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
 public class ConnectionObjects {
 
     PcloudyConnection createConnection;
-    public static AppiumDriver driver;
+    public static AppiumDriver<WebElement> driver;
     private final WaitUtility waitUtility;
+
 
     public ConnectionObjects() {
         createConnection = new PcloudyConnection();
