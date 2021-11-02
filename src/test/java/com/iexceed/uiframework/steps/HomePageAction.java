@@ -1,7 +1,7 @@
 package com.iexceed.uiframework.steps;
 
-import com.iexceed.uiframework.PageObjects.Android.HomePageObjects;
-import com.iexceed.uiframework.PageObjects.IOS.IosHomePageObjects;
+import com.iexceed.uiframework.pageObjects.Android.HomePageObjects;
+import com.iexceed.uiframework.pageObjects.IOS.IosHomePageObjects;
 
 public class HomePageAction {
 

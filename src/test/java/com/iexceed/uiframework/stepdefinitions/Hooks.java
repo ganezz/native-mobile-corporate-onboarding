@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
-import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
 
 public class Hooks {
     @Before()

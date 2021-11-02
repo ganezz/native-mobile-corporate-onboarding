@@ -1,7 +1,6 @@
 package com.iexceed.uiframework.steps;
 
-import com.iexceed.uiframework.DomainObjects.ConnectionObjects;
-import org.openqa.selenium.By;
+import com.iexceed.uiframework.domainObjects.ConnectionObjects;
 
 import java.util.Map;
 

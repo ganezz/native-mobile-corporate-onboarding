@@ -1,4 +1,4 @@
-package com.iexceed.uiframework.PageObjects.IOS;
+package com.iexceed.uiframework.pageObjects.IOS;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import java.util.List;
-import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
 
 public class IosEntityDetailsPage {
 

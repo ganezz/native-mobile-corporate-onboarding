@@ -1,6 +1,6 @@
-package com.iexceed.uiframework.PageObjects.Android;
+package com.iexceed.uiframework.pageObjects.Android;
 
-import com.iexceed.uiframework.DomainObjects.AndroidUtility;
+import com.iexceed.uiframework.domainObjects.AndroidUtility;
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
@@ -10,9 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
-import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
 
 public class EntityDetailsPage {
 

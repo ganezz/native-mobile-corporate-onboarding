@@ -1,4 +1,4 @@
-package com.iexceed.uiframework.DomainObjects;
+package com.iexceed.uiframework.domainObjects;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import org.apache.logging.log4j.LogManager;
@@ -8,14 +8,14 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
 
 
 public class AndroidUtility {
 
     GenericMethods genericMethods;
     private static final Logger log = LogManager.getLogger(AndroidUtility.class);
-    public String stringmsg;
+    public static String stringmsg;
 
     public AndroidUtility() {
         genericMethods = new GenericMethods(driver);

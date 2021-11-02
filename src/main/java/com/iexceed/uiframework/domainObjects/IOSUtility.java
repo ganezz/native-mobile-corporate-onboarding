@@ -1,8 +1,6 @@
-package com.iexceed.uiframework.DomainObjects;
+package com.iexceed.uiframework.domainObjects;
 
 import com.iexceed.uiframework.appium.GenericMethods;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class IOSUtility {
 
