@@ -110,7 +110,7 @@ public class EntityDetailsPageActions {
         }
     }
 
-    public void validateBottomMessage() throws InterruptedException {
+    public void validateBottomMessage() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iIsBottomValidationMsgPresent();
         } else {

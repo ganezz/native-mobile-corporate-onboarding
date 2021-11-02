@@ -154,7 +154,7 @@ public class EntityDetailsPageDefinition extends TestBase {
     }
 
     @And("message will be appear on the bottom$")
-    public void message_will_be_appear_on_the_bottom() throws InterruptedException {
+    public void message_will_be_appear_on_the_bottom() throws Exception {
         entityDetailsPageActions.validateBottomMessage();
     }
 

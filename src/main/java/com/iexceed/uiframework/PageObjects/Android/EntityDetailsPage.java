@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import static com.iexceed.uiframework.DomainObjects.ConnectionObjects.driver;
 
@@ -126,8 +127,9 @@ public class EntityDetailsPage {
                     waitUtility.waitForSeconds(1);
                     Assert.assertFalse(!genericMethods.isElementPresent(validationMSg));
                 } else {
-                    log.info(" enter  email id is vaild");
                     genericMethods.click(editField);
+                    log.info(" enter  email id is vaild");
+
                 }
             } else {
                 log.info("email id is more then limit value");
@@ -246,17 +248,17 @@ public class EntityDetailsPage {
         }
     }
 
-    public void isBottomValidationMsgPresent(){
+    public void isBottomValidationMsgPresent() throws Exception {
+        waitUtility.waitForSeconds(2);
+      try {
+          genericMethods.isElementPresent(validateUseCreationMsg);
+          genericMethods.click(closeBtn);
+      }catch (InterruptedException ie) {
+          log.error("InterruptedException: ", ie);
+          genericMethods.click(closeBtn);
+          Thread.currentThread().interrupt();
+      }
 
-        try {
-            genericMethods.waitForVisibility(validateUseCreationMsg);
-            genericMethods.isElementPresent(validateUseCreationMsg);
-            genericMethods.click(closeBtn);
-        } catch (Exception e) {
-//            Thread.currentThread().interrupt();
-//            genericMethods.click(closeBtn);
-
-        }
     }
 
     public void validateUserDetails(String userName, String email, String mobNum) throws Exception {

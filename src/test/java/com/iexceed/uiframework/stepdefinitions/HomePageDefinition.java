@@ -28,14 +28,8 @@ public class HomePageDefinition extends TestBase {
     public void user_open_the_app_in_device(String testcase) throws Exception {
         CapabilitiesActions capabilities = new CapabilitiesActions();
         deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
-        capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("pcloudy_Username")
-                , deviceConfig.get("pcloudy_API"), deviceConfig.get("platform"), deviceConfig.get("version"),
-                deviceConfig.get("deviceName"), deviceConfig.get("automationName"), deviceConfig.get("applicationName"),
-                deviceConfig.get("androidActivity"), deviceConfig.get("androidPackage"), deviceConfig.get("bundleID"),
-                deviceConfig.get("maxDuration"), deviceConfig.get("deviceURL"), deviceConfig.get("orientation"),
-                deviceConfig.get("noReset"), deviceConfig, props.getProperty("targetCompanyName"),
-                props.getProperty("trustCompanyName"), props.getProperty("trustBtn"),
-                props.getProperty("isTrustedDevice"));
+        capabilities.setCapabilities(deviceConfig.get("mode"),deviceConfig.get("platform"), deviceConfig.get("version"),deviceConfig.get("deviceName"),  deviceConfig.get("applicationName"),
+                deviceConfig.get("maxDuration"),deviceConfig.get("noReset"), deviceConfig,props.getProperty("isTrustedDevice"));
         log.info("User Opens Application in ");
         testdata.setTestDataInMap(deviceConfig);
         testdata.setTestDataInMap(datalist);

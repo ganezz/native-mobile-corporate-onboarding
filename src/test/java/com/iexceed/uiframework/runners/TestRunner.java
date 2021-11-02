@@ -28,27 +28,27 @@ import static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceN
 public class TestRunner extends AbstractTestNGCucumberTests {
     private TestNGCucumberRunner testNGCucumberRunner;
 
-    @BeforeClass(alwaysRun = true)
-    public void setUpClass() {
-        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
-
-    @Test(dataProvider = "features")
-    public void feature(PickleWrapper eventwrapper, FeatureWrapper cucumberFeature) throws Throwable {
-        //testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-        testNGCucumberRunner.runScenario(eventwrapper.getPickle());
-    }
-
-    @DataProvider//(parallel=true)
-    public Object[][] features() {
-        // return testNGCucumberRunner.provideFeatures();
-        return testNGCucumberRunner.provideScenarios();
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass() {
-        testNGCucumberRunner.finish();
-    }
+//    @BeforeClass(alwaysRun = true)
+//    public void setUpClass() {
+//        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+//    }
+//
+//    @Test(dataProvider = "features")
+//    public void feature(PickleWrapper eventwrapper, FeatureWrapper cucumberFeature) throws Throwable {
+//        //testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+//        testNGCucumberRunner.runScenario(eventwrapper.getPickle());
+//    }
+//
+//    @DataProvider//(parallel=true)
+//    public Object[][] features() {
+//        // return testNGCucumberRunner.provideFeatures();
+//        return testNGCucumberRunner.provideScenarios();
+//    }
+//
+//    @AfterClass(alwaysRun = true)
+//    public void tearDownClass() {
+//        testNGCucumberRunner.finish();
+//    }
 
 
 //    @BeforeTest
