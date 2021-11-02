@@ -1,11 +1,11 @@
-package com.iexceed.uiframework.pageObjects.IOS;
+package com.iexceed.uiframework.pageobjects.ios;
 
-import com.iexceed.uiframework.domainObjects.IOSUtility;
+import com.iexceed.uiframework.domainobjects.IOSUtility;
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.openqa.selenium.By;
 
-import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class IosHomePageObjects {
 

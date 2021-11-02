@@ -1,4 +1,4 @@
-package com.iexceed.uiframework.pageObjects.IOS;
+package com.iexceed.uiframework.pageobjects.ios;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
@@ -8,14 +8,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import java.util.List;
-import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class IosEntityDetailsPage {
 
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(IosEntityDetailsPage.class);
-    public String stringmsg;
+    private String stringmsg;
     public IosEntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
@@ -77,10 +77,10 @@ public class IosEntityDetailsPage {
         Assert.assertFalse(!genericMethods.isElementPresent(validationMSg));
     }
 
-    public void iEnterEmail(String Email, String limit) {
+    public void iEnterEmail(String emaill, String limit) {
 
         genericMethods.click(email);
-        genericMethods.sendKeys(email, Email);
+        genericMethods.sendKeys(email, emaill);
         String emailTxt = genericMethods.getText(email);
         int count = characterCount(emailTxt);
         log.info(count);
@@ -118,9 +118,9 @@ public class IosEntityDetailsPage {
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(2);
         log.info(driver.findElements(countryList).size());
-        List<WebElement> temoCountryList = (List<WebElement>) driver.findElements(countryList);
-        String CountryCodeTemp = "+" + countryCode;
-        selectionOfDropdown(CountryCodeTemp, temoCountryList);
+        List<WebElement> temoCountryList =driver.findElements(countryList);
+        String countryCodeTemp = "+" + countryCode;
+        selectionOfDropdown(countryCodeTemp, temoCountryList);
 
     }
 
@@ -160,8 +160,8 @@ public class IosEntityDetailsPage {
         log.info("ios method6");
     }
 
-    public void iValidateUserDetails(String userName, String Email, String mobNum) {
-        stringmsg=String.format("elements are %s %s %s", userName, Email, mobNum);
+    public void iValidateUserDetails(String userName, String email, String mobNum) {
+        stringmsg=String.format("elements are %s %s %s", userName, email, mobNum);
         log.info("ios method5: {}",stringmsg);
 
     }

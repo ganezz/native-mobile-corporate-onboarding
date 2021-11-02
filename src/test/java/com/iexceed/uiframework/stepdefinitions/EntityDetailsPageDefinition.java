@@ -15,17 +15,18 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     public static Logger log = LogManager.getLogger(HomePageDefinition.class);
     TestDataHandler testdata = new TestDataHandler();
-    EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
     HomePageDefinition homePageDefinition = new HomePageDefinition();
 
     @And("clicks Add A New User button$")
     public void clicks_add_a_new_user_button() {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickAddNewUSerBtn();
 
     }
 
     @And("user will landed on the New User screen$")
     public void user_will_landed_on_the_new_user_screen() throws InterruptedException {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.isAddNewScreenVisible();
         log.info("user will landed on the New User screen");
     }
@@ -33,6 +34,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("user input invalid Name$")
     public void user_input_invalid_name() {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"));
 
     }
@@ -45,24 +47,28 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("clicks on Confirm button$")
     public void clicks_on_confirm_button() {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickCOnfirmBtn();
         log.info("user clicks on Confirm button");
     }
 
     @Then("proper error message should display under User Name field$")
     public void proper_error_message_should_display_under_user_name_field() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
         log.info("proper error message should display under User Name field");
     }
 
     @And("user input invalid Email Address$")
     public void user_input_invalid_email_address() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.EnterEmailid(datalist.get("emailId"), datalist.get("limitCheck"));
 
     }
 
     @Then("proper error message should display under email field$")
     public void proper_error_message_should_display_under_email_field() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
         log.info("proper error message should display under User Name field");
     }
@@ -76,6 +82,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("user input invalid Mobile Number$")
     public void user_input_invalid_mobile_number() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         user_input_invalid_name();
         user_input_invalid_email_address();
         entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
@@ -86,6 +93,7 @@ public class EntityDetailsPageDefinition extends TestBase {
     @And("user selects Country Code$")
     public void user_selects_country_code() throws Exception {
 //          entityDetailsPageActions.selectCountryCode(deviceConfig.get("platform"),datalist.get("countryCode"));
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         log.info("user selects Country Code");
         entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
     }
@@ -100,12 +108,14 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @Then("proper error message should display under mobile field$")
     public void proper_error_message_should_display_under_mobile_field() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
         log.info("proper error message should display under mobile field");
     }
 
     @And("clicks Cancel in New User$")
     public void clicks_cancel_in_new_user() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickCancelBtn();
         log.info("clicks Cancel in New User");
     }
@@ -113,6 +123,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("user will prompt to ask about confirmation$")
     public void user_will_prompt_to_ask_about_confirmation() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.YES_NO_messageConfirmantion();
         log.info("user will prompt to ask about confirmation");
     }
@@ -133,11 +144,13 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("clicks Yes button (.+)$")
     public void clicks_yes_button(String testcase) throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.ClickYesBtn();
     }
 
     @And("clicks No button$")
     public void clicks_no_button() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.ClickNOBtn();
     }
 
@@ -155,28 +168,33 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("message will be appear on the bottom$")
     public void message_will_be_appear_on_the_bottom() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.validateBottomMessage();
     }
 
     @And("user given details will display on User Contact Details screen (.+)$")
     public void user_given_details_will_display_on_user_contact_details_screen(String testcase) throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.validateUserDetails(datalist.get("userName"), datalist.get("emailId"), datalist.get("mobNum"));
     }
 
 
     @And("clicks Cancel button$")
     public void clicks_cancel_button() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickCancelBtn();
 
     }
 
     @And("clicks Edit button$")
     public void clicks_edit_button() {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickEditButton();
     }
 
     @And("clicks Delete button$")
     public void clicks_delete_button() {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickDeleteButton();
     }
 
@@ -196,6 +214,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("clicks on Continue Button$")
     public void clicks_on_continue_button() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickcontinueBtn();
     }
 

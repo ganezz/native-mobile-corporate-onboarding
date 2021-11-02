@@ -1,6 +1,6 @@
-package com.iexceed.uiframework.pageObjects.Android;
+package com.iexceed.uiframework.pageobjects.android;
 
-import com.iexceed.uiframework.domainObjects.AndroidUtility;
+import com.iexceed.uiframework.domainobjects.AndroidUtility;
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-import static com.iexceed.uiframework.domainObjects.ConnectionObjects.driver;
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class EntityDetailsPage {
 

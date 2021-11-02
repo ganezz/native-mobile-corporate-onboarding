@@ -30,7 +30,7 @@ public class HomePageDefinition extends TestBase {
         deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
         capabilities.setCapabilities(deviceConfig.get("mode"),deviceConfig.get("platform"), deviceConfig.get("version"),deviceConfig.get("deviceName"),  deviceConfig.get("applicationName"),
                 deviceConfig.get("maxDuration"),deviceConfig.get("noReset"), deviceConfig,props.getProperty("isTrustedDevice"));
-        log.info("User Opens Application in ");
+        log.info("User Opens Application in connected device :"+deviceConfig.get("deviceName"));
         testdata.setTestDataInMap(deviceConfig);
         testdata.setTestDataInMap(datalist);
 

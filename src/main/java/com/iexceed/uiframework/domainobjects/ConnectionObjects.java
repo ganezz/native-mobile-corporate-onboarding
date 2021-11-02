@@ -1,4 +1,4 @@
-package com.iexceed.uiframework.domainObjects;
+package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.PcloudyConnection;
 import com.iexceed.uiframework.core.TestBase;
