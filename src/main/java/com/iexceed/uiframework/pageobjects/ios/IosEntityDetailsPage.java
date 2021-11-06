@@ -15,7 +15,7 @@ public class IosEntityDetailsPage {
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(IosEntityDetailsPage.class);
-    private String stringmsg;
+     String stringmsg;
     public IosEntityDetailsPage() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();

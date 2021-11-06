@@ -22,17 +22,19 @@ public class ConnectionObjects extends TestBase {
         waitUtility = new WaitUtility();
     }
 
-
-    public void setRemoteDeviceCapabilities(String platform, String version, String deviceName,String applicationName,String maxDuration,String isTrusted) throws Exception {
+    public synchronized void synchronizedMethod() {
+        driver = appiumDriver;
+    }
+    public void setRemoteDeviceCapabilities(String platform, String version, String deviceName, String applicationName, String maxDuration, String isTrusted) throws Exception {
        waitUtility.waitForSeconds(6);
         createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName, props.getProperty("automationName"), applicationName, props.getProperty("androidActivity"),props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration,props.getProperty("deviceURL"), props.getProperty("orientation"),
                 Boolean.valueOf(isTrusted),By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
         waitUtility.waitForSeconds(2);
-        driver = appiumDriver;
+        synchronizedMethod();
     }
 
     public void setRealDeviceCapabilities(String platform, String deviceName, String applicationName,String noReset) throws Exception {
         createConnection.setRealDeviceCapabilities(platform, deviceName,  props.getProperty("automationName"), applicationName, props.getProperty("androidActivity"),props.getProperty("androidPackage"), props.getProperty("deviceURL"), noReset,props.getProperty("orientation"));
-        driver = appiumDriver;
+        synchronizedMethod();
     }
 }

@@ -15,7 +15,7 @@ public class AndroidUtility {
 
     GenericMethods genericMethods;
     private static final Logger log = LogManager.getLogger(AndroidUtility.class);
-    private static String stringmsg;
+    private String stringmsg;
 
     public AndroidUtility() {
         genericMethods = new GenericMethods(driver);
