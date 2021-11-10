@@ -12,7 +12,7 @@ import static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceN
 
         features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@sanity_apps",
+        tags= "@DynamicAppLaunch",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
