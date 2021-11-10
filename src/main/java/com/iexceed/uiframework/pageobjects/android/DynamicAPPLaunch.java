@@ -45,7 +45,7 @@ public class DynamicAPPLaunch {
         String Appurl = properties.getProperty("app.url");
         System.out.println("this is app url"+properties.getProperty("app.url"));
         System.out.println("this is app url2");
-        driver.closeApp();
+//        driver.closeApp();
         System.out.println("app closed");
 //        driver.installApp("Appurl");
 
