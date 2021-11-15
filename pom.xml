@@ -12,16 +12,22 @@
             <url>http://20.80.0.230:8081/artifactory/libs-release</url>
         </repository>
     </distributionManagement>
-
     <properties>
-<!--        <app.url>${app.url}</app.url>-->
+        <app.url>${app.url}</app.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencies>
 
-       
+        <dependency>
+            <groupId>pCloudy-java-connector</groupId>
+            <artifactId>pCloudy-java-connector</artifactId>
+            <version>11.0.6</version>
+            <scope>system</scope>
+            <systemPath>/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/libraries/pCloudyjava-connector.jar</systemPath>
+        </dependency>
+
 
         <dependency>
             <groupId>com.github.ralfstuckert.pdfbox-layout</groupId>
@@ -31,8 +37,8 @@
 
         <dependency>
             <groupId>tech.grasshopper</groupId>
-            <artifactId>extentreports-cucumber5-adapter</artifactId>
-            <version>2.8.2</version>
+            <artifactId>extentreports-cucumber6-adapter</artifactId>
+            <version>2.1.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -61,22 +67,15 @@
             <version>6.9.10</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>pCloudy-java-connector</groupId>
-            <artifactId>pCloudy-java-connector</artifactId>
-            <version>11.0.6</version>
-            <scope>system</scope>
-            <systemPath>/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/libraries/pCloudyjava-connector.jar</systemPath>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.10.4</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
     <repositories>
-<!--            <repository>-->
-<!--                <id>local-maven-repo</id>-->
-<!--                <url>file:///${project.basedir}/local-maven-repo/pCloudyjava-connector.jar</url>-->
-<!--            </repository>-->
-
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
@@ -85,7 +84,6 @@
     <build>
 
         <plugins>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>

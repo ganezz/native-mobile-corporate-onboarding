@@ -79,16 +79,16 @@ public class PcloudyDynamicAPPLaunch {
         java.util.Properties properties = new Properties();
         properties.load(inputStream);
         System.out.println("this is app url1");
-//        String Appurl = properties.getProperty("app.url");
-//        System.out.println("this is app url"+properties.getProperty("app.url"));
+        String Appurl = properties.getProperty("app.url");
+        System.out.println("this is app url"+properties.getProperty("app.url"));
 
         // Launch Website
 
-        String userName="readuser";
-        String psd="Re@d@1234";
-//        String URL = "http://" + userName + ":" + psd + "@" + "20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-15-11-2021-12:43.apk";
+//        String userName="readuser";
+//        String psd="Re@d@1234";
+//        String URL = "http://" + userName + ":" + psd + "@" + "20.80.0.230:8082/artifactory/android-apk/ao/manual/devDebug-1.0.0-15-11-2021-12:56.apk";
 //        driver1.get(URL);
-        driver1.get("http://20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-15-11-2021-12:25.apk");
+        driver1.get(properties.getProperty("app.url"));
 
 
 
