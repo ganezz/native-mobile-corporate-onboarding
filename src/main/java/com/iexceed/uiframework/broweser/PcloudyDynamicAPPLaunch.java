@@ -26,7 +26,7 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
     // User Authentication over pCloudy
 
 
-    public PcloudyDynamicAPPLaunch() throws IOException, ConnectError, InterruptedException {
+    public PcloudyDynamicAPPLaunch() throws Exception {
 
         downloadApp_browser();
         System.out.println("app uploaded to local");
@@ -65,9 +65,9 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 
 
 
-    public void downloadApp_browser() throws InterruptedException, IOException {
+    public void downloadApp_browser() throws Exception {
 
-        System.setProperty(props.getProperty("driver"), props.getProperty("driverPath"));
+        System.setProperty(props.getProperty("com.iexceed.firefox.driverPath"), props.getProperty("driverPath"));
         FirefoxOptions options = new FirefoxOptions();
         options.addPreference("browser.download.dir","/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources");
         options.addPreference("browser.download.folderList", 2);
@@ -88,6 +88,7 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
         driver1.get(properties.getProperty("app.url"));
+
 
 
 
