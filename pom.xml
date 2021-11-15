@@ -21,11 +21,12 @@
     <dependencies>
 
         <dependency>
-            <groupId>pCloudy-java-connector</groupId>
-            <artifactId>pCloudy-java-connector</artifactId>
-            <version>11.0.6</version>
+            <groupId>pCloudyjavaConnector</groupId>
+            <artifactId>pCloudyjavaConnector</artifactId>
             <scope>system</scope>
-            <systemPath>/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/libraries/pCloudyjavaConnector.jar</systemPath>
+            <version>11.0.6</version>
+            <systemPath>${project.basedir}/src/main/resources/libraries/pCloudyjavaConnector.jar</systemPath>
+<!--            <systemPath>/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/libraries/pCloudyjavaConnector.jar</systemPath>-->
         </dependency>
 
 
@@ -77,10 +78,10 @@
     </dependencies>
     <repositories>
 
-        <repository>
-            <id>local-maven-repo</id>
-            <url>file://${project.basedir}/local-maven-repo/pCloudyjavaConnector.jar</url>
-        </repository>
+<!--        <repository>-->
+<!--            <id>local-maven-repo</id>-->
+<!--            <url>file://${project.basedir}/local-maven-repo/pCloudyjavaConnector.jar</url>-->
+<!--        </repository>-->
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>

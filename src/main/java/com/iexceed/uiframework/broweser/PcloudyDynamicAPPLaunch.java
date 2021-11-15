@@ -2,6 +2,7 @@ package com.iexceed.uiframework.broweser;
 
 
 
+import com.iexceed.uiframework.core.TestBase;
 import com.ssts.pcloudy.Connector;
 import com.ssts.pcloudy.dto.file.PDriveFileDTO;
 import com.ssts.pcloudy.exception.ConnectError;
@@ -18,7 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
-public class PcloudyDynamicAPPLaunch {
+public class PcloudyDynamicAPPLaunch extends TestBase {
 
     public static AndroidDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
@@ -26,6 +27,7 @@ public class PcloudyDynamicAPPLaunch {
 
 
     public PcloudyDynamicAPPLaunch() throws IOException, ConnectError, InterruptedException {
+
         downloadApp_browser();
         System.out.println("app uploaded to local");
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
@@ -65,9 +67,9 @@ public class PcloudyDynamicAPPLaunch {
 
     public void downloadApp_browser() throws InterruptedException, IOException {
 
-        System.setProperty("webdriver.gecko.driver", "/home/divyabharathi/Downloads/geckodriver-v0.30.0-linux64/geckodriver");
+        System.setProperty(props.getProperty("driver"), props.getProperty("driverPath"));
         FirefoxOptions options = new FirefoxOptions();
-        options.addPreference("browser.download.dir", "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources");
+        options.addPreference("browser.download.dir",props.getProperty("downlodFolderDir"));
         options.addPreference("browser.download.folderList", 2);
         options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
         // Initialize Gecko Driver using Desired Capabilities Class
@@ -77,18 +79,15 @@ public class PcloudyDynamicAPPLaunch {
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
-        properties.load(inputStream);
-        System.out.println("this is app url1");
-        String Appurl = properties.getProperty("app.url");
-        System.out.println("this is app url"+properties.getProperty("app.url"));
+//        properties.load(inputStream);
+//        System.out.println("this is app url1");
+//        String Appurl = properties.getProperty("app.url");
+//        System.out.println("this is app url"+properties.getProperty("app.url"));
 
         // Launch Website
 
-//        String userName="readuser";
-//        String psd="Re@d@1234";
-//        String URL = "http://" + userName + ":" + psd + "@" + "20.80.0.230:8082/artifactory/android-apk/ao/manual/devDebug-1.0.0-15-11-2021-12:56.apk";
-//        driver1.get(URL);
-        driver1.get(properties.getProperty("app.url"));
+        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
+//        driver1.get(properties.getProperty("app.url"));
 
 
 
