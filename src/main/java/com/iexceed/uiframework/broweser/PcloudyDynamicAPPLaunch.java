@@ -69,7 +69,7 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 
         System.setProperty(props.getProperty("driver"), props.getProperty("driverPath"));
         FirefoxOptions options = new FirefoxOptions();
-        options.addPreference("browser.download.dir",props.getProperty("downlodFolderDir"));
+        options.addPreference("browser.download.dir","/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources");
         options.addPreference("browser.download.folderList", 2);
         options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
         // Initialize Gecko Driver using Desired Capabilities Class
@@ -79,15 +79,15 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
-//        properties.load(inputStream);
-//        System.out.println("this is app url1");
-//        String Appurl = properties.getProperty("app.url");
-//        System.out.println("this is app url"+properties.getProperty("app.url"));
+        properties.load(inputStream);
+        System.out.println("this is app url1");
+        String Appurl = properties.getProperty("app.url");
+        System.out.println("this is app url"+properties.getProperty("app.url"));
 
         // Launch Website
 
-        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
-//        driver1.get(properties.getProperty("app.url"));
+//        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
+        driver1.get(properties.getProperty("app.url"));
 
 
 
