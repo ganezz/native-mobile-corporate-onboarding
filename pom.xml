@@ -79,7 +79,7 @@
 
         <repository>
             <id>local-maven-repo</id>
-            <url>file:///${project.basedir}/local-maven-repo/pCloudyjavaConnector.jar</url>
+            <url>file://${project.basedir}/local-maven-repo/pCloudyjavaConnector.jar</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
