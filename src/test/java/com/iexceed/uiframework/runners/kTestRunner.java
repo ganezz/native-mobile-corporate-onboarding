@@ -25,7 +25,7 @@ import static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceN
 
 )
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class kTestRunner extends AbstractTestNGCucumberTests {
     private TestNGCucumberRunner testNGCucumberRunner;
 
 //    @BeforeClass(alwaysRun = true)
