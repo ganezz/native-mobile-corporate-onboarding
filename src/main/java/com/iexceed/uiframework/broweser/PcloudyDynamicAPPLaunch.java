@@ -96,7 +96,7 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public void chromeAPPlaunch(){
+    public void chromeAPPlaunch() throws IOException {
         System.setProperty(props.getProperty("com.iexceed.chrome.driverPath"), props.getProperty("chromeDriver"));
         String downloadFilepath = "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources";
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
@@ -106,12 +106,25 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", chromePrefs);
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--safebrowsing-disable-download-protection");
         DesiredCapabilities cap = DesiredCapabilities.chrome();
         cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
         cap.setCapability(ChromeOptions.CAPABILITY, options);
         ChromeDriver driver2 =new ChromeDriver(options);
-        driver2.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
+
+        java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
+        java.util.Properties properties = new Properties();
+        properties.load(inputStream);
+        System.out.println("this is app url1");
+        String Appurl = properties.getProperty("app.url");
+        System.out.println("this is app url"+properties.getProperty("app.url"));
+
+        // Launch Website
+
+//        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
+        driver2.get(properties.getProperty("app.url"));
 
     }
     public void launchApp() throws Exception {
