@@ -9,14 +9,18 @@ import com.ssts.pcloudy.exception.ConnectError;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Properties;
 
 public class PcloudyDynamicAPPLaunch extends TestBase {
@@ -27,11 +31,11 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 
 
     public PcloudyDynamicAPPLaunch() throws Exception {
-
-        downloadApp_browser();
+        chromeAPPlaunch();
+//        downloadApp_browser();
         System.out.println("app uploaded to local");
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-        // Upload apk in pCloudy
+
         PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File("src/main/resources/ContactManager.apk"));
         Thread.sleep(2000);
         System.out.println("app uploaded");
@@ -89,8 +93,25 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
         driver1.get(properties.getProperty("app.url"));
 
+    }
 
 
+    public void chromeAPPlaunch(){
+        System.setProperty(props.getProperty("com.iexceed.chrome.driverPath"), props.getProperty("chromeDriver"));
+        String downloadFilepath = "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources";
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.default_directory", downloadFilepath);
+        chromePrefs.put("safebrowsing.enabled", "true");
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", chromePrefs);
+        options.addArguments("--headless");
+        options.addArguments("--safebrowsing-disable-download-protection");
+        DesiredCapabilities cap = DesiredCapabilities.chrome();
+        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        cap.setCapability(ChromeOptions.CAPABILITY, options);
+        ChromeDriver driver2 =new ChromeDriver(options);
+        driver2.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
 
     }
     public void launchApp() throws Exception {

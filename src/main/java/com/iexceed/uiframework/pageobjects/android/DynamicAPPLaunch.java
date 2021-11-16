@@ -55,13 +55,11 @@ public class DynamicAPPLaunch extends TestBase {
         } else {
             driver.terminateApp("com.android.vending");
             Thread.sleep(2000);
-            System.out.println(driver.isAppInstalled("com.iexceed.applicationapp"));
-            System.out.println("launch Application");
+            driver.installApp("https://a3.files.diawi.com/app-file/GKW1KVFCibSjaAXjvMC1.apk");
 
 
         }
-        System.out.println("device connected");
-        System.out.println("app installed");
+
 
 
     }
