@@ -122,7 +122,7 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
         String Appurl = properties.getProperty("app.url");
         System.out.println("this is app url"+properties.getProperty("app.url"));
 
-        TestBase.initialization(properties.getProperty("app.url"));
+        TestBase.pcloudyInitialization(properties.getProperty("app.url"));
         // Launch Website
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
 //        driver2.get(properties.getProperty("app.url"));
