@@ -96,23 +96,24 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public void chromeAPPlaunch() throws IOException {
-        System.setProperty(props.getProperty("com.iexceed.chrome.driverPath"), props.getProperty("chromeDriver"));
-        String downloadFilepath = "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources";
-        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-        chromePrefs.put("profile.default_content_settings.popups", 0);
-        chromePrefs.put("download.default_directory", downloadFilepath);
-        chromePrefs.put("safebrowsing.enabled", "true");
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", chromePrefs);
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--safebrowsing-disable-download-protection");
-        DesiredCapabilities cap = DesiredCapabilities.chrome();
-        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-        cap.setCapability(ChromeOptions.CAPABILITY, options);
-        ChromeDriver driver2 =new ChromeDriver(options);
+    public void chromeAPPlaunch() throws Exception {
+//        System.setProperty(props.getProperty("com.iexceed.chrome.driverPath"), props.getProperty("chromeDriver"));
+//        String downloadFilepath = "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources";
+//        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+//        chromePrefs.put("profile.default_content_settings.popups", 0);
+//        chromePrefs.put("download.default_directory", downloadFilepath);
+//        chromePrefs.put("safebrowsing.enabled", "true");
+//        ChromeOptions options = new ChromeOptions();
+//        options.setExperimentalOption("prefs", chromePrefs);
+//        options.addArguments("--headless");
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--safebrowsing-disable-download-protection");
+//
+//        DesiredCapabilities cap = DesiredCapabilities.chrome();
+//        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+//        cap.setCapability(ChromeOptions.CAPABILITY, options);
+//        ChromeDriver driver2 =new ChromeDriver(options);
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
@@ -121,10 +122,11 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
         String Appurl = properties.getProperty("app.url");
         System.out.println("this is app url"+properties.getProperty("app.url"));
 
+        TestBase.initialization(properties.getProperty("app.url"));
         // Launch Website
 
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
-        driver2.get(properties.getProperty("app.url"));
+//        driver2.get(properties.getProperty("app.url"));
 
     }
     public void launchApp() throws Exception {
