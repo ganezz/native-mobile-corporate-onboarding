@@ -124,7 +124,6 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 
         TestBase.initialization(properties.getProperty("app.url"));
         // Launch Website
-
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
 //        driver2.get(properties.getProperty("app.url"));
 
