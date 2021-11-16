@@ -11,7 +11,7 @@ public class lauchWebBrowser {
 
 public static void main(String args[]) throws InterruptedException {
     String downloadFilepath = "src/main/resources";
-    System.setProperty("webdriver.chrome.driver", "/home/divyabharathi/Downloads/chromedriver_linux64/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/home/divyabharathi/Downloads/chromedriver_linux64/chromedriver1");
 
     ChromeOptions options = new ChromeOptions();
     HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
