@@ -1,44 +1,34 @@
 package com.iexceed.uiframework.broweser;
 
 
-
 import com.iexceed.uiframework.core.TestBase;
 import com.ssts.pcloudy.Connector;
 import com.ssts.pcloudy.dto.file.PDriveFileDTO;
-import com.ssts.pcloudy.exception.ConnectError;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Properties;
 
-public class PcloudyDynamicAPPLaunch extends TestBase {
+public class pcloudyDynamicAPPLaunch extends TestBase {
 
     public static AndroidDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
-    // User Authentication over pCloudy
+    String appURL;
 
-
-    public PcloudyDynamicAPPLaunch() throws Exception {
+    public pcloudyDynamicAPPLaunch() throws Exception {
         chromeAPPlaunch();
-//        downloadApp_browser();
-        System.out.println("app uploaded to local");
+        System.out.println("app download to local");
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-
         PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File("src/main/resources/ContactManager.apk"));
         Thread.sleep(2000);
-        System.out.println("app uploaded");
+        System.out.println("app uploaded to pcloudy");
     }
 
     public void DynamicAppCapability() throws MalformedURLException {
@@ -68,15 +58,14 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-
     public void downloadApp_browser() throws Exception {
 
         System.setProperty(props.getProperty("com.iexceed.firefox.driverPath"), props.getProperty("driverPath"));
         FirefoxOptions options = new FirefoxOptions();
-        options.addPreference("browser.download.dir","/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources");
+        options.addPreference("browser.download.dir", "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources");
         options.addPreference("browser.download.folderList", 2);
         options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
-        // Initialize Gecko Driver using Desired Capabilities Class
+
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
         WebDriver driver1 = new FirefoxDriver(options);
@@ -86,9 +75,9 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
         properties.load(inputStream);
         System.out.println("this is app url1");
         String Appurl = properties.getProperty("app.url");
-        System.out.println("this is app url"+properties.getProperty("app.url"));
+        System.out.println("this is app url" + properties.getProperty("app.url"));
 
-        // Launch Website
+
 
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
         driver1.get(properties.getProperty("app.url"));
@@ -115,38 +104,23 @@ public class PcloudyDynamicAPPLaunch extends TestBase {
 //        cap.setCapability(ChromeOptions.CAPABILITY, options);
 //        ChromeDriver driver2 =new ChromeDriver(options);
 
-        java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
-        java.util.Properties properties = new Properties();
-        properties.load(inputStream);
-        System.out.println("this is app url1");
-        String Appurl = properties.getProperty("app.url");
-        System.out.println("this is app url"+properties.getProperty("app.url"));
+        appURL = launchApp();
+        TestBase.pcloudyInitialization(appURL);
 
-        TestBase.pcloudyInitialization(properties.getProperty("app.url"));
-        // Launch Website
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
 //        driver2.get(properties.getProperty("app.url"));
 
     }
-    public void launchApp() throws Exception {
+
+    public String launchApp() throws Exception {
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
         properties.load(inputStream);
-        System.out.println("this is app url1");
-        String Appurl = properties.getProperty("app.url");
-        System.out.println("this is app url"+properties.getProperty("app.url"));
-        System.out.println("this is app url2");
-        try{
-            driver.closeApp();
-        }catch(Exception e){
-            System.out.println("caught exception");
-        }
-
-        System.out.println("app closed");
+        System.out.println("this is app url" + properties.getProperty("app.url"));
+        return properties.getProperty("app.url");
 
     }
-
 
 
 }
