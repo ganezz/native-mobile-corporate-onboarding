@@ -5,6 +5,8 @@ import com.iexceed.uiframework.core.TestBase;
 import com.ssts.pcloudy.Connector;
 import com.ssts.pcloudy.dto.file.PDriveFileDTO;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.commons.io.comparator.LastModifiedFileComparator;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,8 +14,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class pcloudyDynamicAPPLaunch extends TestBase {
@@ -21,12 +27,17 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     public static AndroidDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
     String appURL;
+    static File f2;
+    String renamedFilePath;
+    String renamedAppPath;
 
     public pcloudyDynamicAPPLaunch() throws Exception {
         chromeAPPlaunch();
         System.out.println("app download to local");
+        Thread.sleep(3000);
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-        PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File("src/main/resources/ContactManager.apk"));
+        Thread.sleep(3000);
+        PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
         Thread.sleep(2000);
         System.out.println("app uploaded to pcloudy");
     }
@@ -43,9 +54,9 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         capabilities.setCapability("platformVersion", "11.0.0");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "uiautomator2");
-        capabilities.setCapability("pCloudy_ApplicationName", "ContactManager.apk");
-        capabilities.setCapability("appPackage", "com.example.android.contactmanager");
-        capabilities.setCapability("appActivity", "com.example.android.contactmanager.ContactManager");
+        capabilities.setCapability("pCloudy_ApplicationName", renamedFilePath);
+        capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation1.0.0-Automation");
+        capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
         capabilities.setCapability("pCloudy_EnableVideo", "true");
         capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
         capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
@@ -78,7 +89,6 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         System.out.println("this is app url" + properties.getProperty("app.url"));
 
 
-
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
         driver1.get(properties.getProperty("app.url"));
 
@@ -86,31 +96,80 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 
     public void chromeAPPlaunch() throws Exception {
-//        System.setProperty(props.getProperty("com.iexceed.chrome.driverPath"), props.getProperty("chromeDriver"));
-//        String downloadFilepath = "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources";
-//        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-//        chromePrefs.put("profile.default_content_settings.popups", 0);
-//        chromePrefs.put("download.default_directory", downloadFilepath);
-//        chromePrefs.put("safebrowsing.enabled", "true");
-//        ChromeOptions options = new ChromeOptions();
-//        options.setExperimentalOption("prefs", chromePrefs);
-//        options.addArguments("--headless");
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--safebrowsing-disable-download-protection");
-//
-//        DesiredCapabilities cap = DesiredCapabilities.chrome();
-//        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-//        cap.setCapability(ChromeOptions.CAPABILITY, options);
-//        ChromeDriver driver2 =new ChromeDriver(options);
 
-        appURL = launchApp();
-        TestBase.pcloudyInitialization(appURL);
-
+//        appURL = launchApp();
+        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
+        waitUntilFileToDownload(props.getProperty("downloadFilepath"));
+        fileRenaming();
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
 //        driver2.get(properties.getProperty("app.url"));
 
+
     }
+
+
+    public static void waitUntilFileToDownload(String folderLocation) throws InterruptedException {
+        Thread.sleep(2000);
+        File directory = new File(folderLocation);
+        boolean downloadinFilePresence = false;
+        File[] filesList = null;
+        Boolean filePresent = true;
+
+
+        while (filePresent) {
+            filesList = directory.listFiles();
+            for (File file : filesList) {
+                downloadinFilePresence = file.getName().contains(".apk");
+                String fn1 = file.getName();
+                System.out.println(fn1);
+
+            }
+            if (downloadinFilePresence) {
+                filePresent = false;
+                break;
+            } else {
+                System.out.println("apk file is not present in that directory");
+            }
+        }
+    }
+
+
+    public void fileRenaming() throws InterruptedException {
+
+        LocalDate currentdate = LocalDate.now();
+        Month currentMonth = currentdate.getMonth();
+        int currentDate = currentdate.getDayOfMonth();
+        f2 = new File("App" + currentMonth + currentDate);
+        renamedFilePath = f2.getName();
+        System.out.println("Renamed f2 file path " + renamedFilePath);
+        Thread.sleep(2000);
+        File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
+        newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
+        renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".apk";
+        System.out.println("Renamed app path " + renamedAppPath);
+        String filename = newfile.getName();
+        System.out.println("latest file is=" + filename);
+
+        File updated = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
+        System.out.println("Changed file name is =" + updated);
+
+    }
+
+    public static File getTheNewestFile(String filePath, String ext) {
+        File theNewestFile = null;
+        File dir = new File(filePath);
+        FileFilter fileFilter = new WildcardFileFilter("*." + ext);
+        File[] files = dir.listFiles(fileFilter);
+
+        if (files.length > 0) {
+            /* The newest file comes first */
+            Arrays.sort(files, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+            theNewestFile = files[0];
+        }
+
+        return theNewestFile;
+    }
+
 
     public String launchApp() throws Exception {
 
