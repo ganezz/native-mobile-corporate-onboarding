@@ -36,8 +36,11 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         System.out.println("app download to local");
         Thread.sleep(3000);
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-        PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
-        Thread.sleep(2000);
+        try {
+            PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
+        }catch(Exception e){
+            System.out.println(e);
+        } Thread.sleep(10000);
         System.out.println("app uploaded to pcloudy");
     }
 
@@ -53,7 +56,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         capabilities.setCapability("platformVersion", "11.0.0");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "uiautomator2");
-        capabilities.setCapability("pCloudy_ApplicationName", renamedFilePath);
+        capabilities.setCapability("pCloudy_ApplicationName", "AppNOVEMBER19.apk");
         capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation1.0.0-Automation");
         capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
         capabilities.setCapability("pCloudy_EnableVideo", "true");
@@ -98,6 +101,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 //        appURL = launchApp();
         TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
+        Thread.sleep(10000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
@@ -108,7 +112,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 
     public static void waitUntilFileToDownload(String folderLocation) throws InterruptedException {
-        Thread.sleep(2000);
+
         File directory = new File(folderLocation);
         boolean downloadinFilePresence = false;
         File[] filesList = null;
@@ -121,10 +125,13 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
                 downloadinFilePresence = file.getName().contains(".apk");
                 String fn1 = file.getName();
                 System.out.println(fn1);
+                System.out.println(file.getName().contains(".apk"));
+
 
             }
             if (downloadinFilePresence) {
                 filePresent = false;
+
                 break;
             } else {
                 System.out.println("apk file is not present in that directory");
