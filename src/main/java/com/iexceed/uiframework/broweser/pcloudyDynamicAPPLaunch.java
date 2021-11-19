@@ -36,7 +36,6 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         System.out.println("app download to local");
         Thread.sleep(3000);
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-        Thread.sleep(3000);
         PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
         Thread.sleep(2000);
         System.out.println("app uploaded to pcloudy");
@@ -143,8 +142,10 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         renamedFilePath = f2.getName();
         System.out.println("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
+
         File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
         newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
+        Thread.sleep(2000);
         renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".apk";
         System.out.println("Renamed app path " + renamedAppPath);
         String filename = newfile.getName();
