@@ -28,8 +28,8 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     Connector pCloudyCONNECTOR = new Connector();
     String appURL;
     static File f2;
-    String renamedFilePath;
-    String renamedAppPath;
+   public static String renamedFilePath;
+    public static String renamedAppPath;
 
     public pcloudyDynamicAPPLaunch() throws Exception {
         chromeAPPlaunch();
@@ -56,7 +56,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         capabilities.setCapability("platformVersion", "11.0.0");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "uiautomator2");
-        capabilities.setCapability("pCloudy_ApplicationName", "AppNOVEMBER20.apk");
+        capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-0-18-11-2021.apk");
         capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation");
         capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
         capabilities.setCapability("pCloudy_EnableVideo", "true");
@@ -145,7 +145,8 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         LocalDate currentdate = LocalDate.now();
         Month currentMonth = currentdate.getMonth();
         int currentDate = currentdate.getDayOfMonth();
-        f2 = new File("App" + currentMonth + currentDate);
+//        f2 = new File("App" + currentMonth + currentDate);
+        f2 = new File("Automation-1-0-0-18-11-2021");
         renamedFilePath = f2.getName();
         System.out.println("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
@@ -179,15 +180,6 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public String launchApp() throws Exception {
-
-        java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
-        java.util.Properties properties = new Properties();
-        properties.load(inputStream);
-        System.out.println("this is app url" + properties.getProperty("app.url"));
-        return properties.getProperty("app.url");
-
-    }
 
 
 }
