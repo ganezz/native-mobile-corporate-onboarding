@@ -34,7 +34,7 @@ public class dynamicPageDefinition extends TestBase {
     @When("launcing our Dynamicapp$")
     public void launcing_our_Dynamicapp() throws Exception {
         pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch=new pcloudyDynamicAPPLaunch();
-        pcloudyDynamicAPPLaunch.DynamicAppCapability();
+//        pcloudyDynamicAPPLaunch.DynamicAppCapability();
 
     }
 }

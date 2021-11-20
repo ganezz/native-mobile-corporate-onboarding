@@ -1,18 +1,17 @@
 package com.iexceed.uiframework.runners;
 
 
-import io.cucumber.testng.*;
-import org.testng.annotations.*;
-
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinition.DeviceName;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.TestNGCucumberRunner;
 
 //@RunWith(Cucumber.class)
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features",
+        features = "src/test/resources/Features/LegalEntUserDetails.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@DynamicAppLaunch",
+        tags= "@regressionUserDetailsScreen",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",

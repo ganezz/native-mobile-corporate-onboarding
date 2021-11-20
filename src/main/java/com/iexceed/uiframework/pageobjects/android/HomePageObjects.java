@@ -23,7 +23,7 @@ public class HomePageObjects {
     }
 
 
-     By userDetailsRegBt = By.xpath("//*[@text='User Contact UI No User']");
+     By userDetailsRegBt = By.xpath("//*[@text='Onboaridng']");
      By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
      By englishBtn = By.xpath("//*[@text='English']");
      By arabicBtn = By.xpath("//*[@text='Arabic']");

@@ -5,15 +5,12 @@ import com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import com.ssts.pcloudy.Connector;
-import com.ssts.pcloudy.dto.file.PDriveFileDTO;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.io.File;
-
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
-import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.renamedAppPath;
+import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.countApp;
 
 public class ConnectionObjects extends TestBase {
 
@@ -21,21 +18,18 @@ public class ConnectionObjects extends TestBase {
     public static AppiumDriver<WebElement> driver;
     private final WaitUtility waitUtility;
     Connector pCloudyCONNECTOR = new Connector();
-    pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch();
+    pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch;
 
 
     public ConnectionObjects() throws Exception {
-        pcloudyDynamicAPPLaunch.chromeAPPlaunch();
-        System.out.println("app download to local");
-        Thread.sleep(3000);
-        String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-        try {
-            PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        Thread.sleep(10000);
-        System.out.println("app uploaded to pcloudy");
+
+            if (countApp == 0) {
+                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch();
+            } else {
+                System.out.println("App is already downloaded and uploaded to pcloudy");
+            }
+
+
         createConnection = new PcloudyConnection();
         waitUtility = new WaitUtility();
     }
