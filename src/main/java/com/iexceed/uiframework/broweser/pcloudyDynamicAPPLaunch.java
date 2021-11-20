@@ -56,8 +56,8 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         capabilities.setCapability("platformVersion", "11.0.0");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "uiautomator2");
-        capabilities.setCapability("pCloudy_ApplicationName", "AppNOVEMBER19.apk");
-        capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation1.0.0-Automation");
+        capabilities.setCapability("pCloudy_ApplicationName", "AppNOVEMBER20.apk");
+        capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation");
         capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
         capabilities.setCapability("pCloudy_EnableVideo", "true");
         capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
@@ -101,7 +101,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 //        appURL = launchApp();
         TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
 //        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
