@@ -101,7 +101,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 //        appURL = launchApp();
         TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
-        Thread.sleep(9000);
+        Thread.sleep(10000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
         ++countApp;
