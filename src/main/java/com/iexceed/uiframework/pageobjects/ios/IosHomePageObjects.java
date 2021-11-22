@@ -22,11 +22,13 @@ public class IosHomePageObjects {
     }
 
 
-     By userDetailsRegBt = By.xpath("//*[@text='User Contact UI No User']");
-     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-     By englishBtn = By.xpath("//*[@text='English']");
-     By arabicBtn = By.xpath("//*[@text='Arabic']");
-     By arabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+    By userDetailsRegBt = By.xpath("//*[@text='User Contact UI No User']");
+    By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+    By lightThemeBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton");
+    By darkThemeBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[1]");
+    By englishBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[2]");
+    By arabicBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[3]");
+    By arabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
 
 
     public void iIsHomePageVisible() {
@@ -34,7 +36,7 @@ public class IosHomePageObjects {
             genericMethods.waitForVisibility(englishBtn);
 
         } catch (Exception e) {
-            genericMethods.waitForVisibility(userDetailsRegBt);
+            genericMethods.waitForVisibility(lightThemeBtn);
 
         }
 

@@ -4,24 +4,27 @@ package com.iexceed.uiframework.broweser;
 import com.iexceed.uiframework.core.TestBase;
 import com.ssts.pcloudy.Connector;
 import com.ssts.pcloudy.dto.file.PDriveFileDTO;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class pcloudyDynamicAPPLaunch extends TestBase {
+public class IOSpcloudyDynamicAPPLaunch extends TestBase {
 
-    public static AndroidDriver<?> driver;
+    public static IOSDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
     String appURL;
     static File f2;
@@ -30,8 +33,8 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     public static int countApp = 0;
     static String AppPlatform;
 
-    public pcloudyDynamicAPPLaunch(String platform) throws Exception {
-        AppPlatform = platform;
+    public IOSpcloudyDynamicAPPLaunch() throws Exception {
+
         chromeAPPlaunch();
         System.out.println("app download to local");
         Thread.sleep(3000);
@@ -43,33 +46,40 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         }
         Thread.sleep(3000);
         System.out.println("app uploaded to pcloudy");
+        DynamicAppCapability();
     }
 
-//    public void DynamicAppCapability() throws MalformedURLException {
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
-//        capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
-//        capabilities.setCapability("pCloudy_DurationInMinutes", 20);
-//        capabilities.setCapability("newCommandTimeout", 600);
-//        capabilities.setCapability("launchTimeout", 90000);
-//        capabilities.setCapability("pCloudy_DeviceManufacturer", "SAMSUNG");
-//        capabilities.setCapability("pCloudy_DeviceVersion", "11.0.0");
-//        capabilities.setCapability("platformVersion", "11.0.0");
-//        capabilities.setCapability("platformName", "Android");
-//        capabilities.setCapability("automationName", "uiautomator2");
-//        capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-0-18-11-2021.apk");
-//        capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation");
-//        capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
-//        capabilities.setCapability("pCloudy_EnableVideo", "true");
-//        capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
-//        capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
-//        driver = new AndroidDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-//
-//System.out.println("driver connected");
-//        System.out.println(driver.isAppInstalled("com.example.android.contactmanager"));
-//
-//
-//    }
+
+
+
+
+
+
+    public static void DynamicAppCapability() throws MalformedURLException, MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
+        capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
+        capabilities.setCapability("pCloudy_DurationInMinutes", 20);
+        capabilities.setCapability("newCommandTimeout", 600);
+        capabilities.setCapability("launchTimeout", 90000);
+        capabilities.setCapability("pCloudy_DeviceManufacturer", "APPLE");
+        capabilities.setCapability("pCloudy_DeviceVersion", "12.0.1");
+        capabilities.setCapability("platformVersion", "12.0.1");
+        capabilities.setCapability("platformName", "ios");
+        capabilities.setCapability("acceptAlerts", true);
+        capabilities.setCapability("automationName", "XCUITest");
+        capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-0-18-11-2021.ipa");
+        capabilities.setCapability("bundleId", "com.ixceed.AssistedOnboardingApplication.automation");
+        capabilities.setCapability("pCloudy_EnableVideo", "true");
+        capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
+        capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
+        driver = new IOSDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+
+        System.out.println("driver connected");
+        System.out.println(driver.isAppInstalled("com.example.android.contactmanager"));
+
+
+    }
 
 
     public void downloadApp_FFbrowser() throws Exception {
@@ -85,7 +95,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         WebDriver driver1 = new FirefoxDriver(options);
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
-        java.util.Properties properties = new Properties();
+        Properties properties = new Properties();
         properties.load(inputStream);
         System.out.println("this is app url1");
         String Appurl = properties.getProperty("app.url");
@@ -102,10 +112,9 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 //        appURL = launchApp();
 //        TestBase.pcloudyInitialization(appURL);
-        if(AppPlatform.equalsIgnoreCase("Android")) {
+        if (AppPlatform.equalsIgnoreCase("Android")) {
             TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
-        }
-        else{
+        } else {
             TestBase.pcloudyInitialization("https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-20-11-2021-22%3A37/AUTOMATIONDebug-1.0.0-20-11-2021-22%3A37.ipa");
         }
         Thread.sleep(10000);
@@ -129,12 +138,12 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
             filesList = directory.listFiles();
             for (File file : filesList) {
 
-                if(AppPlatform.equalsIgnoreCase("Android")) {
+                if (AppPlatform.equalsIgnoreCase("Android")) {
                     downloadinFilePresence = file.getName().contains(".apk");
                     String fn1 = file.getName();
                     System.out.println(fn1);
                     System.out.println(file.getName().contains(".apk"));
-                }else{
+                } else {
                     downloadinFilePresence = file.getName().contains(".ipa");
                     String fn1 = file.getName();
                     System.out.println(fn1);
@@ -207,7 +216,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     public String launchApp() throws Exception {
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
-        java.util.Properties properties = new Properties();
+        Properties properties = new Properties();
         properties.load(inputStream);
         System.out.println("this is app url" + properties.getProperty("app.url"));
         return properties.getProperty("app.url");

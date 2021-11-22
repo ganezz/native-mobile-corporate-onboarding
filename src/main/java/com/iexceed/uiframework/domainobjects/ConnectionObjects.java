@@ -21,10 +21,10 @@ public class ConnectionObjects extends TestBase {
     pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch;
 
 
-    public ConnectionObjects() throws Exception {
+    public ConnectionObjects(String platform) throws Exception {
 
             if (countApp == 0) {
-                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch();
+                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch(platform);
             } else {
                 System.out.println("App is already downloaded and uploaded to pcloudy");
             }
@@ -38,16 +38,16 @@ public class ConnectionObjects extends TestBase {
         driver = appiumDriver;
     }
 
-    public void setRemoteDeviceCapabilities(String platform, String version, String deviceName, String maxDuration, String isTrusted) throws Exception {
+    public void setRemoteDeviceCapabilities(String platform, String version, String deviceName,String automationName,String applicationName, String maxDuration, String isTrusted) throws Exception {
         waitUtility.waitForSeconds(6);
-        createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName, props.getProperty("automationName"), props.getProperty("applicationName"), props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration, props.getProperty("deviceURL"), props.getProperty("orientation"),
+        createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName,automationName,applicationName, props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration, props.getProperty("deviceURL"), props.getProperty("orientation"),
                 Boolean.valueOf(isTrusted), By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
         waitUtility.waitForSeconds(4);
         synchronizedMethod();
     }
 
-    public void setRealDeviceCapabilities(String platform, String deviceName, String noReset) throws Exception {
-        createConnection.setRealDeviceCapabilities(platform, deviceName, props.getProperty("automationName"), props.getProperty("applicationName"), props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("deviceURL"), noReset, props.getProperty("orientation"));
+    public void setRealDeviceCapabilities(String platform, String deviceName, String noReset,String automationName,String applicationName) throws Exception {
+        createConnection.setRealDeviceCapabilities(platform, deviceName,automationName, applicationName, props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("deviceURL"), noReset, props.getProperty("orientation"));
         synchronizedMethod();
     }
 }

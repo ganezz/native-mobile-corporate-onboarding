@@ -1,6 +1,5 @@
 package com.iexceed.uiframework.stepdefinitions;
 
-import com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch;
 import com.iexceed.uiframework.core.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -33,7 +32,7 @@ public class dynamicPageDefinition extends TestBase {
 
     @When("launcing our Dynamicapp$")
     public void launcing_our_Dynamicapp() throws Exception {
-        pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch=new pcloudyDynamicAPPLaunch();
+//        pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch=new pcloudyDynamicAPPLaunch();
 //        pcloudyDynamicAPPLaunch.DynamicAppCapability();
 
     }
