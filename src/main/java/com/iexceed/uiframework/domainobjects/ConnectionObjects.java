@@ -42,7 +42,7 @@ public class ConnectionObjects extends TestBase {
         waitUtility.waitForSeconds(6);
         createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName, props.getProperty("automationName"), props.getProperty("applicationName"), props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration, props.getProperty("deviceURL"), props.getProperty("orientation"),
                 Boolean.valueOf(isTrusted), By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(4);
         synchronizedMethod();
     }
 

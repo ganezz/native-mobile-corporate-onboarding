@@ -38,7 +38,7 @@ public class HomePageObjects {
         } catch (Exception e) {
 
             genericMethods.isElementPresent(userDetailsRegBt);
-            Thread.currentThread().interrupt();
+//            Thread.currentThread().interrupt();
         }
 
     }
@@ -51,12 +51,12 @@ public class HomePageObjects {
     public void verifyPageLanding() throws Exception {
 
         try {
-            waitUtility.waitForSeconds(2);
+            waitUtility.waitForSeconds(4);
             genericMethods.isElementPresent(addNewUsrBtn);
 
         } catch (Exception e) {
             stringmsg=String.format(" %s",e);
-            Thread.currentThread().interrupt();
+//            Thread.currentThread().interrupt();
             log.info("Page is not navigating to add new user screen:{}",stringmsg);
         }
     }

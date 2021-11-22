@@ -226,7 +226,7 @@ public class EntityDetailsPage {
                 genericMethods.isElementPresent(deleteConfirmationMsg);
             }
         } catch (Exception e) {
-            Thread.currentThread().interrupt();
+//            Thread.currentThread().interrupt();
             genericMethods.waitForVisibility(confirmationMsg1);
             genericMethods.isElementPresent(confirmationMsg1);
         }
@@ -255,7 +255,7 @@ public class EntityDetailsPage {
       }catch (InterruptedException ie) {
           log.error("InterruptedException: ", ie);
           genericMethods.click(closeBtn);
-          Thread.currentThread().interrupt();
+//          Thread.currentThread().interrupt();
       }
 
     }
@@ -299,7 +299,7 @@ public class EntityDetailsPage {
             }
         } catch (Exception e) {
             log.info(e);
-            Thread.currentThread().interrupt();
+//            Thread.currentThread().interrupt();
         }
     }
 
