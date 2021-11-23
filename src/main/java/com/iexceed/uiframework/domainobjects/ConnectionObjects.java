@@ -23,12 +23,13 @@ public class ConnectionObjects extends TestBase {
 
     public ConnectionObjects(String platform) throws Exception {
 
+        if(platform.equalsIgnoreCase("Android")) {
             if (countApp == 0) {
-                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch(platform);
+                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch();
             } else {
                 System.out.println("App is already downloaded and uploaded to pcloudy");
             }
-
+        }
 
         createConnection = new PcloudyConnection();
         waitUtility = new WaitUtility();

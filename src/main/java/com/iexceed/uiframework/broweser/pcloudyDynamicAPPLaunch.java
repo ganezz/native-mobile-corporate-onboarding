@@ -7,10 +7,6 @@ import com.ssts.pcloudy.dto.file.PDriveFileDTO;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -30,8 +26,8 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     public static int countApp = 0;
     static String AppPlatform;
 
-    public pcloudyDynamicAPPLaunch(String platform) throws Exception {
-        AppPlatform = platform;
+    public pcloudyDynamicAPPLaunch() throws Exception {
+
         chromeAPPlaunch();
         System.out.println("app download to local");
         Thread.sleep(3000);
@@ -45,72 +41,15 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         System.out.println("app uploaded to pcloudy");
     }
 
-//    public void DynamicAppCapability() throws MalformedURLException {
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
-//        capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
-//        capabilities.setCapability("pCloudy_DurationInMinutes", 20);
-//        capabilities.setCapability("newCommandTimeout", 600);
-//        capabilities.setCapability("launchTimeout", 90000);
-//        capabilities.setCapability("pCloudy_DeviceManufacturer", "SAMSUNG");
-//        capabilities.setCapability("pCloudy_DeviceVersion", "11.0.0");
-//        capabilities.setCapability("platformVersion", "11.0.0");
-//        capabilities.setCapability("platformName", "Android");
-//        capabilities.setCapability("automationName", "uiautomator2");
-//        capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-0-18-11-2021.apk");
-//        capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.automation");
-//        capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
-//        capabilities.setCapability("pCloudy_EnableVideo", "true");
-//        capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
-//        capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
-//        driver = new AndroidDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-//
-//System.out.println("driver connected");
-//        System.out.println(driver.isAppInstalled("com.example.android.contactmanager"));
-//
-//
-//    }
-
-
-    public void downloadApp_FFbrowser() throws Exception {
-
-        System.setProperty(props.getProperty("com.iexceed.firefox.driverPath"), props.getProperty("driverPath"));
-        FirefoxOptions options = new FirefoxOptions();
-        options.addPreference("browser.download.dir", "/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources");
-        options.addPreference("browser.download.folderList", 2);
-        options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
-
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", true);
-        WebDriver driver1 = new FirefoxDriver(options);
-
-        java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
-        java.util.Properties properties = new Properties();
-        properties.load(inputStream);
-        System.out.println("this is app url1");
-        String Appurl = properties.getProperty("app.url");
-        System.out.println("this is app url" + properties.getProperty("app.url"));
-
-
-//        driver1.get("https://github.com/appium/sample-apps/raw/master/pre-built/ContactManager.apk");
-        driver1.get(properties.getProperty("app.url"));
-
-    }
-
 
     public int chromeAPPlaunch() throws Exception {
 
 //        appURL = launchApp();
-//        TestBase.pcloudyInitialization(appURL);
-        if(AppPlatform.equalsIgnoreCase("Android")) {
-            TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
-        }
-        else{
-            TestBase.pcloudyInitialization("https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-20-11-2021-22%3A37/AUTOMATIONDebug-1.0.0-20-11-2021-22%3A37.ipa");
-        }
+//            TestBase.pcloudyInitialization(appURL);
+        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
         Thread.sleep(10000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
-        fileRenaming(AppPlatform);
+        fileRenaming();
         ++countApp;
         return countApp;
 
@@ -128,18 +67,11 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         while (filePresent) {
             filesList = directory.listFiles();
             for (File file : filesList) {
+                downloadinFilePresence = file.getName().contains(".apk");
+                String fn1 = file.getName();
+                System.out.println(fn1);
+                System.out.println(file.getName().contains(".apk"));
 
-                if(AppPlatform.equalsIgnoreCase("Android")) {
-                    downloadinFilePresence = file.getName().contains(".apk");
-                    String fn1 = file.getName();
-                    System.out.println(fn1);
-                    System.out.println(file.getName().contains(".apk"));
-                }else{
-                    downloadinFilePresence = file.getName().contains(".ipa");
-                    String fn1 = file.getName();
-                    System.out.println(fn1);
-                    System.out.println(file.getName().contains(".ipa"));
-                }
 
             }
             if (downloadinFilePresence) {
@@ -153,7 +85,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public void fileRenaming(String platform) throws InterruptedException {
+    public void fileRenaming() throws InterruptedException {
 
         LocalDate currentdate = LocalDate.now();
         Month currentMonth = currentdate.getMonth();
@@ -163,7 +95,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         renamedFilePath = f2.getName();
         System.out.println("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
-        if (platform == "Android") {
+
             File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
             newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
             Thread.sleep(2000);
@@ -171,22 +103,10 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
             System.out.println("Renamed apk path " + renamedAppPath);
             String filename = newfile.getName();
             System.out.println("latest apk file is=" + filename);
-
             File updated = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
             System.out.println("Changed apk file name is =" + updated);
 
-        } else {
-            File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "ipa");
-            newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".ipa"));
-            Thread.sleep(2000);
-            renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".ipa";
-            System.out.println("Renamed ipa path " + renamedAppPath);
-            String filename = newfile.getName();
-            System.out.println("latest ipa file is=" + filename);
 
-            File updated = getTheNewestFile(props.getProperty("downloadFilepath"), "ipa");
-            System.out.println("Changed ipa file name is =" + updated);
-        }
     }
 
     public static File getTheNewestFile(String filePath, String ext) {

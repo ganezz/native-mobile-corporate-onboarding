@@ -3,7 +3,6 @@ package com.iexceed.uiframework.broweser;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.ssts.pcloudy.Connector;
-import com.ssts.pcloudy.dto.file.PDriveFileDTO;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
@@ -26,7 +25,7 @@ import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class IOSpcloudyDynamicAPPLaunch extends TestBase {
+public class IOSpcloudyDynamicAPPLaunch1 extends TestBase {
 
 
     public static AppiumDriver<?> driver;
@@ -37,37 +36,44 @@ public class IOSpcloudyDynamicAPPLaunch extends TestBase {
     public static String renamedAppPath;
     public static int countApp = 0;
     static String AppPlatform;
-    private static Logger LOGGER = LogManager.getLogger(IOSpcloudyDynamicAPPLaunch.class);
-
+    private static Logger LOGGER = LogManager.getLogger(IOSpcloudyDynamicAPPLaunch1.class);
+    DesiredCapabilities capabilities = new DesiredCapabilities();
     File f = new File("src/main/resources/app");
-
     File fs = new File(f, "AutomationIOS-1-0-0-18-11-2021.ipa");
 
-    public IOSpcloudyDynamicAPPLaunch() throws Exception {
+    String bundleID = "com.apple.Preferences";
 
-        chromeAPPlaunch();
-        System.out.println("app download to local");
-        Thread.sleep(3000);
-        String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
-        try {
-            PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        Thread.sleep(2000);
-        System.out.println("app uploaded to pcloudy");
+
+    // App2 capabilities
+    String applicationName = "AutomationIOS-1-0-0-18-11-2021.ipa";
+    String bundleID2 = "com.ixceed.AssistedOnboardingApplication.automation";
+
+    public IOSpcloudyDynamicAPPLaunch1() throws Exception {
+
+//        chromeAPPlaunch();
+//        System.out.println("app download to local");
+//        Thread.sleep(3000);
+//        String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
+//        try {
+//            PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//        Thread.sleep(2000);
+//        System.out.println("app uploaded to pcloudy");
 
     }
 
-    public static void DynamicAppCapability() throws MalformedURLException, MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+    public void DynamicAppCapability() throws MalformedURLException, MalformedURLException, InterruptedException {
+
         capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
         capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
         capabilities.setCapability("pCloudy_DurationInMinutes", 400);
         capabilities.setCapability("newCommandTimeout", 200);
         capabilities.setCapability("launchTimeout", 90000);
-        capabilities.setCapability("pCloudy_DeviceFullName", "APPLE_iPhone11_iOS_14.0.0_acd97");
-        capabilities.setCapability("platformVersion", "14.0.0");
+        capabilities.setCapability("pCloudy_DeviceFullName", "APPLE_iPhoneSE_iOS_13.5.1_c982c");
+        capabilities.setCapability("platformVersion", "13.5.1");
         capabilities.setCapability("platformName", "ios");
         capabilities.setCapability("acceptAlerts", true);
         capabilities.setCapability("automationName", "XCUITest");
@@ -77,25 +83,21 @@ public class IOSpcloudyDynamicAPPLaunch extends TestBase {
         capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
         capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
 
-        try {
-            driver = new IOSDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-            System.out.println("driver connected");
-//            driver.terminateApp("com.apple.Preferences");
-//            driver.isAppInstalled("com.ixceed.AssistedOnboardingApplication.automation");
-//            try{
-//                driver.findElement(By.xpath("//XCUIElementTypeButton[@name='Close']")).click();
-//            }catch(Exception e){
-//               System.out.println(e);
-//            }
-
-            driver.installApp("src/main/resources/app/AutomationIOS-1-0-0-18-11-2021.ipa");
-            trustDevice(By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
-//            params.put("bundleId","com.ixceed.AssistedOnboardingApplication.automation");
-//            driver.executeScript("mobile: launchApp", params);
-            LOGGER.info("launch Application");
-        } catch (Exception e) {
-            LOGGER.debug(e);
-        }
+        HashMap<String, Object> args = new HashMap<>();
+        args.put("app","https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-20-11-2021-22%3A37/AUTOMATIONDebug-1.0.0-20-11-2021-22%3A37.ipa");
+        args.put("bundleId", "com.ixceed.AssistedOnboardingApplication.automation");
+        driver = new IOSDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+        System.out.println("driver connected");
+        driver.terminateApp("com.apple.Preferences");
+//        args.put("file", "src/main/resources/app/AutomationIOS-1-0-0-18-11-2021.ipa");
+        args.put("instrument", "noinstrument");
+        driver.executeScript("mobile:installApp", args);
+        System.out.println("app installed");
+        trustDevice(By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
+        args.put("bundleId", "com.ixceed.AssistedOnboardingApplication.automation");
+        driver.executeScript("mobile: launchApp", args);
+        System.out.println("app launched");
+        LOGGER.info("launch Application");
 
     }
 
@@ -103,7 +105,7 @@ public class IOSpcloudyDynamicAPPLaunch extends TestBase {
     public static void trustDevice(By targetCompanyName, By trustCompanyName, By trustBtn) throws InterruptedException {
         LOGGER.info("activate Settings app");
         driver.activateApp("com.apple.Preferences");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         scrollClick("General");
         Thread.sleep(2000);
         try {
@@ -112,12 +114,15 @@ public class IOSpcloudyDynamicAPPLaunch extends TestBase {
             scrollClick("Profiles & Device Management");
         }
         driver.findElement(targetCompanyName).click();
-        try {
-            driver.findElement(trustCompanyName).click();
-            driver.findElement(trustBtn).click();
-        } catch (Exception e) {
+        Thread.sleep(1000);
+        if(driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='Trust “i-exceed technology solutions private limited”']")).isDisplayed())
+        {
+            driver.findElement(By.xpath("//XCUIElementTypeStaticText[@name='Trust “i-exceed technology solutions private limited”']")).click();
+        }else{
             LOGGER.info("Problem with Settings");
         }
+
+        driver.findElement(By.xpath("//XCUIElementTypeButton[@name='Trust']")).click();
         Thread.sleep(3000);
         LOGGER.info("terminate settings");
         driver.terminateApp("com.apple.Preferences");
