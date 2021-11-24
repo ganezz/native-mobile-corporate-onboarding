@@ -46,7 +46,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 //        appURL = launchApp();
 //            TestBase.pcloudyInitialization(appURL);
-        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-18-11-2021-16:04.apk");
+        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-24-11-2021-09:13.apk");
         Thread.sleep(10000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
@@ -91,7 +91,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         Month currentMonth = currentdate.getMonth();
         int currentDate = currentdate.getDayOfMonth();
 //        f2 = new File("App" + currentMonth + currentDate);
-        f2 = new File("Automation-1-0-0-18-11-2021");
+        f2 = new File("Automation-1-0-0-24-11-2021");
         renamedFilePath = f2.getName();
         System.out.println("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
