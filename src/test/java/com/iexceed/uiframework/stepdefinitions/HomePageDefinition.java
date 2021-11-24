@@ -14,6 +14,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
+import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.launchApp;
+
 
 public class HomePageDefinition extends TestBase {
 
@@ -21,18 +23,28 @@ public class HomePageDefinition extends TestBase {
     public static Map<String, String> datalist;
     public static Logger log = LogManager.getLogger(HomePageDefinition.class);
     TestDataHandler testdata = new TestDataHandler();
-    public HomePageAction homePageAction = new HomePageAction();
-    public static String DeviceName;
+      public static String iosAppURL;
+
 
     @Given("user opens the App (.+)$")
     public void user_open_the_app_in_device(String testcase) throws Exception {
         deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
         CapabilitiesActions capabilities = new CapabilitiesActions(deviceConfig.get("platform"));
-        capabilities.setCapabilities(deviceConfig.get("mode"),deviceConfig.get("platform"), deviceConfig.get("version"),deviceConfig.get("deviceName"),
-                deviceConfig.get("automationName"),deviceConfig.get("applicationName"),deviceConfig.get("maxDuration"),deviceConfig.get("noReset"), deviceConfig,props.getProperty("isTrustedDevice"));
-        log.info("User Opens Application in connected device :"+deviceConfig.get("deviceName"));
-        testdata.setTestDataInMap(deviceConfig);
-        testdata.setTestDataInMap(datalist);
+        if(deviceConfig.get("platform").equalsIgnoreCase("Android")) {
+            capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
+                    deviceConfig.get("automationName"), deviceConfig.get("applicationName"), deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));
+            log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
+            testdata.setTestDataInMap(deviceConfig);
+            testdata.setTestDataInMap(datalist);
+        }else{
+            iosAppURL=launchApp();
+            System.out.println(iosAppURL);
+            capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
+                    deviceConfig.get("automationName"), iosAppURL, deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));
+            log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
+            testdata.setTestDataInMap(deviceConfig);
+            testdata.setTestDataInMap(datalist);
+        }
 
     }
 

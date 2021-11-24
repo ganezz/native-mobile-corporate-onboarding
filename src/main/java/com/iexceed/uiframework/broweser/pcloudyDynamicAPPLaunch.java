@@ -124,7 +124,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         return theNewestFile;
     }
 
-    public String launchApp() throws Exception {
+    public static String launchApp() throws Exception {
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
