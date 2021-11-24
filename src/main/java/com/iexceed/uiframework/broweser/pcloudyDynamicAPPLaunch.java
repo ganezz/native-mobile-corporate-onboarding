@@ -44,9 +44,9 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
     public int chromeAPPlaunch() throws Exception {
 
-//        appURL = launchApp();
-//            TestBase.pcloudyInitialization(appURL);
-        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-24-11-2021-09:13.apk");
+        appURL = launchApp();
+            TestBase.pcloudyInitialization(appURL);
+//        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/automationRelease-1.0.0-24-11-2021-09:13.apk");
         Thread.sleep(10000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
