@@ -10,12 +10,12 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features",
+        features = "src/test/resources/Features/HomePage.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags = "@regression_apps",
-        plugin = {"pretty",
+        tags= "@regressionIOSHomePage",
+        plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/jsonReports/cucumber-reports.json", "html:target/cucumber-ui-reports.html",
+                "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
                 "rerun:target/failedrerun.txt"
 
 
@@ -24,7 +24,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 )
 
-public class kTestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests {
     private TestNGCucumberRunner testNGCucumberRunner;
 
 //    @BeforeClass(alwaysRun = true)
