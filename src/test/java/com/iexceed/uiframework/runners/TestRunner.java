@@ -10,7 +10,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features/HomePage.feature",
+        features = "src/test/resources/Features/HomePageIOS.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
         tags= "@regressionIOSHomePage",
         plugin= {"pretty",
@@ -24,7 +24,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 )
 
-public class kTestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests {
     private TestNGCucumberRunner testNGCucumberRunner;
 
 //    @BeforeClass(alwaysRun = true)
