@@ -4,7 +4,7 @@
     <test name="NMCO Regression" parallel = "classes" thread-count = "2"   >
 <!--        <parameter name = "deviceName" value="Android_002"/>-->
         <classes>
-<!--            <class name="com.iexceed.uiframework.runners.TestRunner" />-->
+<!--            <class name="com.iexceed.uiframework.runners.kTestRunner" />-->
             <class name="com.iexceed.uiframework.runners.TestRunner2" />
         </classes>
     </test>
