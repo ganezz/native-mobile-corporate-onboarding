@@ -229,4 +229,3 @@ Feature: Validating features for User Contact Details Screen in NM_CO
     Examples:
       | testcase |
       | TestCase_002 |
-
