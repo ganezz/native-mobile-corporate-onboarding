@@ -14,7 +14,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase |
       | TestCase_002 |
-    
+
 
   @2
   Scenario Outline: Validate Edit button in User List
