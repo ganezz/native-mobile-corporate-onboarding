@@ -1,4 +1,4 @@
-@regressionUserDetailsScreen
+@regression_apps  @regressionUserDetailsScreen
 Feature: Validating User Contact Details screen in NM_CO
 
   Background: User should able to launch App
@@ -14,7 +14,9 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase |
       | TestCase_002 |
+    
 
+  @2
   Scenario Outline: Validate Edit button in User List
     And user in Home screen <testcase>
     When clicks Register Button
@@ -121,5 +123,4 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase |
       | TestCase_022 |
-
 
