@@ -5,14 +5,14 @@ Feature: Validating Add New User screen in NM_CO
     Given user opens the App batch2
 
 
-  Scenario Outline: Validate Gesture in side menu
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
-    And swipes the side menu
-    Then user able to do swipe left and right side drawer menu
-    Examples:
-      | testcase |
+#  Scenario Outline: Validate Gesture in side menu
+#    And user in Home screen <testcase>
+#    When clicks Register Button
+#    Then user will landed on Legal Entity User Details
+#    And swipes the side menu
+#    Then user able to do swipe left and right side drawer menu
+#    Examples:
+#      | testcase |
 
 
 

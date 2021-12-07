@@ -27,6 +27,8 @@ public class EntityDetailsPage {
     }
 
     By hamBurgerMenu = By.xpath("//android.widget.ImageView[@content-desc='HAMBURGER_ICON']");
+    By MenuList = By.xpath("//*[@text='User Contact Details']");
+
     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
     By editField = By.className("android.widget.EditText");
     By editField1 = By.xpath("//android.widget.EditText");
@@ -60,10 +62,14 @@ public class EntityDetailsPage {
 
     }
 
-    public void swipingHamburgerMenu() {
+    public void swipingHamburgerMenu() throws InterruptedException {
         clickAddNewuserBtn();
-
-
+        genericMethods.click(hamBurgerMenu);
+        if(genericMethods.isElementPresent(MenuList)) {
+            System.out.println("menu is swipped");
+        }
+        genericMethods.click(hamBurgerMenu);
+        System.out.println("menu swipped is closed");
     }
 
     public void addUserName(String userName, String limit) {
