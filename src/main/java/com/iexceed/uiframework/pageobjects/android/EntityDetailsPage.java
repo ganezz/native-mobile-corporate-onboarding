@@ -26,7 +26,7 @@ public class EntityDetailsPage {
         waitUtility = new WaitUtility();
     }
 
-
+    By hamBurgerMenu = By.xpath("//android.widget.ImageView[@content-desc='HAMBURGER_ICON']");
     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
     By editField = By.className("android.widget.EditText");
     By editField1 = By.xpath("//android.widget.EditText");
@@ -53,12 +53,18 @@ public class EntityDetailsPage {
     By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
     By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
 
+
     public void clickAddNewuserBtn() {
         genericMethods.waitForVisibility(addNewUsrBtn);
         genericMethods.click(addNewUsrBtn);
 
     }
 
+    public void swipingHamburgerMenu() {
+        clickAddNewuserBtn();
+
+
+    }
 
     public void addUserName(String userName, String limit) {
         String regex = "@@^[-!@#%&()']*$/";
@@ -249,14 +255,14 @@ public class EntityDetailsPage {
 
     public void isBottomValidationMsgPresent() throws Exception {
         waitUtility.waitForSeconds(2);
-      try {
-          genericMethods.isElementPresent(validateUseCreationMsg);
-          genericMethods.click(closeBtn);
-      }catch (InterruptedException ie) {
-          log.error("InterruptedException: ", ie);
-          genericMethods.click(closeBtn);
+        try {
+            genericMethods.isElementPresent(validateUseCreationMsg);
+            genericMethods.click(closeBtn);
+        } catch (InterruptedException ie) {
+            log.error("InterruptedException: ", ie);
+            genericMethods.click(closeBtn);
 //          Thread.currentThread().interrupt();
-      }
+        }
 
     }
 
