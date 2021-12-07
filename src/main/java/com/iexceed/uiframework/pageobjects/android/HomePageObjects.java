@@ -43,6 +43,9 @@ public class HomePageObjects {
 
     }
 
+
+
+
     public void clickUserRegBtn() throws Exception {
         waitUtility.waitForSeconds(2);
         genericMethods.click(userDetailsRegBt);
@@ -74,6 +77,7 @@ public class HomePageObjects {
         genericMethods.click(userDetailsRegBt);
         genericMethods.isElementPresent(arabicaddNewUsrBtn);
     }
+
 
 
 }

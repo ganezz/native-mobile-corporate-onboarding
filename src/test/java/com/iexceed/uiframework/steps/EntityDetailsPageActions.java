@@ -15,6 +15,17 @@ public class EntityDetailsPageActions {
 
     }
 
+    public void hamBurgerSwipping() throws Exception {
+
+        if (platForm.equalsIgnoreCase("ios")) {
+            iEntityDetailsPage.iClickAddNewuserBtn();
+        } else {
+            entityDetailsPage.swipingHamburgerMenu();
+        }
+    }
+
+
+
     public void clickAddNewUSerBtn() {
 
         if (platForm.equalsIgnoreCase("ios")) {

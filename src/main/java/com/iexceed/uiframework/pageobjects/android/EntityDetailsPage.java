@@ -57,13 +57,21 @@ public class EntityDetailsPage {
 
 
     public void clickAddNewuserBtn() {
-        genericMethods.waitForVisibility(addNewUsrBtn);
-        genericMethods.click(addNewUsrBtn);
-
+        try {
+            genericMethods.waitForVisibility(addNewUsrBtn);
+            genericMethods.click(addNewUsrBtn);
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
 
     public void swipingHamburgerMenu() throws InterruptedException {
-        clickAddNewuserBtn();
+        try{
+            genericMethods.waitForVisibility(addNewUsrBtn);
+        }catch(Exception e){
+          System.out.println(e);
+        }
+
         genericMethods.click(hamBurgerMenu);
         if(genericMethods.isElementPresent(MenuList)) {
             System.out.println("menu is swipped");

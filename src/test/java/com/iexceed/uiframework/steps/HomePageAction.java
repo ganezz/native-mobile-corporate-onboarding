@@ -19,6 +19,7 @@ public class HomePageAction {
 
     }
 
+
     public void clickRegUserBtn(String platform) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.iClickUserRegBtn();

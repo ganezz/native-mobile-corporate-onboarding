@@ -220,6 +220,29 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_002 |
 
+  
+   #Adding this to verify search field
+#  Scenario Outline: Validate Search field
+#    And user in Home screen <testcase>
+#    When clicks Register Button
+#    Then user lands on Legal Entity User Details
+#    And clicks on search field
+#    Then user is shown with a editable text field with a cancel button
+#    And user enters text and clicks on cancel button
+#    Then search field becomes normal
+#    Examples:
+#      | testcase |
+
+    #Adding this to verify gesture feature
+#  Scenario Outline: Validate Gesture in side menu
+#    And user in Home screen <testcase>
+#    When clicks Register Button
+#    Then user lands on Legal Entity User Details
+#    And swipes the side menu
+#    Then user is shown with side menu
+#    Examples:
+#      | testcase |    
+
   Scenario Outline: validating Continue button
     And user in Home screen <testcase>
     When clicks Register Button

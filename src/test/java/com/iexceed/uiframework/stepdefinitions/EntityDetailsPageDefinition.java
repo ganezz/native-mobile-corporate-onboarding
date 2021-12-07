@@ -17,6 +17,21 @@ public class EntityDetailsPageDefinition extends TestBase {
     TestDataHandler testdata = new TestDataHandler();
     HomePageDefinition homePageDefinition = new HomePageDefinition();
 
+
+
+    @And("swipes the side menu$")
+    public void swipes_the_side_menu() throws Exception {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
+        entityDetailsPageActions.hamBurgerSwipping();
+
+
+    }
+
+    @Then("user able to do swipe left and right side drawer menu$")
+    public void user_able_to_do_swipe_left_and_right_side_drawer_menu(){
+
+    }
+
     @And("clicks Add A New User button$")
     public void clicks_add_a_new_user_button() {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));

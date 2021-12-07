@@ -76,7 +76,6 @@ public class HomePageDefinition extends TestBase {
     }
 
 
-
     @When("clicks English Button$")
     public void clicks_english_button() throws InterruptedException {
         HomePageAction homePageAction = new HomePageAction();
