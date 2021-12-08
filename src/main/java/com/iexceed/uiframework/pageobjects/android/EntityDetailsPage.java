@@ -54,6 +54,9 @@ public class EntityDetailsPage {
     By continueBtn = By.xpath("//*[@text='Continue']");
     By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
     By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
+    By searchBar = By.xpath("//android.widget.EditText");
+    By clearField = By.xpath("//android.view.View[@content-desc='Clear Field']");
+    By clearFieldArabic = By.xpath("//android.view.View[@content-desc='الحقل خالى']");
 
 
     public void clickAddNewuserBtn() {
@@ -78,6 +81,20 @@ public class EntityDetailsPage {
         }
         genericMethods.click(hamBurgerMenu);
         System.out.println("menu swipped is closed");
+    }
+
+    public void isSearchField() throws InterruptedException {
+        genericMethods.isElementPresent(searchBar);
+        genericMethods.sendKeys(searchBar,"random");
+
+    }
+
+    public void clearSearchField(){
+        try {
+            genericMethods.click(clearField);
+        }catch(Exception e){
+            genericMethods.click(clearFieldArabic);
+        }
     }
 
     public void addUserName(String userName, String limit) {

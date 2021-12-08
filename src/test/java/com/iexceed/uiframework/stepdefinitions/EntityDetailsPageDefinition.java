@@ -32,6 +32,30 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     }
 
+
+    @And("clicks on search field$")
+    public void clicks_on_search_field()  {
+        log.info("clicks on search field");
+           }
+
+    @Then("user is shown with a editable text field with a cancel button$")
+    public void user_is_shown_with_a_editable_text_field_with_a_cancel_button() throws InterruptedException {
+        log.info("user is shown with a editable text field with a cancel button");
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
+        entityDetailsPageActions.validateSearchField();
+    }
+
+    @And("user enters text and clicks on cancel button$")
+    public void user_enters_text_and_clicks_on_cancel_button() throws InterruptedException {
+        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
+        entityDetailsPageActions.clearSearchField();
+
+    }
+    @Then("search field becomes normal$")
+    public void search_field_becomes_normal(){
+        log.info("search field becomes normal");
+    }
+
     @And("clicks Add A New User button$")
     public void clicks_add_a_new_user_button() {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));

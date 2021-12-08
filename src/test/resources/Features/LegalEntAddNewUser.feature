@@ -17,7 +17,7 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_003 |
 
 @b
-  Scenario Outline:  Validate Arabic button
+  Scenario Outline:  Validate Arabic Gesture in side menu
     And user in Home screen <testcase>
     When clicks Arabic Button
     Then app language change to Arabic

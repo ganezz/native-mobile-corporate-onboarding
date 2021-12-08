@@ -220,28 +220,54 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_002 |
 
-  
-   #Adding this to verify search field
-#  Scenario Outline: Validate Search field
-#    And user in Home screen <testcase>
-#    When clicks Register Button
-#    Then user lands on Legal Entity User Details
-#    And clicks on search field
-#    Then user is shown with a editable text field with a cancel button
-#    And user enters text and clicks on cancel button
-#    Then search field becomes normal
-#    Examples:
-#      | testcase |
 
-    #Adding this to verify gesture feature
-#  Scenario Outline: Validate Gesture in side menu
-#    And user in Home screen <testcase>
-#    When clicks Register Button
-#    Then user lands on Legal Entity User Details
-#    And swipes the side menu
-#    Then user is shown with side menu
-#    Examples:
-#      | testcase |    
+  @2
+  Scenario Outline: Validate Search field
+    And user in Home screen <testcase>
+    When clicks Register Button
+    Then user will landed on Legal Entity User Details
+    And clicks on search field
+    Then user is shown with a editable text field with a cancel button
+    And user enters text and clicks on cancel button
+    Then search field becomes normal
+    Examples:
+      | testcase     |
+      | TestCase_002 |
+
+  @3
+  Scenario Outline:  Validate Search field in Arabic
+    And user in Home screen <testcase>
+    When clicks Arabic Button
+    Then app language change to Arabic
+    And clicks on search field
+    Then user is shown with a editable text field with a cancel button
+    And user enters text and clicks on cancel button
+    Then search field becomes normal
+    Examples:
+      | testcase     |
+      | TestCase_023 |
+
+  @a
+  Scenario Outline: Validate Gesture in side menu
+    And user in Home screen <testcase>
+    When clicks Register Button
+    Then user will landed on Legal Entity User Details
+    And swipes the side menu
+    Then user able to do swipe left and right side drawer menu
+    Examples:
+      | testcase |
+      | TestCase_003 |
+
+  @b
+  Scenario Outline:  Validate Arabic Gesture in side menu
+    And user in Home screen <testcase>
+    When clicks Arabic Button
+    Then app language change to Arabic
+    And swipes the side menu
+    Then user able to do swipe left and right side drawer menu
+    Examples:
+      | testcase     |
+      | TestCase_023 |
 
   Scenario Outline: validating Continue button
     And user in Home screen <testcase>

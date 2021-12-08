@@ -12,33 +12,46 @@ Feature: Validating User Contact Details screen in NM_CO
     And clicks Add A New User button
     Then user will landed on the New User screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_002 |
 
-  #Adding this to verify search field
-#  Scenario Outline: Validate Search field
-#    And user in Home screen <testcase>
-#    When clicks Register Button
-#    Then user lands on Legal Entity User Details
-#    And clicks on search field
-#    Then user is shown with a editable text field with a cancel button
-#    And user enters text and clicks on cancel button
-#    Then search field becomes normal
-#    Examples:
-#      | testcase |
-
-    #Adding this to verify gesture feature
-#  Scenario Outline: Validate Gesture in side menu
-#    And user in Home screen <testcase>
-#    When clicks Register Button
-#    Then user lands on Legal Entity User Details
-#    And swipes the side menu
-#    Then user is shown with side menu
-#    Examples:
-#      | testcase |
-
-
   @2
+  Scenario Outline: Validate Search field
+    And user in Home screen <testcase>
+    When clicks Register Button
+    Then user will landed on Legal Entity User Details
+    And clicks on search field
+    Then user is shown with a editable text field with a cancel button
+    And user enters text and clicks on cancel button
+    Then search field becomes normal
+    Examples:
+      | testcase     |
+      | TestCase_002 |
+
+  @3
+  Scenario Outline:  Validate Search field in Arabic
+    And user in Home screen <testcase>
+    When clicks Arabic Button
+    Then app language change to Arabic
+    And clicks on search field
+    Then user is shown with a editable text field with a cancel button
+    And user enters text and clicks on cancel button
+    Then search field becomes normal
+    Examples:
+      | testcase     |
+      | TestCase_023 |
+
+  Scenario Outline: Validate Gesture in side menu
+    And user in Home screen <testcase>
+    When clicks Register Button
+    Then user will landed on Legal Entity User Details
+    And swipes the side menu
+    Then user able to do swipe left and right side drawer menu
+    Examples:
+      | testcase     |
+      | TestCase_003 |
+
+
   Scenario Outline: Validate Edit button in User List
     And user in Home screen <testcase>
     When clicks Register Button
@@ -50,7 +63,7 @@ Feature: Validating User Contact Details screen in NM_CO
     And clicks Edit button
     Then user will landed on the New User screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_021 |
 
   Scenario Outline: Validate Delete button in User List and click Yes button
@@ -66,7 +79,7 @@ Feature: Validating User Contact Details screen in NM_CO
     And clicks Yes button <testcase>
     And user will be deleted and removed from the list <testcase>
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_021 |
 
 
@@ -83,7 +96,7 @@ Feature: Validating User Contact Details screen in NM_CO
     And clicks No button
     And user given details will display on User Contact Details screen <testcase>
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_021 |
 
 
@@ -96,7 +109,7 @@ Feature: Validating User Contact Details screen in NM_CO
     And clicks Yes button <testcase>
     Then user will land on Dashboard screen <testcase>
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_002 |
 
 
@@ -109,7 +122,7 @@ Feature: Validating User Contact Details screen in NM_CO
     And clicks No button
     Then user will stay on User Contact Details screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_002 |
 
 
@@ -125,7 +138,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Then user will land on User Contact Details
     And user given details will display on User Contact Details screen <testcase>
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_021 |
 
 
@@ -143,6 +156,6 @@ Feature: Validating User Contact Details screen in NM_CO
     Then user will land on User Contact Details
     And user given details will display on User Contact Details screen <testcase>
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_022 |
 

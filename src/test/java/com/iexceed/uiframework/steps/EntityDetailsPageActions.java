@@ -24,7 +24,22 @@ public class EntityDetailsPageActions {
         }
     }
 
+    public void validateSearchField() throws InterruptedException {
 
+        if (platForm.equalsIgnoreCase("ios")) {
+            iEntityDetailsPage.iClickAddNewuserBtn();
+        } else {
+            entityDetailsPage.isSearchField();
+        }
+    }
+
+    public void clearSearchField(){
+        if (platForm.equalsIgnoreCase("ios")) {
+            iEntityDetailsPage.iClickAddNewuserBtn();
+        } else {
+            entityDetailsPage.clearSearchField();
+        }
+    }
 
     public void clickAddNewUSerBtn() {
 
