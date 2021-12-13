@@ -38,6 +38,12 @@ public class HomePageDefinition extends TestBase {
             testdata.setTestDataInMap(datalist);
         }else{
             iosAppURL=launchApp();
+
+            if(iosAppURL.equals(props.getProperty("iosApplicionURL")))
+            {
+                iosAppURL=props.getProperty("iosApplicionURL");
+            }
+
             System.out.println(iosAppURL);
             capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
                     deviceConfig.get("automationName"), iosAppURL, deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));

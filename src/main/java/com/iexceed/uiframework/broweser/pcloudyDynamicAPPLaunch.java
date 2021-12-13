@@ -25,7 +25,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     public static String renamedAppPath;
     public static int countApp = 0;
     static String AppPlatform;
-    
+
 
     public pcloudyDynamicAPPLaunch() throws Exception {
 
@@ -47,7 +47,13 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 
         appURL = launchApp();
-            TestBase.pcloudyInitialization(appURL);
+
+        if (appURL.equals(props.getProperty("androidApplicationURL"))) {
+            appURL = props.getProperty("androidApplicationURL");
+        }
+        
+        System.out.println(appURL);
+        TestBase.pcloudyInitialization(appURL);
 //        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/qaRelease-1.0.5-06-12-2021-19:31.apk");
         Thread.sleep(10000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
@@ -98,15 +104,15 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         System.out.println("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
 
-            File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
-            newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
-            Thread.sleep(2000);
-            renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".apk";
-            System.out.println("Renamed apk path " + renamedAppPath);
-            String filename = newfile.getName();
-            System.out.println("latest apk file is=" + filename);
-            File updated = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
-            System.out.println("Changed apk file name is =" + updated);
+        File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
+        newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
+        Thread.sleep(2000);
+        renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".apk";
+        System.out.println("Renamed apk path " + renamedAppPath);
+        String filename = newfile.getName();
+        System.out.println("latest apk file is=" + filename);
+        File updated = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
+        System.out.println("Changed apk file name is =" + updated);
 
 
     }
