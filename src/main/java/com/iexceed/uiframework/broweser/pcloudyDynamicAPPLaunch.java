@@ -25,6 +25,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     public static String renamedAppPath;
     public static int countApp = 0;
     static String AppPlatform;
+    
 
     public pcloudyDynamicAPPLaunch() throws Exception {
 
@@ -43,6 +44,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 
     public int chromeAPPlaunch() throws Exception {
+
 
         appURL = launchApp();
             TestBase.pcloudyInitialization(appURL);
