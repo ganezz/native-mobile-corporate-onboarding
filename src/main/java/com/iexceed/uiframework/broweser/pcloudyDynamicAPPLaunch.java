@@ -99,7 +99,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         Month currentMonth = currentdate.getMonth();
         int currentDate = currentdate.getDayOfMonth();
 //        f2 = new File("App" + currentMonth + currentDate);
-        f2 = new File("Automation-1-0-5-6-12-2021");
+        f2 = new File("Automation-1-0-6-13-12-2021");
         renamedFilePath = f2.getName();
         System.out.println("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
