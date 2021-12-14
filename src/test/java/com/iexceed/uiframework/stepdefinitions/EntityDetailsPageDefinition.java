@@ -72,7 +72,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
 
     @And("user input invalid Name$")
-    public void user_input_invalid_name() {
+    public void user_input_invalid_name() throws Exception {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"));
 

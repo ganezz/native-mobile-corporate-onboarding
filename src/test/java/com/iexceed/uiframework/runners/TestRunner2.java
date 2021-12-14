@@ -9,7 +9,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features",
+        features = "src/test/resources/Features/LegalEntAddNewUser.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
         tags= "@regressionEntityDetailScreen",
         plugin= {"pretty",

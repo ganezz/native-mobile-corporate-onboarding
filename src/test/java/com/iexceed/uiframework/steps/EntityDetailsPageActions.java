@@ -51,7 +51,7 @@ public class EntityDetailsPageActions {
     }
 
 
-    public void EnterUSerName(String username, String limit) {
+    public void EnterUSerName(String username, String limit) throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iAddUserName(username, limit);

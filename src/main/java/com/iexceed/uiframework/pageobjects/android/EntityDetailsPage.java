@@ -33,6 +33,7 @@ public class EntityDetailsPage {
     By editField = By.className("android.widget.EditText");
     By editField1 = By.xpath("//android.widget.EditText");
     By userName = By.xpath("//*[@text='User Name *']");
+    By emailAddress = By.xpath("//android.view.View[@content-desc=\"UserContactDetailsView\"]/android.widget.ScrollView/android.view.View/android.widget.EditText[2]");
     By email = By.xpath("//*[@text='Email *']");
     By confirmBtn = By.xpath("//*[@text='Confirm']");
     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
@@ -63,20 +64,20 @@ public class EntityDetailsPage {
         try {
             genericMethods.waitForVisibility(addNewUsrBtn);
             genericMethods.click(addNewUsrBtn);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
     public void swipingHamburgerMenu() throws InterruptedException {
-        try{
+        try {
             genericMethods.waitForVisibility(addNewUsrBtn);
-        }catch(Exception e){
-          System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
         }
 
         genericMethods.click(hamBurgerMenu);
-        if(genericMethods.isElementPresent(MenuList)) {
+        if (genericMethods.isElementPresent(MenuList)) {
             System.out.println("menu is swipped");
         }
         genericMethods.click(hamBurgerMenu);
@@ -85,20 +86,21 @@ public class EntityDetailsPage {
 
     public void isSearchField() throws InterruptedException {
         genericMethods.isElementPresent(searchBar);
-        genericMethods.sendKeys(searchBar,"random");
+        genericMethods.sendKeys(searchBar, "random");
 
     }
 
-    public void clearSearchField(){
+    public void clearSearchField() {
         try {
             genericMethods.click(clearField);
-        }catch(Exception e){
+        } catch (Exception e) {
             genericMethods.click(clearFieldArabic);
         }
     }
 
-    public void addUserName(String userName, String limit) {
+    public void addUserName(String userName, String limit) throws Exception {
         String regex = "@@^[-!@#%&()']*$/";
+        waitUtility.waitForSeconds(4);
         genericMethods.click(editField);
         androidUtility.clearText(editField);
         genericMethods.sendKeys(editField, userName);
@@ -140,11 +142,21 @@ public class EntityDetailsPage {
 
 
     public void enterEmail(String emaill, String limit) throws Exception {
-        log.debug(driver.findElements(editField).size());
-        editField1.findElements(driver).get(1).click();
-        editField1.findElements(driver).get(1).clear();
-        editField1.findElements(driver).get(1).sendKeys(emaill);
-        String emailIdTxt = editField1.findElements(driver).get(1).getText();
+        String emailIdTxt = null;
+        System.out.println(driver.findElements(editField).size());
+        try {
+            editField1.findElements(driver).get(1).click();
+            editField1.findElements(driver).get(1).clear();
+            editField1.findElements(driver).get(1).sendKeys(emaill);
+            emailIdTxt = editField1.findElements(driver).get(1).getText();
+        } catch (Exception e) {
+            genericMethods.click(editField);
+            driver.findElement(editField).clear();
+            genericMethods.sendKeys(editField, emaill);
+            emailIdTxt = genericMethods.getText(editField);
+
+        }
+
         int count = androidUtility.characterCount(emailIdTxt);
         log.debug(count);
 

@@ -55,7 +55,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         System.out.println(appURL);
         TestBase.pcloudyInitialization(appURL);
 //        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/qaRelease-1.0.5-06-12-2021-19:31.apk");
-        Thread.sleep(10000);
+        Thread.sleep(15000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
         ++countApp;
@@ -105,8 +105,9 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         Thread.sleep(2000);
 
         File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
+        Thread.sleep(4000);
         newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
-        Thread.sleep(2000);
+        Thread.sleep(7000);
         renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".apk";
         System.out.println("Renamed apk path " + renamedAppPath);
         String filename = newfile.getName();

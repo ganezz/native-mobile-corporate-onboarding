@@ -2,7 +2,7 @@
 Feature: Validating Add New User screen in NM_CO
 
   Background: User should able to launch App
-    Given user opens the App batch2
+    Given user opens the App batch1
 
 
   @a
@@ -48,7 +48,7 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_006 |
 
 
-
+@email
   Scenario Outline: Validate Email Address, mandatory Field with Max 100 characters and special characters not allowed and Case insensitive
     And user in Home screen <testcase>
     When clicks Register Button
