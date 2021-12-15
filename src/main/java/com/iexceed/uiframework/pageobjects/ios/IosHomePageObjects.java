@@ -24,11 +24,11 @@ public class IosHomePageObjects {
 
     By userDetailsRegBt = By.xpath("//*[@text='User Contact UI No User']");
     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    By lightThemeBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton");
-    By darkThemeBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[1]");
-    By englishBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[2]");
-    By arabicBtn = By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[3]");
-    By arabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+    By lightThemeBtn = By.xpath("//XCUIElementTypeButton[@name='Light Mode']");
+    By darkThemeBtn = By.xpath("//XCUIElementTypeButton[@name='Dark Mode']");
+    By englishBtn = By.xpath("//XCUIElementTypeButton[@name='English']");
+    By arabicBtn = By.xpath("//XCUIElementTypeButton[@name='Arabic']");
+
 
 
     public void iIsHomePageVisible() {
@@ -54,16 +54,18 @@ public class IosHomePageObjects {
 
     public void iClickEnglishLangBtn() throws InterruptedException {
         genericMethods.waitForVisibility(englishBtn);
+        genericMethods.isElementPresent(englishBtn);
         genericMethods.click(englishBtn);
-        genericMethods.click(userDetailsRegBt);
-        genericMethods.isElementPresent(addNewUsrBtn);
+
+
     }
 
     public void iClickArabicLangBtn() throws InterruptedException {
         genericMethods.waitForVisibility(arabicBtn);
+        genericMethods.isElementPresent(arabicBtn);
         genericMethods.click(arabicBtn);
-        genericMethods.click(userDetailsRegBt);
-        genericMethods.isElementPresent(arabicaddNewUsrBtn);
+
+
     }
 
 

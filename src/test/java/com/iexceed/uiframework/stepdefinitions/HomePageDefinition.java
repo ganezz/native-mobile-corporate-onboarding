@@ -38,6 +38,11 @@ public class HomePageDefinition extends TestBase {
             testdata.setTestDataInMap(datalist);
         }else{
             iosAppURL=launchApp();
+//            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29.ipa";
+            String[] arr=iosAppURL.split("//");
+            String temp1=arr[0]+"//readuser:Re@d@1234@";
+            iosAppURL=temp1+arr[1];
+            System.out.println(iosAppURL);
 
             if(iosAppURL.equals(props.getProperty("iosApplicionURL")))
             {
@@ -46,7 +51,7 @@ public class HomePageDefinition extends TestBase {
 
             System.out.println(iosAppURL);
             capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
-                    deviceConfig.get("automationName"), iosAppURL, deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));
+                    deviceConfig.get("automationName"),iosAppURL , deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));
             log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
