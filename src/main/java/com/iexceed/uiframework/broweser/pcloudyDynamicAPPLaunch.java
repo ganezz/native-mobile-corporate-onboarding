@@ -47,6 +47,10 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 
         appURL = launchApp();
+        String[] arr=appURL.split("//");
+        String temp1=arr[0]+"//readuser:Re@d@1234@";
+        appURL=temp1+arr[1];
+        System.out.println(appURL);
 
         if (appURL.equals(props.getProperty("androidApplicationURL"))) {
             appURL = props.getProperty("androidApplicationURL");
