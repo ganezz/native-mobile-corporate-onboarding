@@ -7,6 +7,8 @@ import com.ssts.pcloudy.dto.file.PDriveFileDTO;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -21,16 +23,15 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     Connector pCloudyCONNECTOR = new Connector();
     String appURL;
     static File f2;
-    public static String renamedFilePath;
-    public static String renamedAppPath;
+    static String renamedFilePath;
+    static String renamedAppPath;
     public static int countApp = 0;
-    static String AppPlatform;
-
+    private static final Logger log = LogManager.getLogger(pcloudyDynamicAPPLaunch.class);
 
     public pcloudyDynamicAPPLaunch() throws Exception {
 
         chromeAPPlaunch();
-        System.out.println("app download to local");
+        log.debug("app download to local");
         Thread.sleep(3000);
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
         try {
@@ -39,7 +40,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
             System.out.println(e);
         }
         Thread.sleep(3000);
-        System.out.println("app uploaded to pcloudy");
+      log.debug("app uploaded to pcloudy");
     }
 
 
@@ -47,16 +48,16 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
 
         appURL = launchApp();
-        String[] arr=appURL.split("//");
-        String temp1=arr[0]+"//readuser:Re@d@1234@";
-        appURL=temp1+arr[1];
-        System.out.println(appURL);
+        String[] arr = appURL.split("//");
+        String temp1 = arr[0] + "//readuser:Re@d@1234@";
+        appURL = temp1 + arr[1];
+        log.debug(appURL);
 
         if (appURL.equals(props.getProperty("androidApplicationURL"))) {
             appURL = props.getProperty("androidApplicationURL");
         }
 
-        System.out.println(appURL);
+        log.debug(appURL);
         TestBase.pcloudyInitialization(appURL);
 //        TestBase.pcloudyInitialization("http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/qaRelease-1.0.5-06-12-2021-19:31.apk");
         Thread.sleep(15000);
@@ -81,8 +82,8 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
             for (File file : filesList) {
                 downloadinFilePresence = file.getName().contains(".apk");
                 String fn1 = file.getName();
-                System.out.println(fn1);
-                System.out.println(file.getName().contains(".apk"));
+                log.debug(fn1);
+                log.debug(file.getName().contains(".apk"));
 
 
             }
@@ -91,7 +92,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
                 break;
             } else {
-                System.out.println("app file is not present in that directory");
+                log.debug("app file is not present in that directory");
             }
         }
     }
@@ -105,7 +106,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 //        f2 = new File("App" + currentMonth + currentDate);
         f2 = new File("Automation-1-0-6-13-12-2021");
         renamedFilePath = f2.getName();
-        System.out.println("Renamed f2 file path " + renamedFilePath);
+        log.debug("Renamed f2 file path " + renamedFilePath);
         Thread.sleep(2000);
 
         File newfile = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
@@ -113,11 +114,11 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         newfile.renameTo(new File(props.getProperty("downloadFilepath") + "/" + f2 + ".apk"));
         Thread.sleep(7000);
         renamedAppPath = props.getProperty("downloadFilepath") + "/" + f2 + ".apk";
-        System.out.println("Renamed apk path " + renamedAppPath);
+        log.debug("Renamed apk path " + renamedAppPath);
         String filename = newfile.getName();
-        System.out.println("latest apk file is=" + filename);
+       log.debug("latest apk file is=" + filename);
         File updated = getTheNewestFile(props.getProperty("downloadFilepath"), "apk");
-        System.out.println("Changed apk file name is =" + updated);
+        log.debug("Changed apk file name is =" + updated);
 
 
     }
@@ -142,7 +143,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
         properties.load(inputStream);
-        System.out.println("this is app url" + properties.getProperty("app.url"));
+        log.debug("this is app url" + properties.getProperty("app.url"));
         return properties.getProperty("app.url");
 
     }

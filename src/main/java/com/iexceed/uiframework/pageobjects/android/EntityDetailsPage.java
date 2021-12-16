@@ -65,7 +65,7 @@ public class EntityDetailsPage {
             genericMethods.waitForVisibility(addNewUsrBtn);
             genericMethods.click(addNewUsrBtn);
         } catch (Exception e) {
-            System.out.println(e);
+            log.debug(e);
         }
     }
 
@@ -73,15 +73,15 @@ public class EntityDetailsPage {
         try {
             genericMethods.waitForVisibility(addNewUsrBtn);
         } catch (Exception e) {
-            System.out.println(e);
+            log.debug(e);
         }
 
         genericMethods.click(hamBurgerMenu);
         if (genericMethods.isElementPresent(MenuList)) {
-            System.out.println("menu is swipped");
+           log.debug("menu is swipped");
         }
         genericMethods.click(hamBurgerMenu);
-        System.out.println("menu swipped is closed");
+        log.debug("menu swipped is closed");
     }
 
     public void isSearchField() throws InterruptedException {
@@ -143,7 +143,7 @@ public class EntityDetailsPage {
 
     public void enterEmail(String emaill, String limit) throws Exception {
         String emailIdTxt = null;
-        System.out.println(driver.findElements(editField).size());
+        log.debug(driver.findElements(editField).size());
         try {
             editField1.findElements(driver).get(1).click();
             editField1.findElements(driver).get(1).clear();

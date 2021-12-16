@@ -6,6 +6,8 @@ import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import com.ssts.pcloudy.Connector;
 import io.appium.java_client.AppiumDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -19,6 +21,7 @@ public class ConnectionObjects extends TestBase {
     private final WaitUtility waitUtility;
     Connector pCloudyCONNECTOR = new Connector();
     pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch;
+    private static final Logger log = LogManager.getLogger(pcloudyDynamicAPPLaunch.class);
 
 
     public ConnectionObjects(String platform) throws Exception {
@@ -27,7 +30,7 @@ public class ConnectionObjects extends TestBase {
             if (countApp == 0) {
                 pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch();
             } else {
-                System.out.println("App is already downloaded and uploaded to pcloudy");
+               log.debug("App is already downloaded and uploaded to pcloudy");
             }
         }
 
