@@ -11,7 +11,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
         features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@regressionEntityDetailScreen",
+        tags= "@regressionHomePage",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",

@@ -1,7 +1,9 @@
 package com.iexceed.uiframework.runners;
 
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.TestNGCucumberRunner;
 
 
 //@RunWith(Cucumber.class)
@@ -21,5 +23,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 )
-public class TestRunnerIOS {
+public class TestRunnerIOS extends AbstractTestNGCucumberTests {
+        private TestNGCucumberRunner testNGCucumberRunner;
+
 }
