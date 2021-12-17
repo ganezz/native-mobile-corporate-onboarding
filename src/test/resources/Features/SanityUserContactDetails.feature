@@ -14,6 +14,22 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase     |
       | TestCase_000 |
 
+  Scenario Outline:  Validate English language button
+    And user in Home screen <testcase>
+    When clicks English Button
+    Then app language change to English
+    Examples:
+      | testcase |
+      | TestCase_001 |
+
+  Scenario Outline:  Validate Arabic button
+    And user in Home screen <testcase>
+    When clicks Arabic Button
+    Then app language change to Arabic
+    Examples:
+      | testcase     |
+      | TestCase_002 |
+
 
   Scenario Outline: Validate + Add A New User Button
     And user in Home screen <testcase>

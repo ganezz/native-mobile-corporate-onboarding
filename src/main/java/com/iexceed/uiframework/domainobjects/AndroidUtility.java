@@ -65,18 +65,5 @@ public class AndroidUtility {
         }
     }
 
-    public void msgConfirmation(String btn) {
-        if (btn.equalsIgnoreCase("OK")) {
-            genericMethods.click(okBtn);
-        } else {
-            try {
-                genericMethods.back();
-
-            } catch (Exception e) {
-                genericMethods.click(cancelBtn);
-            }
-        }
-    }
-
 
 }

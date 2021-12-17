@@ -131,8 +131,8 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("user selects Country Code$")
     public void user_selects_country_code() throws Exception {
-//          entityDetailsPageActions.selectCountryCode(deviceConfig.get("platform"),datalist.get("countryCode"));
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
+        entityDetailsPageActions.selectCountryCode(datalist.get("countryCode"));
         log.info("user selects Country Code");
         entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
     }

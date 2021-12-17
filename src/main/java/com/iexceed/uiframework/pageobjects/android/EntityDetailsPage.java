@@ -86,7 +86,7 @@ public class EntityDetailsPage {
 
     public void isSearchField() throws InterruptedException {
         genericMethods.isElementPresent(searchBar);
-        genericMethods.sendKeys(searchBar, "random");
+        genericMethods.sendKeys(searchBar, "divya");
 
     }
 
@@ -230,7 +230,7 @@ public class EntityDetailsPage {
 
     public void enterCountryCode(String countryCode) throws Exception {
         driver.findElement(countryField).click();
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(3);
         log.info(driver.findElements(countryList).size());
         List<WebElement> temoCountryList = driver.findElements(countryList);
         String countryCodeTemp = "+" + countryCode;
