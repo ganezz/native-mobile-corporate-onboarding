@@ -10,9 +10,9 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features/HomePageIOS.feature",
+        features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@regressionIOSHomePage",
+        tags= "@sanity_apps",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumberIOS-reports.json","html:target/cucumberIOS-ui-reports.html",
