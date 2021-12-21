@@ -23,11 +23,11 @@ public class HomePageObjects {
     }
 
 
-     By userDetailsRegBt = By.xpath("//*[@text='Onboaridng']");
-     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-     By englishBtn = By.xpath("//*[@text='English']");
-     By arabicBtn = By.xpath("//*[@text='Arabic']");
-     By arabicaddNewUsrBtn = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+     By userDetailsRegBt = By.xpath("//android.view.View[@text='Onboarding']");
+     By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
+     By englishBtn = By.xpath("//android.view.View[@text='English']");
+     By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
+     By arabicaddNewUsrBtn = By.xpath("////android.view.View[@text='+ إضافة مستخدم جديد']");
 
 
     public void isHomePageVisible() throws Exception {
