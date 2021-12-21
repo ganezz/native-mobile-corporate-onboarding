@@ -7,6 +7,7 @@ import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterMethod;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,5 +45,12 @@ public class Hooks {
 //      //  VideoRecorder_utlity.stopRecord();
 //        driver.quit();
 //    }
+
+
+    @AfterMethod
+    public void endTest() throws  IOException {
+
+        driver.quit();
+    }
 
 }
