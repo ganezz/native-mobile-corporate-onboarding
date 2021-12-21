@@ -27,7 +27,7 @@ public class HomePageObjects {
      By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
      By englishBtn = By.xpath("//android.view.View[@text='English']");
      By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
-     By arabicaddNewUsrBtn = By.xpath("////android.view.View[@text='+ إضافة مستخدم جديد']");
+     By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
 
 
     public void isHomePageVisible() throws Exception {
