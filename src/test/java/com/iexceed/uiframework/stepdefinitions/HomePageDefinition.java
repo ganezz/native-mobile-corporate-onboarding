@@ -51,9 +51,9 @@ public class HomePageDefinition extends TestBase {
             iosAppURL=temp1+arr[1];
             System.out.println(iosAppURL);
 
-            if(iosAppURL.equals(props.getProperty("iosApplicionURL")))
+            if(iosAppURL.equals(deviceConfig.get("oldAppURL")))
             {
-                iosAppURL=props.getProperty("iosApplicionURL");
+                iosAppURL=deviceConfig.get("oldAppURL");
             }
 
             System.out.println(iosAppURL);
@@ -62,6 +62,11 @@ public class HomePageDefinition extends TestBase {
             log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
+            ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
+            testdata.setTestDataInMap(deviceConfig);
+            log.debug("updated url:"+deviceConfig.get("oldAppURL"));
+
+
         }
 
     }
