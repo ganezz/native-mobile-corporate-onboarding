@@ -1,5 +1,6 @@
 package com.iexceed.uiframework.stepdefinitions;
 
+import com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch1;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.CapabilitiesActions;
 import com.iexceed.uiframework.steps.HomePageAction;
@@ -24,18 +25,24 @@ public class HomePageDefinition extends TestBase {
     public static Logger log = LogManager.getLogger(HomePageDefinition.class);
     TestDataHandler testdata = new TestDataHandler();
       public static String iosAppURL;
-
+    public static String androidAppURL;
 
     @Given("user opens the App (.+)$")
     public void user_open_the_app_in_device(String testcase) throws Exception {
         deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
-        CapabilitiesActions capabilities = new CapabilitiesActions(deviceConfig.get("platform"));
+        CapabilitiesActions capabilities = new CapabilitiesActions(deviceConfig.get("platform"),deviceConfig);
         if(deviceConfig.get("platform").equalsIgnoreCase("Android")) {
             capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
                     deviceConfig.get("automationName"), deviceConfig.get("applicationName"), deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));
             log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
+            androidAppURL=launchApp();
+//            androidAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
+            ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
+            testdata.setTestDataInMap(deviceConfig);
+          log.debug("updated url:"+deviceConfig.get("oldAppURL"));
+
         }else{
             iosAppURL=launchApp();
 //            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29.ipa";
@@ -111,4 +118,17 @@ public class HomePageDefinition extends TestBase {
         log.info("app language change to Arabic");
         log.info("Test Case :" + datalist.get("TestCaseName"));
     }
+
+
+
+    @And("validate url from excel (.+)$")
+    public void validate_url_from_excel(String testcase1) throws Exception {
+        deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), testcase1);
+        pcloudyDynamicAPPLaunch1 pc1=new pcloudyDynamicAPPLaunch1(deviceConfig);
+        ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL","di",testcase1);
+        testdata.setTestDataInMap(deviceConfig);
+        System.out.println("updated url:"+deviceConfig.get("oldAppURL"));
+    }
 }
+
+

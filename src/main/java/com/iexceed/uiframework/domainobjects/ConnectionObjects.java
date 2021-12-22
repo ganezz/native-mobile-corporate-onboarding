@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.Map;
+
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
 import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.countApp;
 
@@ -24,11 +26,11 @@ public class ConnectionObjects extends TestBase {
     private static final Logger log = LogManager.getLogger(pcloudyDynamicAPPLaunch.class);
 
 
-    public ConnectionObjects(String platform) throws Exception {
+    public ConnectionObjects(String platform, Map<String, String> deviceConfig) throws Exception {
 
         if(platform.equalsIgnoreCase("Android")) {
             if (countApp == 0) {
-                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch();
+                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch(deviceConfig);
             } else {
                log.debug("App is already downloaded and uploaded to pcloudy");
             }
