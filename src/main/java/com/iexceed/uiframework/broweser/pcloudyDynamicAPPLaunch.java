@@ -22,7 +22,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
     public static AndroidDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
-    String appURL;
+    public static String appURL;
     static File f2;
     static String renamedFilePath;
     static String renamedAppPath;

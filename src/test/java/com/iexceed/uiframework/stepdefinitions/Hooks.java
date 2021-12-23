@@ -1,5 +1,6 @@
 package com.iexceed.uiframework.stepdefinitions;
 
+import com.iexceed.uiframework.core.TestBase;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
@@ -11,15 +12,32 @@ import org.testng.annotations.AfterMethod;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
+import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.appURL;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
-public class Hooks {
+public class Hooks extends TestBase {
+
+
+
     @Before()
     public  void init(){
         System.out.println("Starting scenario");
 
     }
+
+    @Before("@old")
+    public  void bff(){
+        Map<String, String> deviceConfig;
+        System.out.println("Before scenario for old url");
+//        deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
+//        System.out.println(deviceConfig.get("oldAppURL"));
+        appURL =props.getProperty("androidApplicationURL");
+
+
+    }
+
     @BeforeStep()
     public  void bf(){
         System.out.println("Before scenario");

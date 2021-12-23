@@ -4,7 +4,8 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
   Background: User should able to open App
     Given user opens the App batch1
 
-@1
+
+    @old
   Scenario Outline:  Validate Register button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -13,7 +14,7 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
       | testcase     |
       | TestCase_000 |
 
-@2
+   @new
   Scenario Outline:  Validate English language button
     And user in Home screen <testcase>
     When clicks English Button
