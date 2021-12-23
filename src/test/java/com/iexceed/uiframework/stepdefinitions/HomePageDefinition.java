@@ -1,6 +1,5 @@
 package com.iexceed.uiframework.stepdefinitions;
 
-import com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch1;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.CapabilitiesActions;
 import com.iexceed.uiframework.steps.HomePageAction;
@@ -126,14 +125,7 @@ public class HomePageDefinition extends TestBase {
 
 
 
-    @And("validate url from excel (.+)$")
-    public void validate_url_from_excel(String testcase1) throws Exception {
-        deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), testcase1);
-        pcloudyDynamicAPPLaunch1 pc1=new pcloudyDynamicAPPLaunch1(deviceConfig);
-        ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL","di",testcase1);
-        testdata.setTestDataInMap(deviceConfig);
-        System.out.println("updated url:"+deviceConfig.get("oldAppURL"));
-    }
+
 }
 
 
