@@ -62,7 +62,6 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
 
         log.debug(appURL);
         TestBase.pcloudyInitialization(appURL);
-//        TestBase.pcloudyInitialization("https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk");
         Thread.sleep(15000);
         waitUntilFileToDownload(props.getProperty("downloadFilepath"));
         fileRenaming();
