@@ -14,7 +14,7 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
       | testcase     |
       | TestCase_000 |
 
-   @new
+
   Scenario Outline:  Validate English language button
     And user in Home screen <testcase>
     When clicks English Button
