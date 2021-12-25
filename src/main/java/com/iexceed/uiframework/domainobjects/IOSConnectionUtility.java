@@ -11,7 +11,7 @@ public class IOSConnectionUtility {
 
   private  static IOSDriver<WebElement> driver;
 
-  public  void IOSAppCapability() throws MalformedURLException {
+  public static void IOSAppCapability() throws MalformedURLException {
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("pCloudy_Username", "divya.bharathi@i-exceed.com");
