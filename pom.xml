@@ -39,7 +39,6 @@
             <scope>system</scope>
             <version>11.0.6</version>
             <systemPath>${project.basedir}/src/main/resources/libraries/pCloudyjavaConnector.jar</systemPath>
-<!--            <systemPath>/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/libraries/pCloudyjavaConnector.jar</systemPath>-->
         </dependency>
 
 
@@ -86,20 +85,9 @@
             <scope>test</scope>
         </dependency>
 
-<!--        &lt;!&ndash;        jenkins active reactive plugin&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.biouno</groupId>-->
-<!--            <artifactId>uno-choice</artifactId>-->
-<!--            <version>2.5.7</version>-->
-<!--        </dependency>-->
-
     </dependencies>
     <repositories>
 
-<!--        <repository>-->
-<!--            <id>local-maven-repo</id>-->
-<!--            <url>file://${project.basedir}/local-maven-repo/pCloudyjavaConnector.jar</url>-->
-<!--        </repository>-->
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
