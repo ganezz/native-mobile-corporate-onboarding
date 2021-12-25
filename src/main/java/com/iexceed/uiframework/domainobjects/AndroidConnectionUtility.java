@@ -13,7 +13,7 @@ import java.util.List;
 
 public class AndroidConnectionUtility {
 
-    public static AppiumDriver<?> driver;
+    private static AppiumDriver<?> driver;
 
 
     public static void main(String args[]) throws MalformedURLException {

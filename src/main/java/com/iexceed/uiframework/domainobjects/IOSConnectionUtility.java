@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class IOSConnectionUtility {
 
-  public  static IOSDriver<WebElement> driver;
+  private  static IOSDriver<WebElement> driver;
 
   public  void IOSAppCapability() throws MalformedURLException {
 

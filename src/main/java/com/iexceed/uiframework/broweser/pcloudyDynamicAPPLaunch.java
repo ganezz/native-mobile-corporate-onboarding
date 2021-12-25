@@ -46,7 +46,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public int chromeAPPlaunch() throws Exception {
+    public static int chromeAPPlaunch() throws Exception {
 
 
         appURL = launchApp();
@@ -100,7 +100,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public void fileRenaming() throws InterruptedException {
+    public static void fileRenaming() throws InterruptedException {
 
         LocalDate currentdate = LocalDate.now();
         Month currentMonth = currentdate.getMonth();
