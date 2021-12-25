@@ -12,8 +12,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
@@ -40,7 +38,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
         try {
             PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
         } catch (Exception e) {
-            System.out.println(e);
+            log.debug(e);
         }
         Thread.sleep(3000);
       log.debug("app uploaded to pcloudy");
@@ -71,7 +69,7 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public static void waitUntilFileToDownload(String folderLocation) throws InterruptedException {
+    public static void waitUntilFileToDownload(String folderLocation) {
 
         File directory = new File(folderLocation);
         boolean downloadinFilePresence = false;
@@ -91,7 +89,6 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
             }
             if (downloadinFilePresence) {
                 filePresent = false;
-
                 break;
             } else {
                 log.debug("app file is not present in that directory");
@@ -100,12 +97,9 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     }
 
 
-    public static void fileRenaming() throws InterruptedException {
+    public static void fileRenaming() throws NullPointerException, InterruptedException {
 
-        LocalDate currentdate = LocalDate.now();
-        Month currentMonth = currentdate.getMonth();
-        int currentDate = currentdate.getDayOfMonth();
-//        f2 = new File("App" + currentMonth + currentDate);
+
         f2 = new File("Automation-1-0-7-21-12-2021");
         renamedFilePath = f2.getName();
         log.debug("Renamed f2 file path " + renamedFilePath);
