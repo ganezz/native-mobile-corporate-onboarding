@@ -27,7 +27,7 @@ public class EntityDetailsPage {
     }
 
     By hamBurgerMenu = By.xpath("//android.widget.ImageView[@content-desc='HAMBURGER_ICON']");
-    By MenuList = By.xpath("//*[@text='User Contact Details']");
+    By menuList = By.xpath("//*[@text='User Contact Details']");
 
     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
     By editField = By.className("android.widget.EditText");
@@ -77,7 +77,8 @@ public class EntityDetailsPage {
         }
 
         genericMethods.click(hamBurgerMenu);
-        if (genericMethods.isElementPresent(MenuList)) {
+        Boolean b=genericMethods.isElementPresent(menuList);
+        if (Boolean.TRUE.equals(b)) {
            log.debug("menu is swipped");
         }
         genericMethods.click(hamBurgerMenu);

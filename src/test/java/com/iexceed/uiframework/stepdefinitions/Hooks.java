@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.appURL;
+import static com.iexceed.uiframework.broweser.pcloudydynamicappLaunch.appURL;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class Hooks extends TestBase {

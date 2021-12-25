@@ -13,12 +13,12 @@ import java.util.List;
 
 public class AndroidConnectionUtility {
 
-    public static AppiumDriver<?> driver;
+    private static AppiumDriver<?> driver;
 
 
-    public static void main(String args[]) throws MalformedURLException {
+    public static void main(String[] args) throws MalformedURLException {
 
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("LENOVO_M10Plus_Android_10.0.0_2ba36");
         list.add("SAMSUNG_GalaxyTabS4_Android_10.0.0_2133b");
         list.add("SAMSUNG_GalaxyTabS6_Android_9.0.0_16c48");

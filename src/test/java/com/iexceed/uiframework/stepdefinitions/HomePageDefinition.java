@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
-import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.launchApp;
+import static com.iexceed.uiframework.broweser.pcloudydynamicappLaunch.launchApp;
 
 
 public class HomePageDefinition extends TestBase {

@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
 
-public class pcloudyDynamicAPPLaunch extends TestBase {
+public class pcloudydynamicappLaunch extends TestBase {
 
     public static AndroidDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
@@ -25,11 +25,11 @@ public class pcloudyDynamicAPPLaunch extends TestBase {
     static String renamedFilePath;
     static String renamedAppPath;
     public static int countApp = 0;
-    private static final Logger log = LogManager.getLogger(pcloudyDynamicAPPLaunch.class);
+    private static final Logger log = LogManager.getLogger(pcloudydynamicappLaunch.class);
     public static Map<String, String> deviceConfigCopy;
     public static String appDownloadFilePath="/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/app";
 
-    public pcloudyDynamicAPPLaunch(Map<String, String> deviceConfig) throws Exception {
+    public pcloudydynamicappLaunch(Map<String, String> deviceConfig) throws Exception {
         deviceConfigCopy=deviceConfig;
         chromeAPPlaunch();
         log.debug("app download to local");

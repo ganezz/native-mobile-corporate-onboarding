@@ -1,7 +1,7 @@
 package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.PcloudyConnection;
-import com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch;
+import com.iexceed.uiframework.broweser.pcloudydynamicappLaunch;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import com.ssts.pcloudy.Connector;
@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import java.util.Map;
 
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
-import static com.iexceed.uiframework.broweser.pcloudyDynamicAPPLaunch.countApp;
+import static com.iexceed.uiframework.broweser.pcloudydynamicappLaunch.countApp;
 
 public class ConnectionObjects extends TestBase {
 
@@ -22,15 +22,15 @@ public class ConnectionObjects extends TestBase {
     public static AppiumDriver<WebElement> driver;
     private final WaitUtility waitUtility;
     Connector pCloudyCONNECTOR = new Connector();
-    pcloudyDynamicAPPLaunch pcloudyDynamicAPPLaunch;
-    private static final Logger log = LogManager.getLogger(pcloudyDynamicAPPLaunch.class);
+    pcloudydynamicappLaunch pcloudyDynamicAPPLaunch;
+    private static final Logger log = LogManager.getLogger(ConnectionObjects.class);
 
 
     public ConnectionObjects(String platform, Map<String, String> deviceConfig) throws Exception {
 
         if(platform.equalsIgnoreCase("Android")) {
             if (countApp == 0) {
-                pcloudyDynamicAPPLaunch = new pcloudyDynamicAPPLaunch(deviceConfig);
+                pcloudyDynamicAPPLaunch = new pcloudydynamicappLaunch(deviceConfig);
             } else {
                log.debug("App is already downloaded and uploaded to pcloudy");
             }
