@@ -267,19 +267,18 @@ public class EntityDetailsPage {
 
     public void isYesNoBtnPresentConfirmation() throws InterruptedException {
         Boolean b = genericMethods.isElementPresent(confirmationMsg);
+        Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsg);
 
-        try {
             if (Boolean.TRUE.equals(b)) {
                 genericMethods.waitForVisibility(confirmationMsg);
                 log.info(genericMethods.isElementPresent(confirmationMsg));
-            } else {
+            } else if(Boolean.TRUE.equals(b1)) {
                 genericMethods.isElementPresent(deleteConfirmationMsg);
             }
-        } catch (Exception e) {
-//            Thread.currentThread().interrupt();
-            genericMethods.waitForVisibility(confirmationMsg1);
-            genericMethods.isElementPresent(confirmationMsg1);
-        }
+        else {
+               genericMethods.waitForVisibility(confirmationMsg1);
+                genericMethods.isElementPresent(confirmationMsg1);
+            }
     }
 
     public void clickYEsBtnValidation() throws Exception {
@@ -299,14 +298,13 @@ public class EntityDetailsPage {
 
     public void isBottomValidationMsgPresent() throws Exception {
         waitUtility.waitForSeconds(2);
-        try {
-            genericMethods.isElementPresent(validateUseCreationMsg);
-            genericMethods.click(closeBtn);
-        } catch (InterruptedException ie) {
-            log.error("InterruptedException: ", ie);
-            genericMethods.click(closeBtn);
-//          Thread.currentThread().interrupt();
-        }
+        Boolean b = genericMethods.isElementPresent(validateUseCreationMsg);
+          if(Boolean.TRUE.equals(b)) {
+                genericMethods.isElementPresent(validateUseCreationMsg);
+                genericMethods.click(closeBtn);
+            }else{
+                genericMethods.click(closeBtn);
+            }
 
     }
 
