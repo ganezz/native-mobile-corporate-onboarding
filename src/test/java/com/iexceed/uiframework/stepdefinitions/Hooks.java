@@ -12,9 +12,7 @@ import org.testng.annotations.AfterMethod;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 
-import static com.iexceed.uiframework.broweser.pcloudydynamicappLaunch.appURL;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class Hooks extends TestBase {
@@ -29,11 +27,11 @@ public class Hooks extends TestBase {
 
     @Before("@old")
     public  void bff(){
-        Map<String, String> deviceConfig;
-        System.out.println("Before scenario for old url");
+//        Map<String, String> deviceConfig;
+//        System.out.println("Before scenario for old url");
 //        deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
 //        System.out.println(deviceConfig.get("oldAppURL"));
-        appURL =props.getProperty("androidApplicationURL");
+//        appURL =props.getProperty("androidApplicationURL");
 
 
     }
