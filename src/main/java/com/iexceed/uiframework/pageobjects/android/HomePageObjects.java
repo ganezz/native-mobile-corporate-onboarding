@@ -1,6 +1,5 @@
 package com.iexceed.uiframework.pageobjects.android;
 
-import com.iexceed.uiframework.domainobjects.AndroidUtility;
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
@@ -12,40 +11,37 @@ import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class HomePageObjects {
 
-    AndroidUtility androidUtility = new AndroidUtility();
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(HomePageObjects.class);
-    String stringmsg;
+
     public HomePageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
     }
 
 
-     By userDetailsRegBt = By.xpath("//android.view.View[@text='Onboarding']");
-     By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
-     By englishBtn = By.xpath("//android.view.View[@text='English']");
-     By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
-     By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
+    By userDetailsRegBt = By.xpath("//android.view.View[@text='Onboarding']");
+    By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
+    By englishBtn = By.xpath("//android.view.View[@text='English']");
+    By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
+    By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
 
 
     public void isHomePageVisible() throws Exception {
         waitUtility.waitForSeconds(4);
-        Boolean b1 =  genericMethods.isElementPresent(userDetailsRegBt);
-        Boolean b =genericMethods.isElementPresent(englishBtn);
-        if(Boolean.TRUE.equals(b)){
+        Boolean b1 = genericMethods.isElementPresent(userDetailsRegBt);
+        Boolean b = genericMethods.isElementPresent(englishBtn);
+        if (Boolean.TRUE.equals(b)) {
             log.info("user in home page");
-        }else if(Boolean.TRUE.equals(b1)){
+        } else if (Boolean.TRUE.equals(b1)) {
             log.info("user in home page");
-        }else{
+        } else {
             log.debug("home page is not launched");
         }
 
-      
+
     }
-
-
 
 
     public void clickUserRegBtn() throws Exception {
@@ -55,11 +51,11 @@ public class HomePageObjects {
 
     public void verifyPageLanding() throws Exception {
         waitUtility.waitForSeconds(4);
-        Boolean b =genericMethods.isElementPresent(addNewUsrBtn);
+        Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
 
-        if(Boolean.TRUE.equals(b)){
+        if (Boolean.TRUE.equals(b)) {
             log.info("page is navigating");
-        }else{
+        } else {
             log.info("Page is not navigating to add new user screen");
         }
 
@@ -79,7 +75,6 @@ public class HomePageObjects {
         genericMethods.click(userDetailsRegBt);
         genericMethods.isElementPresent(arabicaddNewUsrBtn);
     }
-
 
 
 }
