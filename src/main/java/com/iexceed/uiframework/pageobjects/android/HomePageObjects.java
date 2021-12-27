@@ -32,15 +32,17 @@ public class HomePageObjects {
 
     public void isHomePageVisible() throws Exception {
         waitUtility.waitForSeconds(4);
-        try {
-            genericMethods.isElementPresent(englishBtn);
-
-        } catch (Exception e) {
-
-            genericMethods.isElementPresent(userDetailsRegBt);
-//            Thread.currentThread().interrupt();
+        Boolean b1 =  genericMethods.isElementPresent(userDetailsRegBt);
+        Boolean b =genericMethods.isElementPresent(englishBtn);
+        if(Boolean.TRUE.equals(b)){
+            log.info("user in home page");
+        }else if(Boolean.TRUE.equals(b1)){
+            log.info("user in home page");
+        }else{
+            log.debug("home page is not launched");
         }
 
+      
     }
 
 
@@ -52,16 +54,16 @@ public class HomePageObjects {
     }
 
     public void verifyPageLanding() throws Exception {
+        waitUtility.waitForSeconds(4);
+        Boolean b =genericMethods.isElementPresent(addNewUsrBtn);
 
-        try {
-            waitUtility.waitForSeconds(4);
-            genericMethods.isElementPresent(addNewUsrBtn);
-
-        } catch (Exception e) {
-            stringmsg=String.format(" %s",e);
-//            Thread.currentThread().interrupt();
-            log.info("Page is not navigating to add new user screen:{}",stringmsg);
+        if(Boolean.TRUE.equals(b)){
+            log.info("page is navigating");
+        }else{
+            log.info("Page is not navigating to add new user screen");
         }
+
+
     }
 
     public void clickEnglishLangBtn() throws InterruptedException {
