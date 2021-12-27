@@ -337,18 +337,20 @@ public class EntityDetailsPage {
         genericMethods.click(continueBtn);
         Boolean b = genericMethods.isElementPresent(consultMsg1);
 
-        try {
             if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(continueBtn);
                 Boolean b1 = genericMethods.isElementPresent(consultMsg2);
+                waitUtility.waitForSeconds(2);
                 if (Boolean.TRUE.equals(b1)) {
                     genericMethods.click(continueBtn);
+                }else{
+                    log.debug(consultMsg2+"is not present");
                 }
             }
-        } catch (Exception e) {
-            log.info(e);
-//            Thread.currentThread().interrupt();
-        }
+            else{
+                log.debug(consultMsg1+"is not present");
+            }
+
     }
 
 }
