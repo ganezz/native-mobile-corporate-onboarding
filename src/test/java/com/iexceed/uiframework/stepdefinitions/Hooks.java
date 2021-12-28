@@ -25,18 +25,6 @@ public class Hooks extends TestBase {
 
     }
 
-    @Before("@old")
-    public  void bff(){
-//        Map<String, String> deviceConfig;
-//        System.out.println("Before scenario for old url");
-//        deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
-//        System.out.println(deviceConfig.get("oldAppURL"));
-//        appURL =props.getProperty("androidApplicationURL");
-
-
-    }
-
-
 
     @BeforeStep()
     public  void bf(){
