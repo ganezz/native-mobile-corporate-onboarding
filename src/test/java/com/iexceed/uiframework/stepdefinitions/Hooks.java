@@ -1,14 +1,15 @@
 package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
+import com.iexceed.uiframework.utilites.WaitUtility;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
+import io.cucumber.java.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterMethod;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +17,7 @@ import java.io.IOException;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class Hooks extends TestBase {
-
+    private final WaitUtility waitUtility= new WaitUtility();;
 
 
     @Before()
@@ -65,10 +66,11 @@ public class Hooks extends TestBase {
 //    }
 
 
-    @AfterMethod
-    public void endTest() throws  IOException {
+    @After
+    public void endTest() throws Exception {
 
         driver.quit();
+        waitUtility.waitForSeconds(30);
     }
 
 }
