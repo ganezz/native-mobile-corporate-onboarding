@@ -70,6 +70,7 @@ public class Hooks extends TestBase {
     public void endTest() throws Exception {
 
         driver.quit();
+        System.out.println(driver+"closed");
         waitUtility.waitForSeconds(30);
     }
 
