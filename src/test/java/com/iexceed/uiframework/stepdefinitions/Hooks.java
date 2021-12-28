@@ -2,9 +2,11 @@ package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
-import io.cucumber.java.*;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
+import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
-import org.junit.AfterClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -14,7 +16,7 @@ import java.io.IOException;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class Hooks extends TestBase {
-    private final WaitUtility waitUtility= new WaitUtility();;
+    private final WaitUtility waitUtility= new WaitUtility();
 
 
     @Before()
@@ -68,11 +70,12 @@ public class Hooks extends TestBase {
 //        driver.quit();
 //    }
 
+//    @AfterClass
+//    public void teardowns(Scenario scenario) throws Exception {
+//        driver.quit();
+//        System.out.println("driver is closed now");
+//        waitUtility.waitForSeconds(30);
+//    }
 
-    @AfterClass
-    public void teardowns(Scenario scenario) throws Exception {
-        driver.quit();
-        waitUtility.waitForSeconds(30);
-    }
 
 }
