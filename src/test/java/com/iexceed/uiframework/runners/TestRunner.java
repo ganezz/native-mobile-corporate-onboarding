@@ -11,18 +11,18 @@ import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 //@RunWith(Cucumber.class)
 
 @CucumberOptions(
-
-        features = "src/test/resources/Features",
-        glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@sanity_apps",
-        plugin= {"pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
-                "rerun:target/failedrerun.txt"
-
-
-
-        }
+//
+//        features = "src/test/resources/Features",
+//        glue = {"com.iexceed.uiframework.stepdefinitions"},
+//        tags= "@sanity_apps",
+//        plugin= {"pretty",
+//                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+//                "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
+//                "rerun:target/failedrerun.txt"
+//
+//
+//
+//        }
 
 
 )
