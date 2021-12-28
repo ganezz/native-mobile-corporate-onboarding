@@ -61,8 +61,9 @@ public class Hooks extends TestBase {
 //    }
 
 
-    @SneakyThrows
+
     @AfterClass(alwaysRun = true)
+    @SneakyThrows
     public void tearDownClass() {
 
         driver.quit();
