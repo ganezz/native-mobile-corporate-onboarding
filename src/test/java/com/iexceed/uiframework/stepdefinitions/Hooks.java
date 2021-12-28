@@ -7,9 +7,9 @@ import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
-import io.cucumber.java.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -66,7 +66,7 @@ public class Hooks extends TestBase {
 //    }
 
 
-    @After
+    @AfterTest
     public void endTest() throws Exception {
 
         driver.quit();
