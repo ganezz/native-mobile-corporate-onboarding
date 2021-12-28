@@ -4,6 +4,7 @@ import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
@@ -66,9 +67,14 @@ public class Hooks extends TestBase {
 //    }
 
 
+   @After("not @api")
+    public void teardown(Scenario scenario) throws Exception {
+        driver.quit();
+    }
+
+
     @AfterTest
     public void endTest() throws Exception {
-
         driver.quit();
         System.out.println(driver+"driver is closed");
         waitUtility.waitForSeconds(30);

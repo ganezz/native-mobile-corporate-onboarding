@@ -4,6 +4,7 @@ package com.iexceed.uiframework.runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
+import org.testng.annotations.AfterClass;
 
 //@RunWith(Cucumber.class)
 
@@ -44,10 +45,10 @@ public class TestRunnerAndroid extends AbstractTestNGCucumberTests {
 //                return testNGCucumberRunner.provideScenarios();
 //        }
 //
-//        @AfterClass(alwaysRun = true)
-//        public void tearDownClass() {
-//                testNGCucumberRunner.finish();
-//        }
+        @AfterClass(alwaysRun = true)
+        public void tearDownClass() {
+                testNGCucumberRunner.finish();
+        }
 
 //        @BeforeTest
 //        @Parameters("deviceName")
