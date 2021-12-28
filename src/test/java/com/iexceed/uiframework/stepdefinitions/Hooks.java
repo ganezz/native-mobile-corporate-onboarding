@@ -62,17 +62,16 @@ public class Hooks extends TestBase {
 //        driver.quit();
 //    }
 
-
-   @After("not @api")
-    public void teardown(Scenario scenario) throws Exception {
-        driver.quit();
-    }
+//
+//   @After("not @api")
+//    public void teardown(Scenario scenario) throws Exception {
+//        driver.quit();
+//    }
 
 
     @AfterClass
-    public void endTest() throws Exception {
+    public void teardowns(Scenario scenario) throws Exception {
         driver.quit();
-        System.out.println(driver+"driver is closed");
         waitUtility.waitForSeconds(30);
     }
 
