@@ -6,7 +6,6 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
 
-
 //@RunWith(Cucumber.class)
 
 @CucumberOptions(
@@ -28,13 +27,14 @@ public class TestRunnerIOS extends AbstractTestNGCucumberTests {
         private TestNGCucumberRunner testNGCucumberRunner;
         private final WaitUtility waitUtility= new WaitUtility();
 
+
 //        @SneakyThrows
 //        @AfterClass(alwaysRun = true)
 //        public void tearDownClass() {
 //
 //                driver.quit();
 //                System.out.println("driver is closed now");
-//                waitUtility.waitForSeconds(64);
+//                waitUtility.waitForSeconds(70);
 ////                testNGCucumberRunner.finish();
 //        }
 }
