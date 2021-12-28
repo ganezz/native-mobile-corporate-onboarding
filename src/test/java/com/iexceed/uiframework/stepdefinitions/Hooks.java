@@ -2,15 +2,11 @@ package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
-import io.cucumber.java.BeforeStep;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import org.apache.commons.io.FileUtils;
+import org.junit.AfterClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -73,7 +69,7 @@ public class Hooks extends TestBase {
     }
 
 
-    @AfterTest
+    @AfterClass
     public void endTest() throws Exception {
         driver.quit();
         System.out.println(driver+"driver is closed");
