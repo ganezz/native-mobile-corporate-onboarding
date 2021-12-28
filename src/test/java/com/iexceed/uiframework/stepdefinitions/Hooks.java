@@ -6,9 +6,11 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
+import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterClass;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,12 +61,15 @@ public class Hooks extends TestBase {
 //    }
 
 
-//    @AfterClass
-//    public void teardowns(Scenario scenario) throws Exception {
-//        driver.quit();
-//        System.out.println("driver is closed now");
-//        waitUtility.waitForSeconds(30);
-//    }
+    @SneakyThrows
+    @AfterClass(alwaysRun = true)
+    public void tearDownClass() {
+
+        driver.quit();
+        System.out.println("driver is closed now");
+        waitUtility.waitForSeconds(64);
+//                testNGCucumberRunner.finish();
+    }
 
 
 }

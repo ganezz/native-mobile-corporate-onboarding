@@ -45,7 +45,7 @@ public class ConnectionObjects extends TestBase {
     }
 
     public void setRemoteDeviceCapabilities(String platform, String version, String deviceName,String automationName,String applicationName, String maxDuration, String isTrusted) throws Exception {
-        waitUtility.waitForSeconds(80);
+//        waitUtility.waitForSeconds(80);
         createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName,automationName,applicationName, props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration, props.getProperty("deviceURL"), props.getProperty("orientation"),
                 Boolean.valueOf(isTrusted), By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
         waitUtility.waitForSeconds(4);
