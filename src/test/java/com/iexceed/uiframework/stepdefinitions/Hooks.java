@@ -67,7 +67,7 @@ public class Hooks extends TestBase {
 
         driver.quit();
         System.out.println("driver is closed now");
-        waitUtility.waitForSeconds(64);
+        waitUtility.waitForSeconds(80);
 //                testNGCucumberRunner.finish();
     }
 

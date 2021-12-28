@@ -5,10 +5,6 @@ import com.iexceed.uiframework.utilites.WaitUtility;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
-import lombok.SneakyThrows;
-import org.testng.annotations.AfterClass;
-
-import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 
 //@RunWith(Cucumber.class)
@@ -20,7 +16,7 @@ import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
         tags= "@sanity_apps",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/jsonReports/cucumberIOS-reports.json","html:target/cucumberIOS-ui-reports.html",
+                "json:target/jsonReports/cucumberSanity-reports.json","html:target/cucumberSanity-ui-reports.html",
                 "rerun:target/failedrerun.txt"
 
 
@@ -51,15 +47,15 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 //    }
 //
 
-    @SneakyThrows
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass() {
-
-        driver.quit();
-        System.out.println("driver is closed now");
-        waitUtility.waitForSeconds(64);
-//                testNGCucumberRunner.finish();
-    }
+//    @SneakyThrows
+//    @AfterClass(alwaysRun = true)
+//    public void tearDownClass() {
+//
+//        driver.quit();
+//        System.out.println("driver is closed now");
+//        waitUtility.waitForSeconds(64);
+////                testNGCucumberRunner.finish();
+//    }
 
 
 //    @BeforeTest
