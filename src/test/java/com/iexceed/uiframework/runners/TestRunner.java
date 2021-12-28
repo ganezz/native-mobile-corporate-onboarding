@@ -17,8 +17,9 @@ import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
         tags= "@sanity_apps",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/jsonReports/cucumberSanity-reports.json","html:target/cucumberSanity-ui-reports.html",
+                "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
                 "rerun:target/failedrerun.txt"
+
 
 
         }
