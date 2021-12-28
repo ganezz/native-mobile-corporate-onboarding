@@ -5,7 +5,9 @@ import com.iexceed.uiframework.utilites.WaitUtility;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
-
+import lombok.SneakyThrows;
+import org.testng.annotations.AfterClass;
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 //@RunWith(Cucumber.class)
 
 @CucumberOptions(
@@ -46,15 +48,15 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 //    }
 //
 
-//    @SneakyThrows
-//    @AfterClass(alwaysRun = true)
-//    public void tearDownClass() {
-//
-//        driver.quit();
-//        System.out.println("driver is closed now");
-//        waitUtility.waitForSeconds(70);
-////                testNGCucumberRunner.finish();
-//    }
+    @SneakyThrows
+    @AfterClass(alwaysRun = true)
+    public void tearDownClass() {
+
+        driver.quit();
+        System.out.println("driver is closed now");
+        waitUtility.waitForSeconds(70);
+//                testNGCucumberRunner.finish();
+    }
 
 
 //    @BeforeTest
