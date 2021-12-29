@@ -55,7 +55,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
         driver.quit();
         System.out.println("driver is closed now");
-        waitUtility.waitForSeconds(70);
+        waitUtility.waitForSeconds(77);
 //                testNGCucumberRunner.finish();
     }
 

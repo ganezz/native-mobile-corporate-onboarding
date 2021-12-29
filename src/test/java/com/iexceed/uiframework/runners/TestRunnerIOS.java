@@ -28,13 +28,5 @@ public class TestRunnerIOS extends AbstractTestNGCucumberTests {
         private final WaitUtility waitUtility= new WaitUtility();
 
 
-//        @SneakyThrows
-//        @AfterClass(alwaysRun = true)
-//        public void tearDownClass() {
-//
-//                driver.quit();
-//                System.out.println("driver is closed now");
-//                waitUtility.waitForSeconds(70);
-////                testNGCucumberRunner.finish();
-//        }
+
 }
