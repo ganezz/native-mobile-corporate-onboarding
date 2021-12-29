@@ -18,7 +18,6 @@ import io.cucumber.testng.TestNGCucumberRunner;
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
                 "rerun:target/failedrerun.txt"
 
-
         }
 
 
