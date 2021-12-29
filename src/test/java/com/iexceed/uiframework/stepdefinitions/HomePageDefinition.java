@@ -43,6 +43,7 @@ public class HomePageDefinition extends TestBase {
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
 
         }else{
+            Thread.sleep(9000);
             iosAppURL=launchApp();
 //            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29.ipa";
             String[] arr=iosAppURL.split("//");
@@ -54,7 +55,7 @@ public class HomePageDefinition extends TestBase {
             {
                 iosAppURL=deviceConfig.get("oldAppURL");
             }
-
+            Thread.sleep(9000);
             System.out.println(iosAppURL);
             capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
                     deviceConfig.get("automationName"),iosAppURL , deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));
