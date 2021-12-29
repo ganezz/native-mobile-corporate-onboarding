@@ -3,6 +3,7 @@ package com.iexceed.uiframework.stepdefinitions;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.CapabilitiesActions;
 import com.iexceed.uiframework.steps.HomePageAction;
+import com.iexceed.uiframework.utilites.WaitUtility;
 import com.iexceed.uiframework.utilites.readexcel.ExcelHandler;
 import com.iexceed.uiframework.utilites.readexcel.TestDataHandler;
 import io.cucumber.java.en.And;
@@ -25,6 +26,7 @@ public class HomePageDefinition extends TestBase {
     TestDataHandler testdata = new TestDataHandler();
       public static String iosAppURL;
     public static String androidAppURL;
+    private final WaitUtility waitUtility=new WaitUtility();
 
     @Given("user opens the App (.+)$")
     public void user_open_the_app_in_device(String testcase) throws Exception {
@@ -43,7 +45,7 @@ public class HomePageDefinition extends TestBase {
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
 
         }else{
-            Thread.sleep(9000);
+            waitUtility.waitForSeconds(10);
             iosAppURL=launchApp();
 //            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29.ipa";
             String[] arr=iosAppURL.split("//");
@@ -55,7 +57,7 @@ public class HomePageDefinition extends TestBase {
             {
                 iosAppURL=deviceConfig.get("oldAppURL");
             }
-            Thread.sleep(9000);
+            waitUtility.waitForSeconds(9);
             System.out.println(iosAppURL);
             capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
                     deviceConfig.get("automationName"),iosAppURL , deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));

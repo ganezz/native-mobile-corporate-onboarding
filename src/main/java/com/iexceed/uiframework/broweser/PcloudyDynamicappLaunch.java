@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
@@ -74,7 +75,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
         Boolean filePresent = true;
 
 
-        while (filePresent) {
+        while (true) {
             filesList = directory.listFiles();
             for (File file : filesList) {
                 downloadinFilePresence = file.getName().contains(".apk");
@@ -86,6 +87,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
             }
             if (downloadinFilePresence) {
                 filePresent = false;
+                log.debug(filePresent);
                 break;
             } else {
                 log.debug("app file is not present in that directory");
@@ -99,7 +101,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
 
         f2 = new File("Automation-1-0-7-21-12-2021");
         renamedFilePath = f2.getName();
-        log.debug("Renamed f2 file path " + renamedFilePath);
+        log.debug("Renamed f2 file path :{}" , renamedFilePath);
         Thread.sleep(2000);
 
         File newfile = getTheNewestFile(appDownloadFilePath, "apk");
@@ -107,11 +109,11 @@ public class PcloudyDynamicappLaunch extends TestBase {
         newfile.renameTo(new File(appDownloadFilePath + "/" + f2 + ".apk"));
         Thread.sleep(7000);
         renamedAppPath = appDownloadFilePath + "/" + f2 + ".apk";
-        log.debug("Renamed apk path " + renamedAppPath);
+        log.debug("Renamed apk path :{}" , renamedAppPath);
         String filename = newfile.getName();
-       log.debug("latest apk file is=" + filename);
+       log.debug("latest apk file is:{}" , filename);
         File updated = getTheNewestFile(appDownloadFilePath, "apk");
-        log.debug("Changed apk file name is =" + updated);
+        log.debug("Changed apk file name is :{}" , updated);
 
 
     }
@@ -131,12 +133,12 @@ public class PcloudyDynamicappLaunch extends TestBase {
         return theNewestFile;
     }
 
-    public static String launchApp() throws Exception {
+    public static String launchApp() throws IOException {
 
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
         properties.load(inputStream);
-        log.debug("this is app url" + properties.getProperty("app.url"));
+        log.debug("this is app url:{}" , properties.getProperty("app.url"));
         return properties.getProperty("app.url");
 
     }
