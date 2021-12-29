@@ -113,10 +113,10 @@ public class PcloudyDynamicappLaunch extends TestBase {
         if (newfile == null) {
             log.debug("file is nullable");
         } else {
-          Boolean b= newfile.renameTo(new File(appDownloadFilePath + "/" + f2 + ".apk"));
+          Boolean b= newfile.renameTo(new File(appDownloadFilePath + File.separator + f2 + ".apk"));
             log.debug(b);
             waitUtility.waitForSeconds(7);
-            renamedAppPath = appDownloadFilePath + "/" + f2 + ".apk";
+            renamedAppPath = appDownloadFilePath + File.separator + f2 + ".apk";
             log.debug("Renamed apk path :{}", renamedAppPath);
             String filename = newfile.getName();
             log.debug("latest apk file is:{}", filename);
