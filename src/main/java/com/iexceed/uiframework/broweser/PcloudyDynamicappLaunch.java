@@ -2,6 +2,7 @@ package com.iexceed.uiframework.broweser;
 
 
 import com.iexceed.uiframework.core.TestBase;
+import com.iexceed.uiframework.utilites.WaitUtility;
 import com.ssts.pcloudy.Connector;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
@@ -18,17 +19,19 @@ import java.util.Properties;
 public class PcloudyDynamicappLaunch extends TestBase {
 
     Connector pCloudyCONNECTOR = new Connector();
-    static String appURL=null;
+    static String appURL = null;
     static File f2;
     static String renamedFilePath;
     static String renamedAppPath;
     public static int countApp = 0;
     private static final Logger log = LogManager.getLogger(PcloudyDynamicappLaunch.class);
     static Map<String, String> deviceConfigCopy;
-    static String appDownloadFilePath="/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/app";
+    static String appDownloadFilePath = props.getProperty("downloadFilepath");
+    private static final WaitUtility waitUtility = new WaitUtility();
 
     public PcloudyDynamicappLaunch(Map<String, String> deviceConfig) throws Exception {
-        deviceConfigCopy=deviceConfig;
+
+        deviceConfigCopy = deviceConfig;
         chromeAPPlaunch();
         log.debug("app download to local");
         Thread.sleep(3000);
@@ -39,7 +42,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
             log.debug(e);
         }
         Thread.sleep(3000);
-      log.debug("app uploaded to pcloudy");
+        log.debug("app uploaded to pcloudy");
     }
 
 
@@ -51,10 +54,10 @@ public class PcloudyDynamicappLaunch extends TestBase {
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
         appURL = temp1 + arr[1];
         log.debug(appURL);
-        String appURLtemp="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
+        String appURLtemp = "https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
         log.debug(appURLtemp);
         if (appURL.equals(deviceConfigCopy.get("oldAppURL"))) {
-            appURL =deviceConfigCopy.get("oldAppURL");
+            appURL = deviceConfigCopy.get("oldAppURL");
         }
 
         log.debug(appURL);
@@ -97,25 +100,29 @@ public class PcloudyDynamicappLaunch extends TestBase {
     }
 
 
-    public static void fileRenaming() throws NullPointerException, InterruptedException {
+    public static void fileRenaming() throws Exception, NullPointerException {
 
 
         f2 = new File("Automation-1-0-7-21-12-2021");
         renamedFilePath = f2.getName();
-        log.debug("Renamed f2 file path :{}" , renamedFilePath);
-        Thread.sleep(2000);
+        log.debug("Renamed f2 file path :{}", renamedFilePath);
+        waitUtility.waitForSeconds(3);
 
         File newfile = getTheNewestFile(appDownloadFilePath, "apk");
-        Thread.sleep(4000);
-        newfile.renameTo(new File(appDownloadFilePath + "/" + f2 + ".apk"));
-        Thread.sleep(7000);
-        renamedAppPath = appDownloadFilePath + "/" + f2 + ".apk";
-        log.debug("Renamed apk path :{}" , renamedAppPath);
-        String filename = newfile.getName();
-       log.debug("latest apk file is:{}" , filename);
-        File updated = getTheNewestFile(appDownloadFilePath, "apk");
-        log.debug("Changed apk file name is :{}" , updated);
-
+        waitUtility.waitForSeconds(4);
+        if (newfile == null) {
+            log.debug("file is nullable");
+        } else {
+          Boolean b= newfile.renameTo(new File(appDownloadFilePath + "/" + f2 + ".apk"));
+            log.debug(b);
+            waitUtility.waitForSeconds(7);
+            renamedAppPath = appDownloadFilePath + "/" + f2 + ".apk";
+            log.debug("Renamed apk path :{}", renamedAppPath);
+            String filename = newfile.getName();
+            log.debug("latest apk file is:{}", filename);
+            File updated = getTheNewestFile(appDownloadFilePath, "apk");
+            log.debug("Changed apk file name is :{}", updated);
+        }
 
     }
 
@@ -139,7 +146,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
         java.io.InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("my.properties");
         java.util.Properties properties = new Properties();
         properties.load(inputStream);
-        log.debug("this is app url:{}" , properties.getProperty("app.url"));
+        log.debug("this is app url:{}", properties.getProperty("app.url"));
         return properties.getProperty("app.url");
 
     }
