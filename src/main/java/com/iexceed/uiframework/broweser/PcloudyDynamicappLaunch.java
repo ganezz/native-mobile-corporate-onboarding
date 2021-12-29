@@ -3,8 +3,6 @@ package com.iexceed.uiframework.broweser;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.ssts.pcloudy.Connector;
-import com.ssts.pcloudy.dto.file.PDriveFileDTO;
-import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.logging.log4j.LogManager;
@@ -16,27 +14,26 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Properties;
 
-public class pcloudydynamicappLaunch extends TestBase {
+public class PcloudyDynamicappLaunch extends TestBase {
 
-    public static AndroidDriver<?> driver;
     Connector pCloudyCONNECTOR = new Connector();
-    public static String appURL;
+    static String appURL=null;
     static File f2;
     static String renamedFilePath;
     static String renamedAppPath;
     public static int countApp = 0;
-    private static final Logger log = LogManager.getLogger(pcloudydynamicappLaunch.class);
-    public static Map<String, String> deviceConfigCopy;
-    public static String appDownloadFilePath="/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/app";
+    private static final Logger log = LogManager.getLogger(PcloudyDynamicappLaunch.class);
+    static Map<String, String> deviceConfigCopy;
+    static String appDownloadFilePath="/home/divyabharathi/2AutomationWOrkspace/MobileAutomationWorkspace/native-mobile-corporate-onboarding/src/main/resources/app";
 
-    public pcloudydynamicappLaunch(Map<String, String> deviceConfig) throws Exception {
+    public PcloudyDynamicappLaunch(Map<String, String> deviceConfig) throws Exception {
         deviceConfigCopy=deviceConfig;
         chromeAPPlaunch();
         log.debug("app download to local");
         Thread.sleep(3000);
         String authToken = pCloudyCONNECTOR.authenticateUser("sriganesh.d@i-exceed.com", "bkx8w6zydrxh6kj7xxw5t4kr");
         try {
-            PDriveFileDTO pDriveFile = pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
+            pCloudyCONNECTOR.uploadApp(authToken, new File(renamedAppPath));
         } catch (Exception e) {
             log.debug(e);
         }
