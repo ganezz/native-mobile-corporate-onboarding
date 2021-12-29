@@ -26,11 +26,15 @@ public class ConnectionObjects extends TestBase {
     private static final Logger log = LogManager.getLogger(ConnectionObjects.class);
 
 
-    public ConnectionObjects(String platform, Map<String, String> deviceConfig) throws Exception {
+    public ConnectionObjects(String platform, Map<String, String> deviceConfig) {
 
         if(platform.equalsIgnoreCase("Android")) {
             if (countApp == 0) {
-                pcloudyDynamicAPPLaunch = new PcloudyDynamicappLaunch(deviceConfig);
+                try {
+                    pcloudyDynamicAPPLaunch = new PcloudyDynamicappLaunch(deviceConfig);
+                } catch (Exception e) {
+                   log.debug(e);
+                }
             } else {
                log.debug("App is already downloaded and uploaded to pcloudy");
             }

@@ -51,7 +51,8 @@ public class PcloudyDynamicappLaunch extends TestBase {
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
         appURL = temp1 + arr[1];
         log.debug(appURL);
-//        appURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
+        String appURLtemp="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
+        log.debug(appURLtemp);
         if (appURL.equals(deviceConfigCopy.get("oldAppURL"))) {
             appURL =deviceConfigCopy.get("oldAppURL");
         }

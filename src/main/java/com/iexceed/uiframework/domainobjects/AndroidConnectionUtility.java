@@ -3,6 +3,8 @@ package com.iexceed.uiframework.domainobjects;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -14,7 +16,7 @@ import java.util.List;
 public class AndroidConnectionUtility {
 
     private static AppiumDriver<?> driver;
-
+    private static final Logger log = LogManager.getLogger(AndroidConnectionUtility.class);
 
     public static void main(String[] args) throws MalformedURLException {
 
@@ -42,7 +44,7 @@ public class AndroidConnectionUtility {
                     capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
                     driver = new AndroidDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-                    System.out.println(driver + "connceted");
+                    log.debug("driver connceted");
                 }
             }
         }

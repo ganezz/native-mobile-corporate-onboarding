@@ -344,11 +344,11 @@ public class EntityDetailsPage {
                 if (Boolean.TRUE.equals(b1)) {
                     genericMethods.click(continueBtn);
                 }else{
-                    log.debug(consultMsg2+"is not present");
+                    log.debug(genericMethods.getText(consultMsg2),"{}is not present");
                 }
             }
             else{
-                log.debug(consultMsg1+"is not present");
+                log.debug(genericMethods.getText(consultMsg1),"{}is not present");
             }
 
     }
