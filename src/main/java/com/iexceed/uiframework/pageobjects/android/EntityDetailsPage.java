@@ -339,8 +339,9 @@ public class EntityDetailsPage {
 
             if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(continueBtn);
-                Boolean b1 = genericMethods.isElementPresent(consultMsg2);
                 waitUtility.waitForSeconds(2);
+                Boolean b1 = genericMethods.isElementPresent(consultMsg2);
+
                 if (Boolean.TRUE.equals(b1)) {
                     genericMethods.click(continueBtn);
                 }else{
