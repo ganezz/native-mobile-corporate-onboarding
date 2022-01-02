@@ -1,14 +1,13 @@
 package com.iexceed.uiframework.steps;
 
 import com.iexceed.uiframework.domainobjects.ConnectionObjects;
-
 import java.util.Map;
 
 public class CapabilitiesActions {
     ConnectionObjects connectionObjects;
 
-    public CapabilitiesActions(String platform, Map<String, String> deviceConfig) throws Exception {
-        connectionObjects = new ConnectionObjects(platform,deviceConfig);
+    public CapabilitiesActions(String platform) throws Exception {
+        connectionObjects = new ConnectionObjects(platform);
     }
 
     public void setCapabilities(String mode,String platform, String version, String deviceName,String automationName,String applicationName, String maxDuration,String noReset, Map<String, String> deviceConfig,String isTrusteded) throws Exception {

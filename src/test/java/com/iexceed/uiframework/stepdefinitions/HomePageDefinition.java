@@ -31,7 +31,7 @@ public class HomePageDefinition extends TestBase {
     @Given("user opens the App (.+)$")
     public void user_open_the_app_in_device(String testcase) throws Exception {
         deviceConfig = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"), props.getProperty(testcase));
-        CapabilitiesActions capabilities = new CapabilitiesActions(deviceConfig.get("platform"),deviceConfig);
+        CapabilitiesActions capabilities = new CapabilitiesActions(deviceConfig.get("platform"));
         if(deviceConfig.get("platform").equalsIgnoreCase("Android")) {
             capabilities.setCapabilities(deviceConfig.get("mode"), deviceConfig.get("platform"), deviceConfig.get("version"), deviceConfig.get("deviceName"),
                     deviceConfig.get("automationName"), deviceConfig.get("applicationName"), deviceConfig.get("maxDuration"), deviceConfig.get("noReset"), deviceConfig, props.getProperty("isTrustedDevice"));

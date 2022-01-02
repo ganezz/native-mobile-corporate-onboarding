@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Map;
 import java.util.Properties;
 
 public class PcloudyDynamicappLaunch extends TestBase {
@@ -25,13 +24,12 @@ public class PcloudyDynamicappLaunch extends TestBase {
     static String renamedAppPath;
     public static int countApp = 0;
     private static final Logger log = LogManager.getLogger(PcloudyDynamicappLaunch.class);
-    static Map<String, String> deviceConfigCopy;
+
     static String appDownloadFilePath = props.getProperty("downloadFilepath");
     private static final WaitUtility waitUtility = new WaitUtility();
 
-    public PcloudyDynamicappLaunch(Map<String, String> deviceConfig) throws Exception {
+    public PcloudyDynamicappLaunch() throws Exception {
 
-        deviceConfigCopy = deviceConfig;
         chromeAPPlaunch();
         log.debug("app download to local");
         Thread.sleep(3000);
@@ -56,9 +54,6 @@ public class PcloudyDynamicappLaunch extends TestBase {
         log.debug(appURL);
         String appURLtemp = "https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
         log.debug(appURLtemp);
-        if (appURL.equals(deviceConfigCopy.get("oldAppURL"))) {
-            appURL = deviceConfigCopy.get("oldAppURL");
-        }
 
         log.debug(appURL);
         TestBase.pcloudyInitialization(appURL);

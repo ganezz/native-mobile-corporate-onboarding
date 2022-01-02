@@ -11,8 +11,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.Map;
-
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
 import static com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch.countApp;
 
@@ -26,12 +24,12 @@ public class ConnectionObjects extends TestBase {
     private static final Logger log = LogManager.getLogger(ConnectionObjects.class);
 
 
-    public ConnectionObjects(String platform, Map<String, String> deviceConfig) {
+    public ConnectionObjects(String platform) {
 
         if(platform.equalsIgnoreCase("Android")) {
             if (countApp == 0) {
                 try {
-                    pcloudyDynamicAPPLaunch = new PcloudyDynamicappLaunch(deviceConfig);
+                    pcloudyDynamicAPPLaunch = new PcloudyDynamicappLaunch();
                 } catch (Exception e) {
                    log.debug(e);
                 }
