@@ -20,7 +20,6 @@ public class HomePageObjects {
         waitUtility = new WaitUtility();
     }
 
-
     By userDetailsRegBt = By.xpath("//android.view.View[@text='Onboarding']");
     By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
     By englishBtn = By.xpath("//android.view.View[@text='English']");
@@ -29,7 +28,7 @@ public class HomePageObjects {
 
 
     public void isHomePageVisible() throws Exception {
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(2);
         Boolean b1 = genericMethods.isElementPresent(userDetailsRegBt);
         Boolean b = genericMethods.isElementPresent(englishBtn);
         if (Boolean.TRUE.equals(b)) {
@@ -45,7 +44,8 @@ public class HomePageObjects {
 
 
     public void clickUserRegBtn() throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(4);
+        genericMethods.isElementPresent(userDetailsRegBt);
         genericMethods.click(userDetailsRegBt);
     }
 

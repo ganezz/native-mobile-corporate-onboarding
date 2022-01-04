@@ -1,6 +1,7 @@
 package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.PcloudyConnection;
+import com.iexceed.uiframework.broweser.AndroidConnectionUtility;
 import com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
@@ -22,7 +23,7 @@ public class ConnectionObjects extends TestBase {
     Connector pCloudyCONNECTOR = new Connector();
     PcloudyDynamicappLaunch pcloudyDynamicAPPLaunch;
     private static final Logger log = LogManager.getLogger(ConnectionObjects.class);
-
+    AndroidConnectionUtility androidConnectionUtility;
 
     public ConnectionObjects(String platform) {
 
@@ -52,6 +53,12 @@ public class ConnectionObjects extends TestBase {
                 Boolean.valueOf(isTrusted), By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
         waitUtility.waitForSeconds(4);
         synchronizedMethod();
+        if(driver==null){
+            androidConnectionUtility=new AndroidConnectionUtility();
+
+        }else{
+            log.debug("driver connected");
+        }
     }
 
     public void setRealDeviceCapabilities(String platform, String deviceName, String noReset,String automationName,String applicationName) throws Exception {
