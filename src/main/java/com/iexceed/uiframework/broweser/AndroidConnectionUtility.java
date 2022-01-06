@@ -3,11 +3,13 @@ import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
+import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 public class AndroidConnectionUtility {
 
 
@@ -40,13 +42,15 @@ public class AndroidConnectionUtility {
                     capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
                     driver = new AndroidDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-                    log.debug("driver connceted");
+                        appiumDriver=driver;
+                    log.debug("Device:"+appName+"driver connceted");
+
                 }catch(Exception e){
                        log.debug(e);
                     }
                 }
             else{
-                System.out.println(appName+" is already connected ");
+                    log.debug("driver is not null,its running ");
             }
 
             }
