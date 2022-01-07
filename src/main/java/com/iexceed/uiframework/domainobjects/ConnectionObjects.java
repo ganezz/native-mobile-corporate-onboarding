@@ -1,12 +1,9 @@
 package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.PcloudyConnection;
-import com.iexceed.uiframework.broweser.AndroidConnectionUtility;
-import com.iexceed.uiframework.broweser.IOSConnectionUtility;
 import com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;
-import com.ssts.pcloudy.Connector;
 import io.appium.java_client.AppiumDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,6 +11,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
+import static com.iexceed.uiframework.broweser.AndroidConnectionUtility.androidConnectionUtilities;
+import static com.iexceed.uiframework.broweser.IOSConnectionUtility.iosConnectionUtilities;
 import static com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch.countApp;
 
 public class ConnectionObjects extends TestBase {
@@ -21,11 +20,9 @@ public class ConnectionObjects extends TestBase {
     PcloudyConnection createConnection;
     public static AppiumDriver<WebElement> driver;
     private final WaitUtility waitUtility;
-    Connector pCloudyCONNECTOR = new Connector();
     PcloudyDynamicappLaunch pcloudyDynamicAPPLaunch;
     private static final Logger log = LogManager.getLogger(ConnectionObjects.class);
-    AndroidConnectionUtility androidConnectionUtility;
-    IOSConnectionUtility iosConnectionUtility;
+
 
     public ConnectionObjects(String platform) {
 
@@ -59,16 +56,15 @@ public class ConnectionObjects extends TestBase {
                 Boolean.valueOf(isTrusted), By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
         waitUtility.waitForSeconds(4);
         synchronizedMethod();
-        if (platform == "Android") {
+        if (platform.equals("Android") ){
             if (driver == null) {
-                androidConnectionUtility = new AndroidConnectionUtility();
-
+                androidConnectionUtilities();
             } else {
                 log.debug("Android driver is connected");
             }
         } else {
             if (driver == null) {
-                iosConnectionUtility = new IOSConnectionUtility(Boolean.valueOf(isTrusted), props.getProperty("bundleID"),applicationName,By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
+                iosConnectionUtilities(Boolean.valueOf(isTrusted), props.getProperty("bundleID"),applicationName,By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
 
             } else {
                 log.debug("driver connected");

@@ -1,4 +1,5 @@
 package com.iexceed.uiframework.broweser;
+import com.iexceed.uiframework.core.TestBase;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,13 +11,13 @@ import java.util.List;
 
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
-public class AndroidConnectionUtility {
+
+public class AndroidConnectionUtility extends TestBase {
 
 
     private static final Logger log = LogManager.getLogger(AndroidConnectionUtility.class);
 
-    public AndroidConnectionUtility(){
-
+    public static void androidConnectionUtilities(){
         List<String> list = new ArrayList<>();
         list.add("LENOVO_M10Plus_Android_10.0.0_2ba36");
         list.add("SAMSUNG_GalaxyTabS4_Android_10.0.0_2133b");
@@ -43,7 +44,7 @@ public class AndroidConnectionUtility {
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
                     driver = new AndroidDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
                         appiumDriver=driver;
-                    log.debug("Device:{0}",appName,"driver connceted");
+                    log.debug(" driver connceted using Device:{}",appName);
 
                 }catch(Exception e){
                        log.debug(e);
