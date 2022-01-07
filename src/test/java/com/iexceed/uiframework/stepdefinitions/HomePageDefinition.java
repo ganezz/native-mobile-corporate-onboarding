@@ -51,7 +51,7 @@ public class HomePageDefinition extends TestBase {
             String[] arr=iosAppURL.split("//");
             String temp1=arr[0]+"//readuser:Re@d@1234@";
             iosAppURL=temp1+arr[1];
-            System.out.println(iosAppURL);
+            log.debug(iosAppURL);
 
             if(iosAppURL.equals(deviceConfig.get("oldAppURL")))
             {

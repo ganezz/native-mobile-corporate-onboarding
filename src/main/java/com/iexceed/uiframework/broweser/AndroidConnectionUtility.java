@@ -43,7 +43,7 @@ public class AndroidConnectionUtility {
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
                     driver = new AndroidDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
                         appiumDriver=driver;
-                    log.debug("Device:"+appName+"driver connceted");
+                    log.debug("Device:{0}",appName,"driver connceted");
 
                 }catch(Exception e){
                        log.debug(e);
