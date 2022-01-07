@@ -21,6 +21,8 @@ public class AndroidConnectionUtility extends TestBase {
         List<String> list = new ArrayList<>();
         list.add("LENOVO_M10Plus_Android_10.0.0_2ba36");
         list.add("SAMSUNG_GalaxyTabS4_Android_10.0.0_2133b");
+        list.add("SAMSUNG_GalaxyTabS5e_Android_11.0.0_cb1ca");
+
                 for (String appName : list) {
 
                 if (driver == null) {

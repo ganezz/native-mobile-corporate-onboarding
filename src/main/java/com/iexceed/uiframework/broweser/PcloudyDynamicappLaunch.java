@@ -52,7 +52,6 @@ public class PcloudyDynamicappLaunch extends TestBase {
         log.debug(appURL);
         String appURLtemp = "http://readuser:Re@d@1234@20.80.0.230:8082/artifactory/android-apk/ao/manual/qaRelease-1.0.8-31-12-2021-14:16.apk";
         log.debug(appURLtemp);
-        log.debug(appURL);
         TestBase.pcloudyInitialization(appURL);
         Thread.sleep(15000);
         waitUntilFileToDownload(appDownloadFilePath);
