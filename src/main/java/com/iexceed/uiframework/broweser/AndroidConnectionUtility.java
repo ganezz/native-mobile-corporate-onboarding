@@ -23,10 +23,10 @@ public class AndroidConnectionUtility extends TestBase {
         list.add("SAMSUNG_GalaxyTabS4_Android_10.0.0_2133b");
         list.add("SAMSUNG_GalaxyTabS5e_Android_11.0.0_cb1ca");
 
-                for (String appName : list) {
+        for (String appName : list) {
 
-                if (driver == null) {
-                    try{
+            if (driver == null) {
+                try{
                     DesiredCapabilities capabilities = new DesiredCapabilities();
                     capabilities.setCapability("pCloudy_Username", pcloudyUsername);
                     capabilities.setCapability("pCloudy_ApiKey", pcloudyApikey);
@@ -45,29 +45,19 @@ public class AndroidConnectionUtility extends TestBase {
                     capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
                     driver = new AndroidDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-                        appiumDriver=driver;
+                    appiumDriver=driver;
                     log.debug(" driver connceted using Device:{}",appName);
 
                 }catch(Exception e){
-                       log.debug(e);
-                    }
+                    log.debug(e);
                 }
+            }
             else{
-                    log.debug("driver is not null,its running ");
+                log.debug("driver is not null,its running ");
             }
 
-            }
         }
-
-
     }
 
 
-
-
-
-
-
-
-
-
+}
