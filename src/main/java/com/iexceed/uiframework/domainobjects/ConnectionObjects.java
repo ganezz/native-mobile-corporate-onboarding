@@ -58,13 +58,13 @@ public class ConnectionObjects extends TestBase {
         synchronizedMethod();
         if (platform.equals("Android") ){
             if (driver == null) {
-                androidConnectionUtilities();
+                androidConnectionUtilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"),platform,version,automationName,applicationName, props.getProperty("androidActivity"),props.getProperty("androidPackage"));
             } else {
                 log.debug("Android driver is connected");
             }
         } else {
             if (driver == null) {
-                iosConnectionUtilities(Boolean.valueOf(isTrusted), props.getProperty("bundleID"),applicationName,By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
+                iosConnectionUtilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"),platform,version,automationName,Boolean.valueOf(isTrusted), props.getProperty("bundleID"),applicationName,By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
 
             } else {
                 log.debug("driver connected");
