@@ -47,6 +47,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
     }
 
     public static void chromeAPPlaunch() throws Exception {
+
         appURL = launchApp();
         String[] arr = appURL.split("//");
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
