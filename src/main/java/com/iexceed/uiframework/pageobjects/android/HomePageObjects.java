@@ -44,7 +44,7 @@ public class HomePageObjects {
 
 
     public void clickUserRegBtn() throws Exception {
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(5);
         genericMethods.isElementPresent(userDetailsRegBt);
         genericMethods.click(userDetailsRegBt);
     }

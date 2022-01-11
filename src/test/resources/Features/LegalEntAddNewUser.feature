@@ -67,7 +67,7 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_011 |
 
 
-
+@c
   Scenario Outline: Validate Country Code, mandatory field with Drop Down
     And user in Home screen <testcase>
     When clicks Register Button
@@ -83,7 +83,7 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_012 |
       | TestCase_017 |
 
-
+@mob
   Scenario Outline: Validate Mobile Number, mandatory Field with Max and Min are with respect to Country Code
     And user in Home screen <testcase>
     When clicks Register Button

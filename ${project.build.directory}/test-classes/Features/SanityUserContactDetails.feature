@@ -5,7 +5,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   Background: User should able to open App
     Given user opens the App batch4
 
-
+@1
   Scenario Outline:  Validate Add A New Application button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -14,6 +14,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase     |
       | TestCase_000 |
 
+  @2
   Scenario Outline:  Validate English language button
     And user in Home screen <testcase>
     When clicks English Button
@@ -22,6 +23,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_001 |
 
+    @3
   Scenario Outline:  Validate Arabic button
     And user in Home screen <testcase>
     When clicks Arabic Button
@@ -30,7 +32,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase     |
       | TestCase_002 |
 
-
+@4
   Scenario Outline: Validate + Add A New User Button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -43,7 +45,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_004 |
       | TestCase_005 |
 
-
+@5
   Scenario Outline: validating User Name field with max 100 characters,No Special characters and numeric allowed except space, Mandatory Field
     And user in Home screen <testcase>
     When clicks Register Button
@@ -61,6 +63,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_005 |
       | TestCase_006 |
 
+  @6
   Scenario Outline: validating Email field with max 80 characters, limited special characters only allowed, Mandatory Field
     And user in Home screen <testcase>
     When clicks Register Button
@@ -79,7 +82,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_011 |
 
 
-
+@7
   Scenario Outline: validating Code field with max 5 characters, Drop down, Mandatory Field
     And user in Home screen <testcase>
     When clicks Register Button
@@ -95,7 +98,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_012 |
       | TestCase_017 |
 
-
+@8
   Scenario Outline: validating Mobile field with max 20 characters, Alphabets and Special Characters not allowed, Mandatory Field
     And user in Home screen <testcase>
     When clicks Register Button
@@ -113,6 +116,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_015 |
       | TestCase_016 |
 
+  @9
   Scenario Outline: validating Add A New User Screen Cancel button with Ok button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -126,7 +130,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
     Examples:
       | testcase |
       | TestCase_018 |
-
+@10
   Scenario Outline: validating Add A New User Screen Cancel button with Cancel button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -141,7 +145,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_020 |
 
-
+@11
   Scenario Outline: validating Confirm button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -157,6 +161,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
+  @12
   Scenario Outline: validating Edit button in User List
     And user in Home screen <testcase>
     When clicks Register Button
@@ -179,6 +184,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
+    @13
   Scenario Outline: validating Delete icon with Ok button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -195,7 +201,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
-
+@14
   Scenario Outline: validating Delete icon with Cancel button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -212,6 +218,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
+  @15
   Scenario Outline: validating User Contact Details screen Cancel button with Cancel button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -224,6 +231,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_002 |
 
+    @16
   Scenario Outline: validating User Contact Details screen Cancel button with Ok button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -237,7 +245,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_002 |
 
 
-  @2
+  @a
   Scenario Outline: Validate Search field
     And user in Home screen <testcase>
     When clicks Register Button
@@ -250,7 +258,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase     |
       | TestCase_002 |
 
-  @3
+  @b
   Scenario Outline:  Validate Search field in Arabic
     And user in Home screen <testcase>
     When clicks Arabic Button
@@ -263,7 +271,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase     |
       | TestCase_023 |
 
-  @a
+  @c
   Scenario Outline: Validate Gesture in side menu
     And user in Home screen <testcase>
     When clicks Register Button
@@ -274,7 +282,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_003 |
 
-  @b
+  @d
   Scenario Outline:  Validate Arabic Gesture in side menu
     And user in Home screen <testcase>
     When clicks Arabic Button
@@ -285,12 +293,13 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase     |
       | TestCase_023 |
 
+@e
   Scenario Outline: validating Continue button
     And user in Home screen <testcase>
     When clicks Register Button
     Then user will landed on Legal Entity User Details
     And clicks on Continue Button
-    Then user lands on homepage dueto feaure not yet developed <testcase>
+    Then user lands on entity legal screen <testcase>
     Examples:
       | testcase |
       | TestCase_002 |

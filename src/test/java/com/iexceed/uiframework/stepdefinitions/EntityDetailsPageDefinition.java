@@ -121,10 +121,8 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("user input invalid Mobile Number$")
     public void user_input_invalid_mobile_number() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        user_input_invalid_name();
-        user_input_invalid_email_address();
-        entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
+
+        user_selects_country_code();
         log.info("user input invalid Mobile Number");
 
     }
@@ -133,7 +131,7 @@ public class EntityDetailsPageDefinition extends TestBase {
     public void user_selects_country_code() throws Exception {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.selectCountryCode(datalist.get("countryCode"));
-        log.info("user selects Country Code");
+        log.info(" Country Code selected");
         entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
     }
 
@@ -256,13 +254,11 @@ public class EntityDetailsPageDefinition extends TestBase {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickcontinueBtn();
     }
-
-    @Then("user lands on homepage dueto feaure not yet developed (.+)$")
-    public void user_lands_on_homepage_dueto_feaure_not_yet_developed(String testcase) throws Exception {
-        log.info("user lands on homepage dueto feaure not yet developed");
-        HomePageDefinition homePageDefinition = new HomePageDefinition();
-        homePageDefinition.user_in_home_screen(testcase);
+    @Then("user lands on entity legal screen (.+)$")
+    public void user_lands_on_entity_legal_screen(String testcase){
+       log.debug("user lands on entity legal screen ");
     }
+
 }
 
 

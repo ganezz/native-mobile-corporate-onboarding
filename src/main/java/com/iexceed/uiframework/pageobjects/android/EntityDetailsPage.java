@@ -39,6 +39,7 @@ public class EntityDetailsPage {
     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
     By countryField = By.xpath("//*[@text='+93']");
+    By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
     By mobNumField = By.xpath("//*[@text='Mobile *']");
     By cancelBtn = By.xpath("//*[@text='Cancel']");
@@ -53,12 +54,11 @@ public class EntityDetailsPage {
     By okBtn = By.xpath("//*[@text='OK']");
     By noButton = By.xpath("//android.view.View[3]");
     By continueBtn = By.xpath("//*[@text='Continue']");
-    By consultMsg1 = By.xpath("//*[@text='Added New Sub Feature One by consultant Team inside Entity ']");
-    By consultMsg2 = By.xpath("//*[@text='Added New Feature by consultant Team inside ']");
     By searchBar = By.xpath("//android.widget.EditText");
     By clearField = By.xpath("//android.view.View[@content-desc='Clear Field']");
     By clearFieldArabic = By.xpath("//android.view.View[@content-desc='الحقل خالى']");
 
+    By entityLegalName= By.xpath("//android.view.View[@text='Entity Legal Name *']");
 
     public void clickAddNewuserBtn() {
         try {
@@ -232,16 +232,17 @@ public class EntityDetailsPage {
     public void enterCountryCode(String countryCode) throws Exception {
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(3);
+        driver.findElement(searchField).click();
+        genericMethods.sendKeys(searchField,countryCode);
         log.info(driver.findElements(countryList).size());
         List<WebElement> temoCountryList = driver.findElements(countryList);
-        String countryCodeTemp = "+" + countryCode;
-        androidUtility.selectionOfDropdown(countryCodeTemp, temoCountryList);
+        androidUtility.selectionOfDropdown(countryCode, temoCountryList);
 
     }
 
     public void enterMobNum(String mob) throws Exception {
         log.info(driver.findElements(editField).size());
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(5);
         Boolean b = genericMethods.isElementPresent(editField);
         try {
             if (Boolean.TRUE.equals(b)) {
@@ -333,23 +334,15 @@ public class EntityDetailsPage {
     }
 
     public void clickContinueBtn() throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(3);
         genericMethods.click(continueBtn);
-        Boolean b = genericMethods.isElementPresent(consultMsg1);
+        Boolean b = genericMethods.isElementPresent(entityLegalName);
 
             if (Boolean.TRUE.equals(b)) {
-                genericMethods.click(continueBtn);
-                waitUtility.waitForSeconds(2);
-                Boolean b1 = genericMethods.isElementPresent(consultMsg2);
-
-                if (Boolean.TRUE.equals(b1)) {
-                    genericMethods.click(continueBtn);
-                }else{
-                    log.debug(genericMethods.getText(consultMsg2),"{}is not present");
-                }
+                log.debug("screen navigate to entity legal screen");
             }
             else{
-                log.debug(genericMethods.getText(consultMsg1),"{}is not present");
+                log.debug("screen navigation is not happening");
             }
 
     }
