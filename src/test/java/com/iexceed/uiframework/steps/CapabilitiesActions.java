@@ -6,7 +6,7 @@ import java.util.Map;
 public class CapabilitiesActions {
     ConnectionObjects connectionObjects;
 
-    public CapabilitiesActions(String platform) throws Exception {
+    public CapabilitiesActions(String platform)  {
         connectionObjects = new ConnectionObjects(platform);
     }
 

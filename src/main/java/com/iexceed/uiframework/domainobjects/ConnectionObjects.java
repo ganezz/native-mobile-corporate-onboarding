@@ -13,7 +13,6 @@ import org.openqa.selenium.WebElement;
 import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
 import static com.iexceed.uiframework.broweser.AndroidConnectionUtility.androidConnectionUtilities;
 import static com.iexceed.uiframework.broweser.IOSConnectionUtility.iosConnectionUtilities;
-import static com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch.countApp;
 
 public class ConnectionObjects extends TestBase {
 
@@ -27,7 +26,7 @@ public class ConnectionObjects extends TestBase {
     public ConnectionObjects(String platform) {
 
         if (platform.equalsIgnoreCase("Android")) {
-            if (countApp == 0) {
+            if (PcloudyDynamicappLaunch.getCountApp() == 0) {
                 try {
                     pcloudyDynamicAPPLaunch = new PcloudyDynamicappLaunch();
                 } catch (Exception e) {
@@ -42,7 +41,7 @@ public class ConnectionObjects extends TestBase {
         waitUtility = new WaitUtility();
     }
 
-    public synchronized void synchronizedMethod() {
+    public  synchronized void synchronizedMethod() {
         if (driver == null) {
             driver = appiumDriver;
         } else {
@@ -52,23 +51,24 @@ public class ConnectionObjects extends TestBase {
 
     public void setRemoteDeviceCapabilities(String platform, String version, String deviceName, String automationName, String applicationName, String maxDuration, String isTrusted) throws Exception {
         waitUtility.waitForSeconds(8);
-        createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName, automationName, applicationName, props.getProperty("androidActivity"), props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration, props.getProperty("deviceURL"), props.getProperty("orientation"),
+        createConnection.setRemoteDeviceCapabilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"), platform, version, deviceName, automationName, applicationName, props.getProperty("androidActivity"),props.getProperty("androidPackage"), props.getProperty("bundleID"), maxDuration, props.getProperty("deviceURL"), props.getProperty("orientation"),
                 Boolean.valueOf(isTrusted), By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
         waitUtility.waitForSeconds(4);
         synchronizedMethod();
-        if (platform.equals("Android") ){
+        if (platform.equals("Android")) {
             if (driver == null) {
-                androidConnectionUtilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"),platform,version,automationName,applicationName, props.getProperty("androidActivity"),props.getProperty("androidPackage"));
+                androidConnectionUtilities();
             } else {
                 log.debug("Android driver is connected");
             }
         } else {
             if (driver == null) {
-                iosConnectionUtilities(props.getProperty("pcloudyUsername"), props.getProperty("pcloudyApikey"),platform,version,automationName,Boolean.valueOf(isTrusted), props.getProperty("bundleID"),applicationName,By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
+                iosConnectionUtilities(Boolean.valueOf(isTrusted), props.getProperty("bundleID"), applicationName, By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
 
             } else {
                 log.debug("driver connected");
             }
+
         }
     }
 

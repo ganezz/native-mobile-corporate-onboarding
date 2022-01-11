@@ -22,14 +22,13 @@ public class PcloudyDynamicappLaunch extends TestBase {
     static File f2;
     static String renamedFilePath;
     static String renamedAppPath;
-    public static int countApp = 0;
+     static int countApp = 0;
     private static final Logger log = LogManager.getLogger(PcloudyDynamicappLaunch.class);
 
     static String appDownloadFilePath = props.getProperty("downloadFilepath");
     private static final WaitUtility waitUtility = new WaitUtility();
 
     public PcloudyDynamicappLaunch() throws Exception {
-
         chromeAPPlaunch();
         log.debug("app download to local");
         Thread.sleep(3000);
@@ -43,8 +42,11 @@ public class PcloudyDynamicappLaunch extends TestBase {
         log.debug("app uploaded to pcloudy");
     }
 
+    public static int getCountApp() {
+        return countApp++;
+    }
 
-    public static int chromeAPPlaunch() throws Exception {
+    public static void chromeAPPlaunch() throws Exception {
         appURL = launchApp();
         String[] arr = appURL.split("//");
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
@@ -56,8 +58,6 @@ public class PcloudyDynamicappLaunch extends TestBase {
         Thread.sleep(15000);
         waitUntilFileToDownload(appDownloadFilePath);
         fileRenaming();
-        ++countApp;
-        return countApp;
 
     }
 
@@ -92,13 +92,10 @@ public class PcloudyDynamicappLaunch extends TestBase {
 
 
     public static void fileRenaming() throws Exception, NullPointerException {
-
-
         f2 = new File("Automation-1-0-8-03-01-2022");
         renamedFilePath = f2.getName();
         log.debug("Renamed f2 file path :{}", renamedFilePath);
         waitUtility.waitForSeconds(3);
-
         File newfile = getTheNewestFile(appDownloadFilePath, "apk");
         waitUtility.waitForSeconds(4);
         if (newfile == null) {
