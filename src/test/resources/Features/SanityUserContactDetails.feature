@@ -161,7 +161,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
-  @12
+
   Scenario Outline: validating Edit button in User List
     And user in Home screen <testcase>
     When clicks Register Button
@@ -184,7 +184,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
-    @13
+
   Scenario Outline: validating Delete icon with Ok button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -218,7 +218,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
-  @15
+
   Scenario Outline: validating User Contact Details screen Cancel button with Cancel button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -231,7 +231,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_002 |
 
-    @16
+    @c4
   Scenario Outline: validating User Contact Details screen Cancel button with Ok button
     And user in Home screen <testcase>
     When clicks Register Button
@@ -245,7 +245,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_002 |
 
 
-  @a
+  @c5
   Scenario Outline: Validate Search field
     And user in Home screen <testcase>
     When clicks Register Button

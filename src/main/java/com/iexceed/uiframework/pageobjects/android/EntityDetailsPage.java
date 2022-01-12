@@ -38,7 +38,7 @@ public class EntityDetailsPage {
     By confirmBtn = By.xpath("//*[@text='Confirm']");
     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
-    By countryField = By.xpath("//*[@text='+93']");
+    By countryField = By.xpath("//android.view.View[@text='Code *']");
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
     By mobNumField = By.xpath("//*[@text='Mobile *']");
@@ -101,7 +101,7 @@ public class EntityDetailsPage {
 
     public void addUserName(String userName, String limit) throws Exception {
         String regex = "@@^[-!@#%&()']*$/";
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(7);
         genericMethods.click(editField);
         androidUtility.clearText(editField);
         genericMethods.sendKeys(editField, userName);
@@ -230,6 +230,7 @@ public class EntityDetailsPage {
 
 
     public void enterCountryCode(String countryCode) throws Exception {
+
         driver.findElement(countryField).click();
         waitUtility.waitForSeconds(3);
         driver.findElement(searchField).click();
@@ -262,7 +263,8 @@ public class EntityDetailsPage {
         }
     }
 
-    public void clickCancelBtn() {
+    public void clickCancelBtn() throws Exception {
+        waitUtility.waitForSeconds(4);
         genericMethods.click(cancelBtn);
     }
 

@@ -37,12 +37,12 @@ public class AndroidConnectionUtility extends TestBase {
                     capabilities.setCapability("platformVersion", "11.0.0");
                     capabilities.setCapability("platformName", "Android");
                     capabilities.setCapability("automationName", "uiautomator2");
-                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-8-03-01-2022.apk");
+                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-10-11-01-2022.apk");
                     capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.qa");
                     capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
                     capabilities.setCapability("pCloudy_WildNet", "true");
                     capabilities.setCapability("pCloudy_EnableVideo", "true");
-                    capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
+                    capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
                     driver = new AndroidDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
                     appiumDriver=driver;

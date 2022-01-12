@@ -135,6 +135,21 @@ public class EntityDetailsPageDefinition extends TestBase {
         entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
     }
 
+    @Then("user is displayed with the selected value in Code field$")
+    public void user_is_displayed_with_the_selected_value_in_code_field() {
+      log.debug("user is displayed with the selected value in Code field");
+    }
+
+    @And("lands on new screen with the drop down values and search option$")
+    public void lands_on_new_screen_with_the_drop_down_values_and_search_option()  {
+       log.debug("lands on new screen with the drop down values and search option");
+    }
+
+    @And("selects a value$")
+    public void selects_a_value() {
+       log.debug("selects a value");
+    }
+
 
     @Then("user will land on User Contact Details$")
     public void user_will_land_on_user_contact_details() throws Exception {
