@@ -24,9 +24,10 @@ public class HomePageDefinition extends TestBase {
     public static Map<String, String> datalist;
     public static Logger log = LogManager.getLogger(HomePageDefinition.class);
     TestDataHandler testdata = new TestDataHandler();
-      public static String iosAppURL;
+    public static String iosAppURL;
     public static String androidAppURL;
     private final WaitUtility waitUtility=new WaitUtility();
+
 
     @Given("user opens the App (.+)$")
     public void user_open_the_app_in_device(String testcase) throws Exception {
@@ -38,8 +39,8 @@ public class HomePageDefinition extends TestBase {
             log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
-            androidAppURL=launchApp();
-//            androidAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
+//            androidAppURL=launchApp();
+            androidAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
             ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
             testdata.setTestDataInMap(deviceConfig);
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
@@ -74,8 +75,11 @@ public class HomePageDefinition extends TestBase {
     }
 
 
+
+
     @And("user in Home screen (.+)$")
     public void user_in_home_screen(String testcase) throws Exception {
+
         HomePageAction homePageAction = new HomePageAction();
         homePageAction.isHomePageVisible(deviceConfig.get("platform"));
         log.info("user in Home screen");
@@ -83,6 +87,7 @@ public class HomePageDefinition extends TestBase {
         log.info("Test Case :" + datalist.get("TestCaseName"));
         testdata.setTestDataInMap(deviceConfig);
         testdata.setTestDataInMap(datalist);
+
     }
 
     @When("clicks Register Button$")

@@ -274,6 +274,8 @@ public class EntityDetailsPageDefinition extends TestBase {
        log.debug("user lands on entity legal screen ");
     }
 
+
+
 }
 
 

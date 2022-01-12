@@ -218,7 +218,7 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | testcase |
       | TestCase_021 |
 
-  @c3
+
   Scenario Outline: validating User Contact Details screen Cancel button with Cancel button
     And user in Home screen <testcase>
     When clicks Register Button

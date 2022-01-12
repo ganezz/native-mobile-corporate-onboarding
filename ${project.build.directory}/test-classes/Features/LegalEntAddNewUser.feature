@@ -13,10 +13,10 @@ Feature: Validating Add New User screen in NM_CO
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_003 |
 
-@b
+  @b
   Scenario Outline:  Validate Arabic Gesture in side menu
     And user in Home screen <testcase>
     When clicks Arabic Button
@@ -26,8 +26,6 @@ Feature: Validating Add New User screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_023 |
-
-
 
 
   Scenario Outline: Validate Name, mandatory Field with Max 100 characters and special characters are not allowed
@@ -41,14 +39,14 @@ Feature: Validating Add New User screen in NM_CO
     And clicks on Confirm button
     Then proper error message should display under User Name field
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_003 |
       | TestCase_004 |
       | TestCase_005 |
       | TestCase_006 |
 
 
-@email
+  @email
   Scenario Outline: Validate Email Address, mandatory Field with Max 100 characters and special characters not allowed and Case insensitive
     And user in Home screen <testcase>
     When clicks Register Button
@@ -59,7 +57,7 @@ Feature: Validating Add New User screen in NM_CO
     And clicks on Confirm button
     Then proper error message should display under email field
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_007 |
       | TestCase_008 |
       | TestCase_009 |
@@ -67,7 +65,7 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_011 |
 
 
-@c
+  @c
   Scenario Outline: Validate Country Code, mandatory field with Drop Down
     And user in Home screen <testcase>
     When clicks Register Button
@@ -76,14 +74,17 @@ Feature: Validating Add New User screen in NM_CO
     And user will landed on the New User screen
     And enters all details in Add A New User screen
     And user selects Country Code
+    And lands on new screen with the drop down values and search option
+    And selects a value
+    Then user is displayed with the selected value in Code field
     And clicks on Confirm button
     Then user will land on User Contact Details
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_012 |
       | TestCase_017 |
 
-@mob
+  @mob
   Scenario Outline: Validate Mobile Number, mandatory Field with Max and Min are with respect to Country Code
     And user in Home screen <testcase>
     When clicks Register Button
@@ -95,12 +96,11 @@ Feature: Validating Add New User screen in NM_CO
     And clicks on Confirm button
     Then proper error message should display under mobile field
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_013 |
       | TestCase_014 |
       | TestCase_015 |
       | TestCase_016 |
-
 
 
   Scenario Outline:  Validate Cancel button in Add A New User screen and click Yes button
@@ -114,7 +114,7 @@ Feature: Validating Add New User screen in NM_CO
     And clicks Yes button <testcase>
     Then user will land on User Contact Details
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_018 |
       | TestCase_019 |
 
@@ -130,7 +130,7 @@ Feature: Validating Add New User screen in NM_CO
     And clicks No button
     Then user will stay on Add A New User screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_020 |
 
 
@@ -146,7 +146,7 @@ Feature: Validating Add New User screen in NM_CO
     Then user will land on User Contact Details
     And user given details will display on User Contact Details screen <testcase>
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_021 |
 
 
