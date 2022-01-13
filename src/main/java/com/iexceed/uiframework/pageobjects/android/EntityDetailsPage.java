@@ -58,7 +58,7 @@ public class EntityDetailsPage {
     By clearField = By.xpath("//android.view.View[@content-desc='Clear Field']");
     By clearFieldArabic = By.xpath("//android.view.View[@content-desc='الحقل خالى']");
 
-    By entityLegalName= By.xpath("//android.view.View[@text='Entity Legal Name *']");
+    By entityLegalName = By.xpath("//android.view.View[@text='Entity Legal Name *']");
 
     public void clickAddNewuserBtn() {
         try {
@@ -77,9 +77,9 @@ public class EntityDetailsPage {
         }
 
         genericMethods.click(hamBurgerMenu);
-        Boolean b=genericMethods.isElementPresent(menuList);
+        Boolean b = genericMethods.isElementPresent(menuList);
         if (Boolean.TRUE.equals(b)) {
-           log.debug("menu is swipped");
+            log.debug("menu is swipped");
         }
         genericMethods.click(hamBurgerMenu);
         log.debug("menu swipped is closed");
@@ -231,10 +231,10 @@ public class EntityDetailsPage {
 
     public void enterCountryCode(String countryCode) throws Exception {
 
-        driver.findElement(countryField).click();
+        genericMethods.click(countryField);
         waitUtility.waitForSeconds(3);
-        driver.findElement(searchField).click();
-        genericMethods.sendKeys(searchField,countryCode);
+        genericMethods.click(searchField);
+        genericMethods.sendKeys(searchField, countryCode);
         log.info(driver.findElements(countryList).size());
         List<WebElement> temoCountryList = driver.findElements(countryList);
         androidUtility.selectionOfDropdown(countryCode, temoCountryList);
@@ -272,16 +272,15 @@ public class EntityDetailsPage {
         Boolean b = genericMethods.isElementPresent(confirmationMsg);
         Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsg);
 
-            if (Boolean.TRUE.equals(b)) {
-                genericMethods.waitForVisibility(confirmationMsg);
-                log.info(genericMethods.isElementPresent(confirmationMsg));
-            } else if(Boolean.TRUE.equals(b1)) {
-                genericMethods.isElementPresent(deleteConfirmationMsg);
-            }
-        else {
-               genericMethods.waitForVisibility(confirmationMsg1);
-                genericMethods.isElementPresent(confirmationMsg1);
-            }
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.waitForVisibility(confirmationMsg);
+            log.info(genericMethods.isElementPresent(confirmationMsg));
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.isElementPresent(deleteConfirmationMsg);
+        } else {
+            genericMethods.waitForVisibility(confirmationMsg1);
+            genericMethods.isElementPresent(confirmationMsg1);
+        }
     }
 
     public void clickYEsBtnValidation() throws Exception {
@@ -302,12 +301,12 @@ public class EntityDetailsPage {
     public void isBottomValidationMsgPresent() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(validateUseCreationMsg);
-          if(Boolean.TRUE.equals(b)) {
-                genericMethods.isElementPresent(validateUseCreationMsg);
-                genericMethods.click(closeBtn);
-            }else{
-                genericMethods.click(closeBtn);
-            }
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.isElementPresent(validateUseCreationMsg);
+            genericMethods.click(closeBtn);
+        } else {
+            genericMethods.click(closeBtn);
+        }
 
     }
 
@@ -336,16 +335,16 @@ public class EntityDetailsPage {
     }
 
     public void clickContinueBtn() throws Exception {
-        waitUtility.waitForSeconds(3);
+        waitUtility.waitForSeconds(5);
+        driver.hideKeyboard();
         genericMethods.click(continueBtn);
         Boolean b = genericMethods.isElementPresent(entityLegalName);
 
-            if (Boolean.TRUE.equals(b)) {
-                log.debug("screen navigate to entity legal screen");
-            }
-            else{
-                log.debug("screen navigation is not happening");
-            }
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("screen navigate to entity legal screen");
+        } else {
+            log.debug("screen navigation is not happening");
+        }
 
     }
 
