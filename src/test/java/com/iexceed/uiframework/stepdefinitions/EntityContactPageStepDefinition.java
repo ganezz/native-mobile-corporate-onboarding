@@ -27,9 +27,9 @@ public class EntityContactPageStepDefinition extends TestBase {
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
         entityContactPageActions.isEntityContactInfoPage();
     }
-    @Then("user remains in User Contact Information screen$")
-    public void user_remains_in_user_contact_information_screen(){
-        user_is_in_entity_contact_information_screen();
+    @Then("user remains in User Contact Information screen (.+)$")
+    public void user_remains_in_user_contact_information_screen(String testcase) throws Exception {
+        user_is_in_entity_contact_information_screen(testcase);
     }
 
 

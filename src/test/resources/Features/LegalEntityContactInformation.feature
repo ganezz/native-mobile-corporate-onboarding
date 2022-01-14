@@ -46,13 +46,13 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | TestCase_055 |
       | TestCase_056 |
 
-@3
+  @3
   Scenario Outline: Validate + Add A New Address Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     Then user lands on Add A New Address screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_056 |
 
   @4
@@ -71,7 +71,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | TestCase_061 |
       | TestCase_062 |
 
-@5
+  @5
   Scenario Outline: Validate Street/Area optional Field with Max 100 characters and should follow url regex and Case insensitive
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
@@ -102,6 +102,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | TestCase_072 |
       | TestCase_073 |
       | TestCase_074 |
+
   @7
   Scenario Outline: Validate zip code optional Field with Max 100 characters and should follow url regex and Case insensitive
     When user is in Entity Contact Information screen <testcase>
@@ -130,7 +131,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | testcase     |
       | TestCase_012 |
       | TestCase_017 |
-@9
+
+  @9
   Scenario Outline: validating Edit button in Address List
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
@@ -149,9 +151,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | testcase     |
       | TestCase_081 |
 
-@10
+  @10
   Scenario Outline: validating Delete icon with Ok button
-  When user is in Entity Contact Information screen <testcase>
+    When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     Then user lands on Add A New Address screen
     And fills valid data in AddressType, UnitNo,Building name,street,Area, Country, State, town,city, zip,postalCode, PO Box
@@ -183,16 +185,18 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | testcase     |
       | TestCase_081 |
 
-    @12
+  @12
   Scenario Outline: validating User Contact Information screen Cancel button with Cancel button
-      When user is in Entity Contact Information screen <testcase>
-      And clicks Cancel button
-      Then user will prompt to ask about confirmation
-      And clicks No button
-    Then user remains in User Contact Information screen
+    When user is in Entity Contact Information screen <testcase>
+    And clicks Cancel button
+    Then user will prompt to ask about confirmation
+    And clicks No button
+    Then user remains in User Contact Information screen <testcase>
     Examples:
-      | testcase |
-@13
+      | testcase     |
+      | TestCase_081 |
+
+  @13
   Scenario Outline: validating User Contact Information screen Cancel button with Ok button
     When user is in Entity Contact Information screen <testcase>
     And clicks Cancel button
@@ -200,7 +204,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And clicks Yes button <testcase>
     Then user will land on Dashboard screen <testcase>
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_081 |
 
   @14
   Scenario Outline: validating Continue button
@@ -208,4 +213,5 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And clicks on Continue Button
     Then user lands on Business Location screen
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_081 |
