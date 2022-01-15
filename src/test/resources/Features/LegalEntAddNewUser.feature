@@ -93,6 +93,9 @@ Feature: Validating Add New User screen in NM_CO
       | testcase     |
       | TestCase_012 |
       | TestCase_017 |
+      | TestCase_091 |
+      | TestCase_092 |
+
 
   @mob
   Scenario Outline: Validate Mobile Number, mandatory Field with Max and Min are with respect to Country Code
@@ -111,6 +114,11 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_014 |
       | TestCase_015 |
       | TestCase_016 |
+      | TestCase_093 |
+      | TestCase_094 |
+      | TestCase_095 |
+      | TestCase_096 |
+
 
 
   Scenario Outline:  Validate Cancel button in Add A New User screen and click Yes button
@@ -127,6 +135,8 @@ Feature: Validating Add New User screen in NM_CO
       | testcase     |
       | TestCase_018 |
       | TestCase_019 |
+      | TestCase_097 |
+      | TestCase_098 |
 
 
   Scenario Outline:  Validate Cancel button in Add A New User screen and click No button
@@ -142,6 +152,7 @@ Feature: Validating Add New User screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_020 |
+      | TestCase_099 |
 
 
   Scenario Outline: validate Confirm button in Add A New User screen

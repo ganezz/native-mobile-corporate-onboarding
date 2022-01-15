@@ -67,11 +67,11 @@ public class EntityDetailsPageActions {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iEnterEmail(email, limit);
         } else {
-            entityDetailsPage.enterEmail(email, limit);
+            entityDetailsPage.enterEmail(email);
         }
     }
 
-    public void clickCOnfirmBtn() throws InterruptedException {
+    public void clickCOnfirmBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClickConfirmBtn();
         } else {

@@ -44,19 +44,27 @@ public class EntityDetailsPage {
     By validationMSg1Arabic = By.xpath("//*[@text='الرجاء إدخال هذا الحقل']");
 
     By countryField = By.xpath("//android.view.View[@text='Code *']");
+    By countryFieldArabic = By.xpath("//*[@text='الشفرة *']");
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
     By mobNumField = By.xpath("//*[@text='Mobile *']");
     By cancelBtn = By.xpath("//*[@text='Cancel']");
+    By cancelBtnArabic = By.xpath("//android.view.View[@text='يلغي']");
     By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
     By confirmationMsg1 = By.xpath("//*[@text='Do you want to cancel the application ?']");
+    By confirmationMsgArabic = By.xpath("//android.view.View[@text='هل تريد الالغاء ؟']");
+    By confirmationMsg1Arabic = By.xpath("//android.view.View[@text='هل تريد إلغاء التطبيق؟']");
     By validateUseCreationMsg = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
+    By validateUseCreationMsgArabic = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
     By closeBtn = By.xpath("//*[@text='Close']");
+    By closeBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By viewDataDetails = By.xpath("//android.view.View");
     By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
     By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
     By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
+    By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف المستخدم من القائمة؟']");
     By okBtn = By.xpath("//*[@text='OK']");
+    By okBtnArabic = By.xpath("//android.view.View[@text='نعم']");
     By noButton = By.xpath("//android.view.View[3]");
     By continueBtn = By.xpath("//*[@text='Continue']");
     By searchBar = By.xpath("//android.widget.EditText");
@@ -150,8 +158,8 @@ public class EntityDetailsPage {
     }
 
 
-    public void enterEmail(String emaill, String limit) throws Exception {
-        String emailIdTxt = null;
+    public void enterEmail(String emaill) {
+
         log.debug(driver.findElements(editField).size());
         try {
             editField1.findElements(driver).get(1).click();
@@ -175,24 +183,23 @@ public class EntityDetailsPage {
 
     }
 
-    public void clickConfirmBtn() throws InterruptedException {
+    public void clickConfirmBtn() throws Exception {
+        genericMethods.hideKeyboard();
         Boolean b = genericMethods.isElementPresent(confirmBtn);
+
         if (Boolean.TRUE.equals(b)) {
             try {
-                genericMethods.hideKeyboard();
                 genericMethods.click(confirmBtn);
             } catch (Exception e) {
                 log.debug("keyboard is not alive");
                 genericMethods.click(confirmBtn);
             }
         } else {
-            try {
-                genericMethods.hideKeyboard();
-                genericMethods.click(confirmBtnArabic);
-            } catch (Exception e) {
-                log.debug("keyboard is not alive");
-                genericMethods.click(confirmBtnArabic);
-            }
+
+            genericMethods.hideKeyboard();
+            waitUtility.waitForSeconds(2);
+            genericMethods.click(confirmBtnArabic);
+
         }
 
     }
@@ -237,14 +244,25 @@ public class EntityDetailsPage {
 
 
     public void enterCountryCode(String countryCode) throws Exception {
-
-        genericMethods.click(countryField);
-        waitUtility.waitForSeconds(3);
-        genericMethods.click(searchField);
-        genericMethods.sendKeys(searchField, countryCode);
-        log.info(driver.findElements(countryList).size());
-        List<WebElement> temoCountryList = driver.findElements(countryList);
-        androidUtility.selectionOfDropdown(countryCode, temoCountryList);
+        try {
+            genericMethods.isElementPresent(countryField);
+            genericMethods.click(countryField);
+            waitUtility.waitForSeconds(3);
+            genericMethods.waitForVisibility(searchField);
+            genericMethods.click(searchField);
+            genericMethods.sendKeys(searchField, countryCode);
+            log.info(driver.findElements(countryList).size());
+            List<WebElement> temoCountryList = driver.findElements(countryList);
+            androidUtility.selectionOfDropdown(countryCode, temoCountryList);
+        } catch (Exception e) {
+            genericMethods.click(countryFieldArabic);
+            waitUtility.waitForSeconds(3);
+            genericMethods.click(searchField);
+            genericMethods.sendKeys(searchField, countryCode);
+            log.info(driver.findElements(countryList).size());
+            List<WebElement> temoCountryList = driver.findElements(countryList);
+            androidUtility.selectionOfDropdown(countryCode, temoCountryList);
+        }
 
     }
 
@@ -272,30 +290,55 @@ public class EntityDetailsPage {
 
     public void clickCancelBtn() throws Exception {
         waitUtility.waitForSeconds(4);
-        genericMethods.click(cancelBtn);
+        Boolean b = genericMethods.isElementPresent(cancelBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(cancelBtn);
+        } else {
+            genericMethods.click(cancelBtnArabic);
+        }
     }
 
-    public void isYesNoBtnPresentConfirmation() throws InterruptedException {
-        Boolean b = genericMethods.isElementPresent(confirmationMsg);
-        Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsg);
 
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.waitForVisibility(confirmationMsg);
-            log.info(genericMethods.isElementPresent(confirmationMsg));
-        } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(deleteConfirmationMsg);
-        } else {
-            genericMethods.waitForVisibility(confirmationMsg1);
-            genericMethods.isElementPresent(confirmationMsg1);
+    public void isYesNoBtnPresentConfirmation() throws InterruptedException {
+        try {
+            Boolean b = genericMethods.isElementPresent(confirmationMsg);
+            Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsg);
+            if (Boolean.TRUE.equals(b)) {
+                genericMethods.waitForVisibility(confirmationMsg);
+                log.info(genericMethods.isElementPresent(confirmationMsg));
+            } else if (Boolean.TRUE.equals(b1)) {
+                genericMethods.isElementPresent(deleteConfirmationMsg);
+            } else {
+                genericMethods.waitForVisibility(confirmationMsg1);
+                genericMethods.isElementPresent(confirmationMsg1);
+            }
+        }catch(Exception e){
+            Boolean c = genericMethods.isElementPresent(confirmationMsgArabic);
+            Boolean c1 = genericMethods.isElementPresent(deleteConfirmationMsgArabic);
+            if (Boolean.TRUE.equals(c)) {
+                genericMethods.waitForVisibility(confirmationMsgArabic);
+                log.info(genericMethods.isElementPresent(confirmationMsgArabic));
+            } else if (Boolean.TRUE.equals(c1)) {
+                genericMethods.isElementPresent(deleteConfirmationMsgArabic);
+            } else {
+                genericMethods.waitForVisibility(confirmationMsg1Arabic);
+                genericMethods.isElementPresent(confirmationMsg1Arabic);
+            }
         }
     }
 
     public void clickYEsBtnValidation() throws Exception {
         waitUtility.waitForSeconds(2);
-        genericMethods.click(okBtn);
+        Boolean c = genericMethods.isElementPresent(okBtn);
+
+        if (Boolean.TRUE.equals(c)) {
+            genericMethods.click(okBtn);
+        }else{
+            genericMethods.click(okBtnArabic);
+        }
     }
 
-    public void clicNoBtnValidation() throws Exception {
+    public void clicNoBtnValidation() {
 
         try {
             waitUtility.waitForSeconds(2);
@@ -308,10 +351,14 @@ public class EntityDetailsPage {
     public void isBottomValidationMsgPresent() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(validateUseCreationMsg);
+        Boolean b1 = genericMethods.isElementPresent(validateUseCreationMsgArabic);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(validateUseCreationMsg);
             genericMethods.click(closeBtn);
-        } else {
+        } else if(Boolean.TRUE.equals(b1)){
+            genericMethods.isElementPresent(validateUseCreationMsgArabic);
+            genericMethods.click(closeBtn);
+        }else {
             genericMethods.click(closeBtn);
         }
 
