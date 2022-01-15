@@ -94,7 +94,7 @@ public class HomePageDefinition extends TestBase {
     public void clicks_register_button() throws Exception {
         log.info("clicks Register Button");
         HomePageAction homePageAction = new HomePageAction();
-        homePageAction.clickRegUserBtn(deviceConfig.get("platform"));
+        homePageAction.clickRegUserBtn(deviceConfig.get("platform"),datalist.get("language"));
     }
 
     @Then("user will landed on Legal Entity User Details$")

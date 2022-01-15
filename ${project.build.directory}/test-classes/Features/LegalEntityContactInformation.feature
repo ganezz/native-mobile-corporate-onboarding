@@ -161,7 +161,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And user lands on Entity Contact information screen
     And user entered address is displayed in address details tab
     And clicks Delete button
-    Then user will prompt to ask about confirmation
+    Then user will prompt to ask about Delete confirmation
     And clicks Yes button <testcase>
     Then address is removed from the list
     Examples:
@@ -178,7 +178,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And user lands on Entity Contact information screen
     And user entered address is displayed in address details tab
     And clicks Delete button
-    Then user will prompt to ask about confirmation
+    Then user will prompt to ask about Delete confirmation
     And clicks No button
     And user given details will display on Entity Contact Details screen
     Examples:

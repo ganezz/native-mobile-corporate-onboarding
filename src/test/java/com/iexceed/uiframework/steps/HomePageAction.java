@@ -20,11 +20,11 @@ public class HomePageAction {
     }
 
 
-    public void clickRegUserBtn(String platform) throws Exception {
+    public void clickRegUserBtn(String platform,String language) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.iClickUserRegBtn();
         } else {
-            homePageObjects.clickUserRegBtn();
+            homePageObjects.clickUserRegBtn(language);
         }
     }
 

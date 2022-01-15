@@ -71,7 +71,7 @@ public class EntityDetailsPageActions {
         }
     }
 
-    public void clickCOnfirmBtn() {
+    public void clickCOnfirmBtn() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClickConfirmBtn();
         } else {

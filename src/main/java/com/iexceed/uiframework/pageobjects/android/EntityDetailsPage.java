@@ -30,14 +30,19 @@ public class EntityDetailsPage {
     By menuList = By.xpath("//*[@text='User Contact Details']");
 
     By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
+    By addNewUsrBtnArabic = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
     By editField = By.className("android.widget.EditText");
     By editField1 = By.xpath("//android.widget.EditText");
     By userName = By.xpath("//*[@text='User Name *']");
     By emailAddress = By.xpath("//android.view.View[@content-desc=\"UserContactDetailsView\"]/android.widget.ScrollView/android.view.View/android.widget.EditText[2]");
     By email = By.xpath("//*[@text='Email *']");
     By confirmBtn = By.xpath("//*[@text='Confirm']");
+    By confirmBtnArabic = By.xpath("//*[@text='يتأكد']");
     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
+    By validationMSgArabic = By.xpath("//*[@text='الرجاء إدخال حقل صالح']");
+    By validationMSg1Arabic = By.xpath("//*[@text='الرجاء إدخال هذا الحقل']");
+
     By countryField = By.xpath("//android.view.View[@text='Code *']");
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
@@ -66,6 +71,9 @@ public class EntityDetailsPage {
             genericMethods.click(addNewUsrBtn);
         } catch (Exception e) {
             log.debug(e);
+            genericMethods.waitForVisibility(addNewUsrBtnArabic);
+            genericMethods.click(addNewUsrBtnArabic);
+
         }
     }
 
@@ -138,7 +146,7 @@ public class EntityDetailsPage {
     }
 
     public void clickSomeOtherField() {
-        genericMethods.click(email);
+        genericMethods.click(editField);
     }
 
 
@@ -149,43 +157,14 @@ public class EntityDetailsPage {
             editField1.findElements(driver).get(1).click();
             editField1.findElements(driver).get(1).clear();
             editField1.findElements(driver).get(1).sendKeys(emaill);
-            emailIdTxt = editField1.findElements(driver).get(1).getText();
+
         } catch (Exception e) {
             genericMethods.click(editField);
             driver.findElement(editField).clear();
             genericMethods.sendKeys(editField, emaill);
-            emailIdTxt = genericMethods.getText(editField);
 
         }
-
-        int count = androidUtility.characterCount(emailIdTxt);
-        log.debug(count);
-
-        if (emailIdTxt.isEmpty()) {
-            log.info("email field is empty");
-            genericMethods.click(editField);
-        } else {
-            if (count <= Integer.parseInt(limit)) {
-                log.info("email field is not empty");
-                if ((genericMethods.getText(email)).contains("@#$%")) {
-                    log.info("Invalid character present in email field");
-                    genericMethods.click(editField);
-                } else if (emailIdTxt.matches("1234567890@gmail.com")) {
-                    log.info(emailIdTxt.matches("1234567890@gmail.com"));
-                    genericMethods.click(editField);
-                    waitUtility.waitForSeconds(1);
-                    Assert.assertFalse(!genericMethods.isElementPresent(validationMSg));
-                } else {
-                    genericMethods.click(editField);
-                    log.info(" enter  email id is vaild");
-
-                }
-            } else {
-                log.info("email id is more then limit value");
-                genericMethods.click(editField);
-            }
-        }
-
+        genericMethods.click(editField);
         try {
 
             genericMethods.hideKeyboard();
@@ -196,34 +175,62 @@ public class EntityDetailsPage {
 
     }
 
-    public void clickConfirmBtn() {
-
-        try {
-            genericMethods.hideKeyboard();
-            genericMethods.click(confirmBtn);
-        } catch (Exception e) {
-            log.debug("keyboard is not alive");
-            genericMethods.click(confirmBtn);
+    public void clickConfirmBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(confirmBtn);
+        if (Boolean.TRUE.equals(b)) {
+            try {
+                genericMethods.hideKeyboard();
+                genericMethods.click(confirmBtn);
+            } catch (Exception e) {
+                log.debug("keyboard is not alive");
+                genericMethods.click(confirmBtn);
+            }
+        } else {
+            try {
+                genericMethods.hideKeyboard();
+                genericMethods.click(confirmBtnArabic);
+            } catch (Exception e) {
+                log.debug("keyboard is not alive");
+                genericMethods.click(confirmBtnArabic);
+            }
         }
 
     }
 
     public void isValidationMsgPresent(String expectedMsg, String expectedMsg1) throws Exception {
         waitUtility.waitForSeconds(2);
+        try {
+            Boolean b = genericMethods.isElementPresent(validationMSg);
+            Boolean b1 = genericMethods.isElementPresent(validationMSg1);
+            if (Boolean.TRUE.equals(b)) {
+                Assert.assertEquals(genericMethods.getText(validationMSg), expectedMsg);
+                log.info(genericMethods.getText(validationMSg));
+                Assert.assertFalse(false);
+            } else if (Boolean.TRUE.equals(b1)) {
+                Assert.assertEquals(genericMethods.getText(validationMSg1), expectedMsg1);
+                log.info(genericMethods.getText(validationMSg1));
+                Assert.assertFalse(false);
 
-        Boolean b = genericMethods.isElementPresent(validationMSg);
-        Boolean b1 = genericMethods.isElementPresent(validationMSg1);
-        if (Boolean.TRUE.equals(b)) {
-            Assert.assertEquals(genericMethods.getText(validationMSg), expectedMsg);
-            log.info(genericMethods.getText(validationMSg));
-            Assert.assertFalse(false);
-        } else if (Boolean.TRUE.equals(b1)) {
-            Assert.assertEquals(genericMethods.getText(validationMSg1), expectedMsg1);
-            log.info(genericMethods.getText(validationMSg1));
-            Assert.assertFalse(false);
+            } else {
+                log.info("Message is not visible-user enter valid input");
 
-        } else {
-            log.info("Message is not visible-user enter valid input");
+            }
+        } catch (Exception e) {
+            Boolean b = genericMethods.isElementPresent(validationMSgArabic);
+            Boolean b1 = genericMethods.isElementPresent(validationMSg1Arabic);
+            if (Boolean.TRUE.equals(b)) {
+                Assert.assertEquals(genericMethods.getText(validationMSgArabic), "الرجاء إدخال حقل صالح");
+                log.info(genericMethods.getText(validationMSgArabic));
+                Assert.assertFalse(false);
+            } else if (Boolean.TRUE.equals(b1)) {
+                Assert.assertEquals(genericMethods.getText(validationMSg1Arabic), "الرجاء إدخال هذا الحقل");
+                log.info(genericMethods.getText(validationMSg1Arabic));
+                Assert.assertFalse(false);
+
+            } else {
+                log.info("Message is not visible-user enter valid input");
+
+            }
 
         }
     }

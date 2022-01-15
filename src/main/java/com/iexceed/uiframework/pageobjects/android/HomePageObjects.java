@@ -22,6 +22,7 @@ public class HomePageObjects {
 
     By userDetailsRegBt = By.xpath("//android.view.View[@text='Onboarding']");
     By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
+    By addNewUsrBtnArabic=By.xpath("//*[@text='+ إضافة مستخدم جديد']");
     By englishBtn = By.xpath("//android.view.View[@text='English']");
     By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
     By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
@@ -43,19 +44,31 @@ public class HomePageObjects {
     }
 
 
-    public void clickUserRegBtn() throws Exception {
+    public void clickUserRegBtn(String language) throws Exception {
         waitUtility.waitForSeconds(5);
-        genericMethods.isElementPresent(userDetailsRegBt);
-        genericMethods.click(userDetailsRegBt);
+        if(language.equals("english")) {
+            genericMethods.isElementPresent(userDetailsRegBt);
+            genericMethods.click(englishBtn);
+            genericMethods.click(userDetailsRegBt);
+        }
+        else{
+            log.debug("arabic validations");
+            genericMethods.isElementPresent(userDetailsRegBt);
+            genericMethods.click(arabicBtn);
+            genericMethods.click(userDetailsRegBt);
+        }
     }
 
     public void verifyPageLanding() throws Exception {
         waitUtility.waitForSeconds(4);
         Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
+        Boolean b1 = genericMethods.isElementPresent(addNewUsrBtnArabic);
 
         if (Boolean.TRUE.equals(b)) {
             log.info("page is navigating");
-        } else {
+        } else if(Boolean.TRUE.equals(b1)){
+            log.info("page is navigating arabic");
+        }else {
             log.info("Page is not navigating to add new user screen");
         }
 

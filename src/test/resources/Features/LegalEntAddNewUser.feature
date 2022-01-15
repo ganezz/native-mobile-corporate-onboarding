@@ -27,7 +27,7 @@ Feature: Validating Add New User screen in NM_CO
       | testcase     |
       | TestCase_023 |
 
-
+@c
   Scenario Outline: Validate Name, mandatory Field with Max 100 characters and special characters are not allowed
     And user in Home screen <testcase>
     When clicks Register Button
@@ -44,6 +44,10 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_004 |
       | TestCase_005 |
       | TestCase_006 |
+      | TestCase_082 |
+      | TestCase_083 |
+      | TestCase_084 |
+      | TestCase_085 |
 
 
   @email
@@ -63,9 +67,15 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_009 |
       | TestCase_010 |
       | TestCase_011 |
+      | TestCase_086 |
+      | TestCase_087 |
+      | TestCase_088 |
+      | TestCase_089 |
+      | TestCase_090 |
 
 
-  @c
+
+    @country
   Scenario Outline: Validate Country Code, mandatory field with Drop Down
     And user in Home screen <testcase>
     When clicks Register Button

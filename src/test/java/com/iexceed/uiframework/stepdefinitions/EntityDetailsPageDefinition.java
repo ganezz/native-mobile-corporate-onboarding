@@ -85,7 +85,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
 
     @And("clicks on Confirm button$")
-    public void clicks_on_confirm_button() {
+    public void clicks_on_confirm_button() throws InterruptedException {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickCOnfirmBtn();
         log.info("user clicks on Confirm button");

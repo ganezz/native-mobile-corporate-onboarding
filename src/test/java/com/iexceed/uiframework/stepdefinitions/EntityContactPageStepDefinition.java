@@ -141,4 +141,8 @@ public class EntityContactPageStepDefinition extends TestBase {
         log.debug(" develpment is in progeress");
     }
 
+    @Then("user will prompt to ask about Delete confirmation$")
+    public void user_will_prompt_to_ask_about_delete_confirmation() throws InterruptedException {
+        entityContactPageActions.contactDeleteMsgValidation();
+    }
 }

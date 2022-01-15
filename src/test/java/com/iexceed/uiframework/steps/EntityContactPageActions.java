@@ -62,4 +62,8 @@ public class EntityContactPageActions {
     public void validateEditMsg() throws Exception {
         entityContactPage.isEditValidationMsgPresent();
     }
+
+    public void contactDeleteMsgValidation() throws InterruptedException {
+        entityContactPage.deletePromtConfirmation();
+    }
 }

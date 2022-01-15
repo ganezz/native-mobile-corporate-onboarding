@@ -33,6 +33,7 @@ public class EntityContactPage {
     By viewDataDetails = By.xpath("//android.view.View");
     By editValidationMsg = By.xpath("//android.view.View[@text='Address edited successfully']");
     By closBtn = By.xpath("//*[@text='Close']");
+    By deleteConfirmationMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
 
     public void isEntityContactPage() {
         genericMethods.waitForVisibility(entityContactInfoPage);
@@ -138,6 +139,18 @@ public class EntityContactPage {
             genericMethods.click(closBtn);
         }
 
+    }
+
+    public void deletePromtConfirmation() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(deleteConfirmationMsg);
+
+
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.waitForVisibility(deleteConfirmationMsg);
+            log.info(genericMethods.isElementPresent(deleteConfirmationMsg));
+        } else {
+            log.debug("delete confirmation popup is not shown");
+        }
     }
 
 }
