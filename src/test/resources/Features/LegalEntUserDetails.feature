@@ -14,6 +14,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_002 |
+      | TestCase_101 |
 
   @2
   Scenario Outline: Validate Search field
@@ -27,6 +28,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_002 |
+      | TestCase_101 |
 
   @3
   Scenario Outline:  Validate Search field in Arabic
@@ -50,6 +52,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_003 |
+      | TestCase_102 |
 
 
   Scenario Outline: Validate Edit button in User List
@@ -65,6 +68,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_021 |
+      | TestCase_103 |
 
   Scenario Outline: Validate Delete button in User List and click Yes button
     And user in Home screen <testcase>
@@ -81,6 +85,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_021 |
+      | TestCase_103 |
 
 
   Scenario Outline: Validate Delete button in User List and click No button
@@ -98,7 +103,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_021 |
-
+      | TestCase_103 |
 
   Scenario Outline:  Validate Cancel button in Contact screen and click Yes button
     And user in Home screen <testcase>
@@ -111,6 +116,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_002 |
+      | TestCase_101 |
 
 
   Scenario Outline:  Validate Cancel button in Contact screen and click No button
@@ -124,6 +130,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_002 |
+      | TestCase_101 |
 
 
   Scenario Outline: Add New User and check the user is listed
@@ -140,6 +147,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_021 |
+      | TestCase_103 |
 
 
   Scenario Outline: Modify User and check the modified user is listed
@@ -158,4 +166,5 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_022 |
+      | TestCase_104 |
 

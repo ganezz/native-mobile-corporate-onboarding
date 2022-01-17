@@ -169,5 +169,5 @@ Feature: Validating Add New User screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_021 |
-
+      | TestCase_100 |
 

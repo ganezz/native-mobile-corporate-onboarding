@@ -55,12 +55,14 @@ public class EntityDetailsPage {
     By confirmationMsgArabic = By.xpath("//android.view.View[@text='هل تريد الالغاء ؟']");
     By confirmationMsg1Arabic = By.xpath("//android.view.View[@text='هل تريد إلغاء التطبيق؟']");
     By validateUseCreationMsg = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
-    By validateUseCreationMsgArabic = By.xpath("//*[@text='Success ! You have successfully added the user to the list...']");
+    By validateUseCreationMsgArabic = By.xpath("//android.view.View[@text='النجاح ! لقد نجحت في إضافة المستخدم إلى القائمة ...']");
     By closeBtn = By.xpath("//*[@text='Close']");
     By closeBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By viewDataDetails = By.xpath("//android.view.View");
     By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
+    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تحرير الأيقونة']");
     By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
+    By deleteButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='رمز الحذف']");
     By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
     By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف المستخدم من القائمة؟']");
     By okBtn = By.xpath("//*[@text='OK']");
@@ -90,6 +92,7 @@ public class EntityDetailsPage {
             genericMethods.waitForVisibility(addNewUsrBtn);
         } catch (Exception e) {
             log.debug(e);
+            genericMethods.waitForVisibility(addNewUsrBtnArabic);
         }
 
         genericMethods.click(hamBurgerMenu);
@@ -107,12 +110,15 @@ public class EntityDetailsPage {
 
     }
 
-    public void clearSearchField() {
-        try {
+    public void clearSearchField() throws InterruptedException {
+
+        Boolean b = genericMethods.isElementPresent(clearField);
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(clearField);
-        } catch (Exception e) {
+        }else{
             genericMethods.click(clearFieldArabic);
         }
+
     }
 
     public void addUserName(String userName, String limit) throws Exception {
@@ -183,22 +189,27 @@ public class EntityDetailsPage {
 
     }
 
-    public void clickConfirmBtn() throws Exception {
-        genericMethods.hideKeyboard();
+    public void clickConfirmBtn() throws InterruptedException {
+
+
         Boolean b = genericMethods.isElementPresent(confirmBtn);
 
         if (Boolean.TRUE.equals(b)) {
             try {
                 genericMethods.click(confirmBtn);
             } catch (Exception e) {
-                log.debug("keyboard is not alive");
+                genericMethods.hideKeyboard();
+                log.debug("keyboard is  alive");
                 genericMethods.click(confirmBtn);
             }
         } else {
-
-            genericMethods.hideKeyboard();
-            waitUtility.waitForSeconds(2);
-            genericMethods.click(confirmBtnArabic);
+            try {
+                genericMethods.click(confirmBtnArabic);
+            } catch (Exception e) {
+                genericMethods.hideKeyboard();
+                log.debug("keyboard is  alive");
+                genericMethods.click(confirmBtnArabic);
+            }
 
         }
 
@@ -375,13 +386,24 @@ public class EntityDetailsPage {
 
     }
 
-    public void clickEditBtn() {
-        genericMethods.click(editButton);
+    public void clickEditBtn() throws InterruptedException {
+               Boolean b = genericMethods.isElementPresent(editButton);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(editButton);
+        }else{
+            genericMethods.click(editButtonArabic);
+        }
     }
 
-    public void clickDeleteBtn() {
-        genericMethods.waitForVisibility(deleteButton);
-        genericMethods.click(deleteButton);
+    public void clickDeleteBtn() throws InterruptedException {
+         Boolean b = genericMethods.isElementPresent(deleteButton);
+
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(deleteButton);
+        }else{
+            genericMethods.click(deleteButtonArabic);
+        }
+
     }
 
     public void isAddNewScreen() throws InterruptedException {

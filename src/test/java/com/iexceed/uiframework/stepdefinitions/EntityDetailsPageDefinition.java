@@ -239,13 +239,13 @@ public class EntityDetailsPageDefinition extends TestBase {
     }
 
     @And("clicks Edit button$")
-    public void clicks_edit_button() {
+    public void clicks_edit_button() throws InterruptedException {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickEditButton();
     }
 
     @And("clicks Delete button$")
-    public void clicks_delete_button() {
+    public void clicks_delete_button() throws InterruptedException {
         EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
         entityDetailsPageActions.clickDeleteButton();
     }

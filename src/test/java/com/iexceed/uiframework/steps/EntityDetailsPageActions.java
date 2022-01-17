@@ -152,7 +152,7 @@ public class EntityDetailsPageActions {
         }
     }
 
-    public void clickEditButton() {
+    public void clickEditButton() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClickEditBtn();
         } else {
@@ -161,7 +161,7 @@ public class EntityDetailsPageActions {
     }
 
 
-    public void clickDeleteButton() {
+    public void clickDeleteButton() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClickDeleteBtn();
         } else {
