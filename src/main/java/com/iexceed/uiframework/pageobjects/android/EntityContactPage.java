@@ -25,6 +25,7 @@ public class EntityContactPage {
     }
 
     By entityContactInfoPage = By.xpath("//android.view.View[@text='Entity contact information']");
+    By entityContactInfoPageArabic = By.xpath("//android.view.View[@text='معلومات الاتصال بالكيان']");
     By editField = By.xpath("//android.widget.EditText");
     By addNewBtn = By.xpath("//*[@text='+ Add a new address']");
     By addNewContactAddress = By.xpath("//*[@text='Registered']");
@@ -35,9 +36,16 @@ public class EntityContactPage {
     By closBtn = By.xpath("//*[@text='Close']");
     By deleteConfirmationMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
 
-    public void isEntityContactPage() {
-        genericMethods.waitForVisibility(entityContactInfoPage);
-        log.debug("user in entity contact page");
+    public void isEntityContactPage() throws Exception {
+        waitUtility.waitForSeconds(4);
+        Boolean b = genericMethods.isElementPresent(entityContactInfoPage);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("user in entity contact page");
+        } else {
+            Boolean b1 = genericMethods.isElementPresent(entityContactInfoPageArabic);
+            log.debug(b1);
+            log.debug("user in entity contact page");
+        }
 
     }
 

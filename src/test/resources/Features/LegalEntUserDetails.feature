@@ -132,7 +132,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_002 |
       | TestCase_101 |
 
-
+@aa
   Scenario Outline: Add New User and check the user is listed
     And user in Home screen <testcase>
     When clicks Register Button
@@ -146,10 +146,10 @@ Feature: Validating User Contact Details screen in NM_CO
     And user given details will display on User Contact Details screen <testcase>
     Examples:
       | testcase     |
-      | TestCase_021 |
+#      | TestCase_021 |
       | TestCase_103 |
 
-
+@bb
   Scenario Outline: Modify User and check the modified user is listed
     And user in Home screen <testcase>
     When clicks Register Button

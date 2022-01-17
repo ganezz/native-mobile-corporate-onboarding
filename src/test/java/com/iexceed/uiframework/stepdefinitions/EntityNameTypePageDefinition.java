@@ -18,13 +18,13 @@ public class EntityNameTypePageDefinition extends TestBase {
     public static Logger log = LogManager.getLogger(EntityNameTypePageDefinition.class);
 
     @When("user is in Entity name & type screen (.+)$")
-    public void user_is_in_entity_name_type_screen(String testcase) throws InterruptedException {
+    public void user_is_in_entity_name_type_screen(String testcase) throws Exception {
         legalEntityNameTypeActions.isEntityLegalPage();
         log.debug("screen navigate to legal entity");
 
     }
     @Then("user lands on Entity name and type screen$")
-    public void user_lands_on_entity_name_and_type_screen(){
+    public void user_lands_on_entity_name_and_type_screen() throws Exception {
         legalEntityNameTypeActions.isEntityLegalPage();
         log.debug("user lands on Entity name and type screen");
     }

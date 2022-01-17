@@ -18,7 +18,7 @@ public class EntityContactPageStepDefinition extends TestBase {
     public static Logger log = LogManager.getLogger(EntityContactPageStepDefinition.class);
 
     @Then("user lands on Entity Contact information screen$")
-    public void user_lands_on_entity_contact_information_screen() {
+    public void user_lands_on_entity_contact_information_screen() throws Exception {
         entityContactPageActions.isEntityContactInfoPage();
     }
 

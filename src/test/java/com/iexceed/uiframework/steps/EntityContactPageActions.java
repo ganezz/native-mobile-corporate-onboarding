@@ -11,7 +11,7 @@ public class EntityContactPageActions {
 
     }
 
-    public void isEntityContactInfoPage() {
+    public void isEntityContactInfoPage() throws Exception {
         entityContactPage.isEntityContactPage();
     }
 

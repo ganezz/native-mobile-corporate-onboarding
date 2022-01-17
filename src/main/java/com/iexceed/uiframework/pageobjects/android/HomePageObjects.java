@@ -60,7 +60,7 @@ public class HomePageObjects {
     }
 
     public void verifyPageLanding() throws Exception {
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(5);
         Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
         Boolean b1 = genericMethods.isElementPresent(addNewUsrBtnArabic);
 

@@ -22,7 +22,7 @@ public class EntityNameTypeActions {
     public void fieldValidations() throws InterruptedException {
         legalEntityNameTypePage.fieldValidationMsg();
     }
-    public void isEntityLegalPage() {
+    public void isEntityLegalPage() throws Exception {
         legalEntityNameTypePage.isEntityLegalPage();
     }
 

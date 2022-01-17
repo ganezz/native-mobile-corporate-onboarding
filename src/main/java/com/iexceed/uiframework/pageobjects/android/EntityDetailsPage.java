@@ -69,10 +69,11 @@ public class EntityDetailsPage {
     By okBtnArabic = By.xpath("//android.view.View[@text='نعم']");
     By noButton = By.xpath("//android.view.View[3]");
     By continueBtn = By.xpath("//*[@text='Continue']");
+    By continueBtnArabic = By.xpath("//android.view.View[@text='يكمل']");
     By searchBar = By.xpath("//android.widget.EditText");
     By clearField = By.xpath("//android.view.View[@content-desc='Clear Field']");
     By clearFieldArabic = By.xpath("//android.view.View[@content-desc='الحقل خالى']");
-
+    By entityLegalNameArabic = By.xpath("//android.view.View[@text='الاسم القانوني للكيان *']");
     By entityLegalName = By.xpath("//android.view.View[@text='Entity Legal Name *']");
 
     public void clickAddNewuserBtn() {
@@ -115,7 +116,7 @@ public class EntityDetailsPage {
         Boolean b = genericMethods.isElementPresent(clearField);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(clearField);
-        }else{
+        } else {
             genericMethods.click(clearFieldArabic);
         }
 
@@ -189,7 +190,7 @@ public class EntityDetailsPage {
 
     }
 
-    public void clickConfirmBtn() throws InterruptedException {
+    public void clickConfirmBtn() throws Exception {
 
 
         Boolean b = genericMethods.isElementPresent(confirmBtn);
@@ -205,10 +206,12 @@ public class EntityDetailsPage {
         } else {
             try {
                 genericMethods.click(confirmBtnArabic);
+                waitUtility.waitForSeconds(3);
             } catch (Exception e) {
                 genericMethods.hideKeyboard();
                 log.debug("keyboard is  alive");
                 genericMethods.click(confirmBtnArabic);
+                waitUtility.waitForSeconds(3);
             }
 
         }
@@ -323,7 +326,7 @@ public class EntityDetailsPage {
                 genericMethods.waitForVisibility(confirmationMsg1);
                 genericMethods.isElementPresent(confirmationMsg1);
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             Boolean c = genericMethods.isElementPresent(confirmationMsgArabic);
             Boolean c1 = genericMethods.isElementPresent(deleteConfirmationMsgArabic);
             if (Boolean.TRUE.equals(c)) {
@@ -344,7 +347,7 @@ public class EntityDetailsPage {
 
         if (Boolean.TRUE.equals(c)) {
             genericMethods.click(okBtn);
-        }else{
+        } else {
             genericMethods.click(okBtnArabic);
         }
     }
@@ -366,10 +369,10 @@ public class EntityDetailsPage {
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(validateUseCreationMsg);
             genericMethods.click(closeBtn);
-        } else if(Boolean.TRUE.equals(b1)){
+        } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.isElementPresent(validateUseCreationMsgArabic);
-            genericMethods.click(closeBtn);
-        }else {
+            genericMethods.click(closeBtnArabic);
+        } else {
             genericMethods.click(closeBtn);
         }
 
@@ -387,20 +390,20 @@ public class EntityDetailsPage {
     }
 
     public void clickEditBtn() throws InterruptedException {
-               Boolean b = genericMethods.isElementPresent(editButton);
+        Boolean b = genericMethods.isElementPresent(editButton);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(editButton);
-        }else{
+        } else {
             genericMethods.click(editButtonArabic);
         }
     }
 
     public void clickDeleteBtn() throws InterruptedException {
-         Boolean b = genericMethods.isElementPresent(deleteButton);
+        Boolean b = genericMethods.isElementPresent(deleteButton);
 
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(deleteButton);
-        }else{
+        } else {
             genericMethods.click(deleteButtonArabic);
         }
 
@@ -413,15 +416,26 @@ public class EntityDetailsPage {
     public void clickContinueBtn() throws Exception {
         waitUtility.waitForSeconds(5);
         driver.hideKeyboard();
-        genericMethods.click(continueBtn);
-        Boolean b = genericMethods.isElementPresent(entityLegalName);
+        try {
 
-        if (Boolean.TRUE.equals(b)) {
-            log.debug("screen navigate to entity legal screen");
-        } else {
-            log.debug("screen navigation is not happening");
+            genericMethods.click(continueBtn);
+            Boolean b = genericMethods.isElementPresent(entityLegalName);
+
+            if (Boolean.TRUE.equals(b)) {
+                log.debug("screen navigate to entity legal screen");
+            } else {
+                log.debug("screen navigation is not happening");
+            }
+        } catch (Exception e) {
+            genericMethods.click(continueBtnArabic);
+            Boolean b = genericMethods.isElementPresent(entityLegalNameArabic);
+
+            if (Boolean.TRUE.equals(b)) {
+                log.debug("screen navigate to entity legal screen");
+            } else {
+                log.debug("screen navigation is not happening");
+            }
         }
-
     }
 
 }
