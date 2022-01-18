@@ -28,13 +28,20 @@ public class EntityContactPage {
     By entityContactInfoPageArabic = By.xpath("//android.view.View[@text='معلومات الاتصال بالكيان']");
     By editField = By.xpath("//android.widget.EditText");
     By addNewBtn = By.xpath("//*[@text='+ Add a new address']");
+    By addNewAddressBtnArabic = By.xpath("//android.view.View[@text='+ أضف عنوانًا جديدًا']");
     By addNewContactAddress = By.xpath("//*[@text='Registered']");
+    By addNewContactAddressArabic = By.xpath("//android.view.View[@text='نوع العنوان *']");
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
     By viewDataDetails = By.xpath("//android.view.View");
     By editValidationMsg = By.xpath("//android.view.View[@text='Address edited successfully']");
+    By editValidationMsgArabic = By.xpath("//android.view.View[@text='تم تحرير العنوان بنجاح']");
     By closBtn = By.xpath("//*[@text='Close']");
+    By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By deleteConfirmationMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
+    By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
+
+
 
     public void isEntityContactPage() throws Exception {
         waitUtility.waitForSeconds(4);
@@ -65,12 +72,24 @@ public class EntityContactPage {
         genericMethods.click(editField);
     }
 
-    public void clickAddnewBtn() {
-        genericMethods.click(addNewBtn);
+    public void clickAddnewBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(addNewBtn);
+        if(Boolean.TRUE.equals(b)) {
+            genericMethods.click(addNewBtn);
+        }else{
+            genericMethods.click(addNewAddressBtnArabic);
+        }
     }
 
-    public void isEntityaddNewAddress() {
-        genericMethods.waitForVisibility(addNewContactAddress);
+    public void isEntityaddNewAddress() throws Exception {
+        waitUtility.waitForSeconds(5);
+        Boolean b = genericMethods.isElementPresent(addNewContactAddress);
+        if(Boolean.TRUE.equals(b)) {
+            log.debug(b);
+        }else{
+            log.debug(genericMethods.isElementPresent(addNewContactAddressArabic));
+        }
+
     }
 
     public void enterUnitNo(String unitno) {
@@ -140,10 +159,14 @@ public class EntityContactPage {
     public void isEditValidationMsgPresent() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(editValidationMsg);
+        Boolean b1 = genericMethods.isElementPresent(editValidationMsg);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(editValidationMsg);
             genericMethods.click(closBtn);
-        } else {
+        } else if(Boolean.TRUE.equals(b1)){
+            genericMethods.isElementPresent(editValidationMsgArabic);
+            genericMethods.click(closBtnArabic);
+        }else {
             genericMethods.click(closBtn);
         }
 
@@ -151,12 +174,15 @@ public class EntityContactPage {
 
     public void deletePromtConfirmation() throws InterruptedException {
         Boolean b = genericMethods.isElementPresent(deleteConfirmationMsg);
-
+        Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsgArabic);
 
         if (Boolean.TRUE.equals(b)) {
             genericMethods.waitForVisibility(deleteConfirmationMsg);
             log.info(genericMethods.isElementPresent(deleteConfirmationMsg));
-        } else {
+        } else if(Boolean.TRUE.equals(b1)){
+            genericMethods.waitForVisibility(deleteConfirmationMsgArabic);
+            log.info(genericMethods.isElementPresent(deleteConfirmationMsgArabic));
+        }else {
             log.debug("delete confirmation popup is not shown");
         }
     }

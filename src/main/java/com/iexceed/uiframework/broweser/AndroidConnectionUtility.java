@@ -30,14 +30,14 @@ public class AndroidConnectionUtility extends TestBase {
                     DesiredCapabilities capabilities = new DesiredCapabilities();
                     capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
                     capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
-                    capabilities.setCapability("pCloudy_DurationInMinutes", 78);
+                    capabilities.setCapability("pCloudy_DurationInMinutes", 300);
                     capabilities.setCapability("newCommandTimeout", 600);
                     capabilities.setCapability("launchTimeout", 90000);
                     capabilities.setCapability("pCloudy_DeviceFullName", appName);
                     capabilities.setCapability("platformVersion", "11.0.0");
                     capabilities.setCapability("platformName", "Android");
                     capabilities.setCapability("automationName", "uiautomator2");
-                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-10-11-01-2022.apk");
+                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-11-13-01-2022.apk");
                     capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.qa");
                     capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
                     capabilities.setCapability("pCloudy_WildNet", "true");

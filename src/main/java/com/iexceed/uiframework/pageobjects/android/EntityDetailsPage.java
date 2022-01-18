@@ -191,10 +191,7 @@ public class EntityDetailsPage {
     }
 
     public void clickConfirmBtn() throws Exception {
-
-
         Boolean b = genericMethods.isElementPresent(confirmBtn);
-
         if (Boolean.TRUE.equals(b)) {
             try {
                 genericMethods.click(confirmBtn);
@@ -373,7 +370,11 @@ public class EntityDetailsPage {
             genericMethods.isElementPresent(validateUseCreationMsgArabic);
             genericMethods.click(closeBtnArabic);
         } else {
-            genericMethods.click(closeBtn);
+            try{
+            genericMethods.click(closeBtn);}catch(Exception e){
+                genericMethods.click(closeBtnArabic);
+
+            }
         }
 
     }
@@ -427,6 +428,7 @@ public class EntityDetailsPage {
                 log.debug("screen navigation is not happening");
             }
         } catch (Exception e) {
+            waitUtility.waitForSeconds(7);
             genericMethods.click(continueBtnArabic);
             Boolean b = genericMethods.isElementPresent(entityLegalNameArabic);
 

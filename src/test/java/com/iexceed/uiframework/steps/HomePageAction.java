@@ -19,12 +19,28 @@ public class HomePageAction {
 
     }
 
+    public void chooseLanguage(String platform,String language) throws Exception {
+        if (platform.equalsIgnoreCase("ios")) {
+            ihomePageObjects.ichooseLanguage();
+        } else {
+            homePageObjects.chooseLanguage(language);
+        }
+
+    }
 
     public void clickRegUserBtn(String platform,String language) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.iClickUserRegBtn();
+            ihomePageObjects.iClickUserRegBtn(language);
         } else {
             homePageObjects.clickUserRegBtn(language);
+        }
+    }
+
+    public void validateLoginCredentials(String platform) {
+        if (platform.equalsIgnoreCase("ios")) {
+            ihomePageObjects.ienterLoginCredentials();
+        } else {
+            homePageObjects.enterLoginCredentials();
         }
     }
 
@@ -33,6 +49,14 @@ public class HomePageAction {
             ihomePageObjects.iVerifyPageLanding();
         } else {
             homePageObjects.verifyPageLanding();
+        }
+    }
+
+    public void login(String platform) throws Exception {
+        if (platform.equalsIgnoreCase("ios")) {
+            ihomePageObjects.loginPage();
+        } else {
+            homePageObjects.clickLogin();
         }
     }
 

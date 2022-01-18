@@ -57,12 +57,12 @@ public class EntityContactPageStepDefinition extends TestBase {
         legalEntityNameTypeActions.fieldValidations();
     }
     @And("clicks Add A New Address button$")
-    public void clicks_add_a_new_address_button(){
+    public void clicks_add_a_new_address_button() throws InterruptedException {
         entityContactPageActions.clickAddNewBtn();
     }
 
     @Then("user lands on Add A New Address screen$")
-    public void user_lands_on_add_a_new_address_screen(){
+    public void user_lands_on_add_a_new_address_screen() throws Exception {
         entityContactPageActions.isAddNewContactAddressPage();
     }
     @And("clicks on Unit no$")
@@ -111,7 +111,7 @@ public class EntityContactPageStepDefinition extends TestBase {
         entityContactPageActions.validateEnteredAddress("Registered",datalist.get("State"),datalist.get("city"),datalist.get("zipCode"),datalist.get("postbox"));
     }
     @And("user lands on Modification Screen Add A New Address Screen with already given data$")
-    public void user_lands_on_modification_screen_add_a_new_address_screen_with_already_given_data(){
+    public void user_lands_on_modification_screen_add_a_new_address_screen_with_already_given_data() throws Exception {
         entityContactPageActions.isAddNewContactAddressPage();
     }
     @And("edits one or more fields in valid format$")

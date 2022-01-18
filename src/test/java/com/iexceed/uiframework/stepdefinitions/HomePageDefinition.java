@@ -15,8 +15,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
-import static com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch.launchApp;
-
 
 public class HomePageDefinition extends TestBase {
 
@@ -40,15 +38,15 @@ public class HomePageDefinition extends TestBase {
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
 //            androidAppURL=launchApp();
-            androidAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.7-21-12-2021-15:37.apk";
+            androidAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.11-13-01-2022-15:16.apk";
             ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
             testdata.setTestDataInMap(deviceConfig);
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
 
         }else{
             waitUtility.waitForSeconds(10);
-            iosAppURL=launchApp();
-//            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29/AUTOMATIONDebug-1.0.0-13-12-2021-13%3A29.ipa";
+//            iosAppURL=launchApp();
+            iosAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/iOS-ipa/ao/manual/QARelease-1.0.0-18-01-2022-11%3A58/QARelease-1.0.0-18-01-2022-11%3A58.ipa";
             String[] arr=iosAppURL.split("//");
             String temp1=arr[0]+"//readuser:Re@d@1234@";
             iosAppURL=temp1+arr[1];
@@ -90,6 +88,23 @@ public class HomePageDefinition extends TestBase {
 
     }
 
+    @And("click login button$")
+    public void click_login_button() throws Exception {
+        HomePageAction homePageAction = new HomePageAction();
+        homePageAction.login(deviceConfig.get("platform"));
+    }
+
+    @When("enter username and password (.+)$")
+    public void enter_username_and_password(String testcase){
+        HomePageAction homePageAction = new HomePageAction();
+        homePageAction.validateLoginCredentials(deviceConfig.get("platform"));
+    }
+    @When("clicks language dropDown choose language (.+)$")
+    public void clicks_language_dropdown_choose_language(String testcase) throws Exception {
+        HomePageAction homePageAction = new HomePageAction();
+        homePageAction.chooseLanguage(deviceConfig.get("platform"),datalist.get("language"));
+    }
+
     @When("clicks Register Button$")
     public void clicks_register_button() throws Exception {
         log.info("clicks Register Button");
@@ -97,8 +112,8 @@ public class HomePageDefinition extends TestBase {
         homePageAction.clickRegUserBtn(deviceConfig.get("platform"),datalist.get("language"));
     }
 
-    @Then("user will landed on Legal Entity User Details$")
-    public void user_will_landed_on_legal_entity_user_details() throws Exception {
+    @Then("user will landed on Dashboard page$")
+    public void user_will_landed_on_dashboard_page() throws Exception {
         HomePageAction homePageAction = new HomePageAction();
         homePageAction.verifyPageNavigation(deviceConfig.get("platform"));
         log.info("user will landed on Legal Entity User Details");

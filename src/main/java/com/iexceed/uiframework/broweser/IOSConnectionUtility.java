@@ -27,6 +27,7 @@ public class IOSConnectionUtility extends TestBase {
         listIOS.add("APPLE_iPhone7_iOS_13.1.3_316f0");
         listIOS.add("APPLE_iPhone7plus_iOS_13.3.1_ce483");
         listIOS.add("APPLE_iPhoneX_iOS_14.0.0_1b718");
+
         for (String DeviceName : listIOS) {
 
             if (driver == null) {

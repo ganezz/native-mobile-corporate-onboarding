@@ -23,11 +23,11 @@ public class EntityContactPageActions {
         entityContactPage.enterCompanyWebsite(companyWebsit);
     }
 
-    public void clickAddNewBtn() {
+    public void clickAddNewBtn() throws InterruptedException {
         entityContactPage.clickAddnewBtn();
     }
 
-    public void isAddNewContactAddressPage(){
+    public void isAddNewContactAddressPage() throws Exception {
         entityContactPage.isEntityaddNewAddress();
     }
 

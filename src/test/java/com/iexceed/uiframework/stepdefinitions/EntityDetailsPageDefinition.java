@@ -155,7 +155,7 @@ public class EntityDetailsPageDefinition extends TestBase {
     public void user_will_land_on_user_contact_details() throws Exception {
         log.info("user will land on User Contact Details");
         HomePageDefinition homePageDefinition = new HomePageDefinition();
-        homePageDefinition.user_will_landed_on_legal_entity_user_details();
+        homePageDefinition.user_will_landed_on_dashboard_page();
     }
 
     @Then("proper error message should display under mobile field$")
@@ -191,7 +191,7 @@ public class EntityDetailsPageDefinition extends TestBase {
     @Then("user will stay on User Contact Details screen$")
     public void user_will_stay_on_user_contact_details_screen() throws Exception {
         log.info("user will stay on User Contact Details screen ");
-        homePageDefinition.user_will_landed_on_legal_entity_user_details();
+        homePageDefinition.user_will_landed_on_dashboard_page();
     }
 
     @And("clicks Yes button (.+)$")
@@ -208,7 +208,7 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @Then("user will stay on Add A New User screen$")
     public void user_will_stay_on_add_a_new_user_screen() throws Exception {
-        homePageDefinition.user_will_landed_on_legal_entity_user_details();
+        homePageDefinition.user_will_landed_on_dashboard_page();
     }
 
     @And("enters all the details in Add A New User screen$")
