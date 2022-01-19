@@ -8,8 +8,9 @@ Feature: Validating Add New User screen in NM_CO
   @a
   Scenario Outline: Validate Gesture in side menu
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
@@ -19,19 +20,23 @@ Feature: Validating Add New User screen in NM_CO
   @b
   Scenario Outline:  Validate Arabic Gesture in side menu
     And user in Home screen <testcase>
-    When clicks Arabic Button
-    Then app language change to Arabic
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
       | testcase     |
-      | TestCase_023 |
+      | TestCase_0001 |
 
-@c
+  @c
   Scenario Outline: Validate Name, mandatory Field with Max 100 characters and special characters are not allowed
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And user input invalid Name
@@ -53,8 +58,10 @@ Feature: Validating Add New User screen in NM_CO
   @email
   Scenario Outline: Validate Email Address, mandatory Field with Max 100 characters and special characters not allowed and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And user input invalid Email Address
@@ -74,12 +81,13 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_090 |
 
 
-
-    @country
+  @country
   Scenario Outline: Validate Country Code, mandatory field with Drop Down
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all details in Add A New User screen
@@ -100,8 +108,10 @@ Feature: Validating Add New User screen in NM_CO
   @mob
   Scenario Outline: Validate Mobile Number, mandatory Field with Max and Min are with respect to Country Code
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all details in Add A New User screen
@@ -120,11 +130,12 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_096 |
 
 
-
   Scenario Outline:  Validate Cancel button in Add A New User screen and click Yes button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And clicks Cancel in New User
@@ -141,8 +152,10 @@ Feature: Validating Add New User screen in NM_CO
 
   Scenario Outline:  Validate Cancel button in Add A New User screen and click No button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And clicks Cancel in New User
@@ -157,8 +170,10 @@ Feature: Validating Add New User screen in NM_CO
 
   Scenario Outline: validate Confirm button in Add A New User screen
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all the details in Add A New User screen

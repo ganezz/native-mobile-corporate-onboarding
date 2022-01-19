@@ -93,7 +93,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
 
 
     public static void fileRenaming() throws Exception, NullPointerException {
-        f2 = new File("Automation-1-0-12-18-01-2022");
+        f2 = new File("Automation-1-0-13-18-01-2022");
         renamedFilePath = f2.getName();
         log.debug("Renamed f2 file path :{}", renamedFilePath);
         waitUtility.waitForSeconds(3);

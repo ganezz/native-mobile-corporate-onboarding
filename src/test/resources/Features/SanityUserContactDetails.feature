@@ -7,36 +7,21 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @1
   Scenario Outline:  Validate Add A New Application button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     Examples:
       | testcase     |
       | TestCase_000 |
 
-  @2
-  Scenario Outline:  Validate English language button
-    And user in Home screen <testcase>
-    When clicks English Button
-    Then app language change to English
-    Examples:
-      | testcase |
-      | TestCase_001 |
-
-    @3
-  Scenario Outline:  Validate Arabic button
-    And user in Home screen <testcase>
-    When clicks Arabic Button
-    Then app language change to Arabic
-    Examples:
-      | testcase     |
-      | TestCase_002 |
 
 @4
   Scenario Outline: Validate + Add A New User Button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     Examples:
@@ -47,9 +32,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @5
   Scenario Outline: validating User Name field with max 100 characters,No Special characters and numeric allowed except space, Mandatory Field
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And user input invalid Name
@@ -66,8 +52,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   @6
   Scenario Outline: validating Email field with max 80 characters, limited special characters only allowed, Mandatory Field
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And user input invalid Email Address
@@ -84,9 +71,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @7
   Scenario Outline: validating Code field with max 5 characters, Drop down, Mandatory Field
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all details in Add A New User screen
@@ -100,9 +88,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @8
   Scenario Outline: validating Mobile field with max 20 characters, Alphabets and Special Characters not allowed, Mandatory Field
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all details in Add A New User screen
@@ -119,8 +108,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   @9
   Scenario Outline: validating Add A New User Screen Cancel button with Ok button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And clicks Cancel in New User
@@ -132,9 +122,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
       | TestCase_018 |
 @10
   Scenario Outline: validating Add A New User Screen Cancel button with Cancel button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And clicks Cancel in New User
@@ -147,9 +138,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @11
   Scenario Outline: validating Confirm button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all the details in Add A New User screen
@@ -164,8 +156,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
   Scenario Outline: validating Edit button in User List
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all the details in Add A New User screen
@@ -187,8 +180,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
   Scenario Outline: validating Delete icon with Ok button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Add A New User button
     And enters all the details in Add A New User screen
     And clicks on Confirm button
@@ -203,9 +197,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @14
   Scenario Outline: validating Delete icon with Cancel button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks Add A New User button
     And enters all the details in Add A New User screen
     And clicks on Confirm button
@@ -221,8 +216,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
   Scenario Outline: validating User Contact Details screen Cancel button with Cancel button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks Cancel button
     Then user will prompt to ask about confirmation
     And clicks No button
@@ -233,9 +229,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
     @c4
   Scenario Outline: validating User Contact Details screen Cancel button with Ok button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+      And user in Home screen <testcase>
+      When enter username and password <testcase>
+      And click login button
+      Then user will landed on Dashboard page
     And clicks Cancel button
     Then user will prompt to ask about confirmation
     And clicks Yes button <testcase>
@@ -248,8 +245,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   @c5
   Scenario Outline: Validate Search field
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on search field
     Then user is shown with a editable text field with a cancel button
     And user enters text and clicks on cancel button
@@ -261,8 +259,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   @b
   Scenario Outline:  Validate Search field in Arabic
     And user in Home screen <testcase>
-    When clicks Arabic Button
-    Then app language change to Arabic
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on search field
     Then user is shown with a editable text field with a cancel button
     And user enters text and clicks on cancel button
@@ -274,8 +273,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   @c
   Scenario Outline: Validate Gesture in side menu
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
@@ -285,8 +285,9 @@ Feature: Validating features for User Contact Details Screen in NM_CO
   @d
   Scenario Outline:  Validate Arabic Gesture in side menu
     And user in Home screen <testcase>
-    When clicks Arabic Button
-    Then app language change to Arabic
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
@@ -295,9 +296,10 @@ Feature: Validating features for User Contact Details Screen in NM_CO
 
 @e
   Scenario Outline: validating Continue button
-    And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+  And user in Home screen <testcase>
+  When enter username and password <testcase>
+  And click login button
+  Then user will landed on Dashboard page
     And clicks on Continue Button
     Then user lands on entity legal screen <testcase>
     Examples:

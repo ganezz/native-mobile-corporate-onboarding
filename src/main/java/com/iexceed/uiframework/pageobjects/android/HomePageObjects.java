@@ -34,14 +34,14 @@ public class HomePageObjects extends TestBase {
     By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
     By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
     By textField = By.xpath("//android.widget.EditText");
-    By loginBtn = By.xpath("//android.view.View[@text='LOGIN']");
-    By loginArabicBtn = By.xpath("//android.view.View[@text='تسجيل الدخول']");
+    By loginBtn = By.xpath("//android.view.View[@content-desc='LOGIN']");
+    By loginArabicBtn = By.xpath("//android.view.View[@content-desc='تسجيل الدخول']");
     By dropDown = By.xpath("//android.widget.EditText[@text='English']");
     By dropDownList = By.xpath("//android.view.View");
 
 
     public void isHomePageVisible() throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(4);
         Boolean b1 = genericMethods.isElementPresent(userDetailsRegBt);
         Boolean b = genericMethods.isElementPresent(englishBtn);
         if (Boolean.TRUE.equals(b)) {
@@ -106,7 +106,8 @@ public class HomePageObjects extends TestBase {
         textField.findElements(driver).get(2).sendKeys(props.getProperty("password"));
         try {
             driver.hideKeyboard();
-        } catch (Exception e) {log.debug(e);
+        } catch (Exception e) {
+            log.debug(e);
         }
     }
 
@@ -115,9 +116,9 @@ public class HomePageObjects extends TestBase {
         Boolean b = genericMethods.isElementPresent(loginBtn);
         Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
         if (Boolean.TRUE.equals(b)) {
-            driver.findElement(By.xpath("//android.view.View[@text='LOGIN']")).click();
+            genericMethods.click(loginBtn);
         } else if (Boolean.TRUE.equals(b1)) {
-            driver.findElement(By.xpath("//android.view.View[@text='تسجيل الدخول']")).click();
+            genericMethods.click(loginArabicBtn);
         } else {
             log.info("Login is not happening");
         }

@@ -5,7 +5,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Given user opens the App batch1
 #    And user in Home screen TestCase_021
 #    When clicks Register Button
-#    Then user will landed on Legal Entity User Details
+#    Then user will landed on Dashboard page
 #    And clicks Add A New User button
 #    And user will landed on the New User screen
 #    And enters all the details in Add A New User screen
@@ -18,7 +18,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
   Scenario Outline: Validate Entity Legal Name, mandatory field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks on Entity Legal Name field <testcase>
@@ -28,15 +28,15 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_025 |
-      | TestCase_026 |
-      | TestCase_027 |
-      | TestCase_028 |
-      | TestCase_029 |
-      | TestCase_030 |
-      | TestCase_105 |
-      | TestCase_106 |
-      | TestCase_107 |
-      | TestCase_108 |
+#      | TestCase_026 |
+#      | TestCase_027 |
+#      | TestCase_028 |
+#      | TestCase_029 |
+#      | TestCase_030 |
+#      | TestCase_105 |
+#      | TestCase_106 |
+#      | TestCase_107 |
+#      | TestCase_108 |
       | TestCase_109 |
       | TestCase_110 |
 
@@ -44,7 +44,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
   Scenario Outline: Validate Trade Name(s), optional field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks on Trade Name field <testcase>
@@ -54,23 +54,23 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_031 |
-      | TestCase_032 |
-      | TestCase_033 |
-      | TestCase_034 |
-      | TestCase_035 |
-      | TestCase_036 |
+#      | TestCase_032 |
+#      | TestCase_033 |
+#      | TestCase_034 |
+#      | TestCase_035 |
+#      | TestCase_036 |
       | TestCase_111 |
-      | TestCase_112 |
-      | TestCase_113 |
-      | TestCase_114 |
-      | TestCase_115 |
-      | TestCase_116 |
+#      | TestCase_112 |
+#      | TestCase_113 |
+#      | TestCase_114 |
+#      | TestCase_115 |
+#      | TestCase_116 |
 
   @3
   Scenario Outline: Validate Previously known as, optional field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And enters details in other fields of Entity name and type screen <testcase>
@@ -82,23 +82,23 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_037 |
-      | TestCase_038 |
-      | TestCase_039 |
-      | TestCase_040 |
-      | TestCase_041 |
-      | TestCase_042 |
-      | TestCase_117 |
-      | TestCase_118 |
-      | TestCase_119 |
-      | TestCase-120 |
-      | TestCase_121 |
+#      | TestCase_038 |
+#      | TestCase_039 |
+#      | TestCase_040 |
+#      | TestCase_041 |
+#      | TestCase_042 |
+#      | TestCase_117 |
+#      | TestCase_118 |
+#      | TestCase_119 |
+#      | TestCase-120 |
+#      | TestCase_121 |
       | TestCase_122 |
 
   @4
   Scenario Outline: Validate Legal entity type, mandatory field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And enters details in other fields of Entity name and type screen <testcase>
@@ -116,7 +116,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
   Scenario Outline: Validate Previously trading as, optional field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks on Previously trading as field <testcase>
@@ -126,12 +126,12 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_044 |
-      | TestCase_045 |
-      | TestCase_046 |
-      | TestCase_047 |
-      | TestCase_048 |
-      | TestCase_049 |
-      | TestCase_123 |
+#      | TestCase_045 |
+#      | TestCase_046 |
+#      | TestCase_047 |
+#      | TestCase_048 |
+#      | TestCase_049 |
+#      | TestCase_123 |
       | TestCase_124 |
       | TestCase_125 |
 
@@ -139,7 +139,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
   Scenario Outline:  Validate Cancel button in Entity name and type screen with click on Yes button
     And user in Home screen TestCase_021
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks Cancel in New User
@@ -155,7 +155,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
   Scenario Outline:  Validate Cancel button in Entity name and type screen with click on No button
     And user in Home screen TestCase_021
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks Cancel in Entity name & type screen
@@ -171,7 +171,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
   Scenario Outline: Validate Continue button
     And user in Home screen TestCase_021
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And enters all mandatory fields <testcase>

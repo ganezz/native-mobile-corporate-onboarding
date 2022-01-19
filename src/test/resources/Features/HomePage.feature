@@ -5,33 +5,33 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
     Given user opens the App batch1
 
   @1
-  Scenario Outline:  Validate Register button
+  Scenario Outline:  Validate Login Credenials
     And user in Home screen <testcase>
-    When clicks Register Button
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     Examples:
       | testcase     |
       | TestCase_000 |
 
 
-#  Scenario Outline:  Validate English language button
-#    And user in Home screen <testcase>
-#    When clicks English Button
-#    Then app language change to English
-#    Examples:
-#      | testcase |
-#      | TestCase_001 |
-#
-#
-#  Scenario Outline:  Validate Arabic button
-#    And user in Home screen <testcase>
-#    When clicks Arabic Button
-#    Then app language change to Arabic
-#    Examples:
-#      | testcase     |
-#      | TestCase_002 |
-#
-#
-#
-#
-#
+  Scenario Outline:  Validate English language button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    Then app language change to English
+    Examples:
+      | testcase |
+      | TestCase_001 |
+
+
+  Scenario Outline:  Validate Arabic button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    Then app language change to Arabic
+    Examples:
+      | testcase     |
+      | TestCase_0001 |
+
+
+
+

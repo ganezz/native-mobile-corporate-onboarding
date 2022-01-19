@@ -19,9 +19,11 @@ public class AndroidConnectionUtility extends TestBase {
 
     public static void androidConnectionUtilities(){
         List<String> list = new ArrayList<>();
+        list.add("SAMSUNG_GalaxyTabS6_Android_11.0.0_383e3");
+        list.add("SAMSUNG_GalaxyTabS5e_Android_11.0.0_cb1ca");
         list.add("LENOVO_M10Plus_Android_10.0.0_2ba36");
         list.add("SAMSUNG_GalaxyTabS4_Android_10.0.0_2133b");
-        list.add("SAMSUNG_GalaxyTabS5e_Android_11.0.0_cb1ca");
+        list.add("SAMSUNG_GalaxyTabS6Lite_Android_10.0.0_5ffce");
 
         for (String appName : list) {
 
@@ -37,7 +39,7 @@ public class AndroidConnectionUtility extends TestBase {
                     capabilities.setCapability("platformVersion", "11.0.0");
                     capabilities.setCapability("platformName", "Android");
                     capabilities.setCapability("automationName", "uiautomator2");
-                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-11-13-01-2022.apk");
+                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-13-18-01-2022.apk");
                     capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.qa");
                     capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
                     capabilities.setCapability("pCloudy_WildNet", "true");

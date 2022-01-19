@@ -16,17 +16,19 @@ import static com.iexceed.uiframework.appium.PcloudyConnection.appiumDriver;
 import static com.iexceed.uiframework.appium.PcloudyConnection.launchApp;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
+
 public class IOSConnectionUtility extends TestBase {
 
 
     private static final Logger log = LogManager.getLogger(IOSConnectionUtility.class);
 
     public static void iosConnectionUtilities(Boolean isTrustDevice, String bundleID, String applicationName, By targetCompanyName, By trustCompanyName, By trustBtn) {
-        String bundleId="bundleID";
+        String bundleId = bundleID;
         List<String> listIOS = new ArrayList<>();
-        listIOS.add("APPLE_iPhone7_iOS_13.1.3_316f0");
-        listIOS.add("APPLE_iPhone7plus_iOS_13.3.1_ce483");
-        listIOS.add("APPLE_iPhoneX_iOS_14.0.0_1b718");
+        listIOS.add("APPLE_iPadPro3_iOS_14.7.1_c7375");
+        listIOS.add("APPLE_iPad7_iOS_14.0.1_7de055");
+        listIOS.add("APPLE_iPad_iOS_14.6.0_18525");
+        listIOS.add("APPLE_iPad9.7_iOS_14.3.0_a13e3");
 
         for (String DeviceName : listIOS) {
 
@@ -47,23 +49,20 @@ public class IOSConnectionUtility extends TestBase {
                     capabilities.setCapability("pCloudy_EnableVideo", "true");
                     capabilities.setCapability("pCloudy_EnablePerformanceData", "true");
                     capabilities.setCapability("pCloudy_EnableDeviceLogs", "true");
-                    Boolean b=isTrustDevice;
-                    if (Boolean.TRUE.equals(b)) {
-                        capabilities.setCapability("bundleId", "com.apple.Preferences");
-                        driver = new IOSDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+                    capabilities.setCapability("bundleId", "com.apple.Preferences");
+                    try {
+                        driver = new IOSDriver<>(new URL("https://us.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+                        log.debug("driver connceted Device:{}", DeviceName);
+                    }catch(Exception e){
+                     log.debug(e);
+                    }
+                    if(driver!=null) {
                         appiumDriver = driver;
-                        log.debug("driver connceted Device:{}", DeviceName );
                         launchApp(bundleID, applicationName, targetCompanyName, trustCompanyName, trustBtn);
-
-                    } else {
-                        capabilities.setCapability("pCloudy_ApplicationName", applicationName);
-                        capabilities.setCapability(bundleId, bundleID);
-                        driver = new IOSDriver<>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
-
                     }
                 } catch (InterruptedException | MalformedURLException ie) {
                     log.debug(ie);
-                    Thread.currentThread().interrupt();
+//                    Thread.currentThread().interrupt();
                 }
             } else {
                 log.debug("driver is not null,its running ");
@@ -71,7 +70,6 @@ public class IOSConnectionUtility extends TestBase {
 
         }
     }
-
 
 
 }

@@ -15,6 +15,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
+import static com.iexceed.uiframework.broweser.PcloudyDynamicappLaunch.launchApp;
+
 
 public class HomePageDefinition extends TestBase {
 
@@ -44,9 +46,9 @@ public class HomePageDefinition extends TestBase {
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
 
         }else{
-            waitUtility.waitForSeconds(10);
-//            iosAppURL=launchApp();
-            iosAppURL="https://readuser:Re@d@1234@artifactory.appzillon.com/artifactory/iOS-ipa/ao/manual/QARelease-1.0.0-18-01-2022-11%3A58/QARelease-1.0.0-18-01-2022-11%3A58.ipa";
+            waitUtility.waitForSeconds(5);
+            iosAppURL=launchApp();
+//            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/manual/QARelease-1.0.0-18-01-2022-11%3A58/QARelease-1.0.0-18-01-2022-11%3A58.ipa";
             String[] arr=iosAppURL.split("//");
             String temp1=arr[0]+"//readuser:Re@d@1234@";
             iosAppURL=temp1+arr[1];
@@ -77,7 +79,6 @@ public class HomePageDefinition extends TestBase {
 
     @And("user in Home screen (.+)$")
     public void user_in_home_screen(String testcase) throws Exception {
-
         HomePageAction homePageAction = new HomePageAction();
         homePageAction.isHomePageVisible(deviceConfig.get("platform"));
         log.info("user in Home screen");

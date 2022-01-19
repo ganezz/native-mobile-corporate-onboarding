@@ -17,8 +17,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @1
   Scenario Outline: Validate Email Address, optional Field with Max 100 characters and should follow email regex and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -29,23 +30,24 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_007 |
-      | TestCase_008 |
-      | TestCase_009 |
-      | TestCase_010 |
-      | TestCase_011 |
-      | TestCase_086 |
-      | TestCase_087 |
-      | TestCase_088 |
-      | TestCase_089 |
-      | TestCase_090 |
+#      | TestCase_008 |
+#      | TestCase_009 |
+#      | TestCase_010 |
+#      | TestCase_011 |
+#      | TestCase_086 |
+#      | TestCase_087 |
+#      | TestCase_088 |
+#      | TestCase_089 |
+#      | TestCase_090 |
 
 
 
   @2
   Scenario Outline: Validate Company Website, optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -56,23 +58,24 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_051 |
-      | TestCase_052 |
-      | TestCase_053 |
-      | TestCase_054 |
-      | TestCase_055 |
-      | TestCase_056 |
-      | TestCase_127 |
-      | TestCase_128 |
-      | TestCase_129 |
-      | TestCase_130 |
-      | TestCase_131 |
-      | TestCase_132 |
+#      | TestCase_052 |
+#      | TestCase_053 |
+#      | TestCase_054 |
+#      | TestCase_055 |
+#      | TestCase_056 |
+#      | TestCase_127 |
+#      | TestCase_128 |
+#      | TestCase_129 |
+#      | TestCase_130 |
+#      | TestCase_131 |
+#      | TestCase_132 |
 
   @3
   Scenario Outline: Validate + Add A New Address Button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -86,8 +89,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @4
   Scenario Outline: Validate Unit no/Building, optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -98,23 +102,24 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_057 |
-      | TestCase_058 |
-      | TestCase_059 |
-      | TestCase_060 |
-      | TestCase_061 |
-      | TestCase_133 |
-      | TestCase_134 |
-      | TestCase_135 |
-      | TestCase_136 |
-      | TestCase_137 |
-      | TestCase_138 |
+#      | TestCase_058 |
+#      | TestCase_059 |
+#      | TestCase_060 |
+#      | TestCase_061 |
+#      | TestCase_133 |
+#      | TestCase_134 |
+#      | TestCase_135 |
+#      | TestCase_136 |
+#      | TestCase_137 |
+#      | TestCase_138 |
 
 
   @5
   Scenario Outline: Validate Street/Area optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -125,21 +130,22 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_063 |
-      | TestCase_064 |
-      | TestCase_065 |
-      | TestCase_066 |
-      | TestCase_067 |
-      | TestCase_068 |
-      | TestCase_139 |
-      | TestCase_140 |
-      | TestCase_141 |
+#      | TestCase_064 |
+#      | TestCase_065 |
+#      | TestCase_066 |
+#      | TestCase_067 |
+#      | TestCase_068 |
+#      | TestCase_139 |
+#      | TestCase_140 |
+#      | TestCase_141 |
       | TestCase_142 |
 
   @6
   Scenario Outline: Validate state,City and Post box optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -150,23 +156,24 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_069 |
-      | TestCase_070 |
-      | TestCase_071 |
-      | TestCase_072 |
-      | TestCase_073 |
-      | TestCase_074 |
-      | TestCase_143 |
-      | TestCase_144 |
-      | TestCase_145 |
-      | TestCase_146 |
-      | TestCase_147 |
-      | TestCase_148 |
+#      | TestCase_070 |
+#      | TestCase_071 |
+#      | TestCase_072 |
+#      | TestCase_073 |
+#      | TestCase_074 |
+#      | TestCase_143 |
+#      | TestCase_144 |
+#      | TestCase_145 |
+#      | TestCase_146 |
+#      | TestCase_147 |
+#      | TestCase_148 |
 
   @7
   Scenario Outline: Validate zip code optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -177,20 +184,21 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_075 |
-      | TestCase_076 |
-      | TestCase_077 |
-      | TestCase_078 |
-      | TestCase_079 |
-      | TestCase_080 |
-      | TestCase_149 |
-      | TestCase_150 |
-      | TestCase_151 |
+#      | TestCase_076 |
+#      | TestCase_077 |
+#      | TestCase_078 |
+#      | TestCase_079 |
+#      | TestCase_080 |
+#      | TestCase_149 |
+#      | TestCase_150 |
+#      | TestCase_151 |
 
   @8
   Scenario Outline: Validate country Field
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -202,15 +210,16 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_012 |
-      | TestCase_017 |
-      | TestCase_152 |
-      | TestCase_153 |
+#      | TestCase_017 |
+#      | TestCase_152 |
+#      | TestCase_153 |
 
   @9
   Scenario Outline: validating Edit button in Address List
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -234,8 +243,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @10
   Scenario Outline: validating Delete icon with Ok button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -257,8 +267,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @11
   Scenario Outline: validating Delete icon with Cancel button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -280,8 +291,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @12
   Scenario Outline: validating User Contact Information screen Cancel button with Cancel button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -297,8 +309,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @13
   Scenario Outline: validating User Contact Information screen Cancel button with Ok button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -314,8 +327,9 @@ Feature: Validating Entity Contact Information screen in NM_CO
   @14
   Scenario Outline: validating Continue button
     And user in Home screen <testcase>
-    When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>

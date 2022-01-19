@@ -53,13 +53,13 @@ public class AndroidUtility {
             if (name.isDisplayed()) {
                 if ((name.getText()).contains(itemType)) {
                     log.info(name.isDisplayed());
-                    stringmsg=String.format(" %s",itemType);
-                    log.debug("User details is visible {}",stringmsg);
+                    stringmsg = String.format(" %s", itemType);
+                    log.debug("User details is visible {}", stringmsg);
                     break;
                 }
             } else {
 
-                log.debug("User details is not visible {}",stringmsg);
+                log.debug("User details is not visible {}", stringmsg);
 
             }
         }
