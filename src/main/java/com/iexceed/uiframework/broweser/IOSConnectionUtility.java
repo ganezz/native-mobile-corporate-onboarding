@@ -24,10 +24,11 @@ public class IOSConnectionUtility extends TestBase {
 
     public static void iosConnectionUtilities(Boolean isTrustDevice, String bundleID, String applicationName, By targetCompanyName, By trustCompanyName, By trustBtn) {
         String bundleId = bundleID;
+
         List<String> listIOS = new ArrayList<>();
+        listIOS.add("APPLE_iPad_iOS_14.6.0_18525");
         listIOS.add("APPLE_iPad7_iOS_14.0.1_7de055");
         listIOS.add("APPLE_iPadPro3_iOS_14.7.1_c7375");
-        listIOS.add("APPLE_iPad_iOS_14.6.0_18525");
         listIOS.add("APPLE_iPad9.7_iOS_14.3.0_a13e3");
 
         for (String DeviceName : listIOS) {
@@ -59,6 +60,7 @@ public class IOSConnectionUtility extends TestBase {
                     if(driver!=null) {
                         appiumDriver = driver;
                         launchApp(bundleID, applicationName, targetCompanyName, trustCompanyName, trustBtn);
+
                     }
                 } catch (InterruptedException | MalformedURLException ie) {
                     log.debug(ie);

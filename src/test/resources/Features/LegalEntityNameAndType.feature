@@ -17,7 +17,9 @@ Feature: Validating Entity Name And Type screen in NM_CO
   @1
   Scenario Outline: Validate Entity Legal Name, mandatory field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
-    When clicks Register Button
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -43,7 +45,9 @@ Feature: Validating Entity Name And Type screen in NM_CO
   @2
   Scenario Outline: Validate Trade Name(s), optional field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
-    When clicks Register Button
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -69,7 +73,9 @@ Feature: Validating Entity Name And Type screen in NM_CO
   @3
   Scenario Outline: Validate Previously known as, optional field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
-    When clicks Register Button
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -97,7 +103,9 @@ Feature: Validating Entity Name And Type screen in NM_CO
   @4
   Scenario Outline: Validate Legal entity type, mandatory field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
-    When clicks Register Button
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -115,7 +123,9 @@ Feature: Validating Entity Name And Type screen in NM_CO
   @5
   Scenario Outline: Validate Previously trading as, optional field with Max 100 characters and special characters allowed
     And user in Home screen <testcase>
-    When clicks Register Button
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -137,8 +147,10 @@ Feature: Validating Entity Name And Type screen in NM_CO
 
   @6
   Scenario Outline:  Validate Cancel button in Entity name and type screen with click on Yes button
-    And user in Home screen TestCase_021
-    When clicks Register Button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -153,8 +165,10 @@ Feature: Validating Entity Name And Type screen in NM_CO
 
   @7
   Scenario Outline:  Validate Cancel button in Entity name and type screen with click on No button
-    And user in Home screen TestCase_021
-    When clicks Register Button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
@@ -169,8 +183,10 @@ Feature: Validating Entity Name And Type screen in NM_CO
 
   @8
   Scenario Outline: Validate Continue button
-    And user in Home screen TestCase_021
-    When clicks Register Button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
     Then user will landed on Dashboard page
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
