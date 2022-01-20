@@ -37,11 +37,8 @@ public class IosHomePageObjects {
 
     public void iIsHomePageVisible() throws Exception {
         waitUtility.waitForSeconds(2);
-        Boolean b1 = genericMethods.isElementPresent(englishBtn);
         Boolean b = genericMethods.isElementPresent(lightThemeBtn);
         if (Boolean.TRUE.equals(b)) {
-            log.info("user in home page");
-        } else if (Boolean.TRUE.equals(b1)) {
             log.info("user in home page");
         } else {
             log.debug("home page is not launched");
@@ -54,6 +51,7 @@ public class IosHomePageObjects {
         log.debug("language");
 
     }
+
     public void iClickUserRegBtn(String language) throws Exception {
         waitUtility.waitForSeconds(5);
         if (language.equals("english")) {
@@ -68,11 +66,11 @@ public class IosHomePageObjects {
         }
     }
 
-    public void ienterLoginCredentials(){
+    public void ienterLoginCredentials() {
         log.debug("ios");
     }
 
-    public void loginPage(){
+    public void loginPage() {
         log.info("log");
     }
 
@@ -107,7 +105,6 @@ public class IosHomePageObjects {
         genericMethods.click(arabicBtn);
         genericMethods.click(userOnboardBtn);
         genericMethods.isElementPresent(newApplicationBtnArabic);
-
 
 
     }

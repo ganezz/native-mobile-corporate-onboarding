@@ -53,7 +53,7 @@ public class EntityNameTypePage {
         entityLegalScreenEditField.findElements(driver).get(1).click();
         entityLegalScreenEditField.findElements(driver).get(1).clear();
         entityLegalScreenEditField.findElements(driver).get(1).sendKeys(entityName);
-        entityLegalScreenEditField.findElements(driver).get(2).click();
+        genericMethods.click(entityLegalScreenEditField);
 
 
     }
@@ -65,13 +65,12 @@ public class EntityNameTypePage {
             entityLegalScreenEditField.findElements(driver).get(2).click();
             entityLegalScreenEditField.findElements(driver).get(2).clear();
             entityLegalScreenEditField.findElements(driver).get(2).sendKeys(tradeName);
-            entityLegalScreenEditField.findElements(driver).get(1).click();
-
+            genericMethods.click(entityLegalScreenEditField);
         } else {
             entityLegalScreenEditField.findElements(driver).get(1).click();
             entityLegalScreenEditField.findElements(driver).get(1).clear();
             entityLegalScreenEditField.findElements(driver).get(1).sendKeys(tradeName);
-            entityLegalScreenEditField.findElements(driver).get(1).click();
+            genericMethods.click(entityLegalScreenEditField);
         }
 
     }
@@ -83,12 +82,12 @@ public class EntityNameTypePage {
             entityLegalScreenEditField.findElements(driver).get(4).click();
             entityLegalScreenEditField.findElements(driver).get(4).clear();
             entityLegalScreenEditField.findElements(driver).get(4).sendKeys(previouslyKnown);
-            entityLegalScreenEditField.findElements(driver).get(1).click();
+            genericMethods.click(entityLegalScreenEditField);
         } else {
             entityLegalScreenEditField.findElements(driver).get(1).click();
             entityLegalScreenEditField.findElements(driver).get(1).clear();
             entityLegalScreenEditField.findElements(driver).get(1).sendKeys(previouslyKnown);
-            entityLegalScreenEditField.findElements(driver).get(1).click();
+            genericMethods.click(entityLegalScreenEditField);
         }
 
     }
@@ -101,12 +100,12 @@ public class EntityNameTypePage {
             entityLegalScreenEditField.findElements(driver).get(5).click();
             entityLegalScreenEditField.findElements(driver).get(5).clear();
             entityLegalScreenEditField.findElements(driver).get(5).sendKeys(previouslyTrade);
-            entityLegalScreenEditField.findElements(driver).get(1).click();
+            genericMethods.click(entityLegalScreenEditField);
         } else {
             entityLegalScreenEditField.findElements(driver).get(4).click();
             entityLegalScreenEditField.findElements(driver).get(4).clear();
             entityLegalScreenEditField.findElements(driver).get(4).sendKeys(previouslyTrade);
-            entityLegalScreenEditField.findElements(driver).get(1).click();
+            genericMethods.click(entityLegalScreenEditField);
         }
 
     }
