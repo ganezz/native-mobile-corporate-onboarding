@@ -1,6 +1,7 @@
 package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.GenericMethods;
+import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -16,11 +17,14 @@ public class AndroidUtility {
     GenericMethods genericMethods;
     private static final Logger log = LogManager.getLogger(AndroidUtility.class);
     private String stringmsg;
-
+    WaitUtility waitUtility;
     public AndroidUtility() {
         genericMethods = new GenericMethods(driver);
+        waitUtility = new WaitUtility();
     }
 
+    By hamBurgerMenu = By.xpath("//android.widget.ImageView[@content-desc='HAMBURGER_ICON']");
+    By businessLogicMenu = By.xpath("//*[@text='Business Location']");
     By okBtn = By.xpath("//*[@text='OK']");
     By cancelBtn = By.xpath("//*[@text='Cancel']");
     By cancelBtn1 = By.xpath("//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.View/android.view.View/android.view.View/android.view.View[2]");
@@ -42,7 +46,14 @@ public class AndroidUtility {
             }
         }
     }
-
+    public void swipingHamburgerMenu() throws Exception {
+        waitUtility.waitForSeconds(4);
+        genericMethods.click(hamBurgerMenu);
+        Boolean b = genericMethods.isElementPresent(businessLogicMenu);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("menu is swipped");
+        }
+    }
 
     public void clearText(By element) {
         driver.findElement(element).clear();

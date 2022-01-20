@@ -63,7 +63,7 @@ public class ConnectionObjects extends TestBase {
             }
         } else {
             if (driver == null) {
-                iosConnectionUtilities(Boolean.valueOf(isTrusted), props.getProperty("bundleID"), applicationName, By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
+                iosConnectionUtilities( props.getProperty("bundleID"), applicationName, By.xpath(props.getProperty("targetCompanyName")), By.xpath(props.getProperty("trustCompanyName")), By.xpath(props.getProperty("trustBtn")));
 
             } else {
                 log.debug("driver connected");

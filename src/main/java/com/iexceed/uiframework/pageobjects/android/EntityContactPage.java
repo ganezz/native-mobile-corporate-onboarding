@@ -167,7 +167,11 @@ public class EntityContactPage {
             genericMethods.isElementPresent(editValidationMsgArabic);
             genericMethods.click(closBtnArabic);
         }else {
-            genericMethods.click(closBtn);
+            try {
+                genericMethods.click(closBtn);
+            }catch(Exception e){
+                genericMethods.click(closBtnArabic);
+            }
         }
 
     }

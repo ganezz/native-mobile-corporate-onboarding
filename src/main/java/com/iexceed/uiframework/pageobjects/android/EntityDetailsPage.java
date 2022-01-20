@@ -191,29 +191,22 @@ public class EntityDetailsPage {
     }
 
     public void clickConfirmBtn() throws Exception {
+        try {
+            genericMethods.hideKeyboard();
+        } catch (Exception e) {
+            log.debug("keyboard is not alive");
+        }
+
         Boolean b = genericMethods.isElementPresent(confirmBtn);
         if (Boolean.TRUE.equals(b)) {
-            try {
-                genericMethods.click(confirmBtn);
-            } catch (Exception e) {
-                genericMethods.hideKeyboard();
-                log.debug("keyboard is  alive");
-                genericMethods.click(confirmBtn);
-            }
+            genericMethods.click(confirmBtn);
         } else {
-            try {
-                genericMethods.click(confirmBtnArabic);
-                waitUtility.waitForSeconds(3);
-            } catch (Exception e) {
-                genericMethods.hideKeyboard();
-                log.debug("keyboard is  alive");
-                genericMethods.click(confirmBtnArabic);
-                waitUtility.waitForSeconds(3);
-            }
-
+            genericMethods.click(confirmBtnArabic);
+            waitUtility.waitForSeconds(3);
         }
 
     }
+
 
     public void isValidationMsgPresent(String expectedMsg, String expectedMsg1) throws Exception {
         waitUtility.waitForSeconds(2);
@@ -370,8 +363,9 @@ public class EntityDetailsPage {
             genericMethods.isElementPresent(validateUseCreationMsgArabic);
             genericMethods.click(closeBtnArabic);
         } else {
-            try{
-            genericMethods.click(closeBtn);}catch(Exception e){
+            try {
+                genericMethods.click(closeBtn);
+            } catch (Exception e) {
                 genericMethods.click(closeBtnArabic);
 
             }
