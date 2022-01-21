@@ -41,4 +41,78 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void addNewLocation() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.addNewLocationBtn();
+        }
+
+    }
+
+    public void addNewMarket() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.addNewMarketBtn();
+        }
+    }
+
+    public void fillCountryandOperation(String country, String operation) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.fillCountry(country);
+            businessLocationPage.fillOperation(operation);
+        }
+    }
+    public void fillCountryandProportion(String country, String proportion) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.fillCountry(country);
+            businessLocationPage.fillProportion(proportion);
+        }
+    }
+
+
+    public void validateAddNewLocationField(String country, String operation) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.validateAddNewLocationField(country, operation);
+        }
+    }
+    public void validateAddNewMarketField(String country, String proportion) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.validateAddNewMarketField(country, proportion);
+        }
+    }
+
+    public void isEditValidationMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.isEditValidationMsgPresent();
+        }
+    }
+
+    public void isEditBusinessMarketMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.isEditMarketValidationMsgPresent();
+        }
+    }
+
+    public void isDeletePopupPresent() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.isDeleteMsgPresent();
+        }
+    }
+
 }

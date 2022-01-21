@@ -23,8 +23,6 @@ public class IOSConnectionUtility extends TestBase {
     private static final Logger log = LogManager.getLogger(IOSConnectionUtility.class);
 
     public static void iosConnectionUtilities( String bundleID, String applicationName, By targetCompanyName, By trustCompanyName, By trustBtn) {
-        String bundleId = bundleID;
-
         List<String> listIOS = new ArrayList<>();
 
         listIOS.add("APPLE_iPad7_iOS_14.0.1_7de055");
@@ -67,7 +65,7 @@ public class IOSConnectionUtility extends TestBase {
                     }
                 } catch (InterruptedException | MalformedURLException ie) {
                     log.debug(ie);
-//                    Thread.currentThread().interrupt();
+
                 }
             } else {
                 log.debug("driver is not null,its running ");
