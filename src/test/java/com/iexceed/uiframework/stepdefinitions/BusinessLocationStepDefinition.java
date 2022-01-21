@@ -119,4 +119,8 @@ public class BusinessLocationStepDefinition extends TestBase {
     public void user_displayed_with_edited_values_in_business_markets_section(){
         user_entered_business_market_is_displayed_in_business_market_section();
     }
+    @Then("Business market is removed from the list$")
+    public void business_market_is_removed_from_the_list(){
+        user_entered_business_market_is_displayed_in_business_market_section();
+    }
 }

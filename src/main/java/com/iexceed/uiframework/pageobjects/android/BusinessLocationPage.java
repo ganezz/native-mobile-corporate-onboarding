@@ -40,10 +40,10 @@ public class BusinessLocationPage {
     By closBtn = By.xpath("//*[@text='Close']");
     By locationEditMsgArabic=By.xpath("//android.view.View[@text='تعديل ! تم تحرير موقع العمل بنجاح']");
     By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
-    By businessAddDeleteMsg=By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
-    By businessAddDeleteMsgArabic=By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف العنوان من القائمة؟']");
-    By businessLocDeleteMsg=By.xpath("//android.view.View[@text='Are  ghg you sure you want to delete the Address from the list ?']");
-    By businessLocDeleteMsgArabic=By.xpath("//android.view.View[@text='Are ygggfou sure you want to delete the Address from the list ?']");
+    By businessLocDeleteMsg=By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
+    By businessLocDeleteMsgArabic=By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف العنوان من القائمة؟']");
+    By businessMarketDeleteMsg=By.xpath("//android.view.View[@text='Are  ghg you sure you want to delete the Address from the list ?']");
+    By businessMarketDeleteMsgArabic=By.xpath("//android.view.View[@text='Are ygggfou sure you want to delete the Address from the list ?']");
 
     public void selectBusinessLocationPage() throws Exception {
         androidUtility.swipingHamburgerMenu();
@@ -182,22 +182,22 @@ public class BusinessLocationPage {
 
     public void isDeleteMsgPresent() throws InterruptedException {
         try {
-            Boolean b = genericMethods.isElementPresent(businessAddDeleteMsg);
-            Boolean b1 = genericMethods.isElementPresent(businessLocDeleteMsg);
+            Boolean b = genericMethods.isElementPresent(businessLocDeleteMsg);
+            Boolean b1 = genericMethods.isElementPresent(businessMarketDeleteMsg);
             if (Boolean.TRUE.equals(b)) {
-                genericMethods.waitForVisibility(businessAddDeleteMsg);
-                log.info(genericMethods.isElementPresent(businessAddDeleteMsg));
+                genericMethods.waitForVisibility(businessLocDeleteMsg);
+                log.info(genericMethods.isElementPresent(businessLocDeleteMsg));
             } else if (Boolean.TRUE.equals(b1)) {
-                genericMethods.isElementPresent(businessLocDeleteMsg);
+                genericMethods.isElementPresent(businessMarketDeleteMsg);
             } else {
                 log.debug("no messsage popup is present");
             }
         } catch (Exception e) {
-            Boolean c = genericMethods.isElementPresent(businessAddDeleteMsgArabic);
-            Boolean c1 = genericMethods.isElementPresent(businessLocDeleteMsgArabic);
+            Boolean c = genericMethods.isElementPresent(businessLocDeleteMsgArabic);
+            Boolean c1 = genericMethods.isElementPresent(businessMarketDeleteMsgArabic);
             if (Boolean.TRUE.equals(c)) {
-                genericMethods.waitForVisibility(businessAddDeleteMsgArabic);
-                log.info(genericMethods.isElementPresent(businessAddDeleteMsgArabic));
+                genericMethods.waitForVisibility(businessLocDeleteMsgArabic);
+                log.info(genericMethods.isElementPresent(businessMarketDeleteMsgArabic));
             } else if (Boolean.TRUE.equals(c1)) {
                 genericMethods.isElementPresent(businessLocDeleteMsgArabic);
             } else {

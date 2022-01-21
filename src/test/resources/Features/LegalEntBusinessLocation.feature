@@ -135,6 +135,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | testcase     |
       | TestCase_012 |
 
+  @7
   Scenario Outline: validating Edit button in Business markets section
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -162,25 +163,40 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
       | TestCase_158 |
 
-
+  @8
   Scenario Outline: validating Delete icon of Business markets section with Ok button
-    When user is in Business Location And Operations screen Screen <testcase>
-    And clicks on Add A New Business market button
-    And user lands on Add A New Business markets Screen
-    And fills valid data in Country and Proportion of Business(%) fields
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
+    And swipes the side menu and select Business Location
+    When user is in Business Location And Operations screen
+    And clicks Add A New Business Markets button
+    Then user lands on Add A New Business Markets screen
+    And fills valid data in Country and Proportion of Business fields
     And clicks on Confirm button
-    And user lands on Business Location And Operations screen
-    And user entered Business markets is displayed in Business markets Section
-    And clicks on delete icon
+    When user is in Business Location And Operations screen
+    And user entered Business market is displayed in Business market Section
+    And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks on Ok button
+    And clicks Yes button <testcase>
     Then Business market is removed from the list
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
+
 
   Scenario Outline: validating Delete icon of Business markets section with Cancel button
-    When user is in Business Location And Operations screen Screen <testcase>
-    And clicks on Add A New Business market button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
+    And swipes the side menu and select Business Location
+    When user is in Business Location And Operations screen
+    And clicks Add A New Business Markets button
     And user lands on Add A New Business markets Screen
     And fills valid data in Country and Proportion of Business(%) fields
     And clicks on Confirm button
