@@ -86,6 +86,13 @@ public class HomePageDefinition extends TestBase {
         testdata.setTestDataInMap(datalist);
 
     }
+    @And("user input invalid text in Username field$")
+    public void user_input_invalid_text_in_username_field(){
+        HomePageAction homePageAction = new HomePageAction();
+        homePageAction.enterUserName(deviceConfig.get("platform"));
+    }
+
+
 
     @And("click login button$")
     public void click_login_button() throws Exception {

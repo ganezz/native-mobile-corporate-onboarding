@@ -197,38 +197,60 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
-    And user lands on Add A New Business markets Screen
-    And fills valid data in Country and Proportion of Business(%) fields
+    Then user lands on Add A New Business Markets screen
+    And fills valid data in Country and Proportion of Business fields
     And clicks on Confirm button
-    And user lands on Business Location And Operations screen
-    And user entered Business markets is displayed in Business markets Section
-    And clicks on delete icon
+    When user is in Business Location And Operations screen
+    And user entered Business market is displayed in Business market Section
+    And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks on Cancel button
+    And clicks No button
     Then Business market is not removed from the list
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
 
-  Scenario Outline: validating Business Location and Operations screen Cancel button with Cancel button
-    When user is in Business Location and Operations Screen <testcase>
-    And clicks on Cancel Button
-    And user is displayed with Cancel Prompt
-    And clicks on Cancel button
+  Scenario Outline: validating Business Location and Operations screen with Cancel button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
+    And swipes the side menu and select Business Location
+    When user is in Business Location And Operations screen
+    And clicks Cancel button
+    Then user will prompt to ask about confirmation
+    And clicks No button
     Then user remains in Business Location and Operations screen
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
 
   Scenario Outline: validating Business Location and Operations screen Cancel button with Ok button
-    When user is in Business Location and Operations Screen <testcase>
-    And clicks on Cancel Button
-    And user is displayed with Cancel Prompt
-    And clicks on Ok button
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
+    And swipes the side menu and select Business Location
+    When user is in Business Location And Operations screen
+    And clicks Cancel button
+    Then user will prompt to ask about confirmation
+    And clicks Yes button <testcase>
     Then user lands on Dashboard
     Examples:
       | testcase |
 
   Scenario Outline: validating Continue button
-    When user is in Business Location And Operations Screen <testcase>
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user will landed on Dashboard page
+    And swipes the side menu and select Business Location
+    When user is in Business Location And Operations screen
     And user fills all mandatory values
     And clicks on Continue Button
     Then user lands on Industry screen

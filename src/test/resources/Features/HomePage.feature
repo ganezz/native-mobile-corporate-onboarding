@@ -4,9 +4,9 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
   Background: User should able to open App
     Given user opens the App batch1
 
-  @1
-  Scenario Outline:  Validate Login Credenials
-    And user in Home screen <testcase>
+#  @1
+#  Scenario Outline:  Validate Login Credenials
+#    And user in Home screen <testcase>
 #    When enter username and password <testcase>
 #    And click login button
 #    Then user will landed on Dashboard page
@@ -35,10 +35,10 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
 #
 #
 #  Scenario Outline: validating Username, mandatory Field with Max 100 characters and special characters are not allowed
-#    When user is in Login screen<testcase>
+#    And user in Home screen <testcase>
 #    And user input invalid text in Username field
 #    And clicks on some other field
-#    And clicks on Login button
+#    And click login button
 #    Then error message should be displayed under Username field
 #    Examples:
 #      | testcase |

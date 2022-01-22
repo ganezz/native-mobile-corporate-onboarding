@@ -36,6 +36,22 @@ public class HomePageAction {
         }
     }
 
+    public void enterUserName(String platform){
+        if (platform.equalsIgnoreCase("ios")) {
+            ihomePageObjects.ienterLoginCredentials();
+        } else {
+            homePageObjects.enterUserName();
+        }
+    }
+
+    public void enterPassword(String platform){
+        if (platform.equalsIgnoreCase("ios")) {
+            ihomePageObjects.ienterLoginCredentials();
+        } else {
+            homePageObjects.enterPassword();
+        }
+    }
+
     public void validateLoginCredentials(String platform) {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ienterLoginCredentials();

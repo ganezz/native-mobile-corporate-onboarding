@@ -92,6 +92,29 @@ public class HomePageObjects extends TestBase {
 
     }
 
+    public void enterUserName(){
+        genericMethods.waitForVisibility(textField);
+        textField.findElements(driver).get(1).click();
+        textField.findElements(driver).get(1).sendKeys(props.getProperty("username"));
+        try {
+            driver.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+    }
+
+    public void enterPassword(){
+        genericMethods.waitForVisibility(textField);
+        textField.findElements(driver).get(2).click();
+        textField.findElements(driver).get(2).clear();
+        textField.findElements(driver).get(2).sendKeys(props.getProperty("password"));
+        try {
+            driver.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+    }
+
     public void enterLoginCredentials() {
         genericMethods.waitForVisibility(textField);
         textField.findElements(driver).get(1).click();

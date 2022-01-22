@@ -123,4 +123,13 @@ public class BusinessLocationStepDefinition extends TestBase {
     public void business_market_is_removed_from_the_list(){
         user_entered_business_market_is_displayed_in_business_market_section();
     }
+    @Then("Business market is not removed from the list$")
+    public void business_market_is_not_removed_from_the_list(){
+        user_entered_business_market_is_displayed_in_business_market_section();
+    }
+    @Then("user remains in Business Location and Operations screen$")
+    public void user_remains_in_business_location_and_operations_screen() throws Exception {
+        businessLocationPageActions.isBusinessLoactionPage();
+    }
 }
+
