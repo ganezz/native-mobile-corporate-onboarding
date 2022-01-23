@@ -275,5 +275,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: io.cucumber:cucumber-java:6.10.4" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.cucumber:cucumber-testng:6.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.aventstack:extentreports:5.0.4" level="project" />
   </component>
 </module>
