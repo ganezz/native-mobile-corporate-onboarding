@@ -37,11 +37,7 @@ public class HomePageDefinition extends TestBase {
             log.info("User Opens Application in connected device :" + deviceConfig.get("deviceName"));
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
-//            androidAppURL=launchApp();
-            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.15-21-01-2022-14:05.apk";
-            ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
-            testdata.setTestDataInMap(deviceConfig);
-          log.debug("updated url:"+deviceConfig.get("oldAppURL"));
+            log.debug("updated url:"+deviceConfig.get("oldAppURL"));
 
         }else{
             waitUtility.waitForSeconds(5);

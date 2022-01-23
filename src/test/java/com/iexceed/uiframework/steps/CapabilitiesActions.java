@@ -1,6 +1,7 @@
 package com.iexceed.uiframework.steps;
 
 import com.iexceed.uiframework.domainobjects.ConnectionObjects;
+
 import java.util.Map;
 
 public class CapabilitiesActions {
