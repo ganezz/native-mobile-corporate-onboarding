@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/classes" />
       <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/test-classes" />
@@ -15,8 +16,8 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="pCloudy-java-connector-11.0.6-jar-with-dependencies" level="project" />
-    <orderEntry type="library" name="AAF-jar-with-dependencies" level="project" />
+    <orderEntry type="library" exported="" name="pCloudy-java-connector-11.0.6-jar-with-dependencies" level="project" />
+    <orderEntry type="library" exported="" name="AAF-jar-with-dependencies" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: pCloudyjavaConnector:pCloudyjavaConnector:11.0.6">
         <CLASSES>
@@ -276,5 +277,7 @@
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.cucumber:cucumber-testng:6.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.aventstack:extentreports:5.0.4" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:6.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-java:6.10.4" level="project" />
   </component>
 </module>
