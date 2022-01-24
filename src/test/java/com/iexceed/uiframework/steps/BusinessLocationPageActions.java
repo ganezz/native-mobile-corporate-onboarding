@@ -1,12 +1,12 @@
 package com.iexceed.uiframework.steps;
 
-import com.iexceed.uiframework.pageobjects.android.BusinessLocationPage;
+import com.iexceed.uiframework.pageobjects.android.BusinessLocationPageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class BusinessLocationPageActions {
 
-    BusinessLocationPage businessLocationPage = new BusinessLocationPage();
+    BusinessLocationPageObjects businessLocationPage = new BusinessLocationPageObjects();
     private static final Logger log = LogManager.getLogger(BusinessLocationPageActions.class);
     public String platForm;
 

@@ -30,6 +30,8 @@ public class HomePageObjects extends TestBase {
     By userDetailsRegBt = By.xpath("//android.view.View[@text='Onboarding']");
     By addNewUsrBtn = By.xpath("//android.view.View[@text='+ Add A New User']");
     By addNewUsrBtnArabic = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+    By addNewAppliBtn = By.xpath("//android.view.View[@content-desc='New application']");
+    By addNewAppliBtnArabic = By.xpath("//android.view.View[@content-desc='تطبيق جديد']");
     By englishBtn = By.xpath("//android.view.View[@text='English']");
     By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
     By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
@@ -38,7 +40,12 @@ public class HomePageObjects extends TestBase {
     By loginArabicBtn = By.xpath("//android.view.View[@content-desc='تسجيل الدخول']");
     By dropDown = By.xpath("//android.widget.EditText[@text='English']");
     By dropDownList = By.xpath("//android.view.View");
-
+    By userNameErrorMsg = By.xpath("//android.view.View[@text='Please Enter Valid Username']");
+    By userNameErrorMsgArabic = By.xpath("//android.view.View[@text='Please Enter Valid Username']");
+    By passwordErrorMsg = By.xpath("//android.view.View[@text='Please Enter Valid Password']");
+    By passwordErrorMsgArabic = By.xpath("//android.view.View[@text='الرجاء إدخال كلمة مرور صالحة']");
+    By themeToggleBtn = By.xpath("//android.widget.Switch[@content-desc='Dark Theme']");
+    By themeToggleBtnArabic = By.xpath("//android.widget.Switch[@content-desc='مظهر داكن']");
 
     public void isHomePageVisible() throws Exception {
         waitUtility.waitForSeconds(4);
@@ -50,6 +57,23 @@ public class HomePageObjects extends TestBase {
             log.info("user in home page");
         } else {
             log.debug("home page is not launched");
+        }
+    }
+
+
+    public void clikckThemeBtn() throws Exception {
+
+        Boolean b = genericMethods.isElementPresent(themeToggleBtn);
+        Boolean b1 = genericMethods.isElementPresent(themeToggleBtnArabic);
+
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(themeToggleBtn);
+            log.info("changed to dark mode");
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(themeToggleBtnArabic);
+            log.info("changed to dark mode");
+        } else {
+            log.info("theme is not applied");
         }
 
 
@@ -76,14 +100,17 @@ public class HomePageObjects extends TestBase {
         }
     }
 
+
     public void verifyPageLanding() throws Exception {
         waitUtility.waitForSeconds(5);
-        Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
-        Boolean b1 = genericMethods.isElementPresent(addNewUsrBtnArabic);
+        Boolean b = genericMethods.isElementPresent(addNewAppliBtn);
+        Boolean b1 = genericMethods.isElementPresent(addNewAppliBtnArabic);
 
         if (Boolean.TRUE.equals(b)) {
             log.info("page is navigating");
-        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(addNewAppliBtn);
+                    } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(addNewAppliBtnArabic);
             log.info("page is navigating arabic");
         } else {
             log.info("Page is not navigating to add new user screen");
@@ -92,10 +119,10 @@ public class HomePageObjects extends TestBase {
 
     }
 
-    public void enterUserName(){
+    public void enterUserName(String userNmae) {
         genericMethods.waitForVisibility(textField);
         textField.findElements(driver).get(1).click();
-        textField.findElements(driver).get(1).sendKeys(props.getProperty("username"));
+        textField.findElements(driver).get(1).sendKeys(userNmae);
         try {
             driver.hideKeyboard();
         } catch (Exception e) {
@@ -103,11 +130,41 @@ public class HomePageObjects extends TestBase {
         }
     }
 
-    public void enterPassword(){
+    public void isUsrErrormsgPresent() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(loginBtn);
+        Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(loginBtn);
+            genericMethods.isElementPresent(userNameErrorMsg);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(loginArabicBtn);
+            genericMethods.isElementPresent(userNameErrorMsgArabic);
+        } else {
+            log.info("Error message is not present");
+        }
+
+    }
+
+    public void isPasswordErrormsgPresent() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(loginBtn);
+        Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(loginBtn);
+            genericMethods.isElementPresent(passwordErrorMsg);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(loginArabicBtn);
+            genericMethods.isElementPresent(passwordErrorMsgArabic);
+        } else {
+            log.info("Error message is not present");
+        }
+
+    }
+
+    public void enterPassword(String password) {
         genericMethods.waitForVisibility(textField);
         textField.findElements(driver).get(2).click();
         textField.findElements(driver).get(2).clear();
-        textField.findElements(driver).get(2).sendKeys(props.getProperty("password"));
+        textField.findElements(driver).get(2).sendKeys(password);
         try {
             driver.hideKeyboard();
         } catch (Exception e) {

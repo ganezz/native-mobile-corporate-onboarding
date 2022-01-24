@@ -241,7 +241,9 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Yes button <testcase>
     Then user lands on Dashboard
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
 
   Scenario Outline: validating Continue button
     And user in Home screen <testcase>
@@ -251,8 +253,10 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user will landed on Dashboard page
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
-    And user fills all mandatory values
+    And user fills all mandatory values <testcase>
     And clicks on Continue Button
     Then user lands on Industry screen
     Examples:
       | testcase |
+      | TestCase_163 |
+      | TestCase_164 |

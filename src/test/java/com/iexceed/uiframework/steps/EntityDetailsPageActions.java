@@ -1,12 +1,12 @@
 package com.iexceed.uiframework.steps;
 
-import com.iexceed.uiframework.pageobjects.android.EntityDetailsPage;
+import com.iexceed.uiframework.pageobjects.android.EntityDetailsPageObjects;
 import com.iexceed.uiframework.pageobjects.ios.IosEntityDetailsPage;
 
 
 public class EntityDetailsPageActions {
 
-    EntityDetailsPage entityDetailsPage = new EntityDetailsPage();
+    EntityDetailsPageObjects entityDetailsPage = new EntityDetailsPageObjects();
     IosEntityDetailsPage iEntityDetailsPage = new IosEntityDetailsPage();
     public String platForm;
 
