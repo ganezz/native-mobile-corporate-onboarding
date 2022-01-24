@@ -4,12 +4,12 @@ import com.iexceed.uiframework.pageobjects.android.DashboardPageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class DashboardPageActions {
+public class DashboardPageAction {
     public String platForm;
     DashboardPageObjects dashboardPage=new DashboardPageObjects();
-    private static final Logger log = LogManager.getLogger(DashboardPageActions.class);
+    private static final Logger log = LogManager.getLogger(DashboardPageAction.class);
 
-    public DashboardPageActions(String platform) {
+    public DashboardPageAction(String platform) {
         this.platForm = platform;
 
     }

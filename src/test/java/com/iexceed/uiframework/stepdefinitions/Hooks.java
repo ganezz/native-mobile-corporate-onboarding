@@ -1,4 +1,4 @@
-package com.iexceed.uiframework.stepdefinition;
+package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.utilites.WaitUtility;

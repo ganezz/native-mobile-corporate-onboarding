@@ -4,13 +4,13 @@ import com.iexceed.uiframework.pageobjects.android.EntityNameTypePageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class EntityNameTypeActions {
+public class EntityNameTypeAction {
     public String platForm;
     EntityNameTypePageObjects legalEntityNameTypePage=new EntityNameTypePageObjects();
-    private static final Logger log = LogManager.getLogger(EntityNameTypeActions.class);
+    private static final Logger log = LogManager.getLogger(EntityNameTypeAction.class);
 
 
-    public EntityNameTypeActions(String platform) {
+    public EntityNameTypeAction(String platform) {
         this.platForm = platform;
 
     }

@@ -1,28 +1,28 @@
-package com.iexceed.uiframework.stepdefinition;
+package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
-import com.iexceed.uiframework.steps.EntityDetailsPageActions;
+import com.iexceed.uiframework.steps.EntityDetailsPageAction;
 import com.iexceed.uiframework.utilites.readexcel.TestDataHandler;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.iexceed.uiframework.stepdefinition.HomePageDefinition.datalist;
-import static com.iexceed.uiframework.stepdefinition.HomePageDefinition.deviceConfig;
+import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
+import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
 
-public class EntityDetailsPageDefinition extends TestBase {
+public class EntityDetailsPageDefinitions extends TestBase {
 
-    public static Logger log = LogManager.getLogger(HomePageDefinition.class);
+    public static Logger log = LogManager.getLogger(HomePageDefinitions.class);
     TestDataHandler testdata = new TestDataHandler();
-    HomePageDefinition homePageDefinition = new HomePageDefinition();
+    HomePageDefinitions homePageDefinitions = new HomePageDefinitions();
 
 
 
     @And("swipes the side menu$")
     public void swipes_the_side_menu() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.hamBurgerSwipping();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.hamBurgerSwipping();
 
 
     }
@@ -41,14 +41,14 @@ public class EntityDetailsPageDefinition extends TestBase {
     @Then("user is shown with a editable text field with a cancel button$")
     public void user_is_shown_with_a_editable_text_field_with_a_cancel_button() throws InterruptedException {
         log.info("user is shown with a editable text field with a cancel button");
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.validateSearchField();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.validateSearchField();
     }
 
     @And("user enters text and clicks on cancel button$")
     public void user_enters_text_and_clicks_on_cancel_button() throws InterruptedException {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clearSearchField();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clearSearchField();
 
     }
     @Then("search field becomes normal$")
@@ -58,23 +58,23 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("clicks Add A New User button$")
     public void clicks_add_a_new_user_button() {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickAddNewUSerBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickAddNewUSerBtn();
 
     }
 
     @And("user will landed on the New User screen$")
     public void user_will_landed_on_the_new_user_screen() throws InterruptedException {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.isAddNewScreenVisible();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.isAddNewScreenVisible();
         log.info("user will landed on the New User screen");
     }
 
 
     @And("user input invalid Name$")
     public void user_input_invalid_name() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"));
 
     }
 
@@ -86,29 +86,29 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("clicks on Confirm button$")
     public void clicks_on_confirm_button() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickCOnfirmBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickCOnfirmBtn();
         log.info("user clicks on Confirm button");
     }
 
     @Then("proper error message should display under User Name field$")
     public void proper_error_message_should_display_under_user_name_field() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
         log.info("proper error message should display under User Name field");
     }
 
     @And("user input invalid Email Address$")
     public void user_input_invalid_email_address() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.EnterEmailid(datalist.get("emailId"), datalist.get("limitCheck"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.EnterEmailid(datalist.get("emailId"), datalist.get("limitCheck"));
 
     }
 
     @Then("proper error message should display under email field$")
     public void proper_error_message_should_display_under_email_field() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
         log.info("proper error message should display under User Name field");
     }
 
@@ -129,10 +129,10 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("user selects Country Code$")
     public void user_selects_country_code() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.selectCountryCode(datalist.get("countryCode"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.selectCountryCode(datalist.get("countryCode"));
         log.info(" Country Code selected");
-        entityDetailsPageActions.enterMobNum(datalist.get("mobNum"));
+        entityDetailsPageAction.enterMobNum(datalist.get("mobNum"));
     }
 
     @Then("user is displayed with the selected value in Code field$")
@@ -154,35 +154,35 @@ public class EntityDetailsPageDefinition extends TestBase {
     @Then("user will land on User Contact Details$")
     public void user_will_land_on_user_contact_details() throws Exception {
         log.info("user will land on User Contact Details");
-        HomePageDefinition homePageDefinition = new HomePageDefinition();
-        homePageDefinition.user_will_landed_on_dashboard_page();
+        HomePageDefinitions homePageDefinitions = new HomePageDefinitions();
+        homePageDefinitions.user_will_landed_on_dashboard_page();
     }
 
     @Then("proper error message should display under mobile field$")
     public void proper_error_message_should_display_under_mobile_field() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.verifyValidationMsg(datalist.get("expectedMsg"), datalist.get("expectedMsg1"));
         log.info("proper error message should display under mobile field");
     }
 
     @And("clicks Cancel in New User$")
     public void clicks_cancel_in_new_user() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickCancelBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickCancelBtn();
         log.info("clicks Cancel in New User");
     }
 
 
     @And("user will prompt to ask about confirmation$")
     public void user_will_prompt_to_ask_about_confirmation() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.YES_NO_messageConfirmantion();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.YES_NO_messageConfirmantion();
         log.info("user will prompt to ask about confirmation");
     }
 
     @Then("user will land on Dashboard screen (.+)$")
     public void user_will_land_on_dashboard_screen(String testcase) throws Exception {
-        homePageDefinition.user_in_home_screen(testcase);
+        homePageDefinitions.user_in_home_screen(testcase);
         log.info("user will land on Dashboard screen ");
 
     }
@@ -191,24 +191,24 @@ public class EntityDetailsPageDefinition extends TestBase {
     @Then("user will stay on User Contact Details screen$")
     public void user_will_stay_on_user_contact_details_screen() throws Exception {
         log.info("user will stay on User Contact Details screen ");
-        homePageDefinition.user_will_landed_on_dashboard_page();
+        homePageDefinitions.user_will_landed_on_dashboard_page();
     }
 
     @And("clicks Yes button (.+)$")
     public void clicks_yes_button(String testcase) throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.ClickYesBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.ClickYesBtn();
     }
 
     @And("clicks No button$")
     public void clicks_no_button() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.ClickNOBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.ClickNOBtn();
     }
 
     @Then("user will stay on Add A New User screen$")
     public void user_will_stay_on_add_a_new_user_screen() throws Exception {
-        homePageDefinition.user_will_landed_on_dashboard_page();
+        homePageDefinitions.user_will_landed_on_dashboard_page();
     }
 
     @And("enters all the details in Add A New User screen$")
@@ -220,34 +220,34 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("message will be appear on the bottom$")
     public void message_will_be_appear_on_the_bottom() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.validateBottomMessage();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.validateBottomMessage();
     }
 
     @And("user given details will display on User Contact Details screen (.+)$")
     public void user_given_details_will_display_on_user_contact_details_screen(String testcase) throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.validateUserDetails(datalist.get("userName"), datalist.get("emailId"), datalist.get("mobNum"));
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.validateUserDetails(datalist.get("userName"), datalist.get("emailId"), datalist.get("mobNum"));
     }
 
 
     @And("clicks Cancel button$")
     public void clicks_cancel_button() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickCancelBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickCancelBtn();
 
     }
 
     @And("clicks Edit button$")
     public void clicks_edit_button() throws InterruptedException {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickEditButton();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickEditButton();
     }
 
     @And("clicks Delete button$")
     public void clicks_delete_button() throws InterruptedException {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickDeleteButton();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickDeleteButton();
     }
 
     @And("user will be deleted and removed from the list (.+)$")
@@ -266,8 +266,8 @@ public class EntityDetailsPageDefinition extends TestBase {
 
     @And("clicks on Continue Button$")
     public void clicks_on_continue_button() throws Exception {
-        EntityDetailsPageActions entityDetailsPageActions = new EntityDetailsPageActions(deviceConfig.get("platform"));
-        entityDetailsPageActions.clickcontinueBtn();
+        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        entityDetailsPageAction.clickcontinueBtn();
     }
     @Then("user lands on entity legal screen (.+)$")
     public void user_lands_on_entity_legal_screen(String testcase){

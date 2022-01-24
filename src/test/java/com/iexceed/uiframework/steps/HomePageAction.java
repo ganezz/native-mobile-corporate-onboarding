@@ -5,11 +5,11 @@ import com.iexceed.uiframework.pageobjects.ios.IosHomePageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class HomePageActions {
+public class HomePageAction {
 
     HomePageObjects homePageObjects = new HomePageObjects();
     IosHomePageObjects ihomePageObjects = new IosHomePageObjects();
-    private static final Logger log = LogManager.getLogger(HomePageActions.class);
+    private static final Logger log = LogManager.getLogger(HomePageAction.class);
 
     public void isHomePageVisible(String platform) throws Exception {
 

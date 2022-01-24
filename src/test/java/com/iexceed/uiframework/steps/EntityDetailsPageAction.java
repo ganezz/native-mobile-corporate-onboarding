@@ -4,13 +4,13 @@ import com.iexceed.uiframework.pageobjects.android.EntityDetailsPageObjects;
 import com.iexceed.uiframework.pageobjects.ios.IosEntityDetailsPage;
 
 
-public class EntityDetailsPageActions {
+public class EntityDetailsPageAction {
 
     EntityDetailsPageObjects entityDetailsPage = new EntityDetailsPageObjects();
     IosEntityDetailsPage iEntityDetailsPage = new IosEntityDetailsPage();
     public String platForm;
 
-    public EntityDetailsPageActions(String platform) {
+    public EntityDetailsPageAction(String platform) {
         this.platForm = platform;
 
     }

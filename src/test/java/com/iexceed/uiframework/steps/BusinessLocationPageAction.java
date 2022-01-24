@@ -4,13 +4,13 @@ import com.iexceed.uiframework.pageobjects.android.BusinessLocationPageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class BusinessLocationPageActions {
+public class BusinessLocationPageAction {
 
     BusinessLocationPageObjects businessLocationPage = new BusinessLocationPageObjects();
-    private static final Logger log = LogManager.getLogger(BusinessLocationPageActions.class);
+    private static final Logger log = LogManager.getLogger(BusinessLocationPageAction.class);
     public String platForm;
 
-    public BusinessLocationPageActions(String platform) {
+    public BusinessLocationPageAction(String platform) {
         this.platForm = platform;
 
     }

@@ -4,12 +4,12 @@ import com.iexceed.uiframework.pageobjects.android.EntityContactPageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class EntityContactPageActions {
+public class EntityContactPageAction {
     public String platForm;
     EntityContactPageObjects entityContactPage = new EntityContactPageObjects();
-    private static final Logger log = LogManager.getLogger(EntityContactPageActions.class);
+    private static final Logger log = LogManager.getLogger(EntityContactPageAction.class);
 
-    public EntityContactPageActions(String platform) {
+    public EntityContactPageAction(String platform) {
         this.platForm = platform;
 
     }
