@@ -2,6 +2,7 @@ package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.DashboardPageAction;
+import com.iexceed.uiframework.steps.HomePageAction;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
@@ -36,5 +37,26 @@ public class DashboardPageStepDefinitions extends TestBase {
     @Then("user is displayed with acquired 10 applications$")
     public void user_is_displayed_with_acquired_10_applications() throws Exception {
         dashboardPageAction.isTenApplicationPresent();
+    }
+    @And("clicks on search$")
+    public void clicks_on_search() throws Exception {
+        dashboardPageAction.validateSearch();
+    }
+    @Then("user is displayed with 10 applications$")
+    public void user_is_displayed_with_10_applications() throws Exception {
+        user_is_displayed_with_acquired_10_applications();
+    }
+    @And("type a valid input$")
+    public void type_a_valid_input(){
+        log.debug("type a valid input");
+    }
+    @Then("user is displayed with respective applications$")
+    public void user_is_displayed_with_respective_applications(){
+        log.debug("user is displayed with respective applications");
+    }
+    @And("clicks on Add New Application button$")
+    public void clicks_on_add_new_application_button() throws Exception {
+        HomePageAction homePageAction = new HomePageAction();
+        homePageAction.verifyPageNavigation(deviceConfig.get("platform"));
     }
 }

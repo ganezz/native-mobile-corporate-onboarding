@@ -2,7 +2,6 @@ package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.utilites.WaitUtility;
-import io.appium.java_client.TouchAction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -11,9 +10,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
-import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
-import static io.appium.java_client.touch.offset.ElementOption.element;
-import static java.time.Duration.ofSeconds;
 
 
 public class AndroidUtility {
@@ -81,14 +77,5 @@ public class AndroidUtility {
     }
 
 
-   public void ScrollElement(By from ,By to){
-       TouchAction t=new TouchAction(driver);
-       driver.findElementByXPath("//*[@content-desc='6']").click();
-       WebElement fromEle=driver.findElement(from);
-       WebElement toEle=driver.findElement(to);
 
-       //long press,on element atleast 2 min  ,move to another element any you release
-       t.longPress(longPressOptions().withElement(element(fromEle)).withDuration(ofSeconds(3))).moveTo(element(toEle)).release().perform();
-
-   }
 }

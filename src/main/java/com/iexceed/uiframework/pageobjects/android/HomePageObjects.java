@@ -61,7 +61,7 @@ public class HomePageObjects extends TestBase {
     }
 
 
-    public void clikckThemeBtn() throws Exception {
+    public void clikckThemeBtn() throws InterruptedException {
 
         Boolean b = genericMethods.isElementPresent(themeToggleBtn);
         Boolean b1 = genericMethods.isElementPresent(themeToggleBtnArabic);

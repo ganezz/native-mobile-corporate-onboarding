@@ -59,4 +59,12 @@ public class DashboardPageAction {
             dashboardPage.isScrollTill10ApplicationList();
         }
     }
+
+    public void validateSearch() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            dashboardPage.searchValidation();
+        }
+    }
 }
