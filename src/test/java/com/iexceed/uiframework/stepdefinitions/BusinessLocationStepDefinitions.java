@@ -1,29 +1,30 @@
 package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
-import com.iexceed.uiframework.steps.BusinessLocationPageAction;
+import com.iexceed.uiframework.steps.BusinessLocationPageActions;
 import com.iexceed.uiframework.utilites.readexcel.ExcelHandler;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
 
 public class BusinessLocationStepDefinitions extends TestBase {
     public static Logger log = LogManager.getLogger(BusinessLocationStepDefinitions.class);
-    BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
+    BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
 
     @And("swipes the side menu and select Business Location$")
     public void swipes_the_side_menu_and_select_business_location() throws Exception {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.selectBusinessLoaction();
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.selectBusinessLoaction();
     }
     @When("user is in Business Location And Operations screen$")
     public void user_is_in_business_location_and_operations_screen() throws Exception {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.isBusinessLoactionPage();
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.isBusinessLoactionPage();
     }
     @And("clicks on toggle$")
     public void clicks_on_toggle(){
@@ -31,23 +32,26 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
     @And("user displayed with a Country of domicile dropdown field (.+)$")
     public void user_displayed_with_a_country_of_domicile_dropdown_field(String testcase) throws Exception {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
-        businessLocationPageAction.selectCountry(datalist.get("countryCode"));
+        businessLocationPageActions.selectCountry(datalist.get("countryCode"));
     }
     @Then("user is displayed with the selected value in Country of domicile field$")
     public void user_is_displayed_with_the_selected_value_in_country_of_domicile_field(){
         log.debug("user is displayed with the selected value in Country of domicile field");
     }
+
+
+
     @And("user entered Business market is displayed in Business market Section$")
     public void user_entered_business_market_is_displayed_in_business_market_section(){
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.validateAddNewMarketField(datalist.get("countryCode"),datalist.get("proportion"));
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.validateAddNewMarketField(datalist.get("countryCode"),datalist.get("proportion"));
     }
     @And("clicks Add A New Location button$")
-    public void clicks_add_a_new_location_button() throws InterruptedException {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.addNewLocation();
+    public void clicks_add_a_new_location_button() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.addNewLocation();
     }
     @Then("user lands on Add A New Location screen$")
     public void user_lands_on_add_a_new_location_screen(){
@@ -56,18 +60,34 @@ public class BusinessLocationStepDefinitions extends TestBase {
     @And("fills valid data in Country and Type of operations fields (.+)$")
     public void fills_valid_data_in_country_and_type_of_operations_fields(String testcase) throws Exception {
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.fillCountryandOperation(datalist.get("countryCode"),datalist.get("typeOfOperation"));
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.fillCountryandOperation(datalist.get("countryCode"),datalist.get("typeOfOperation"));
     }
+    @And("click on Ok button$")
+    public void click_on_ok_button() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.clickOkBtn();
+    }
+    @And("click on Cancel button$")
+    public void click_on_cancel_button() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.clickCancelBtn();
+    }
+    @And("click Application Cancel button$")
+    public void click_application_cancel_button() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.clickApplicationCancelBtn();
+    }
+
     @And("fills valid data in Country and Proportion of Business fields$")
     public void fills_valid_data_in_country_and_proportion_of_business_fields() throws Exception {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.fillCountryandProportion(datalist.get("countryCode"),datalist.get("proportion"));
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.fillCountryandProportion(datalist.get("countryCode"),datalist.get("proportion"));
     }
     @And("user entered Location is displayed in Location of business operations Section$")
     public void user_entered_location_is_displayed_in_location_of_business_operations_section() {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.validateAddNewLocationField(datalist.get("countryCode"),datalist.get("typeOfOperation"));
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.validateAddNewLocationField(datalist.get("countryCode"),datalist.get("typeOfOperation"));
     }
     @And("user lands on Modification Screen Add A New Location Screen with already given data$")
     public void user_lands_on_modification_screen_add_a_new_location_screen_with_already_given_data(){
@@ -84,14 +104,14 @@ public class BusinessLocationStepDefinitions extends TestBase {
 
     @And("user displayed with Successfully Edited location snack bar Message$")
     public void user_displayed_with_successfully_edited_location_snack_bar_message() throws Exception {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.isEditValidationMsgPresent();
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.isEditValidationMsgPresent();
     }
 
     @And("user displayed with Successfully Edited market snack bar Message$")
     public void user_displayed_with_successfully_edited_market_snack_bar_message() throws Exception {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.isEditBusinessMarketMsgPresent();
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.isEditBusinessMarketMsgPresent();
     }
 
     @Then("user displayed with edited values in Location of business operations Section$")
@@ -103,10 +123,14 @@ public class BusinessLocationStepDefinitions extends TestBase {
         user_entered_location_is_displayed_in_location_of_business_operations_section();
     }
 
+    @And("click on Confirm button$")
+    public void click_on_confirm_button() throws Exception {
+        businessLocationPageActions.clickConfirmBtn();
+    }
+
     @And("user is Displayed with Delete Prompt$")
     public void user_is_displayed_with_delete_prompt() throws InterruptedException {
-        BusinessLocationPageAction businessLocationPageAction =new BusinessLocationPageAction(deviceConfig.get("platform"));
-        businessLocationPageAction.isDeletePopupPresent();
+        businessLocationPageActions.isDeletePopupPresent();
     }
     @Then("Location is not removed from the list$")
     public void location_is_not_removed_from_the_list(){
@@ -114,7 +138,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
     @And("clicks Add A New Business Markets button$")
     public void clicks_add_a_new_business_markets_button() throws InterruptedException {
-        businessLocationPageAction.addNewMarket();
+        businessLocationPageActions.addNewMarket();
     }
     @Then("user lands on Add A New Business Markets screen$")
     public void user_lands_on_add_a_new_business_markets_screen(){
@@ -138,18 +162,26 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
     @Then("user remains in Business Location and Operations screen$")
     public void user_remains_in_business_location_and_operations_screen() throws Exception {
-        businessLocationPageAction.isBusinessLoactionPage();
+        businessLocationPageActions.isBusinessLoactionPage();
     }
 
     @Then("user lands on Industry screen$")
     public void user_lands_on_industry_screen(){
         log.debug("user lands on Industry screen");
     }
-    @And("^user fills all mandatory values (.+)$")
+    @And("user fills all mandatory values (.+)$")
     public void user_fills_all_mandatory_values(String testcase) throws Exception {
-        user_displayed_with_a_country_of_domicile_dropdown_field(testcase);
+        clicks_add_a_new_location_button();
         fills_valid_data_in_country_and_type_of_operations_fields(testcase);
+        click_on_confirm_button();
+        clicks_add_a_new_business_markets_button();
         fills_valid_data_in_country_and_proportion_of_business_fields();
+        click_on_confirm_button();
+
+    }
+    @And("clicks on Application Continue Button$")
+    public void clicks_on_application_continue_button() throws Exception {
+        businessLocationPageActions.clickApplicationContinueBtn();
     }
 }
 

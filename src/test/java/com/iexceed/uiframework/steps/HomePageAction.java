@@ -11,6 +11,9 @@ public class HomePageAction {
     IosHomePageObjects ihomePageObjects = new IosHomePageObjects();
     private static final Logger log = LogManager.getLogger(HomePageAction.class);
 
+    public HomePageAction() {
+   }
+
     public void isHomePageVisible(String platform) throws Exception {
 
         if (platform.equalsIgnoreCase("ios")) {

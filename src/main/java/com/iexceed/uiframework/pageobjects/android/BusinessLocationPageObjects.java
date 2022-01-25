@@ -26,10 +26,10 @@ public class BusinessLocationPageObjects {
     }
 
     By businessLogicMenu = By.xpath("//*[@text='Business Location']");
-    By addNewLocationBtn = By.xpath("//android.view.View[@text='+ Add a new location']");
-    By addNewLocationBtnArabic = By.xpath("//android.view.View[@text='+ إضافة موقع جديد']");
-    By addNewMarketBtn = By.xpath("//android.view.View[@text='+ Add a new business market']");
-    By addNewMarketBtnArabic = By.xpath("//android.view.View[@text='+ أضف سوق عمل جديد']");
+    By addNewLocationBtn = By.xpath("//android.view.View[@content-desc='Add a new location']");
+    By addNewLocationBtnArabic = By.xpath("//android.view.View[@content-desc='أضف موقعًا جديدًا']");
+    By addNewMarketBtn = By.xpath("//android.view.View[@content-desc='Add a new business market']");
+    By addNewMarketBtnArabic = By.xpath("//android.view.View[@content-desc='أضف سوق عمل جديد']");
     By editField = By.xpath("//android.widget.EditText");
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
@@ -44,6 +44,17 @@ public class BusinessLocationPageObjects {
     By businessLocDeleteMsgArabic=By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف العنوان من القائمة؟']");
     By businessMarketDeleteMsg=By.xpath("//android.view.View[@text='Are  ghg you sure you want to delete the Address from the list ?']");
     By businessMarketDeleteMsgArabic=By.xpath("//android.view.View[@text='Are ygggfou sure you want to delete the Address from the list ?']");
+    By confirmBtn=By.xpath("//android.view.View[@content-desc='Confirm']");
+    By confirmBtnArabic=By.xpath("//android.view.View[@content-desc='يتأكد']");
+    By okBtn=By.xpath("//android.view.View[@content-desc='Okay button']");
+    By okBtnArabic=By.xpath("//android.view.View[@content-desc='زر موافق']");
+    By cancelBtn=By.xpath("//android.view.View[@content-desc='Cancel button']");
+    By cancelBtnArabic=By.xpath("//android.view.View[@content-desc='زرالإلغاء']");
+    By applicCancelBtn=By.xpath("//android.view.View[@content-desc='Cancel']");
+    By applicCancelBtnArabic=By.xpath("//android.view.View[@content-desc='يلغي']");
+    By continueBtn=By.xpath("//android.view.View[@content-desc='Continue']");
+    By continueBtnArabic=By.xpath("//android.view.View[@content-desc='يكمل']");
+
 
     public void selectBusinessLocationPage() throws Exception {
         androidUtility.swipingHamburgerMenu();
@@ -62,6 +73,21 @@ public class BusinessLocationPageObjects {
         }
     }
 
+    public void clickConfirmBtn() throws Exception {
+        try {
+            genericMethods.hideKeyboard();
+        } catch (Exception e) {
+            log.debug("keyboard is not alive");
+        }
+        Boolean b = genericMethods.isElementPresent(confirmBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(confirmBtn);
+        } else {
+            genericMethods.click(confirmBtnArabic);
+            waitUtility.waitForSeconds(2);
+        }
+
+    }
 
     public void selectCountry(String country) throws Exception {
         editField.findElements(driver).get(1).click();
@@ -73,8 +99,53 @@ public class BusinessLocationPageObjects {
         androidUtility.selectionOfDropdown(country, tempCountryList);
     }
 
-    public void addNewLocationBtn() throws InterruptedException {
+    public void clickOkBtnValidation() throws Exception {
+        waitUtility.waitForSeconds(2);
+        Boolean c = genericMethods.isElementPresent(okBtn);
 
+        if (Boolean.TRUE.equals(c)) {
+            genericMethods.click(okBtn);
+        } else {
+            genericMethods.click(okBtnArabic);
+        }
+    }
+    public void clickCancelBtnValidation() throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean c = genericMethods.isElementPresent(cancelBtn);
+
+        if (Boolean.TRUE.equals(c)) {
+            genericMethods.click(cancelBtn);
+        } else {
+            genericMethods.click(cancelBtnArabic);
+        }
+    }
+
+    public void clickApplicationCancelBtnValidation() throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean c = genericMethods.isElementPresent(applicCancelBtn);
+
+        if (Boolean.TRUE.equals(c)) {
+            genericMethods.click(applicCancelBtn);
+        } else {
+            genericMethods.click(applicCancelBtnArabic);
+        }
+    }
+
+    public void clickApplicationContinueBtn() throws Exception {
+        waitUtility.waitForSeconds(1);
+        driver.hideKeyboard();
+        try {
+
+            genericMethods.click(continueBtn);
+
+        } catch (Exception e) {
+            waitUtility.waitForSeconds(1);
+            genericMethods.click(continueBtnArabic);
+        }
+    }
+
+    public void addNewLocationBtn() throws Exception {
+      waitUtility.waitForSeconds(3);
         Boolean b = genericMethods.isElementPresent(addNewLocationBtn);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewLocationBtn);

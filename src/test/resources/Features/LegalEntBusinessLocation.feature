@@ -18,9 +18,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And lands on new screen with the drop down values and search option
     And selects a value
     Then user is displayed with the selected value in Country of domicile field
-#    And user enters valid data in other fields
-#    And user clicks on confirm button
-#    Then user lands on Industry screen
+
     Examples:
       | testcase     |
       | TestCase_012 |
@@ -42,6 +40,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_012 |
+      | TestCase_091 |
 
   @3
   Scenario Outline: validating Edit button in Location of business operations section
@@ -54,13 +53,13 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Add A New Location button
     Then user lands on Add A New Location screen
     And fills valid data in Country and Type of operations fields <testcase>
-    And clicks on Confirm button
+    And click on Confirm button
     Then user lands on Add A New Location screen
     And user entered Location is displayed in Location of business operations Section
     And clicks Edit button
     And user lands on Modification Screen Add A New Location Screen with already given data
     And edits one or more fields in loation screen valid format <testcase>
-    And clicks on Confirm button
+    And click on Confirm button
     And user displayed with Successfully Edited location snack bar Message
     Then user displayed with edited values in Location of business operations Section
     Examples:
@@ -82,12 +81,12 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Add A New Location button
     Then user lands on Add A New Location screen
     And fills valid data in Country and Type of operations fields <testcase>
-    And clicks on Confirm button
+    And click on Confirm button
     Then user lands on Add A New Location screen
     And user entered Location is displayed in Location of business operations Section
     And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks Yes button <testcase>
+   And click on Ok button
     Then Location is removed from the list
     Examples:
       | testcase     |
@@ -107,12 +106,12 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Add A New Location button
     Then user lands on Add A New Location screen
     And fills valid data in Country and Type of operations fields <testcase>
-    And clicks on Confirm button
+    And click on Confirm button
     Then user lands on Add A New Location screen
     And user entered Location is displayed in Location of business operations Section
     And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks No button
+    And click on Cancel button
     Then Location is not removed from the list
     Examples:
       | testcase     |
@@ -147,13 +146,13 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Add A New Business Markets button
     Then user lands on Add A New Business Markets screen
     And fills valid data in Country and Proportion of Business fields
-    And clicks on Confirm button
+    And click on Confirm button
     When user is in Business Location And Operations screen
     And user entered Business market is displayed in Business market Section
     And clicks Edit button
     And user lands on Modification Screen Add A New Business market Screen with already given data
     And edits one or more fields in business market screen valid format <testcase>
-    And clicks on Confirm button
+    And click on Confirm button
     And user displayed with Successfully Edited market snack bar Message
     Then user displayed with edited values in Business markets Section
     Examples:
@@ -175,19 +174,19 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Add A New Business Markets button
     Then user lands on Add A New Business Markets screen
     And fills valid data in Country and Proportion of Business fields
-    And clicks on Confirm button
+    And click on Confirm button
     When user is in Business Location And Operations screen
     And user entered Business market is displayed in Business market Section
     And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks Yes button <testcase>
+   And click on Ok button
     Then Business market is removed from the list
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
-
+@9
   Scenario Outline: validating Delete icon of Business markets section with Cancel button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -199,18 +198,19 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks Add A New Business Markets button
     Then user lands on Add A New Business Markets screen
     And fills valid data in Country and Proportion of Business fields
-    And clicks on Confirm button
+    And click on Confirm button
     When user is in Business Location And Operations screen
     And user entered Business market is displayed in Business market Section
     And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks No button
+    And click on Cancel button
     Then Business market is not removed from the list
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+  @10
   Scenario Outline: validating Business Location and Operations screen with Cancel button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -219,15 +219,16 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user will landed on Dashboard page
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
-    And clicks Cancel button
+    And click Application Cancel button
     Then user will prompt to ask about confirmation
-    And clicks No button
+    And click on Cancel button
     Then user remains in Business Location and Operations screen
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+    @11
   Scenario Outline: validating Business Location and Operations screen Cancel button with Ok button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -236,15 +237,16 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user will landed on Dashboard page
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
-    And clicks Cancel button
+    And click Application Cancel button
     Then user will prompt to ask about confirmation
-    And clicks Yes button <testcase>
+   And click on Ok button
     Then user lands on Dashboard
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+      @12
   Scenario Outline: validating Continue button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -254,7 +256,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And user fills all mandatory values <testcase>
-    And clicks on Continue Button
+    And clicks on Application Continue Button
     Then user lands on Industry screen
     Examples:
       | testcase |
