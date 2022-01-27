@@ -68,6 +68,7 @@ public class EntityDetailsPageObjects {
     By okBtn = By.xpath("//*[@text='OK']");
     By okButton = By.xpath("//android.view.View[@content-desc='Okay button']");
     By okBtnArabic = By.xpath("//android.view.View[@text='نعم']");
+    By okButtonArabic = By.xpath("//android.view.View[@content-desc='زر موافق']");
     By noButton = By.xpath("//android.view.View[3]");
     By continueBtn = By.xpath("//android.view.View[@content-desc='Continue']");
     By continueBtnArabic = By.xpath("//android.view.View[@content-desc='يكمل']");
@@ -336,11 +337,13 @@ public class EntityDetailsPageObjects {
         waitUtility.waitForSeconds(2);
         Boolean c = genericMethods.isElementPresent(okBtn);
         Boolean c1 = genericMethods.isElementPresent(okButton);
-
+        Boolean c2 = genericMethods.isElementPresent(okButtonArabic);
             if (Boolean.TRUE.equals(c)) {
                 genericMethods.click(okBtn);
             } else if(Boolean.TRUE.equals(c1)){
                 genericMethods.click(okButton);
+            }else if(Boolean.TRUE.equals(c2)){
+                genericMethods.click(okButtonArabic);
             }else {
                 genericMethods.click(okBtnArabic);
             }
