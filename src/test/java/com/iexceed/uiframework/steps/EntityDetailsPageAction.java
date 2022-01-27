@@ -132,7 +132,7 @@ public class EntityDetailsPageAction {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClicNoBtnValidation();
         } else {
-            entityDetailsPage.clicNoBtnValidation();
+            entityDetailsPage.clickCancelBtnValidation();
         }
     }
 

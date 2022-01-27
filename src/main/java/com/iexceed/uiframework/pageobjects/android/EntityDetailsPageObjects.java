@@ -28,16 +28,15 @@ public class EntityDetailsPageObjects {
 
     By hamBurgerMenu = By.xpath("//android.widget.ImageView[@content-desc='HAMBURGER_ICON']");
     By menuList = By.xpath("//*[@text='User Contact Details']");
-
-    By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    By addNewUsrBtnArabic = By.xpath("//*[@text='+ إضافة مستخدم جديد']");
+    By addNewUsrBtn = By.xpath("//android.view.View[@content-desc='Add a new user']");
+    By addNewUsrBtnArabic = By.xpath("//android.view.View[@content-desc='إضافة مستخدم جديد']");
     By editField = By.className("android.widget.EditText");
     By editField1 = By.xpath("//android.widget.EditText");
     By userName = By.xpath("//*[@text='User Name *']");
     By emailAddress = By.xpath("//android.view.View[@content-desc=\"UserContactDetailsView\"]/android.widget.ScrollView/android.view.View/android.widget.EditText[2]");
     By email = By.xpath("//*[@text='Email *']");
-    By confirmBtn = By.xpath("//*[@text='Confirm']");
-    By confirmBtnArabic = By.xpath("//*[@text='يتأكد']");
+    By confirmBtn = By.xpath("//android.view.View[@content-desc='Confirm']");
+    By confirmBtnArabic = By.xpath("//android.view.View[@content-desc='يتأكد']");
     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
     By validationMSg1 = By.xpath("//*[@text='Please enter this field']");
     By validationMSgArabic = By.xpath("//*[@text='الرجاء إدخال حقل صالح']");
@@ -48,8 +47,9 @@ public class EntityDetailsPageObjects {
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
     By mobNumField = By.xpath("//*[@text='Mobile *']");
-    By cancelBtn = By.xpath("//*[@text='Cancel']");
-    By cancelBtnArabic = By.xpath("//android.view.View[@text='يلغي']");
+    By cancelBtn = By.xpath("//android.view.View[@content-desc='Cancel']");
+    By cancelButton = By.xpath("//android.view.View[@content-desc='Cancel']");
+    By cancelBtnArabic = By.xpath("//android.view.View[@content-desc='يلغي']");
     By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
     By confirmationMsg1 = By.xpath("//*[@text='Do you want to cancel the application ?']");
     By confirmationMsgArabic = By.xpath("//android.view.View[@text='هل تريد الالغاء ؟']");
@@ -66,10 +66,11 @@ public class EntityDetailsPageObjects {
     By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
     By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف المستخدم من القائمة؟']");
     By okBtn = By.xpath("//*[@text='OK']");
+    By okButton = By.xpath("//android.view.View[@content-desc='Okay button']");
     By okBtnArabic = By.xpath("//android.view.View[@text='نعم']");
     By noButton = By.xpath("//android.view.View[3]");
-    By continueBtn = By.xpath("//*[@text='Continue']");
-    By continueBtnArabic = By.xpath("//android.view.View[@text='يكمل']");
+    By continueBtn = By.xpath("//android.view.View[@content-desc='Continue']");
+    By continueBtnArabic = By.xpath("//android.view.View[@content-desc='يكمل']");
     By searchBar = By.xpath("//android.widget.EditText");
     By clearField = By.xpath("//android.view.View[@content-desc='Clear Field']");
     By clearFieldArabic = By.xpath("//android.view.View[@content-desc='الحقل خالى']");
@@ -334,19 +335,28 @@ public class EntityDetailsPageObjects {
     public void clickYEsBtnValidation() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean c = genericMethods.isElementPresent(okBtn);
+        Boolean c1 = genericMethods.isElementPresent(okButton);
 
-        if (Boolean.TRUE.equals(c)) {
-            genericMethods.click(okBtn);
-        } else {
-            genericMethods.click(okBtnArabic);
-        }
+            if (Boolean.TRUE.equals(c)) {
+                genericMethods.click(okBtn);
+            } else if(Boolean.TRUE.equals(c1)){
+                genericMethods.click(okButton);
+            }else {
+                genericMethods.click(okBtnArabic);
+            }
+
     }
 
-    public void clicNoBtnValidation() {
+    public void clickCancelBtnValidation() {
 
         try {
             waitUtility.waitForSeconds(2);
-            genericMethods.click(noButton);
+            Boolean c = genericMethods.isElementPresent(noButton);
+            if (Boolean.TRUE.equals(c)) {
+                genericMethods.click(noButton);
+            } else {
+                genericMethods.click(cancelButton);
+            }
         } catch (Exception e) {
             genericMethods.back();
         }

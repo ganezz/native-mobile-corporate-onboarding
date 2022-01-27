@@ -1,0 +1,75 @@
+<!--&lt;!&ndash;<?xml version="1.0" encoding="UTF-8"?>&ndash;&gt;-->
+<!--&lt;!&ndash;<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"&ndash;&gt;-->
+<!--&lt;!&ndash;          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&ndash;&gt;-->
+<!--&lt;!&ndash;    <servers>&ndash;&gt;-->
+<!--&lt;!&ndash;        <server>&ndash;&gt;-->
+<!--&lt;!&ndash;            <username>admin</username>&ndash;&gt;-->
+<!--&lt;!&ndash;            <password>AP29mrTKKsVX9Q8jBb2yeVU55xB</password>&ndash;&gt;-->
+<!--&lt;!&ndash;            <id>central</id>&ndash;&gt;-->
+<!--&lt;!&ndash;        </server>&ndash;&gt;-->
+<!--&lt;!&ndash;        <server>&ndash;&gt;-->
+<!--&lt;!&ndash;            <username>admin</username>&ndash;&gt;-->
+<!--&lt;!&ndash;            <password>AP29mrTKKsVX9Q8jBb2yeVU55xB</password>&ndash;&gt;-->
+<!--&lt;!&ndash;            <id>snapshots</id>&ndash;&gt;-->
+<!--&lt;!&ndash;        </server>&ndash;&gt;-->
+<!--&lt;!&ndash;    </servers>&ndash;&gt;-->
+<!--&lt;!&ndash;    <profiles>&ndash;&gt;-->
+<!--&lt;!&ndash;        <profile>&ndash;&gt;-->
+<!--&lt;!&ndash;            <repositories>&ndash;&gt;-->
+<!--&lt;!&ndash;                <repository>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <snapshots>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <enabled>false</enabled>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </snapshots>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <id>central</id>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <name>libs-release</name>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <url>http://20.80.0.230:8081/artifactory/libs-release</url>&ndash;&gt;-->
+<!--&lt;!&ndash;                </repository>&ndash;&gt;-->
+<!--&lt;!&ndash;                <repository>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <snapshots />&ndash;&gt;-->
+<!--&lt;!&ndash;                    <id>snapshots</id>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <name>libs-snapshot</name>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <url>http://20.80.0.230:8081/artifactory/libs-snapshot</url>&ndash;&gt;-->
+<!--&lt;!&ndash;                </repository>&ndash;&gt;-->
+<!--&lt;!&ndash;            </repositories>&ndash;&gt;-->
+<!--&lt;!&ndash;            <pluginRepositories>&ndash;&gt;-->
+<!--&lt;!&ndash;                <pluginRepository>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <snapshots>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <enabled>false</enabled>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </snapshots>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <id>central</id>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <name>libs-release</name>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <url>http://20.80.0.230:8081/artifactory/libs-release</url>&ndash;&gt;-->
+<!--&lt;!&ndash;                </pluginRepository>&ndash;&gt;-->
+<!--&lt;!&ndash;                <pluginRepository>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <snapshots />&ndash;&gt;-->
+<!--&lt;!&ndash;                    <id>snapshots</id>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <name>libs-snapshot</name>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <url>http://20.80.0.230:8081/artifactory/libs-snapshot</url>&ndash;&gt;-->
+<!--&lt;!&ndash;                </pluginRepository>&ndash;&gt;-->
+<!--&lt;!&ndash;            </pluginRepositories>&ndash;&gt;-->
+<!--&lt;!&ndash;            <id>artifactory</id>&ndash;&gt;-->
+<!--&lt;!&ndash;        </profile>&ndash;&gt;-->
+<!--&lt;!&ndash;    </profiles>&ndash;&gt;-->
+<!--&lt;!&ndash;    <activeProfiles>&ndash;&gt;-->
+<!--&lt;!&ndash;        <activeProfile>artifactory</activeProfile>&ndash;&gt;-->
+<!--&lt;!&ndash;    </activeProfiles>&ndash;&gt;-->
+<!--&lt;!&ndash;</settings>&ndash;&gt;-->
+
+
+<settings>
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Enter your SonarQube instance URL here -->
+                <sonar.host.url>http://localhost:9000</sonar.host.url>
+            </properties>
+        </profile>
+    </profiles>
+</settings>

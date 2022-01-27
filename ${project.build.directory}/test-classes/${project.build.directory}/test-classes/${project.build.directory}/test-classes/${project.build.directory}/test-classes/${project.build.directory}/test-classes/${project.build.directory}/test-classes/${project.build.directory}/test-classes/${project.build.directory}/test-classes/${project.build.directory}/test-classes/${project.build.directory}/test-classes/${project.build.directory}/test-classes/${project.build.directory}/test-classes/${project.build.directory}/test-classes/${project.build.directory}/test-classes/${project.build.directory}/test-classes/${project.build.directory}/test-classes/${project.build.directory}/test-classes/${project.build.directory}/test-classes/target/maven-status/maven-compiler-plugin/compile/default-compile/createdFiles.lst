@@ -1,0 +1,14 @@
+com/iexceed/uiframework/domainobjects/IOSUtility.class
+com/iexceed/uiframework/pageobjects/ios/IosHomePageObjects.class
+com/iexceed/uiframework/domainobjects/ConnectionObjects.class
+com/iexceed/uiframework/pageobjects/android/EntityNameTypePageObjects.class
+com/iexceed/uiframework/broweser/IOSConnectionUtility.class
+com/iexceed/uiframework/pageobjects/android/EntityDetailsPageObjects.class
+com/iexceed/uiframework/pageobjects/android/DashboardPageObjects.class
+com/iexceed/uiframework/pageobjects/android/BusinessLocationPageObjects.class
+com/iexceed/uiframework/pageobjects/ios/IosEntityDetailsPage.class
+com/iexceed/uiframework/broweser/PcloudyDynamicappLaunch.class
+com/iexceed/uiframework/domainobjects/AndroidUtility.class
+com/iexceed/uiframework/pageobjects/android/EntityContactPageObjects.class
+com/iexceed/uiframework/broweser/AndroidConnectionUtility.class
+com/iexceed/uiframework/pageobjects/android/HomePageObjects.class
