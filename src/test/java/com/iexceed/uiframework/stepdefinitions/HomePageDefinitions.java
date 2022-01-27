@@ -38,7 +38,7 @@ public class HomePageDefinitions extends TestBase {
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
 //            androidAppURL=launchApp();
-            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.15-21-01-2022-14:05.apk";
+            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.16-27-01-2022-10:18.apk";
             ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
             testdata.setTestDataInMap(deviceConfig);
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
