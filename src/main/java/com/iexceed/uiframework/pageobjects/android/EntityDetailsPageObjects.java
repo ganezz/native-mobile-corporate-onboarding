@@ -113,8 +113,8 @@ public class EntityDetailsPageObjects {
 
     }
 
-    public void clearSearchField() throws InterruptedException {
-
+    public void clearSearchField() throws Exception {
+       waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(clearField);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(clearField);

@@ -33,7 +33,7 @@ public class EntityDetailsPageAction {
         }
     }
 
-    public void clearSearchField() throws InterruptedException {
+    public void clearSearchField() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClickAddNewuserBtn();
         } else {

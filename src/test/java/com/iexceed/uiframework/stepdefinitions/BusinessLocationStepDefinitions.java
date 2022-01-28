@@ -45,6 +45,11 @@ public class BusinessLocationStepDefinitions extends TestBase {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         businessLocationPageActions.isErrorMsgPresent();
     }
+    @Then("proper error message should display under proportion field$")
+    public void proper_error_message_should_display_under_proportion_field() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.isErrorMsgPresent();
+    }
 
     @And("user entered Business market is displayed in Business market Section$")
     public void user_entered_business_market_is_displayed_in_business_market_section(){

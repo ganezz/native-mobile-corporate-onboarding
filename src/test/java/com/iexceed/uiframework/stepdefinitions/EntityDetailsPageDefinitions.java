@@ -6,7 +6,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
 
@@ -44,7 +43,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     }
 
     @And("user enters text and clicks on cancel button$")
-    public void user_enters_text_and_clicks_on_cancel_button() throws InterruptedException {
+    public void user_enters_text_and_clicks_on_cancel_button() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
         EntityDetailsPageAction.clearSearchField();
 
