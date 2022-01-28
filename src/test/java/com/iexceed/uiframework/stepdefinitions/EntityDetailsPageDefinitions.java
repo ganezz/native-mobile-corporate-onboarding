@@ -35,7 +35,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
            }
 
     @Then("user is shown with a editable text field with a cancel button$")
-    public void user_is_shown_with_a_editable_text_field_with_a_cancel_button() throws InterruptedException {
+    public void user_is_shown_with_a_editable_text_field_with_a_cancel_button() throws Exception {
         log.info("user is shown with a editable text field with a cancel button");
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
         EntityDetailsPageAction.validateSearchField();

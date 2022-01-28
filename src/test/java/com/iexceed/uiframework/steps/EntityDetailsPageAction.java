@@ -24,7 +24,7 @@ public class EntityDetailsPageAction {
         }
     }
 
-    public void validateSearchField() throws InterruptedException {
+    public void validateSearchField() throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
             iEntityDetailsPage.iClickAddNewuserBtn();

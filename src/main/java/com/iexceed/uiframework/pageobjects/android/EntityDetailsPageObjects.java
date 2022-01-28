@@ -107,7 +107,8 @@ public class EntityDetailsPageObjects {
         log.debug("menu swipped is closed");
     }
 
-    public void isSearchField() throws InterruptedException {
+    public void isSearchField() throws Exception {
+        waitUtility.waitForSeconds(3);
         genericMethods.isElementPresent(searchBar);
         genericMethods.sendKeys(searchBar, "divya");
 
