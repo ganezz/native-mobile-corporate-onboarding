@@ -15,8 +15,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
      HomePageDefinitions homePageDefinitions = new HomePageDefinitions();
 
 
-
-    @And("swipes the side menu$")
+     @And("swipes the side menu$")
     public void swipes_the_side_menu() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
         EntityDetailsPageAction.hamBurgerSwipping();

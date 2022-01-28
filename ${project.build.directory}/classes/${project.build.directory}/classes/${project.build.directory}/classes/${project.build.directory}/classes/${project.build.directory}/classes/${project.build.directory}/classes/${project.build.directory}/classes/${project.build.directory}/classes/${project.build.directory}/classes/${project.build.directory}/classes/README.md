@@ -1,2 +1,0 @@
-# native-mobile-corporate-onboarding
-
