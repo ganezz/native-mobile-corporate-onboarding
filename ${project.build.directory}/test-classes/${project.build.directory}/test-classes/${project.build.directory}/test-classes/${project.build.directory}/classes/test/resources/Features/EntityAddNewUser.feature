@@ -129,7 +129,7 @@ Feature: Validating Add New User screen in NM_CO
       | TestCase_095 |
       | TestCase_096 |
 
-
+@yes
   Scenario Outline:  Validate Cancel button in Add A New User screen and click Yes button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>

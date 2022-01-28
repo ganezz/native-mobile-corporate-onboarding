@@ -62,7 +62,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_003 |
       | TestCase_102 |
 
-
+@e
   Scenario Outline: Validate Edit button in User List
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -80,6 +80,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_021 |
       | TestCase_103 |
 
+  @f
   Scenario Outline: Validate Delete button in User List and click Yes button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -99,7 +100,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_021 |
       | TestCase_103 |
 
-
+@g
   Scenario Outline: Validate Delete button in User List and click No button
     And user in Home screen <testcase>
     When clicks language dropDown choose language <testcase>

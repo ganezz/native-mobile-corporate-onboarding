@@ -59,10 +59,10 @@ public class EntityDetailsPageObjects {
     By closeBtn = By.xpath("//*[@text='Close']");
     By closeBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By viewDataDetails = By.xpath("//android.view.View");
-    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
-    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تحرير الأيقونة']");
-    By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
-    By deleteButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='رمز الحذف']");
+    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit']");
+    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تعديل']");
+    By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete']");
+    By deleteButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='حذف']");
     By deleteConfirmationMsg = By.xpath("//*[@text='Are you sure you want to delete the User from the list ?']");
     By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف المستخدم من القائمة؟']");
     By okBtn = By.xpath("//*[@text='OK']");
