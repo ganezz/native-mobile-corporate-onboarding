@@ -33,6 +33,13 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void isErrorMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.isErrorMsgDisplayed();
+        }
+    }
     public void selectCountry(String country) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -56,6 +63,7 @@ public class BusinessLocationPageActions {
             businessLocationPage.clickCancelBtnValidation();
         }
     }
+
     public void clickApplicationCancelBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -63,6 +71,7 @@ public class BusinessLocationPageActions {
             businessLocationPage.clickApplicationCancelBtnValidation();
         }
     }
+
     public void clickApplicationContinueBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -97,6 +106,14 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void fillTypeOfOperation(String operation) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.fillOperation(operation);
+        }
+    }
+
     public void fillCountryandProportion(String country, String proportion) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -127,7 +144,15 @@ public class BusinessLocationPageActions {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            businessLocationPage.isEditValidationMsgPresent();
+            businessLocationPage.isEditLocationValidationMsgPresent();
+        }
+    }
+
+    public void isAddedValidationMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.isAddedValidationMsgPresent();
         }
     }
 
@@ -138,6 +163,8 @@ public class BusinessLocationPageActions {
             businessLocationPage.isEditMarketValidationMsgPresent();
         }
     }
+
+
 
     public void isDeletePopupPresent() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {

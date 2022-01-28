@@ -34,32 +34,49 @@ public class BusinessLocationPageObjects {
     By searchField = By.xpath("//android.widget.EditText");
     By countryList = By.xpath("//android.view.View");
     By viewDataDetails = By.xpath("//android.view.View");
-    By locationEditMsg=By.xpath("//android.view.View[@text='Edit ! Business Location edited successfully']");
-    By marketEditMsg=By.xpath("//android.view.View[@text='Edit ! Business Market edited successfully']");
-    By marketEditMsgArabic=By.xpath("//android.view.View[@text='تعديل ! تم تحرير سوق العمل بنجاح']");
+    By locationEditMsg = By.xpath("//android.view.View[@text='Edit ! Business Location edited successfully']");
+    By marketEditMsg = By.xpath("//android.view.View[@text='Edit ! Business Market edited successfully']");
+    By marketEditMsgArabic = By.xpath("//android.view.View[@text='تعديل ! تم تحرير سوق العمل بنجاح']");
     By closBtn = By.xpath("//*[@text='Close']");
-    By locationEditMsgArabic=By.xpath("//android.view.View[@text='تعديل ! تم تحرير موقع العمل بنجاح']");
+    By locationEditMsgArabic = By.xpath("//android.view.View[@text='تعديل ! تم تحرير موقع العمل بنجاح']");
     By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
-    By businessLocDeleteMsg=By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
-    By businessLocDeleteMsgArabic=By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف العنوان من القائمة؟']");
-    By businessMarketDeleteMsg=By.xpath("//android.view.View[@text='Are  ghg you sure you want to delete the Address from the list ?']");
-    By businessMarketDeleteMsgArabic=By.xpath("//android.view.View[@text='Are ygggfou sure you want to delete the Address from the list ?']");
-    By confirmBtn=By.xpath("//android.view.View[@content-desc='Confirm']");
-    By confirmBtnArabic=By.xpath("//android.view.View[@content-desc='يتأكد']");
-    By okBtn=By.xpath("//android.view.View[@content-desc='Okay button']");
-    By okBtnArabic=By.xpath("//android.view.View[@content-desc='زر موافق']");
-    By cancelBtn=By.xpath("//android.view.View[@content-desc='Cancel button']");
-    By cancelBtnArabic=By.xpath("//android.view.View[@content-desc='زرالإلغاء']");
-    By applicCancelBtn=By.xpath("//android.view.View[@content-desc='Cancel']");
-    By applicCancelBtnArabic=By.xpath("//android.view.View[@content-desc='يلغي']");
-    By continueBtn=By.xpath("//android.view.View[@content-desc='Continue']");
-    By continueBtnArabic=By.xpath("//android.view.View[@content-desc='يكمل']");
+    By businessLocDeleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
+    By businessLocDeleteMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف العنوان من القائمة؟']");
+    By businessMarketDeleteMsg = By.xpath("//android.view.View[@text='Are  ghg you sure you want to delete the Address from the list ?']");
+    By businessMarketDeleteMsgArabic = By.xpath("//android.view.View[@text='Are ygggfou sure you want to delete the Address from the list ?']");
+    By confirmBtn = By.xpath("//android.view.View[@content-desc='Confirm']");
+    By confirmBtnArabic = By.xpath("//android.view.View[@content-desc='يتأكد']");
+    By okBtn = By.xpath("//android.view.View[@content-desc='Okay button']");
+    By okBtnArabic = By.xpath("//android.view.View[@content-desc='زر موافق']");
+    By cancelBtn = By.xpath("//android.view.View[@content-desc='Cancel button']");
+    By cancelBtnArabic = By.xpath("//android.view.View[@content-desc='زرالإلغاء']");
+    By applicCancelBtn = By.xpath("//android.view.View[@content-desc='Cancel']");
+    By applicCancelBtnArabic = By.xpath("//android.view.View[@content-desc='يلغي']");
+    By continueBtn = By.xpath("//android.view.View[@content-desc='Continue']");
+    By continueBtnArabic = By.xpath("//android.view.View[@content-desc='يكمل']");
+    By errorFieldValidation = By.xpath("//*[@text='Please enter valid field']");
+    By errorFieldValidationArabic = By.xpath("//*[@text='الرجاء إدخال حقل صالح']");
+    By addedBinessLocationMsg=By.xpath("//android.view.View[@text='Success ! Business Location added successfully']");
+    By addedBinessLocationMsgArabic=By.xpath("//android.view.View[@text='نجاح ! تمت إضافة موقع العمل بنجاح']");
 
 
     public void selectBusinessLocationPage() throws Exception {
         androidUtility.swipingHamburgerMenu();
         genericMethods.click(businessLogicMenu);
     }
+
+    public void isErrorMsgDisplayed() throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean b = genericMethods.isElementPresent(errorFieldValidation);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("Proper error message is present");
+        } else {
+            Boolean b1 = genericMethods.isElementPresent(errorFieldValidationArabic);
+            log.debug(b1);
+            log.debug("Proper error message is present");
+        }
+    }
+
 
     public void isBusinessLocationPage() throws Exception {
         waitUtility.waitForSeconds(2);
@@ -109,6 +126,7 @@ public class BusinessLocationPageObjects {
             genericMethods.click(okBtnArabic);
         }
     }
+
     public void clickCancelBtnValidation() throws Exception {
         waitUtility.waitForSeconds(1);
         Boolean c = genericMethods.isElementPresent(cancelBtn);
@@ -145,7 +163,7 @@ public class BusinessLocationPageObjects {
     }
 
     public void addNewLocationBtn() throws Exception {
-      waitUtility.waitForSeconds(3);
+        waitUtility.waitForSeconds(3);
         Boolean b = genericMethods.isElementPresent(addNewLocationBtn);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewLocationBtn);
@@ -187,21 +205,22 @@ public class BusinessLocationPageObjects {
         editField.findElements(driver).get(1).sendKeys(operation);
     }
 
-    public void fillProportion(String proportion){
+    public void fillProportion(String proportion) {
         editField.findElements(driver).get(1).click();
         editField.findElements(driver).get(1).clear();
         editField.findElements(driver).get(1).sendKeys(proportion);
     }
 
 
-    public void validateAddNewLocationField(String country,String operation){
+    public void validateAddNewLocationField(String country, String operation) {
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(country, tempDetails);
         androidUtility.selectionItemVisible(operation, tempDetails);
 
     }
-    public void validateAddNewMarketField(String country,String proportion){
+
+    public void validateAddNewMarketField(String country, String proportion) {
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(country, tempDetails);
@@ -209,21 +228,41 @@ public class BusinessLocationPageObjects {
 
     }
 
+    public void isAddedValidationMsgPresent() throws Exception {
+        waitUtility.waitForSeconds(2);
+        Boolean b = genericMethods.isElementPresent(addedBinessLocationMsg);
+        Boolean b1 = genericMethods.isElementPresent(addedBinessLocationMsgArabic);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.isElementPresent(addedBinessLocationMsg);
+            genericMethods.click(closBtn);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.isElementPresent(addedBinessLocationMsgArabic);
+            genericMethods.click(closBtnArabic);
+        } else {
+            try {
+                genericMethods.click(closBtn);
+            } catch (Exception e) {
+                genericMethods.click(closBtnArabic);
+            }
+        }
 
-    public void isEditValidationMsgPresent() throws Exception {
+    }
+
+
+    public void isEditLocationValidationMsgPresent() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(locationEditMsg);
         Boolean b1 = genericMethods.isElementPresent(locationEditMsgArabic);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(locationEditMsg);
             genericMethods.click(closBtn);
-        } else if(Boolean.TRUE.equals(b1)){
+        } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.isElementPresent(locationEditMsgArabic);
             genericMethods.click(closBtnArabic);
-        }else {
+        } else {
             try {
                 genericMethods.click(closBtn);
-            }catch(Exception e){
+            } catch (Exception e) {
                 genericMethods.click(closBtnArabic);
             }
         }
@@ -237,13 +276,13 @@ public class BusinessLocationPageObjects {
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(marketEditMsg);
             genericMethods.click(closBtn);
-        } else if(Boolean.TRUE.equals(b1)){
+        } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.isElementPresent(marketEditMsgArabic);
             genericMethods.click(closBtnArabic);
-        }else {
+        } else {
             try {
                 genericMethods.click(closBtn);
-            }catch(Exception e){
+            } catch (Exception e) {
                 genericMethods.click(closBtnArabic);
             }
         }

@@ -1,5 +1,4 @@
 package com.iexceed.uiframework.stepdefinitions;
-
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.BusinessLocationPageActions;
 import com.iexceed.uiframework.utilites.readexcel.ExcelHandler;
@@ -11,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
+
 
 public class BusinessLocationStepDefinitions extends TestBase {
     public static Logger log = LogManager.getLogger(BusinessLocationStepDefinitions.class);
@@ -41,7 +41,11 @@ public class BusinessLocationStepDefinitions extends TestBase {
         log.debug("user is displayed with the selected value in Country of domicile field");
     }
 
-
+    @Then("proper error message should display under Type of operations field$")
+    public void proper_error_message_should_display_under_type_of_operations_field() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.isErrorMsgPresent();
+    }
 
     @And("user entered Business market is displayed in Business market Section$")
     public void user_entered_business_market_is_displayed_in_business_market_section(){
@@ -57,11 +61,32 @@ public class BusinessLocationStepDefinitions extends TestBase {
     public void user_lands_on_add_a_new_location_screen(){
         log.debug("user lands on Add A New Location screen");
     }
+    @And("clicks on Country field$")
+    public void clicks_on_country_field(){
+       log.debug("clicks on Country field");
+    }
+
+    @Then("user is displayed with the selected value in Country field$")
+    public void user_is_displayed_with_the_selected_value_in_country_field(){
+       log.debug("user is displayed with the selected value in Country field");
+    }
     @And("fills valid data in Country and Type of operations fields (.+)$")
     public void fills_valid_data_in_country_and_type_of_operations_fields(String testcase) throws Exception {
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         businessLocationPageActions.fillCountryandOperation(datalist.get("countryCode"),datalist.get("typeOfOperation"));
+    }
+
+    @And("user clicks on Type of operations field (.+)$")
+    public void user_clicks_on_type_of_operations_field(String testcase)throws Exception {
+        datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.fillTypeOfOperation(datalist.get("typeOfOperation"));
+
+    }
+    @And("user input invalid type$")
+    public void user_input_invalid_type(){
+        log.debug("user input invalid type");
     }
     @And("click on Ok button$")
     public void click_on_ok_button() throws Exception {
@@ -182,6 +207,10 @@ public class BusinessLocationStepDefinitions extends TestBase {
     @And("clicks on Application Continue Button$")
     public void clicks_on_application_continue_button() throws Exception {
         businessLocationPageActions.clickApplicationContinueBtn();
+    }
+    @And("^user displayed with Successfull addded snack bar Message$")
+    public void user_displayed_with_successfull_addded_snack_bar_message() throws Exception {
+        businessLocationPageActions.isAddedValidationMsgPresent();
     }
 }
 

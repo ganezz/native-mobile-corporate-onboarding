@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class HomePageDefinitions extends TestBase {
 
-    public static Map<String, String> deviceConfig;
-    public static Map<String, String> datalist;
+    public static Map<String,String> deviceConfig;
+    public static Map<String,String> datalist;
     public static Logger log = LogManager.getLogger(HomePageDefinitions.class);
     TestDataHandler testdata = new TestDataHandler();
     public static String iosAppURL;
