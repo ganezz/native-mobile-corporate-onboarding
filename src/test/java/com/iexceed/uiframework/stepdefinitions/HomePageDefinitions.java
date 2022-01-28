@@ -77,8 +77,8 @@ public class HomePageDefinitions extends TestBase {
 
     @And("user in Home screen (.+)$")
     public void user_in_home_screen(String testcase) throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.isHomePageVisible(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.isHomePageVisible(deviceConfig.get("platform"));
         log.info("user in Home screen");
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"),testcase);
         log.info("Test Case :" + datalist.get("TestCaseName"));
@@ -88,32 +88,32 @@ public class HomePageDefinitions extends TestBase {
     }
     @And("user input invalid text in Username field (.+)$")
     public void user_input_invalid_text_in_username_field(String testcase) throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
+        HomePageAction HomePageAction = new HomePageAction();
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"),testcase);
-        homePageAction.enterUserName(deviceConfig.get("platform"),datalist.get("userName"));
+        HomePageAction.enterUserName(deviceConfig.get("platform"),datalist.get("userName"));
     }
     @And("user input invalid text in Password field (.+)$")
     public void user_input_invalid_text_in_password_field(String testcase){
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.enterPassword(deviceConfig.get("platform"),datalist.get("userName"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.enterPassword(deviceConfig.get("platform"),datalist.get("userName"));
     }
 
     @Then("error message should be displayed under Username field$")
     public void error_message_should_be_displayed_under_username_field() throws InterruptedException {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.isUserErrorMsgPresent(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.isUserErrorMsgPresent(deviceConfig.get("platform"));
     }
 
     @Then("error message should be displayed under Password field$")
     public void error_message_should_be_displayed_under_password_field() throws InterruptedException {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.isPasswordMsgPresent(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.isPasswordMsgPresent(deviceConfig.get("platform"));
     }
 
     @And("clicks on theme toggle$")
     public void clicks_on_theme_toggle() throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.clickthemeBtn(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.clickthemeBtn(deviceConfig.get("platform"));
     }
     @Then("App theme is changed to dark mode$")
     public void app_theme_is_changed_to_dark_mode(){
@@ -122,32 +122,32 @@ public class HomePageDefinitions extends TestBase {
 
     @And("click login button$")
     public void click_login_button() throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.login(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.login(deviceConfig.get("platform"));
     }
 
     @When("enter username and password (.+)$")
     public void enter_username_and_password(String testcase){
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.validateLoginCredentials(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.validateLoginCredentials(deviceConfig.get("platform"));
     }
     @When("clicks language dropDown choose language (.+)$")
     public void clicks_language_dropdown_choose_language(String testcase) throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.chooseLanguage(deviceConfig.get("platform"),datalist.get("language"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.chooseLanguage(deviceConfig.get("platform"),datalist.get("language"));
     }
 
     @When("clicks Register Button$")
     public void clicks_register_button() throws Exception {
         log.info("clicks Register Button");
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.clickRegUserBtn(deviceConfig.get("platform"),datalist.get("language"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.clickRegUserBtn(deviceConfig.get("platform"),datalist.get("language"));
     }
 
     @Then("user will landed on Dashboard page$")
     public void user_will_landed_on_dashboard_page() throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.verifyPageNavigation(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.verifyPageNavigation(deviceConfig.get("platform"));
         log.info("user will landed on Legal Entity User Details");
         log.info("Test Case :" + datalist.get("TestCaseName"));
     }
@@ -155,8 +155,8 @@ public class HomePageDefinitions extends TestBase {
 
     @When("clicks English Button$")
     public void clicks_english_button() throws InterruptedException {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.verifyLanguageAsEnglish(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.verifyLanguageAsEnglish(deviceConfig.get("platform"));
     }
 
     @Then("app language change to English$")
@@ -168,8 +168,8 @@ public class HomePageDefinitions extends TestBase {
 
     @When("clicks Arabic Button$")
     public void clicks_arabic_button() throws InterruptedException {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.verifyLanguageAsArabic(deviceConfig.get("platform"));
+        HomePageAction HomePageAction = new HomePageAction();
+        HomePageAction.verifyLanguageAsArabic(deviceConfig.get("platform"));
     }
 
     @Then("app language change to Arabic$")

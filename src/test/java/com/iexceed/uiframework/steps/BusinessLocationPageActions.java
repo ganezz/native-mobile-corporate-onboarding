@@ -40,6 +40,7 @@ public class BusinessLocationPageActions {
             businessLocationPage.isErrorMsgDisplayed();
         }
     }
+
     public void selectCountry(String country) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -123,6 +124,14 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void fillProportion(String proportion) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.fillProportion(proportion);
+        }
+    }
+
 
     public void validateAddNewLocationField(String country, String operation) {
         if (platForm.equalsIgnoreCase("ios")) {
@@ -156,6 +165,14 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void isAddedMaktValidationMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.isAddMarketValidationMsgPresent();
+        }
+    }
+
     public void isEditBusinessMarketMsgPresent() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -163,7 +180,6 @@ public class BusinessLocationPageActions {
             businessLocationPage.isEditMarketValidationMsgPresent();
         }
     }
-
 
 
     public void isDeletePopupPresent() throws InterruptedException {

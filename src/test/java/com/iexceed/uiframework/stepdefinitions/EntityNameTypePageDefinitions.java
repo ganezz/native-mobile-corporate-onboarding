@@ -38,8 +38,8 @@ public class EntityNameTypePageDefinitions extends TestBase {
 
     @And("clicks Cancel in Entity name & type screen$")
     public void clicks_cancel_in_entity_name_type_screen() throws Exception {
-        EntityDetailsPageAction entityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
-        entityDetailsPageAction.clickCancelBtn();
+        EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        EntityDetailsPageAction.clickCancelBtn();
     }
     @And("clicks on Entity Legal Name field (.+)$")
     public void clicks_on_entity_legal_name_field(String testcase) throws Exception {

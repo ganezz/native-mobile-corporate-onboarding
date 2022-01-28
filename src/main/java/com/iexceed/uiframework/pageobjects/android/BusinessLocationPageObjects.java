@@ -58,6 +58,8 @@ public class BusinessLocationPageObjects {
     By errorFieldValidationArabic = By.xpath("//*[@text='الرجاء إدخال حقل صالح']");
     By addedBinessLocationMsg=By.xpath("//android.view.View[@text='Success ! Business Location added successfully']");
     By addedBinessLocationMsgArabic=By.xpath("//android.view.View[@text='نجاح ! تمت إضافة موقع العمل بنجاح']");
+    By addedBinessMarketMsg=By.xpath("//android.view.View[@text='Success ! Business Market added successfully']");
+    By addedBinessMarketMsgArabic=By.xpath("//android.view.View[@text='نجاح ! تمت إضافة سوق الأعمال بنجاح']");
 
 
     public void selectBusinessLocationPage() throws Exception {
@@ -245,7 +247,24 @@ public class BusinessLocationPageObjects {
                 genericMethods.click(closBtnArabic);
             }
         }
-
+    }
+    public void isAddMarketValidationMsgPresent() throws Exception {
+        waitUtility.waitForSeconds(2);
+        Boolean b = genericMethods.isElementPresent(addedBinessMarketMsg);
+        Boolean b1 = genericMethods.isElementPresent(addedBinessMarketMsgArabic);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.isElementPresent(addedBinessMarketMsg);
+            genericMethods.click(closBtn);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.isElementPresent(addedBinessMarketMsgArabic);
+            genericMethods.click(closBtnArabic);
+        } else {
+            try {
+                genericMethods.click(closBtn);
+            } catch (Exception e) {
+                genericMethods.click(closBtnArabic);
+            }
+        }
     }
 
 

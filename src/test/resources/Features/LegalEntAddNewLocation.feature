@@ -20,7 +20,7 @@ Feature: Validating Add A New Location screen in NM_CO
     Then user is displayed with the selected value in Country field
     And fills valid data in Country and Type of operations fields <testcase>
     And click on Confirm button
-    And user displayed with Successfully Edited location snack bar Message
+    And user displayed with Successfull addded snack bar Message
     Then user displayed with edited values in Location of business operations Section
     Examples:
       | testcase     |

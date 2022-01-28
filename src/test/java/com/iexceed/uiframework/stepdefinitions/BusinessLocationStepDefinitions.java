@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
 import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
 
@@ -109,6 +108,16 @@ public class BusinessLocationStepDefinitions extends TestBase {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         businessLocationPageActions.fillCountryandProportion(datalist.get("countryCode"),datalist.get("proportion"));
     }
+    @And("user clicks Proportion of Business field$")
+    public void user_clicks_proportion_of_business_field(){
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.fillProportion(datalist.get("proportion"));
+    }
+    @And("user input invalid number$")
+    public void user_input_invalid_number(){
+       log.debug("user input invalid number");
+    }
+
     @And("user entered Location is displayed in Location of business operations Section$")
     public void user_entered_location_is_displayed_in_location_of_business_operations_section() {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
@@ -211,6 +220,11 @@ public class BusinessLocationStepDefinitions extends TestBase {
     @And("^user displayed with Successfull addded snack bar Message$")
     public void user_displayed_with_successfull_addded_snack_bar_message() throws Exception {
         businessLocationPageActions.isAddedValidationMsgPresent();
+    }
+
+    @And("user displayed with Successfull addded Market snack bar Message$")
+    public void user_displayed_with_successfull_addded_market_snack_bar_message() throws Exception {
+        businessLocationPageActions.isAddedMaktValidationMsgPresent();
     }
 }
 

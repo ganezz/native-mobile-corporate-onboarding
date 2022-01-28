@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Parallel TestCases">
+<!--    <test name="NMCO Regression" parallel = "classes" thread-count = "2"   >-->
+<!--&lt;!&ndash;        <parameter name = "deviceName" value="Android_002"/>&ndash;&gt;-->
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="com.iexceed.uiframework.runners.TestRunner" />&ndash;&gt;-->
+<!--            <class name="com.iexceed.uiframework.runners.TestRunnerAndroid" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="NMCO Sanity"  >-->
+<!--        <parameter name = "deviceName" value="Android_003"/>-->
+<!--        <classes>-->
+<!--            <class name="com.iexceed.uiframework.runners.TestRunnerAndroid" />-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
+
