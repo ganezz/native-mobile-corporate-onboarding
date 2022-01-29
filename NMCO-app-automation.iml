@@ -17,6 +17,8 @@
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="pCloudy-java-connector-11.0.6-jar-with-dependencies1" level="project" />
+    <orderEntry type="library" name="AAF-jar-with-dependencies" level="project" />
+    <orderEntry type="library" name="pCloudy-java-connector-11.0.6-jar-with-dependencies" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: pCloudyjavaConnector:pCloudyjavaConnector:11.0.6">
         <CLASSES>
@@ -287,7 +289,5 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
-    <orderEntry type="library" name="AAF-jar-with-dependencies" level="project" />
-    <orderEntry type="library" name="pCloudy-java-connector-11.0.6-jar-with-dependencies" level="project" />
   </component>
 </module>
