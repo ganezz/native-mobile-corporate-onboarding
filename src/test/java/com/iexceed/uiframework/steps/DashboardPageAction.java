@@ -59,6 +59,28 @@ public class DashboardPageAction {
             dashboardPage.isScrollTill10ApplicationList();
         }
     }
+    public void isTenActiveApplicationPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            dashboardPage.isActive10ApplicationPresent();
+        }
+    }
+    public void isTenUnclaimedApplicationPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            dashboardPage.isUnclaimed10ApplicationPresent();
+        }
+    }
+
+    public void isTenCompletedApplicationPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            dashboardPage.isComplete10ApplicationPresent();
+        }
+    }
 
     public void validateSearch() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {

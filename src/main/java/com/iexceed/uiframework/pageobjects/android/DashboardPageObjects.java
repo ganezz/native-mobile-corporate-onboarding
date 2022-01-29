@@ -111,6 +111,76 @@ public class DashboardPageObjects extends TestBase {
 
     }
 
+    public void isActive10ApplicationPresent() throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean b1 = genericMethods.isElementPresent(activeApplicationTab);
+        Boolean b = genericMethods.isElementPresent(activeApplicationTabArabic);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug(genericMethods.isElementPresent(activeApplicationTab));
+            genericMethods.click(activeApplicationTab);
+            waitUtility.waitForSeconds(2);
+            AndroidDriver drive = (AndroidDriver) driver;
+            drive.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"10\"))");
+            waitUtility.waitForSeconds(2);
+        } else if (Boolean.TRUE.equals(b1)) {
+            log.debug(genericMethods.isElementPresent(activeApplicationTabArabic));
+            genericMethods.click(activeApplicationTabArabic);
+            waitUtility.waitForSeconds(2);
+            AndroidDriver drive = (AndroidDriver) driver;
+            drive.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"10\"))");
+            waitUtility.waitForSeconds(2);
+        } else {
+            log.debug("Active application tab is not visible");
+        }
+    }
+
+    public void isComplete10ApplicationPresent() throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean b1 = genericMethods.isElementPresent(completedApplicationTab);
+        Boolean b = genericMethods.isElementPresent(completedApplicationTabArabic);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug(genericMethods.isElementPresent(completedApplicationTab));
+            genericMethods.click(completedApplicationTab);
+            waitUtility.waitForSeconds(2);
+            AndroidDriver drive = (AndroidDriver) driver;
+            drive.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"10\"))");
+            waitUtility.waitForSeconds(2);
+        } else if (Boolean.TRUE.equals(b1)) {
+            log.debug(genericMethods.isElementPresent(completedApplicationTabArabic));
+            genericMethods.click(completedApplicationTabArabic);
+            waitUtility.waitForSeconds(2);
+            AndroidDriver drive = (AndroidDriver) driver;
+            drive.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"10\"))");
+            waitUtility.waitForSeconds(2);
+        } else {
+            log.debug("Ccompleted application tab is not visible");
+        }
+    }
+
+
+
+    public void isUnclaimed10ApplicationPresent() throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean b1 = genericMethods.isElementPresent(unClaimApplicationTab);
+        Boolean b = genericMethods.isElementPresent(unClaimApplicationTabArabic);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug(genericMethods.isElementPresent(unClaimApplicationTab));
+            genericMethods.click(unClaimApplicationTab);
+            waitUtility.waitForSeconds(2);
+            AndroidDriver drive = (AndroidDriver) driver;
+            drive.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"10\"))");
+            waitUtility.waitForSeconds(2);
+        } else if (Boolean.TRUE.equals(b1)) {
+            log.debug(genericMethods.isElementPresent(unClaimApplicationTabArabic));
+            genericMethods.click(unClaimApplicationTabArabic);
+            waitUtility.waitForSeconds(2);
+            AndroidDriver drive = (AndroidDriver) driver;
+            drive.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"10\"))");
+            waitUtility.waitForSeconds(2);
+        } else {
+            log.debug("unclaimed application tab is not visible");
+        }
+    }
 
     public void searchValidation() throws Exception {
         waitUtility.waitForSeconds(1);

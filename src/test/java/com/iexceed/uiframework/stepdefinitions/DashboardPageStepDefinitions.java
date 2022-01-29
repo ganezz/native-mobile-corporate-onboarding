@@ -38,6 +38,20 @@ public class DashboardPageStepDefinitions extends TestBase {
     public void user_is_displayed_with_acquired_10_applications() throws Exception {
         DashboardPageAction.isTenApplicationPresent();
     }
+    @Then("user is displayed with Unclaimed 10 applications$")
+    public void user_is_displayed_with_unclaimed_10_applications() throws Exception {
+        DashboardPageAction.isTenUnclaimedApplicationPresent();
+    }
+
+    @Then("user is displayed with Completed 10 applications$")
+    public void user_is_displayed_with_completed_10_applications() throws Exception {
+        DashboardPageAction.isTenCompletedApplicationPresent();
+    }
+    @Then("^user is displayed with Active 10 applications$")
+    public void user_is_displayed_with_active_10_applications() throws Exception {
+        DashboardPageAction.isTenActiveApplicationPresent();
+    }
+
     @And("clicks on search$")
     public void clicks_on_search() throws Exception {
         DashboardPageAction.validateSearch();

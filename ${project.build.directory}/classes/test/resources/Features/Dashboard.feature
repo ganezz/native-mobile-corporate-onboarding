@@ -71,7 +71,7 @@ Feature: Validating Dashboard screen in NM_CO
     And click login button
     Then user lands on Dashboard
     And clicks on Unclaimed Applications menu
-    Then user is displayed with acquired 10 applications
+    Then user is displayed with Unclaimed 10 applications
     Examples:
       | testcase |
       | TestCase_012 |
@@ -85,7 +85,7 @@ Feature: Validating Dashboard screen in NM_CO
     And click login button
     Then user lands on Dashboard
     And clicks on Completed Applications menu
-    Then user is displayed with acquired 10 applications
+    Then user is displayed with Completed 10 applications
     Examples:
       | testcase |
       | TestCase_012 |
@@ -99,7 +99,7 @@ Feature: Validating Dashboard screen in NM_CO
     And click login button
     Then user lands on Dashboard
     And clicks on Active Applications menu
-    Then user is displayed with acquired 10 applications
+    Then user is displayed with Active 10 applications
     Examples:
       | testcase |
       | TestCase_012 |
@@ -160,7 +160,7 @@ Feature: Validating Dashboard screen in NM_CO
     And click login button
     Then user lands on Dashboard
     And clicks on Unclaimed Applications menu
-    Then user is displayed with 10 applications
+    Then user is displayed with Unclaimed 10 applications
 #    And clicks on Acquire icon for a particular record
 #    And clicks on My Applications
 #    Then user displayed with released record
