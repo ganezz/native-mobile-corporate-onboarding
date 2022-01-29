@@ -54,10 +54,14 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
 
-        driver.quit();
-        System.out.println("driver is closed now");
-        waitUtility.waitForSeconds(77);
+        try {
+            driver.quit();
+            System.out.println("driver is closed now");
+            waitUtility.waitForSeconds(77);
 //                testNGCucumberRunner.finish();
+        }catch(Exception e){
+
+        }
     }
 
 
