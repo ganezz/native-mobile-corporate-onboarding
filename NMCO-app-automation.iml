@@ -279,5 +279,13 @@
     <orderEntry type="library" name="Maven: com.aventstack:extentreports:5.0.4" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:6.8.1" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-java:6.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.3" level="project" />
+    <orderEntry type="library" name="Maven: tech.grasshopper:extentreports-cucumber6-adapter:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aventstack:klov-reporter:5.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:bson:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.2" level="project" />
   </component>
 </module>
