@@ -39,8 +39,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isDashboardPage() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(addNewAppliBtn);
-        Boolean b = genericMethods.isElementPresent(addNewAppliBtnArabic);
+        Boolean b = genericMethods.isElementPresent(addNewAppliBtn);
+        Boolean b1 = genericMethods.isElementPresent(addNewAppliBtnArabic);
         if (Boolean.TRUE.equals(b)) {
             log.info("user in dashboardPage");
         } else if (Boolean.TRUE.equals(b1)) {
@@ -53,8 +53,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isMyapplication() throws Exception {
         waitUtility.waitForSeconds(2);
-        Boolean b1 = genericMethods.isElementPresent(myApplicationTab);
-        Boolean b = genericMethods.isElementPresent(myApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(myApplicationTab);
+        Boolean b1 = genericMethods.isElementPresent(myApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(myApplicationTab));
         } else if (Boolean.TRUE.equals(b1)) {
@@ -66,8 +66,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isUnclaimedApplicaion() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(unClaimApplicationTab);
-        Boolean b = genericMethods.isElementPresent(unClaimApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(unClaimApplicationTab);
+        Boolean b1 = genericMethods.isElementPresent(unClaimApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(unClaimApplicationTab));
         } else if (Boolean.TRUE.equals(b1)) {
@@ -79,8 +79,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isCompletedApplicaion() throws Exception {
         waitUtility.waitForSeconds(2);
-        Boolean b1 = genericMethods.isElementPresent(completedApplicationTab);
-        Boolean b = genericMethods.isElementPresent(completedApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(completedApplicationTab);
+        Boolean b1 = genericMethods.isElementPresent(completedApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(completedApplicationTab));
         } else if (Boolean.TRUE.equals(b1)) {
@@ -92,8 +92,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isActiveApplicaion() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(activeApplicationTab);
-        Boolean b = genericMethods.isElementPresent(activeApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(activeApplicationTab);
+        Boolean b1 = genericMethods.isElementPresent(activeApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(activeApplicationTab));
         } else if (Boolean.TRUE.equals(b1)) {
@@ -113,8 +113,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isActive10ApplicationPresent() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(activeApplicationTab);
-        Boolean b = genericMethods.isElementPresent(activeApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(activeApplicationTab);
+        Boolean b1= genericMethods.isElementPresent(activeApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(activeApplicationTab));
             genericMethods.click(activeApplicationTab);
@@ -136,8 +136,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isComplete10ApplicationPresent() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(completedApplicationTab);
-        Boolean b = genericMethods.isElementPresent(completedApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(completedApplicationTab);
+        Boolean b1 = genericMethods.isElementPresent(completedApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(completedApplicationTab));
             genericMethods.click(completedApplicationTab);
@@ -161,8 +161,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void isUnclaimed10ApplicationPresent() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(unClaimApplicationTab);
-        Boolean b = genericMethods.isElementPresent(unClaimApplicationTabArabic);
+        Boolean b = genericMethods.isElementPresent(unClaimApplicationTab);
+        Boolean b1 = genericMethods.isElementPresent(unClaimApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(unClaimApplicationTab));
             genericMethods.click(unClaimApplicationTab);
@@ -184,8 +184,8 @@ public class DashboardPageObjects extends TestBase {
 
     public void searchValidation() throws Exception {
         waitUtility.waitForSeconds(1);
-        Boolean b1 = genericMethods.isElementPresent(searchBox);
-        Boolean b = genericMethods.isElementPresent(searchBoxArabic);
+        Boolean b = genericMethods.isElementPresent(searchBox);
+        Boolean b1 = genericMethods.isElementPresent(searchBoxArabic);
         try {
             if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(searchBox);
