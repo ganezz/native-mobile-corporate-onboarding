@@ -17,7 +17,6 @@ import io.cucumber.testng.TestNGCucumberRunner;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
                 "rerun:target/failedrerun.txt"
-
         }
 
 

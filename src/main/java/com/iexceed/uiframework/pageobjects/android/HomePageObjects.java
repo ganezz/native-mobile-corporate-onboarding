@@ -84,7 +84,6 @@ public class HomePageObjects extends TestBase {
         genericMethods.click(dropDown);
         List<WebElement> tempdropDownList = driver.findElements(dropDownList);
         androidUtility.selectionOfDropdown(language, tempdropDownList);
-
     }
 
 
