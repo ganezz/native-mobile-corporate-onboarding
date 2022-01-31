@@ -8,7 +8,7 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
   Scenario Outline:  Validate Register button
     And user in Home screen <testcase>
     When clicks Register Button
-    Then user will landed on Legal Entity User Details
+    Then user lands on Dashboard
     Examples:
       | testcase     |
       | TestCase_000 |

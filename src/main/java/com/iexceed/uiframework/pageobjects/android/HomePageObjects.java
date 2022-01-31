@@ -80,11 +80,13 @@ public class HomePageObjects extends TestBase {
     }
 
     public void chooseLanguage(String language) {
+        genericMethods.waitForVisibility(dropDown);
         genericMethods.click(dropDown);
         List<WebElement> tempdropDownList = driver.findElements(dropDownList);
         androidUtility.selectionOfDropdown(language, tempdropDownList);
 
     }
+
 
     public void clickUserRegBtn(String language) throws Exception {
         waitUtility.waitForSeconds(5);
