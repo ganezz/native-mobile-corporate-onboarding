@@ -8,10 +8,6 @@ import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.remote.RemoteWebElement;
-
-import java.util.HashMap;
 
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
@@ -111,18 +107,7 @@ public class IosDashboardPageObjects extends TestBase {
 
     public void ios_isScrollTill10ApplicationList() throws Exception {
         waitUtility.waitForSeconds(2);
-        RemoteWebElement element = (RemoteWebElement)driver.findElement(nxtPageArrow);
-        String elementID = element.getId();
-//        HashMap<String, String> scrollObject = new HashMap<String, String>();
-//        scrollObject.put("element", elementID); // Only for ‘scroll in element’
-//        scrollObject.put("direction", "up");
-//        driver.executeScript("mobile:scroll", scrollObject);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("direction", "down");
-        params.put("velocity", 2500);
-//        params.put("element", elementID);
-        js.executeScript("mobile: swipe", params);
+        iosUtility.scrollUp();
     }
 
     public void ios_isActive10ApplicationPresent() throws Exception {
@@ -133,13 +118,13 @@ public class IosDashboardPageObjects extends TestBase {
             log.debug(genericMethods.isElementPresent(activeApplicationTab));
             genericMethods.click(activeApplicationTab);
             waitUtility.waitForSeconds(2);
-            iosUtility.scrollToElement(nxtPageArrow);
+            iosUtility.scrollUp();
 
                     } else if (Boolean.TRUE.equals(b1)) {
             log.debug(genericMethods.isElementPresent(activeApplicationTabArabic));
             genericMethods.click(activeApplicationTabArabic);
             waitUtility.waitForSeconds(2);
-            iosUtility.scrollToElement(nxtPageArrow);
+            iosUtility.scrollUp();
         } else {
             log.debug("Active application tab is not visible");
         }
@@ -153,12 +138,12 @@ public class IosDashboardPageObjects extends TestBase {
             log.debug(genericMethods.isElementPresent(completedApplicationTab));
             genericMethods.click(completedApplicationTab);
             waitUtility.waitForSeconds(2);
-            iosUtility.scrollToElement(nxtPageArrow);
+            iosUtility.scrollUp();
         } else if (Boolean.TRUE.equals(b1)) {
             log.debug(genericMethods.isElementPresent(completedApplicationTabArabic));
             genericMethods.click(completedApplicationTabArabic);
             waitUtility.waitForSeconds(2);
-            iosUtility.scrollToElement(nxtPageArrow);
+            iosUtility.scrollUp();
         } else {
             log.debug("Ccompleted application tab is not visible");
         }
@@ -173,12 +158,12 @@ public class IosDashboardPageObjects extends TestBase {
             log.debug(genericMethods.isElementPresent(unClaimApplicationTab));
             genericMethods.click(unClaimApplicationTab);
             waitUtility.waitForSeconds(2);
-            iosUtility.scrollToElement(nxtPageArrow);
+            iosUtility.scrollUp();
         } else if (Boolean.TRUE.equals(b1)) {
             log.debug(genericMethods.isElementPresent(unClaimApplicationTabArabic));
             genericMethods.click(unClaimApplicationTabArabic);
             waitUtility.waitForSeconds(2);
-            iosUtility.scrollToElement(nxtPageArrow);
+            iosUtility.scrollUp();
         } else {
             log.debug("unclaimed application tab is not visible");
         }
