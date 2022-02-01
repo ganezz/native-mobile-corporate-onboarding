@@ -12,7 +12,7 @@ Feature: Validating Dashboard screen in NM_CO
 #    And clicks on change password
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   Scenario Outline: validating logout option under overflow menu with Ok button
@@ -26,7 +26,7 @@ Feature: Validating Dashboard screen in NM_CO
 #    Then user is displayed with login screen
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   Scenario Outline: validating logout option under overflow menu with Cancel button
@@ -40,7 +40,7 @@ Feature: Validating Dashboard screen in NM_CO
 #    Then user is displayed with Dashboard screen
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @myapp
@@ -53,7 +53,7 @@ Feature: Validating Dashboard screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_167|
-#      | TestCase_168 |
+      | TestCase_168 |
 
   @un
   Scenario Outline: validating Unclaimed Applications section
@@ -64,7 +64,7 @@ Feature: Validating Dashboard screen in NM_CO
     Then user is displayed with Unclaimed 10 applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @com
@@ -88,7 +88,7 @@ Feature: Validating Dashboard screen in NM_CO
     Then user is displayed with Active 10 applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   Scenario Outline: validating Date filter under Applications section
@@ -102,7 +102,7 @@ Feature: Validating Dashboard screen in NM_CO
 #    Then user is displayed with respective applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @se
@@ -116,7 +116,7 @@ Feature: Validating Dashboard screen in NM_CO
     Then user is displayed with respective applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   Scenario Outline: validating Release option under My Applications section
@@ -130,7 +130,7 @@ Feature: Validating Dashboard screen in NM_CO
 #    Then user displayed with released record
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   Scenario Outline: validating Acquire option under Unclaimed Applications section
@@ -144,7 +144,7 @@ Feature: Validating Dashboard screen in NM_CO
 #    Then user displayed with released record
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   Scenario Outline: validating Add New Application button
@@ -155,29 +155,25 @@ Feature: Validating Dashboard screen in NM_CO
     When user is in Entity Contact Information screen <testcase>
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @n
   Scenario Outline: validating Next page button, should be activated only if there are more than 10 applications
     And user in Home screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
+    When clicks Register Button
     Then user lands on Dashboard
     And clicks on Next page button
     Then user is displayed with the next 10 set of applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @p
   Scenario Outline: validating Previous page button, should not be activated for the first 10 applications
     And user in Home screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
+    When clicks Register Button
     Then user lands on Dashboard
     And clicks on Next page button
     Then user is displayed with 10 set of applications
@@ -185,15 +181,13 @@ Feature: Validating Dashboard screen in NM_CO
     Then user is displayed with previous 10 set of applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @f
   Scenario Outline: validating First page button, should not be activated in the first page
     And user in Home screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
+    When clicks Register Button
     Then user lands on Dashboard
     And clicks on Next page button
     Then user is displayed with 10 set of applications
@@ -201,21 +195,19 @@ Feature: Validating Dashboard screen in NM_CO
     Then user is displayed with First 10 set of applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
   @l
   Scenario Outline: validating last page button, should not be activated in the last page
     And user in Home screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
+    When clicks Register Button
     Then user lands on Dashboard
     And clicks on last page button
     Then user is displayed with the last page and set of applications
     Examples:
       | testcase     |
-      | TestCase_167|
+      | TestCase_167 |
       | TestCase_168 |
 
 
