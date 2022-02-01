@@ -18,6 +18,43 @@ public class DashboardPageStepDefinitions extends TestBase {
     public void user_lands_on_dashboard() throws Exception {
         DashboardPageAction.isDashboardPage();
     }
+    @And("clicks on Next page button$")
+    public void clicks_on_next_page_button() throws Exception {
+        DashboardPageAction.nextPageArrownav();
+    }
+    @Then("user is displayed with the next 10 set of applications$")
+    public void user_is_displayed_with_the_next_10_set_of_applications(){
+        log.debug("user is displayed with the next 10 set of applications");
+    }
+    @Then("user is displayed with 10 set of applications$")
+    public void user_is_displayed_with_10_set_of_applications() throws Exception {
+        log.debug("user is displayed with the next 10 set of applications");
+    }
+    @And("clicks on previous page button$")
+    public void clicks_on_previous_page_button() throws Exception {
+        DashboardPageAction.PreviousPageArrownav();
+    }
+    @Then("user is displayed with previous 10 set of applications$")
+    public void user_is_displayed_with_previous_10_set_of_applications() throws Exception {
+        log.debug("user is displayed with the next 10 set of applications");
+    }
+    @And("clicks on First page button$")
+    public void clicks_on_first_page_button() throws Exception {
+        DashboardPageAction.firstPageArrownav();
+    }
+    @Then("user is displayed with First 10 set of applications$")
+    public void user_is_displayed_with_first_10_set_of_applications() throws Exception {
+        log.debug("user is displayed with the next 10 set of applications");
+    }
+    @And("clicks on last page button$")
+    public void clicks_on_last_page_button() throws Exception {
+        DashboardPageAction.lastPageArrownav();
+    }
+    @Then("user is displayed with the last page and set of applications$")
+    public void user_is_displayed_with_the_last_page_and_set_of_applications() throws Exception {
+        log.debug("user is displayed with the next 10 set of applications");
+    }
+
     @And("clicks on My Applications menu$")
     public void clicks_on_my_applications_menu() throws Exception {
         DashboardPageAction.isMyapplication();

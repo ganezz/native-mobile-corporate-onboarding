@@ -16,6 +16,36 @@ public class DashboardPageAction {
 
     }
 
+    public void nextPageArrownav() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosDashboard.ios_nextPage();
+        } else {
+            dashboardPage.nextPage();
+        }
+    }
+
+    public void PreviousPageArrownav() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosDashboard.ios_previousPageArrow();
+        } else {
+            dashboardPage.previousPageArrow();
+        }
+    }
+    public void lastPageArrownav() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosDashboard.ios_lastPage();
+        } else {
+            dashboardPage.lastPage();
+        }
+    }
+    public void firstPageArrownav() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosDashboard.ios_firstPage();
+        } else {
+            dashboardPage.firstPage();
+        }
+    }
+
     public void isDashboardPage() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             iosDashboard.ios_isDashboardPage();

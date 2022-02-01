@@ -31,16 +31,16 @@ Feature: Validating Entity Name And Type screen in NM_CO
       | testcase     |
       | TestCase_025 |
       | TestCase_026 |
-#      | TestCase_027 |
-#      | TestCase_028 |
+      | TestCase_027 |
+      | TestCase_028 |
       | TestCase_029 |
       | TestCase_030 |
       | TestCase_105 |
-#      | TestCase_106 |
-#      | TestCase_107 |
-#      | TestCase_108 |
-#      | TestCase_109 |
-#      | TestCase_110 |
+      | TestCase_106 |
+      | TestCase_107 |
+      | TestCase_108 |
+      | TestCase_109 |
+      | TestCase_110 |
 
   @2
   Scenario Outline: Validate Trade Name(s), optional field with Max 100 characters and special characters allowed
@@ -58,17 +58,17 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_031 |
-#      | TestCase_032 |
-#      | TestCase_033 |
-#      | TestCase_034 |
-#      | TestCase_035 |
+      | TestCase_032 |
+      | TestCase_033 |
+      | TestCase_034 |
+      | TestCase_035 |
       | TestCase_036 |
       | TestCase_111 |
       | TestCase_112 |
-#      | TestCase_113 |
-#      | TestCase_114 |
-#      | TestCase_115 |
-#      | TestCase_116 |
+      | TestCase_113 |
+      | TestCase_114 |
+      | TestCase_115 |
+      | TestCase_116 |
 
   @3
   Scenario Outline: Validate Previously known as, optional field with Max 100 characters and special characters allowed
@@ -88,16 +88,16 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_037 |
-#      | TestCase_038 |
-#      | TestCase_039 |
-#      | TestCase_040 |
-#      | TestCase_041 |
+      | TestCase_038 |
+      | TestCase_039 |
+      | TestCase_040 |
+      | TestCase_041 |
       | TestCase_042 |
       | TestCase_117 |
-#      | TestCase_118 |
-#      | TestCase_119 |
-#      | TestCase_120 |
-#      | TestCase_121 |
+      | TestCase_118 |
+      | TestCase_119 |
+      | TestCase_120 |
+      | TestCase_121 |
       | TestCase_122 |
 
   @4
@@ -138,10 +138,10 @@ Feature: Validating Entity Name And Type screen in NM_CO
       | TestCase_044 |
       | TestCase_045 |
       | TestCase_046 |
-#      | TestCase_047 |
-#      | TestCase_048 |
-#      | TestCase_049 |
-#      | TestCase_123 |
+      | TestCase_047 |
+      | TestCase_048 |
+      | TestCase_049 |
+      | TestCase_123 |
       | TestCase_124 |
       | TestCase_125 |
 

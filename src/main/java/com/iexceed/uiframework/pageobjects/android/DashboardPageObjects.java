@@ -36,6 +36,60 @@ public class DashboardPageObjects extends TestBase {
     By activeApplicationTabArabic = By.xpath("//android.view.View[@content-desc='تطبيقات نشطة']");
     By searchBox = By.xpath("//*[@content-desc='Search...']");
     By searchBoxArabic = By.xpath("//*[@content-desc='بحث...']");
+    By nxtPageArrow = By.xpath("//android.view.View[@content-desc='Go to Next Page']");
+    By previousPageArrow = By.xpath("//android.view.View[@content-desc='Go to Previous Page']");
+    By lastPageArrow = By.xpath("//android.view.View[@content-desc='Go to Last Page']");
+    By firstPageArrow = By.xpath("//android.view.View[@content-desc='Go to First Page']");
+    By nxtPageArabicArrow = By.xpath("//android.view.View[@content-desc='اذهب إلى الصفحة التالية']");
+    By previousPageArabicArrow = By.xpath("//android.view.View[@content-desc='الانتقال إلى الصفحة السابقة']");
+    By lastPageArabicArrow = By.xpath("//android.view.View[@content-desc='اذهب إلى الصفحة الأخيرة']");
+    By firstPageArabicArrow = By.xpath("//android.view.View[@content-desc='اذهب إلى الصفحة الأولى']");
+
+
+    public void nextPage() throws Exception {
+        isMyapplication();
+        isScrollTill10ApplicationList();
+        Boolean b = genericMethods.isElementPresent(nxtPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(nxtPageArrow);
+        } else {
+            genericMethods.click(nxtPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
+    public void previousPageArrow() throws Exception {
+         Boolean b = genericMethods.isElementPresent(previousPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(previousPageArrow);
+        } else {
+            genericMethods.click(previousPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
+    public void lastPage() throws Exception {
+        nextPage();
+        Boolean b = genericMethods.isElementPresent(lastPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(lastPageArrow);
+        } else {
+            genericMethods.click(lastPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
+    public void firstPage() throws Exception {
+
+        Boolean b = genericMethods.isElementPresent(firstPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(firstPageArrow);
+        } else {
+            genericMethods.click(firstPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
 
     public void isDashboardPage() throws Exception {
         waitUtility.waitForSeconds(1);
@@ -114,7 +168,7 @@ public class DashboardPageObjects extends TestBase {
     public void isActive10ApplicationPresent() throws Exception {
         waitUtility.waitForSeconds(1);
         Boolean b = genericMethods.isElementPresent(activeApplicationTab);
-        Boolean b1= genericMethods.isElementPresent(activeApplicationTabArabic);
+        Boolean b1 = genericMethods.isElementPresent(activeApplicationTabArabic);
         if (Boolean.TRUE.equals(b)) {
             log.debug(genericMethods.isElementPresent(activeApplicationTab));
             genericMethods.click(activeApplicationTab);
@@ -156,7 +210,6 @@ public class DashboardPageObjects extends TestBase {
             log.debug("Ccompleted application tab is not visible");
         }
     }
-
 
 
     public void isUnclaimed10ApplicationPresent() throws Exception {

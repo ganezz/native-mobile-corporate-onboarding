@@ -182,3 +182,62 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_012 |
       | TestCase_091 |
 
+    @n
+  Scenario Outline: validating Next page button, should be activated only if there are more than 10 applications
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    And clicks on Next page button
+    Then user is displayed with the next 10 set of applications
+    Examples:
+      | testcase |
+      | TestCase_012 |
+      | TestCase_091 |
+
+    @p
+  Scenario Outline: validating Previous page button, should not be activated for the first 10 applications
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    And clicks on Next page button
+    Then user is displayed with 10 set of applications
+    And clicks on previous page button
+    Then user is displayed with previous 10 set of applications
+    Examples:
+      | testcase |
+      | TestCase_012 |
+      | TestCase_091 |
+
+@f
+  Scenario Outline: validating First page button, should not be activated in the first page
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    And clicks on Next page button
+    Then user is displayed with 10 set of applications
+    And clicks on First page button
+    Then user is displayed with First 10 set of applications
+    Examples:
+      | testcase |
+      | TestCase_012 |
+      | TestCase_091 |
+
+@l
+  Scenario Outline: validating last page button, should not be activated in the last page
+    And user in Home screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    And clicks on last page button
+    Then user is displayed with the last page and set of applications
+    Examples:
+      | testcase |
+      | TestCase_012 |
+      | TestCase_091 |

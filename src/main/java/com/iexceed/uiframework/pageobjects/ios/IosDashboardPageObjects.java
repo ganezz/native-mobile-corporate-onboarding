@@ -18,11 +18,12 @@ public class IosDashboardPageObjects extends TestBase {
     private static final Logger log = LogManager.getLogger(IosDashboardPageObjects.class);
     AndroidUtility androidUtility;
     IOSUtility iosUtility;
+
     public IosDashboardPageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
         androidUtility = new AndroidUtility();
-        iosUtility=new IOSUtility();
+        iosUtility = new IOSUtility();
     }
 
 
@@ -37,7 +38,60 @@ public class IosDashboardPageObjects extends TestBase {
     By activeApplicationTab = By.xpath("//XCUIElementTypeOther[@name='Active Application Button']");
     By activeApplicationTabArabic = By.xpath("//XCUIElementTypeOther[@name='Active Application Button']");
     By searchBox = By.xpath("//XCUIElementTypeTextField[@name='SearchTextField']");
-    By nxtPageArrow=By.xpath("//XCUIElementTypeButton[@name='Next Button']");
+    By nxtPageArrow = By.xpath("//XCUIElementTypeButton[@name='Next Button']");
+    By previousPageArrow = By.xpath("//XCUIElementTypeButton[@name='Previous Button']");
+    By lastPageArrow = By.xpath("//XCUIElementTypeButton[@name='End Button']");
+    By firstPageArrow = By.xpath("//XCUIElementTypeButton[@name='Start Button']");
+    By nxtPageArabicArrow = By.xpath("//XCUIElementTypeButton[@name='Next Button']");
+    By previousPageArabicArrow = By.xpath("//XCUIElementTypeButton[@name='Previous Button']");
+    By lastPageArabicArrow = By.xpath("//XCUIElementTypeButton[@name='End Button']");
+    By firstPageArabicArrow = By.xpath("//XCUIElementTypeButton[@name='Start Button']");
+
+
+    public void ios_nextPage() throws Exception {
+        ios_isMyapplication();
+        ios_isScrollTill10ApplicationList();
+        Boolean b = genericMethods.isElementPresent(nxtPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(nxtPageArrow);
+        } else {
+            genericMethods.click(nxtPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
+    public void ios_previousPageArrow() throws Exception {
+        Boolean b = genericMethods.isElementPresent(previousPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(previousPageArrow);
+        } else {
+            genericMethods.click(previousPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
+    public void ios_lastPage() throws Exception {
+        ios_nextPage();
+        Boolean b = genericMethods.isElementPresent(lastPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(lastPageArrow);
+        } else {
+            genericMethods.click(lastPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
+    public void ios_firstPage() throws Exception {
+
+        Boolean b = genericMethods.isElementPresent(firstPageArrow);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(firstPageArrow);
+        } else {
+            genericMethods.click(firstPageArabicArrow);
+        }
+        waitUtility.waitForSeconds(1);
+    }
+
 
     public void ios_isDashboardPage() throws Exception {
         waitUtility.waitForSeconds(1);
@@ -120,7 +174,7 @@ public class IosDashboardPageObjects extends TestBase {
             waitUtility.waitForSeconds(2);
             iosUtility.scrollUp();
 
-                    } else if (Boolean.TRUE.equals(b1)) {
+        } else if (Boolean.TRUE.equals(b1)) {
             log.debug(genericMethods.isElementPresent(activeApplicationTabArabic));
             genericMethods.click(activeApplicationTabArabic);
             waitUtility.waitForSeconds(2);
