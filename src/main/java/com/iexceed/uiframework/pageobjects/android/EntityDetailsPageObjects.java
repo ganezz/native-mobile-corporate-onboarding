@@ -426,25 +426,13 @@ public class EntityDetailsPageObjects {
         waitUtility.waitForSeconds(5);
         driver.hideKeyboard();
         try {
-
             genericMethods.click(continueBtn);
-            Boolean b = genericMethods.isElementPresent(entityLegalName);
-
-            if (Boolean.TRUE.equals(b)) {
-                log.debug("screen navigate to entity legal screen");
-            } else {
-                log.debug("screen navigation is not happening");
-            }
+            genericMethods.isElementPresent(entityLegalName);
         } catch (Exception e) {
-            waitUtility.waitForSeconds(7);
+            waitUtility.waitForSeconds(4);
             genericMethods.click(continueBtnArabic);
-            Boolean b = genericMethods.isElementPresent(entityLegalNameArabic);
+            genericMethods.isElementPresent(entityLegalNameArabic);
 
-            if (Boolean.TRUE.equals(b)) {
-                log.debug("screen navigate to entity legal screen");
-            } else {
-                log.debug("screen navigation is not happening");
-            }
         }
     }
 

@@ -110,13 +110,13 @@ public class HomePageObjects extends TestBase {
         if (Boolean.TRUE.equals(b)) {
             log.info("page is navigating");
             genericMethods.click(addNewAppliBtn);
-                    } else if (Boolean.TRUE.equals(b1)) {
+        } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.click(addNewAppliBtnArabic);
             log.info("page is navigating arabic");
         } else {
             log.info("Page is not navigating to add new user screen");
         }
-
+        waitUtility.waitForSeconds(3);
 
     }
 

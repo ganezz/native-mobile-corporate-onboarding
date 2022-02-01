@@ -53,7 +53,7 @@ Feature: Validating Dashboard screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_167|
-      | TestCase_168 |
+#      | TestCase_168 |
 
   @un
   Scenario Outline: validating Unclaimed Applications section

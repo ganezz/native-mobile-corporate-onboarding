@@ -135,15 +135,15 @@ Feature: Validating Entity Name And Type screen in NM_CO
     Then error message should be displayed under Previously trading as field
     Examples:
       | testcase     |
-#      | TestCase_044 |
+      | TestCase_044 |
       | TestCase_045 |
-#      | TestCase_046 |
-#      | TestCase_047 |
+      | TestCase_046 |
+      | TestCase_047 |
       | TestCase_048 |
-#      | TestCase_049 |
-#      | TestCase_123 |
-#      | TestCase_124 |
-#      | TestCase_125 |
+      | TestCase_049 |
+      | TestCase_123 |
+      | TestCase_124 |
+      | TestCase_125 |
 
   @6
   Scenario Outline:  Validate Cancel button in Entity name and type screen with click on Yes button

@@ -61,7 +61,6 @@ public class IOSConnectionUtility extends TestBase {
                     if(driver!=null) {
                         appiumDriver = driver;
                         launchApp(bundleID, applicationName, targetCompanyName, trustCompanyName, trustBtn);
-
                     }
                 } catch (InterruptedException | MalformedURLException ie) {
                     log.debug(ie);
