@@ -49,7 +49,7 @@ public class HomePageObjects extends TestBase {
 
     public void isHomePageVisible() throws Exception {
         waitUtility.waitForSeconds(4);
-        Boolean b1 = genericMethods.isElementPresent(userDetailsRegBt);
+        Boolean b1 = genericMethods.isElementPresent(textField);
         Boolean b = genericMethods.isElementPresent(englishBtn);
         if (Boolean.TRUE.equals(b)) {
             log.info("user in home page");

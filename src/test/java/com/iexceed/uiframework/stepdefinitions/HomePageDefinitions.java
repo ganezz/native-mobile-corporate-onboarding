@@ -46,7 +46,7 @@ public class HomePageDefinitions extends TestBase {
         }else{
             waitUtility.waitForSeconds(5);
 //            iosAppURL=launchApp();
-            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/manual/QARelease-1.0.0-27-01-2022-21%3A51/QARelease-1.0.0-27-01-2022-21%3A51.ipa";
+            iosAppURL="http://20.80.0.230:8082/artifactory/iOS-ipa/ao/manual/QARelease-1.0.0-01-02-2022-15:09/QARelease-1.0.0-01-02-2022-15:09.ipa";
             String[] arr=iosAppURL.split("//");
             String temp1=arr[0]+"//readuser:Re@d@1234@";
             iosAppURL=temp1+arr[1];
@@ -71,9 +71,6 @@ public class HomePageDefinitions extends TestBase {
         }
 
     }
-
-
-
 
     @And("user in Home screen (.+)$")
     public void user_in_home_screen(String testcase) throws Exception {
@@ -137,13 +134,6 @@ public class HomePageDefinitions extends TestBase {
         HomePageAction.chooseLanguage(deviceConfig.get("platform"),datalist.get("language"));
     }
 
-    @When("clicks Register Button$")
-    public void clicks_register_button() throws Exception {
-        log.info("clicks Register Button");
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.clickRegUserBtn(deviceConfig.get("platform"),datalist.get("language"));
-    }
-
 
     @Then("user will landed on Dashboard page$")
     public void user_will_landed_on_dashboard_page() throws Exception {
@@ -154,24 +144,12 @@ public class HomePageDefinitions extends TestBase {
     }
 
 
-    @When("clicks English Button$")
-    public void clicks_english_button() throws InterruptedException {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.verifyLanguageAsEnglish(deviceConfig.get("platform"));
-    }
-
     @Then("app language change to English$")
     public void app_language_change_to_english() {
         log.info("app language change to English");
         log.info("Test Case :" + datalist.get("TestCaseName"));
     }
 
-
-    @When("clicks Arabic Button$")
-    public void clicks_arabic_button() throws InterruptedException {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.verifyLanguageAsArabic(deviceConfig.get("platform"));
-    }
 
     @Then("app language change to Arabic$")
     public void app_language_change_to_arabic() {

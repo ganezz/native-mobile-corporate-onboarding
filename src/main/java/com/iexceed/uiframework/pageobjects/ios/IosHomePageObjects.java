@@ -1,7 +1,9 @@
 package com.iexceed.uiframework.pageobjects.ios;
 
 import com.iexceed.uiframework.appium.GenericMethods;
+import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.domainobjects.IOSUtility;
+import com.iexceed.uiframework.pageobjects.android.HomePageObjects;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,14 +11,13 @@ import org.openqa.selenium.By;
 
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
-public class IosHomePageObjects {
+public class IosHomePageObjects extends TestBase {
 
 
     GenericMethods genericMethods;
-    IOSUtility iosUtility;
-
-    private static final Logger log = LogManager.getLogger(IosHomePageObjects.class);
     private final WaitUtility waitUtility;
+    private static final Logger log = LogManager.getLogger(HomePageObjects.class);
+    IOSUtility iosUtility=new IOSUtility();
 
     public IosHomePageObjects() {
         genericMethods = new GenericMethods(driver);
@@ -24,90 +25,174 @@ public class IosHomePageObjects {
     }
 
 
-    By userOnboardBtn = By.xpath("//XCUIElementTypeButton[@name='Launch Onboarding SDK']");
-    By newApplicationBtn = By.xpath("//XCUIElementTypeButton[@name='New Application Button']");
-    By newApplicationBtnArabic = By.xpath("//XCUIElementTypeButton[@name='New Application Button']");
-    By addNewUsrBtn = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    By addNewUsrBtnArabic = By.xpath("//android.view.View[contains(@text,'+ Add A New User')]");
-    By lightThemeBtn = By.xpath("//XCUIElementTypeButton[@name='Light Mode']");
-    By darkThemeBtn = By.xpath("//XCUIElementTypeButton[@name='Dark Mode']");
-    By englishBtn = By.xpath("//XCUIElementTypeButton[@name='English']");
-    By arabicBtn = By.xpath("//XCUIElementTypeButton[@name='Arabic']");
+    By addNewAppliBtn = By.xpath("//XCUIElementTypeButton[@name='New Application Button']");
+    By addNewAppliBtnArabic = By.xpath("//XCUIElementTypeButton[@name='New Application Button']");
+    By loginBtn = By.xpath("//XCUIElementTypeButton[@name='LoginButton']");
+    By loginArabicBtn = By.xpath("//XCUIElementTypeButton[@name='LoginButton']");
+    By dropDown = By.xpath("//XCUIElementTypeButton[@name='LanguageDropDown']");
+    By userName=By.xpath("//XCUIElementTypeTextField[@name='UsernameTextField']");
+    By password=By.xpath("//XCUIElementTypeTextField[@name='PasswordTextField']");
+    By userNameErrorMsg = By.xpath("//*[contains(@label,'Please enter valid field')]");
+    By userNameErrorMsgArabic = By.xpath("//*[contains(@label,'الرجاء إدخال حقل صالح')]");
+    By passwordErrorMsg =  By.xpath("//*[contains(@label,'Please enter valid field')]");
+    By passwordErrorMsgArabic = By.xpath("//*[contains(@label,'الرجاء إدخال حقل صالح')]");
+    By themeToggleBtn = By.xpath("//XCUIElementTypeSwitch[@name='DarkModeSwitch']");
+    By themeToggleBtnArabic = By.xpath("//XCUIElementTypeSwitch[@name='DarkModeSwitch']");
+    By englishBtn=By.xpath("//XCUIElementTypeButton[@name='English']");
+    By arabicBtn=By.xpath("//XCUIElementTypeButton[@name='عربى']");
 
 
-    public void iIsHomePageVisible() throws Exception {
-        waitUtility.waitForSeconds(2);
-        Boolean b = genericMethods.isElementPresent(lightThemeBtn);
+    public void ios_isHomePageVisible() throws Exception {
+        waitUtility.waitForSeconds(4);
+        Boolean b = genericMethods.isElementPresent(dropDown);
         if (Boolean.TRUE.equals(b)) {
             log.info("user in home page");
-        } else {
+        }  else {
             log.debug("home page is not launched");
         }
-
     }
 
 
-    public void ichooseLanguage() {
-        log.debug("language");
+    public void ios_clikckThemeBtn() throws InterruptedException {
 
-    }
+        Boolean b = genericMethods.isElementPresent(themeToggleBtn);
+        Boolean b1 = genericMethods.isElementPresent(themeToggleBtnArabic);
 
-    public void iClickUserRegBtn(String language) throws Exception {
-        waitUtility.waitForSeconds(5);
-        if (language.equals("english")) {
-            genericMethods.isElementPresent(userOnboardBtn);
-            genericMethods.click(englishBtn);
-            genericMethods.click(userOnboardBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(themeToggleBtn);
+            log.info("changed to dark mode");
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(themeToggleBtnArabic);
+            log.info("changed to dark mode");
         } else {
-            log.debug("arabic validations");
-            genericMethods.isElementPresent(userOnboardBtn);
-            genericMethods.click(arabicBtn);
-            genericMethods.click(userOnboardBtn);
+            log.info("theme is not applied");
         }
+
+
     }
 
-    public void ienterLoginCredentials() {
-        log.debug("ios");
+    public void ios_chooseLanguage(String language) {
+        genericMethods.waitForVisibility(dropDown);
+        genericMethods.click(dropDown);
+          if(language.equalsIgnoreCase("English")){
+           genericMethods.waitForVisibility(englishBtn);
+            genericMethods.click(englishBtn);
+          }else{
+              genericMethods.waitForVisibility(arabicBtn);
+              genericMethods.click(arabicBtn);
+          }
     }
 
-    public void loginPage() {
-        log.info("log");
-    }
 
-    public void iVerifyPageLanding() throws Exception {
-
-        waitUtility.waitForSeconds(2);
-        genericMethods.click(newApplicationBtn);
-        waitUtility.waitForSeconds(2);
-        Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
-        Boolean b1 = genericMethods.isElementPresent(addNewUsrBtnArabic);
+    public void ios_verifyPageLanding() throws Exception {
+        waitUtility.waitForSeconds(5);
+        Boolean b = genericMethods.isElementPresent(addNewAppliBtn);
+        Boolean b1 = genericMethods.isElementPresent(addNewAppliBtnArabic);
 
         if (Boolean.TRUE.equals(b)) {
             log.info("page is navigating");
+            genericMethods.click(addNewAppliBtn);
         } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(addNewAppliBtnArabic);
             log.info("page is navigating arabic");
         } else {
             log.info("Page is not navigating to add new user screen");
         }
-    }
-
-    public void iClickEnglishLangBtn() throws InterruptedException {
-        genericMethods.waitForVisibility(englishBtn);
-        genericMethods.click(englishBtn);
-        genericMethods.click(userOnboardBtn);
-        genericMethods.isElementPresent(newApplicationBtn);
-
+        waitUtility.waitForSeconds(3);
 
     }
 
-    public void iClickArabicLangBtn() throws InterruptedException {
-        genericMethods.waitForVisibility(arabicBtn);
-        genericMethods.click(arabicBtn);
-        genericMethods.click(userOnboardBtn);
-        genericMethods.isElementPresent(newApplicationBtnArabic);
+    public void ios_enterUserName(String userNAme) {
+        genericMethods.waitForVisibility(userName);
+        genericMethods.click(userName);
+        genericMethods.sendKeys(userName,userNAme);
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+    }
 
+    public void ios_isUsrErrormsgPresent() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(loginBtn);
+        Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(loginBtn);
+            genericMethods.isElementPresent(userNameErrorMsg);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(loginArabicBtn);
+            genericMethods.isElementPresent(userNameErrorMsgArabic);
+        } else {
+            log.info("Error message is not present");
+        }
 
     }
+
+    public void ios_isPasswordErrormsgPresent() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(loginBtn);
+        Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(loginBtn);
+            genericMethods.isElementPresent(passwordErrorMsg);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(loginArabicBtn);
+            genericMethods.isElementPresent(passwordErrorMsgArabic);
+        } else {
+            log.info("Error message is not present");
+        }
+
+    }
+
+    public void ios_enterPassword(String passWord) {
+        try{
+            iosUtility.scrollUp();
+        }catch(Exception e){
+            log.debug(e);
+        }
+        genericMethods.waitForVisibility(password);
+        genericMethods.click(password);
+        genericMethods.sendKeys(password,passWord);
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+    }
+
+    public void ios_enterLoginCredentials() {
+        genericMethods.waitForVisibility(dropDown);
+        genericMethods.waitForVisibility(userName);
+        genericMethods.click(userName);
+        genericMethods.sendKeys(userName,props.getProperty("iusername"));
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+        genericMethods.waitForVisibility(password);
+        genericMethods.click(password);
+        genericMethods.sendKeys(password,props.getProperty("ipassword"));
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+    }
+
+
+    public void ios_clickLogin() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(loginBtn);
+        Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(loginBtn);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.click(loginArabicBtn);
+        } else {
+            log.info("Login is not happening");
+        }
+
+    }
+
 
 
 }

@@ -69,16 +69,16 @@ Feature: Validating Add New User screen in NM_CO
     Then proper error message should display under email field
     Examples:
       | testcase     |
-#      | TestCase_007 |
-#      | TestCase_008 |
+      | TestCase_007 |
+      | TestCase_008 |
       | TestCase_009 |
       | TestCase_010 |
-#      | TestCase_011 |
-#      | TestCase_086 |
-#      | TestCase_087 |
-#      | TestCase_088 |
-#      | TestCase_089 |
-#      | TestCase_090 |
+      | TestCase_011 |
+      | TestCase_086 |
+      | TestCase_087 |
+      | TestCase_088 |
+      | TestCase_089 |
+      | TestCase_090 |
 
 
   @country

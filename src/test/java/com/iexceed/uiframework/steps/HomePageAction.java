@@ -17,33 +17,26 @@ public class HomePageAction {
     public void isHomePageVisible(String platform) throws Exception {
 
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.iIsHomePageVisible();
+            ihomePageObjects.ios_isHomePageVisible();
         } else {
             homePageObjects.isHomePageVisible();
         }
 
     }
 
-    public void chooseLanguage(String platform, String language) throws Exception {
+    public void chooseLanguage(String platform, String language)  {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.ichooseLanguage();
+            ihomePageObjects.ios_chooseLanguage(language);
         } else {
             homePageObjects.chooseLanguage(language);
         }
 
     }
 
-    public void clickRegUserBtn(String platform, String language) throws Exception {
-        if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.iClickUserRegBtn(language);
-        } else {
-            homePageObjects.clickUserRegBtn(language);
-        }
-    }
 
     public void enterUserName(String platform, String userNmae) {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.ienterLoginCredentials();
+            ihomePageObjects.ios_enterUserName(userNmae);
         } else {
             homePageObjects.enterUserName(userNmae);
         }
@@ -51,7 +44,7 @@ public class HomePageAction {
 
     public void isUserErrorMsgPresent(String platform) throws InterruptedException {
         if (platform.equalsIgnoreCase("ios")) {
-            log.debug("ios");
+            ihomePageObjects.ios_isUsrErrormsgPresent();
         } else {
             homePageObjects.isUsrErrormsgPresent();
         }
@@ -59,7 +52,7 @@ public class HomePageAction {
 
     public void isPasswordMsgPresent(String platform) throws InterruptedException {
         if (platform.equalsIgnoreCase("ios")) {
-            log.debug("ios");
+            ihomePageObjects.ios_isPasswordErrormsgPresent();
         } else {
             homePageObjects.isPasswordErrormsgPresent();
         }
@@ -67,7 +60,7 @@ public class HomePageAction {
 
     public void enterPassword(String platform, String password) {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.ienterLoginCredentials();
+            ihomePageObjects.ios_enterPassword(password);
         } else {
             homePageObjects.enterPassword(password);
         }
@@ -75,7 +68,7 @@ public class HomePageAction {
 
     public void clickthemeBtn(String platform) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
-            log.debug("ios");
+            ihomePageObjects.ios_clikckThemeBtn();
         } else {
             homePageObjects.clikckThemeBtn();
         }
@@ -84,7 +77,7 @@ public class HomePageAction {
 
     public void validateLoginCredentials(String platform) {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.ienterLoginCredentials();
+            ihomePageObjects.ios_enterLoginCredentials();
         } else {
             homePageObjects.enterLoginCredentials();
         }
@@ -92,7 +85,7 @@ public class HomePageAction {
 
     public void verifyPageNavigation(String platform) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.iVerifyPageLanding();
+            ihomePageObjects.ios_verifyPageLanding();
         } else {
             homePageObjects.verifyPageLanding();
         }
@@ -100,27 +93,13 @@ public class HomePageAction {
 
     public void login(String platform) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.loginPage();
+            ihomePageObjects.ios_clickLogin();
         } else {
             homePageObjects.clickLogin();
         }
     }
 
-    public void verifyLanguageAsEnglish(String platform) throws InterruptedException {
-        if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.iClickEnglishLangBtn();
-        } else {
-            homePageObjects.clickEnglishLangBtn();
-        }
-    }
 
-    public void verifyLanguageAsArabic(String platform) throws InterruptedException {
-        if (platform.equalsIgnoreCase("ios")) {
-            ihomePageObjects.iClickArabicLangBtn();
-        } else {
-            homePageObjects.clickArabicLangBtn();
-        }
-    }
 
 
 }
