@@ -6,13 +6,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
+import static com.iexceed.uiframework.stepdefinitions.LoginPageDefinitions.datalist;
+import static com.iexceed.uiframework.stepdefinitions.LoginPageDefinitions.deviceConfig;
 
 public class EntityDetailsPageDefinitions extends TestBase {
 
-    public static Logger log = LogManager.getLogger(HomePageDefinitions.class);
-     HomePageDefinitions homePageDefinitions = new HomePageDefinitions();
+    public static Logger log = LogManager.getLogger(LoginPageDefinitions.class);
+     LoginPageDefinitions loginPageDefinitions = new LoginPageDefinitions();
 
 
      @And("swipes the side menu$")
@@ -150,8 +150,8 @@ public class EntityDetailsPageDefinitions extends TestBase {
     @Then("user will land on User Contact Details$")
     public void user_will_land_on_user_contact_details() throws Exception {
         log.info("user will land on User Contact Details");
-        HomePageDefinitions homePageDefinitions = new HomePageDefinitions();
-        homePageDefinitions.user_will_landed_on_dashboard_page();
+        LoginPageDefinitions loginPageDefinitions = new LoginPageDefinitions();
+        loginPageDefinitions.user_will_landed_on_dashboard_page();
     }
 
     @Then("proper error message should display under mobile field$")
@@ -178,7 +178,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
 
     @Then("user will land on Dashboard screen (.+)$")
     public void user_will_land_on_dashboard_screen(String testcase) throws Exception {
-        homePageDefinitions.user_in_home_screen(testcase);
+        loginPageDefinitions.user_in_Login_screen(testcase);
         log.info("user will land on Dashboard screen ");
 
     }
@@ -187,7 +187,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     @Then("user will stay on User Contact Details screen$")
     public void user_will_stay_on_user_contact_details_screen() throws Exception {
         log.info("user will stay on User Contact Details screen ");
-        homePageDefinitions.user_will_landed_on_dashboard_page();
+        loginPageDefinitions.user_will_landed_on_dashboard_page();
     }
 
     @And("clicks Yes button (.+)$")
@@ -204,7 +204,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
 
     @Then("user will stay on Add A New User screen$")
     public void user_will_stay_on_add_a_new_user_screen() throws Exception {
-        homePageDefinitions.user_will_landed_on_dashboard_page();
+        loginPageDefinitions.user_will_landed_on_dashboard_page();
     }
 
     @And("enters all the details in Add A New User screen$")

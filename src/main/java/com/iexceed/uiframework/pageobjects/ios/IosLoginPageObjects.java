@@ -3,7 +3,7 @@ package com.iexceed.uiframework.pageobjects.ios;
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.domainobjects.IOSUtility;
-import com.iexceed.uiframework.pageobjects.android.HomePageObjects;
+import com.iexceed.uiframework.pageobjects.android.LoginPageObjects;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,15 +11,15 @@ import org.openqa.selenium.By;
 
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
-public class IosHomePageObjects extends TestBase {
+public class IosLoginPageObjects extends TestBase {
 
 
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
-    private static final Logger log = LogManager.getLogger(HomePageObjects.class);
+    private static final Logger log = LogManager.getLogger(LoginPageObjects.class);
     IOSUtility iosUtility=new IOSUtility();
 
-    public IosHomePageObjects() {
+    public IosLoginPageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
     }

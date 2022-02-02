@@ -6,7 +6,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
 @1
   Scenario Outline: Validate + Add A New User Button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -20,7 +20,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
   @2
   Scenario Outline: Validate Search field
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -36,7 +36,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
   @3
   Scenario Outline:  Validate Search field in Arabic
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -50,7 +50,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_023 |
 
   Scenario Outline: Validate Gesture in side menu
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -64,7 +64,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
 @e
   Scenario Outline: Validate Edit button in User List
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -82,7 +82,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
   @f
   Scenario Outline: Validate Delete button in User List and click Yes button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -102,7 +102,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
 @g
   Scenario Outline: Validate Delete button in User List and click No button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -121,7 +121,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_103 |
 
   Scenario Outline:  Validate Cancel button in Contact screen and click Yes button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -137,7 +137,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
 
   Scenario Outline:  Validate Cancel button in Contact screen and click No button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -153,7 +153,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
   @aa
   Scenario Outline: Add New User and check the user is listed
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -172,7 +172,7 @@ Feature: Validating User Contact Details screen in NM_CO
 
   @bb
   Scenario Outline: Modify User and check the modified user is listed
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button

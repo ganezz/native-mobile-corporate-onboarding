@@ -1,17 +1,17 @@
 package com.iexceed.uiframework.steps;
 
-import com.iexceed.uiframework.pageobjects.android.HomePageObjects;
-import com.iexceed.uiframework.pageobjects.ios.IosHomePageObjects;
+import com.iexceed.uiframework.pageobjects.android.LoginPageObjects;
+import com.iexceed.uiframework.pageobjects.ios.IosLoginPageObjects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class HomePageAction {
+public class LoginPageAction {
 
-    HomePageObjects homePageObjects = new HomePageObjects();
-    IosHomePageObjects ihomePageObjects = new IosHomePageObjects();
-    private static final Logger log = LogManager.getLogger(HomePageAction.class);
+    LoginPageObjects loginPageObjects = new LoginPageObjects();
+    IosLoginPageObjects ihomePageObjects = new IosLoginPageObjects();
+    private static final Logger log = LogManager.getLogger(LoginPageAction.class);
 
-    public HomePageAction() {
+    public LoginPageAction() {
    }
 
     public void isHomePageVisible(String platform) throws Exception {
@@ -19,7 +19,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_isHomePageVisible();
         } else {
-            homePageObjects.isHomePageVisible();
+            loginPageObjects.isHomePageVisible();
         }
 
     }
@@ -28,7 +28,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_chooseLanguage(language);
         } else {
-            homePageObjects.chooseLanguage(language);
+            loginPageObjects.chooseLanguage(language);
         }
 
     }
@@ -38,7 +38,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_enterUserName(userNmae);
         } else {
-            homePageObjects.enterUserName(userNmae);
+            loginPageObjects.enterUserName(userNmae);
         }
     }
 
@@ -46,7 +46,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_isUsrErrormsgPresent();
         } else {
-            homePageObjects.isUsrErrormsgPresent();
+            loginPageObjects.isUsrErrormsgPresent();
         }
     }
 
@@ -54,7 +54,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_isPasswordErrormsgPresent();
         } else {
-            homePageObjects.isPasswordErrormsgPresent();
+            loginPageObjects.isPasswordErrormsgPresent();
         }
     }
 
@@ -62,7 +62,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_enterPassword(password);
         } else {
-            homePageObjects.enterPassword(password);
+            loginPageObjects.enterPassword(password);
         }
     }
 
@@ -70,7 +70,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_clikckThemeBtn();
         } else {
-            homePageObjects.clikckThemeBtn();
+            loginPageObjects.clikckThemeBtn();
         }
 
     }
@@ -79,7 +79,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_enterLoginCredentials();
         } else {
-            homePageObjects.enterLoginCredentials();
+            loginPageObjects.enterLoginCredentials();
         }
     }
 
@@ -87,7 +87,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_verifyPageLanding();
         } else {
-            homePageObjects.verifyPageLanding();
+            loginPageObjects.verifyPageLanding();
         }
     }
 
@@ -95,7 +95,7 @@ public class HomePageAction {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_clickLogin();
         } else {
-            homePageObjects.clickLogin();
+            loginPageObjects.clickLogin();
         }
     }
 

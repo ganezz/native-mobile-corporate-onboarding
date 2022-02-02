@@ -2,7 +2,7 @@ package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.CapabilitiesActions;
-import com.iexceed.uiframework.steps.HomePageAction;
+import com.iexceed.uiframework.steps.LoginPageAction;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import com.iexceed.uiframework.utilites.readexcel.ExcelHandler;
 import com.iexceed.uiframework.utilites.readexcel.TestDataHandler;
@@ -16,11 +16,11 @@ import org.apache.logging.log4j.Logger;
 import java.util.Map;
 
 
-public class HomePageDefinitions extends TestBase {
+public class LoginPageDefinitions extends TestBase {
 
     public static Map<String,String> deviceConfig;
     public static Map<String,String> datalist;
-    public static Logger log = LogManager.getLogger(HomePageDefinitions.class);
+    public static Logger log = LogManager.getLogger(LoginPageDefinitions.class);
     TestDataHandler testdata = new TestDataHandler();
     public static String iosAppURL;
     public static String androidAppURL;
@@ -72,10 +72,10 @@ public class HomePageDefinitions extends TestBase {
 
     }
 
-    @And("user in Home screen (.+)$")
-    public void user_in_home_screen(String testcase) throws Exception {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.isHomePageVisible(deviceConfig.get("platform"));
+    @And("user in Login screen (.+)$")
+    public void user_in_Login_screen(String testcase) throws Exception {
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.isHomePageVisible(deviceConfig.get("platform"));
         log.info("user in Home screen");
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"),testcase);
         log.info("Test Case :" + datalist.get("TestCaseName"));
@@ -85,32 +85,32 @@ public class HomePageDefinitions extends TestBase {
     }
     @And("user input invalid text in Username field (.+)$")
     public void user_input_invalid_text_in_username_field(String testcase) throws Exception {
-        HomePageAction HomePageAction = new HomePageAction();
+        LoginPageAction LoginPageAction = new LoginPageAction();
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"),testcase);
-        HomePageAction.enterUserName(deviceConfig.get("platform"),datalist.get("userName"));
+        LoginPageAction.enterUserName(deviceConfig.get("platform"),datalist.get("userName"));
     }
     @And("user input invalid text in Password field (.+)$")
     public void user_input_invalid_text_in_password_field(String testcase){
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.enterPassword(deviceConfig.get("platform"),datalist.get("userName"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.enterPassword(deviceConfig.get("platform"),datalist.get("userName"));
     }
 
     @Then("error message should be displayed under Username field$")
     public void error_message_should_be_displayed_under_username_field() throws InterruptedException {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.isUserErrorMsgPresent(deviceConfig.get("platform"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.isUserErrorMsgPresent(deviceConfig.get("platform"));
     }
 
     @Then("error message should be displayed under Password field$")
     public void error_message_should_be_displayed_under_password_field() throws InterruptedException {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.isPasswordMsgPresent(deviceConfig.get("platform"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.isPasswordMsgPresent(deviceConfig.get("platform"));
     }
 
     @And("clicks on theme toggle$")
     public void clicks_on_theme_toggle() throws Exception {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.clickthemeBtn(deviceConfig.get("platform"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.clickthemeBtn(deviceConfig.get("platform"));
     }
     @Then("App theme is changed to dark mode$")
     public void app_theme_is_changed_to_dark_mode(){
@@ -119,26 +119,26 @@ public class HomePageDefinitions extends TestBase {
 
     @And("click login button$")
     public void click_login_button() throws Exception {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.login(deviceConfig.get("platform"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.login(deviceConfig.get("platform"));
     }
 
     @When("enter username and password (.+)$")
     public void enter_username_and_password(String testcase){
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.validateLoginCredentials(deviceConfig.get("platform"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.validateLoginCredentials(deviceConfig.get("platform"));
     }
     @When("clicks language dropDown choose language (.+)$")
     public void clicks_language_dropdown_choose_language(String testcase) throws Exception {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.chooseLanguage(deviceConfig.get("platform"),datalist.get("language"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.chooseLanguage(deviceConfig.get("platform"),datalist.get("language"));
     }
 
 
     @Then("user will landed on Dashboard page$")
     public void user_will_landed_on_dashboard_page() throws Exception {
-        HomePageAction HomePageAction = new HomePageAction();
-        HomePageAction.verifyPageNavigation(deviceConfig.get("platform"));
+        LoginPageAction LoginPageAction = new LoginPageAction();
+        LoginPageAction.verifyPageNavigation(deviceConfig.get("platform"));
         log.info("user will landed on Legal Entity User Details");
         log.info("Test Case :" + datalist.get("TestCaseName"));
     }

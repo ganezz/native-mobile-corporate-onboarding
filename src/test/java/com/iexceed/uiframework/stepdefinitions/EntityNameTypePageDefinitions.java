@@ -10,8 +10,8 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.datalist;
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
+import static com.iexceed.uiframework.stepdefinitions.LoginPageDefinitions.datalist;
+import static com.iexceed.uiframework.stepdefinitions.LoginPageDefinitions.deviceConfig;
 
 public class EntityNameTypePageDefinitions extends TestBase {
     EntityNameTypeAction legalEntityNameTypeAction =new EntityNameTypeAction(deviceConfig.get("platform"));

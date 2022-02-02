@@ -7,7 +7,7 @@ Feature: Validating Add New User screen in NM_CO
 
   @a
   Scenario Outline: Validate Gesture in side menu
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When enter username and password <testcase>
     And click login button
     Then user will landed on Dashboard page
@@ -19,7 +19,7 @@ Feature: Validating Add New User screen in NM_CO
 
   @b
   Scenario Outline:  Validate Arabic Gesture in side menu
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -32,7 +32,7 @@ Feature: Validating Add New User screen in NM_CO
 
   @c
   Scenario Outline: Validate Name, mandatory Field with Max 100 characters and special characters are not allowed
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -57,7 +57,7 @@ Feature: Validating Add New User screen in NM_CO
 
   @email
   Scenario Outline: Validate Email Address, mandatory Field with Max 100 characters and special characters not allowed and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -83,7 +83,7 @@ Feature: Validating Add New User screen in NM_CO
 
   @country
   Scenario Outline: Validate Country Code, mandatory field with Drop Down
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -107,7 +107,7 @@ Feature: Validating Add New User screen in NM_CO
 
   @mob
   Scenario Outline: Validate Mobile Number, mandatory Field with Max and Min are with respect to Country Code
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -131,7 +131,7 @@ Feature: Validating Add New User screen in NM_CO
 
 @yes
   Scenario Outline:  Validate Cancel button in Add A New User screen and click Yes button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -151,7 +151,7 @@ Feature: Validating Add New User screen in NM_CO
 
 
   Scenario Outline:  Validate Cancel button in Add A New User screen and click No button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -169,7 +169,7 @@ Feature: Validating Add New User screen in NM_CO
 
 
   Scenario Outline: validate Confirm button in Add A New User screen
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button

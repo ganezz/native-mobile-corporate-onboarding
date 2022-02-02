@@ -2,13 +2,13 @@ package com.iexceed.uiframework.stepdefinitions;
 
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.DashboardPageAction;
-import com.iexceed.uiframework.steps.HomePageAction;
+import com.iexceed.uiframework.steps.LoginPageAction;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.iexceed.uiframework.stepdefinitions.HomePageDefinitions.deviceConfig;
+import static com.iexceed.uiframework.stepdefinitions.LoginPageDefinitions.deviceConfig;
 
 public class DashboardPageStepDefinitions extends TestBase {
     DashboardPageAction DashboardPageAction =new DashboardPageAction(deviceConfig.get("platform"));
@@ -107,7 +107,7 @@ public class DashboardPageStepDefinitions extends TestBase {
     }
     @And("clicks on Add New Application button$")
     public void clicks_on_add_new_application_button() throws Exception {
-        HomePageAction homePageAction = new HomePageAction();
-        homePageAction.verifyPageNavigation(deviceConfig.get("platform"));
+        LoginPageAction loginPageAction = new LoginPageAction();
+        loginPageAction.verifyPageNavigation(deviceConfig.get("platform"));
     }
 }

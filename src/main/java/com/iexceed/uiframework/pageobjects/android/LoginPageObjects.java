@@ -14,14 +14,14 @@ import java.util.List;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 
-public class HomePageObjects extends TestBase {
+public class LoginPageObjects extends TestBase {
 
     GenericMethods genericMethods;
     private final WaitUtility waitUtility;
-    private static final Logger log = LogManager.getLogger(HomePageObjects.class);
+    private static final Logger log = LogManager.getLogger(LoginPageObjects.class);
     AndroidUtility androidUtility;
 
-    public HomePageObjects() {
+    public LoginPageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
         androidUtility = new AndroidUtility();
