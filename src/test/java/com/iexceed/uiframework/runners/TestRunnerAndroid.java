@@ -19,7 +19,6 @@ import io.cucumber.testng.TestNGCucumberRunner;
                 "rerun:target/failedrerun.txt"
         }
 
-
 )
 
 public class TestRunnerAndroid extends AbstractTestNGCucumberTests {

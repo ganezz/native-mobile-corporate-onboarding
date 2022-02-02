@@ -44,6 +44,7 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
       | testcase     |
       | TestCase_159 |
       | TestCase_160 |
+      | TestCase_158 |
 
 
   @5
@@ -57,6 +58,7 @@ Feature: Validating buttons in Home screen of APZ_NMCO_ONB
       | testcase     |
       | TestCase_159 |
       | TestCase_160 |
+      | TestCase_158 |
 
 
     @6

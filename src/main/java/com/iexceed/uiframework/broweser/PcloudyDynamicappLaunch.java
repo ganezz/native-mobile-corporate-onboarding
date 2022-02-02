@@ -53,7 +53,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
         appURL = temp1 + arr[1];
         log.debug(appURL);
-        String appURLtemp = "https://artifactory.appzillon.com/artifactory/android-apk/ao/manual/qaRelease-1.0.16-27-01-2022-10:18.apk";
+        String appURLtemp = "https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.18-02-02-2022-14:23.apk";
         log.debug(appURLtemp);
         TestBase.pcloudyInitialization(appURL);
         Thread.sleep(15000);
@@ -93,7 +93,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
 
 
     public static void fileRenaming() throws Exception, NullPointerException {
-        f2 = new File("Automation-1-0-16-27-01-2022");
+        f2 = new File("Automation-1-0-18-02-02-2022");
         renamedFilePath = f2.getName();
         log.debug("Renamed f2 file path :{}", renamedFilePath);
         waitUtility.waitForSeconds(3);
