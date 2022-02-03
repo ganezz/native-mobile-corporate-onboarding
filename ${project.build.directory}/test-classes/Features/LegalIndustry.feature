@@ -195,14 +195,14 @@ Feature: Validating Industry screen in NM_CO
     And clicks Add A New Industry button
     Then user lands on Add A New Industry screen
     And fills valid data in Type of Industry, Section, Division, Group, Class <testcase>
-    And clicks on Confirm button
+    And click on Confirm button
     And user lands on Industry screen
     And user entered Industry is displayed in Industry details tab
-    And clicks on Edit button
-    And user lands on Modification Screen i.e Add A New Industry Screen with already given data
-    And edits one or more fields in valid format
-    And clicks on Confirm button
-    And user displayed with Successfully Edited snack bar Message
+    And clicks Edit button
+    And user lands on Modification Screen Add A New Industry Screen with already given data
+    And edits one or more industry fields in valid data <testcase>
+    And click on Confirm button
+    And user displayed with Successfully Edited Industry snack bar Message
     Then user displayed with edited values in Industry details screen
     Examples:
       | testcase |
@@ -217,18 +217,20 @@ Feature: Validating Industry screen in NM_CO
     Then user will landed on Dashboard page
     And swipes the side menu and select Industry
     When user is in Industry screen Screen <testcase>
-    And clicks on Add A New Industry button
-    And user lands on Add A New Industry Screen
-    And fills valid data in Type of Industry, Section, Division, Group, Class
-    And clicks on Confirm button
+    And clicks Add A New Industry button
+    Then user lands on Add A New Industry screen
+    And fills valid data in Type of Industry, Section, Division, Group, Class <testcase>
+    And click on Confirm button
     And user lands on Industry screen
     And user entered Industry is displayed in Industry details tab
-    And clicks on delete icon
+    And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks on Ok button
+    And click on Ok button
     Then Industry is removed from the list
     Examples:
       | testcase |
+      | TestCase_171 |
+      | TestCase_172 |
 
   Scenario Outline: validating Delete icon with Cancel button
     And user in Login screen <testcase>
@@ -237,19 +239,23 @@ Feature: Validating Industry screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Industry
-    When user is in Industry screen Screen <testcase>
-    And clicks on Add A New Industry button
-    And user lands on Add A New Industry Screen
-    And fills valid data in Type of Industry, Section, Division, Group, Class
-    And clicks on Confirm button
+    When user is in Industry screen <testcase>
+    And clicks Add A New Industry button
+    Then user lands on Add A New Industry screen
+    And fills valid data in Type of Industry, Section, Division, Group, Class <testcase>
+    And click on Confirm button
     And user lands on Industry screen
     And user entered Industry is displayed in Industry details tab
-    And clicks on delete icon
+    And clicks Delete button
     And user is Displayed with Delete Prompt
-    And clicks on Cancel button
+    And click on Cancel button
     Then Industry is not removed from the list
     Examples:
       | testcase |
+      | TestCase_171 |
+      | TestCase_172 |
+
+
 
   Scenario Outline: validating Industry screen Cancel button with Cancel button
     And user in Login screen <testcase>
@@ -258,13 +264,15 @@ Feature: Validating Industry screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Industry
-    When user is in Industry Screen <testcase>
-    And clicks on Cancel Button
-    And user is displayed with Cancel Prompt
-    And clicks on Cancel button
+    When user is in Industry screen <testcase>
+    And click Application Cancel button
+    Then user will prompt to ask about confirmation
+    And click on Cancel button
     Then user remains in Industry screen
     Examples:
       | testcase |
+      | TestCase_171 |
+      | TestCase_172 |
 
   Scenario Outline: validating Industry screen Cancel button with Ok button
     And user in Login screen <testcase>
@@ -273,13 +281,15 @@ Feature: Validating Industry screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Industry
-    When user is in Industry Screen <testcase>
-    And clicks on Cancel Button
-    And user is displayed with Cancel Prompt
-    And clicks on Ok button
-    Then user lands on Dashboard screen
+    When user is in Industry screen <testcase>
+    And click Application Cancel button
+    Then user will prompt to ask about confirmation
+    And click on Ok button
+    Then user lands on Dashboard
     Examples:
       | testcase |
+      | TestCase_171 |
+      | TestCase_172 |
 
   Scenario Outline: validating Continue button
     And user in Login screen <testcase>
@@ -288,8 +298,10 @@ Feature: Validating Industry screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Industry
-    When user is in Industry Screen <testcase>
+    When user is in Industry screen <testcase>
     And clicks on Continue Button
     Then user lands on Incorporation screen
     Examples:
       | testcase |
+      | TestCase_171 |
+      | TestCase_172 |

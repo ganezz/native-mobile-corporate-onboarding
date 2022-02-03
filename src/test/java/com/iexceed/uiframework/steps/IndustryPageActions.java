@@ -86,4 +86,12 @@ public class IndustryPageActions {
         }
     }
 
+    public void isEditMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            industryPageObjects.isEditIndustryMsgPresent();
+        }
+    }
+
 }

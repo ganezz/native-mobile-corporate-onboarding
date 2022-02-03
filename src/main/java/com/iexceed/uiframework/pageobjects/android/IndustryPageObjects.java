@@ -42,6 +42,9 @@ public class IndustryPageObjects extends TestBase {
     By industryMenu = By.xpath("//android.view.View[@text='Industry']");
     By closBtn = By.xpath("//*[@text='Close']");
     By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
+    By industryEditMsg=By.xpath("//*[@text='Edit ! Industry edited successfully']");
+    By industryEditMsgArabic=By.xpath("//android.view.View[@text='تعديل ! تمت إضافة الصناعة بنجاح']");
+
 
     public void selectIndustryPage() throws Exception {
         androidUtility.swipingHamburgerMenu();
@@ -146,23 +149,23 @@ public class IndustryPageObjects extends TestBase {
 
     }
 
-    public void isEditLocationValidationMsgPresent() throws Exception {
-//        waitUtility.waitForSeconds(2);
-//        Boolean b = genericMethods.isElementPresent(locationEditMsg);
-//        Boolean b1 = genericMethods.isElementPresent(locationEditMsgArabic);
-//        if (Boolean.TRUE.equals(b)) {
-//            genericMethods.isElementPresent(locationEditMsg);
-//            genericMethods.click(closBtn);
-//        } else if (Boolean.TRUE.equals(b1)) {
-//            genericMethods.isElementPresent(locationEditMsgArabic);
-//            genericMethods.click(closBtnArabic);
-//        } else {
-//            try {
-//                genericMethods.click(closBtn);
-//            } catch (Exception e) {
-//                genericMethods.click(closBtnArabic);
-//            }
-//        }
+    public void isEditIndustryMsgPresent() throws Exception {
+        waitUtility.waitForSeconds(2);
+        Boolean b = genericMethods.isElementPresent(industryEditMsg);
+        Boolean b1 = genericMethods.isElementPresent(industryEditMsgArabic);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.isElementPresent(industryEditMsg);
+            genericMethods.click(closBtn);
+        } else if (Boolean.TRUE.equals(b1)) {
+            genericMethods.isElementPresent(industryEditMsgArabic);
+            genericMethods.click(closBtnArabic);
+        } else {
+            try {
+                genericMethods.click(closBtn);
+            } catch (Exception e) {
+                genericMethods.click(closBtnArabic);
+            }
+        }
 
     }
 

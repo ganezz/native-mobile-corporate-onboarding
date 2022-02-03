@@ -141,4 +141,25 @@ public class IndustryStepDefinition extends TestBase {
     public void user_displayed_with_edited_values_in_industry_details_screen(){
         user_entered_industry_is_displayed_in_industry_details_tab();
     }
+    @And("user displayed with Successfully Edited Industry snack bar Message$")
+    public void user_displayed_with_successfully_edited_industry_snack_bar_message() throws Exception {
+        industryPageActions.isEditMsgPresent();
+    }
+    @Then("Industry is removed from the list$")
+    public void industry_is_removed_from_the_list(){
+        user_displayed_with_edited_values_in_industry_details_screen();
+    }
+    @Then("Industry is not removed from the list$")
+    public void industry_is_not_removed_from_the_list(){
+        user_displayed_with_edited_values_in_industry_details_screen();
+    }
+    @Then("user remains in Industry screen$")
+    public void user_remains_in_industry_screen(){
+        log.debug("user remains in Industry screen");
+    }
+
+    @Then("user lands on Incorporation screen$")
+    public void user_lands_on_incorporation_screen(){
+        log.debug("user lands on Incorporation screen");
+    }
 }
