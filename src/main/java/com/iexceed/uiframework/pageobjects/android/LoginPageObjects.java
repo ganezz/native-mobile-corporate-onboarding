@@ -36,7 +36,7 @@ public class LoginPageObjects extends TestBase {
     By arabicBtn = By.xpath("//android.view.View[@text='Arabic']");
     By arabicaddNewUsrBtn = By.xpath("//android.view.View[@text='+ إضافة مستخدم جديد']");
     By textField = By.xpath("//android.widget.EditText");
-    By loginBtn = By.xpath("//android.view.View[@content-desc='LOGIN']");
+    By loginBtn = By.xpath("//android.view.View[@content-desc='Login']");
     By loginArabicBtn = By.xpath("//android.view.View[@content-desc='تسجيل الدخول']");
     By dropDown = By.xpath("//android.widget.EditText[@text='English']");
     By dropDownList = By.xpath("//android.view.View");
@@ -113,8 +113,6 @@ public class LoginPageObjects extends TestBase {
         } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.click(addNewAppliBtnArabic);
             log.info("page is navigating arabic");
-        } else {
-            log.info("Page is not navigating to add new user screen");
         }
         waitUtility.waitForSeconds(3);
 
@@ -200,10 +198,7 @@ public class LoginPageObjects extends TestBase {
             genericMethods.click(loginBtn);
         } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.click(loginArabicBtn);
-        } else {
-            log.info("Login is not happening");
         }
-
     }
 
     public void clickEnglishLangBtn() throws InterruptedException {

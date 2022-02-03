@@ -92,7 +92,6 @@ public class EntityContactPageStepDefinitions extends TestBase {
     }
     @And("fills valid data in AddressType, UnitNo,Building name,street,Area, Country, State, town,city, zip,postalCode, PO Box$")
     public void fills_valid_data_in_addresstype_unitnobuilding_namestreetarea_country_state_towncity_zippostalcode_po_box() throws Exception {
-
         clicks_on_unit_no();
         clicks_on_street_field();
         clicks_on_county();

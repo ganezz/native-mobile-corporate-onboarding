@@ -14,63 +14,63 @@ Feature: Validating Entity Contact Information screen in NM_CO
 #    And clicks on Continue Button
 #    And clicks on Continue Button
 
-  @1
-  Scenario Outline: Validate Email Address, optional Field with Max 100 characters and should follow email regex and Case insensitive
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user will landed on Dashboard page
-    And clicks on Continue Button
-    And clicks on Continue Button
-    When user is in Entity Contact Information screen <testcase>
-    And clicks on Email Address field
-    And user inputs invalid data
-    And clicks on other field
-    Then error message should be displayed under Email Address field
-    Examples:
-      | testcase     |
-      | TestCase_007 |
-      | TestCase_008 |
-      | TestCase_009 |
-      | TestCase_010 |
-      | TestCase_011 |
-      | TestCase_086 |
-      | TestCase_087 |
-      | TestCase_088 |
-      | TestCase_089 |
-      | TestCase_090 |
-
-
-
-  @2
-  Scenario Outline: Validate Company Website, optional Field with Max 100 characters and should follow url regex and Case insensitive
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user will landed on Dashboard page
-    And clicks on Continue Button
-    And clicks on Continue Button
-    When user is in Entity Contact Information screen <testcase>
-    And clicks on Company Website
-    And user inputs invalid data
-    And clicks on other field
-    Then error message should be displayed under Company Website field
-    Examples:
-      | testcase     |
-      | TestCase_051 |
-      | TestCase_052 |
-      | TestCase_053 |
-      | TestCase_054 |
-      | TestCase_055 |
-      | TestCase_056 |
-      | TestCase_127 |
-      | TestCase_128 |
-      | TestCase_129 |
-      | TestCase_130 |
-      | TestCase_131 |
-      | TestCase_132 |
+#  @1
+#  Scenario Outline: Validate Email Address, optional Field with Max 100 characters and should follow email regex and Case insensitive
+#    And user in Login screen <testcase>
+#    When clicks language dropDown choose language <testcase>
+#    When enter username and password <testcase>
+#    And click login button
+#    Then user will landed on Dashboard page
+#    And clicks on Continue Button
+#    And clicks on Continue Button
+#    When user is in Entity Contact Information screen <testcase>
+#    And clicks on Email Address field
+#    And user inputs invalid data
+#    And clicks on other field
+#    Then error message should be displayed under Email Address field
+#    Examples:
+#      | testcase     |
+#      | TestCase_007 |
+#      | TestCase_008 |
+#      | TestCase_009 |
+#      | TestCase_010 |
+#      | TestCase_011 |
+#      | TestCase_086 |
+#      | TestCase_087 |
+#      | TestCase_088 |
+#      | TestCase_089 |
+#      | TestCase_090 |
+#
+#
+#
+#  @2
+#  Scenario Outline: Validate Company Website, optional Field with Max 100 characters and should follow url regex and Case insensitive
+#    And user in Login screen <testcase>
+#    When clicks language dropDown choose language <testcase>
+#    When enter username and password <testcase>
+#    And click login button
+#    Then user will landed on Dashboard page
+#    And clicks on Continue Button
+#    And clicks on Continue Button
+#    When user is in Entity Contact Information screen <testcase>
+#    And clicks on Company Website
+#    And user inputs invalid data
+#    And clicks on other field
+#    Then error message should be displayed under Company Website field
+#    Examples:
+#      | testcase     |
+#      | TestCase_051 |
+#      | TestCase_052 |
+#      | TestCase_053 |
+#      | TestCase_054 |
+#      | TestCase_055 |
+#      | TestCase_056 |
+#      | TestCase_127 |
+#      | TestCase_128 |
+#      | TestCase_129 |
+#      | TestCase_130 |
+#      | TestCase_131 |
+#      | TestCase_132 |
 
   @3
   Scenario Outline: Validate + Add A New Address Button

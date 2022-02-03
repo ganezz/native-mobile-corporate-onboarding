@@ -27,8 +27,8 @@ public class EntityContactPageObjects {
     By entityContactInfoPage = By.xpath("//android.view.View[@text='Entity contact information']");
     By entityContactInfoPageArabic = By.xpath("//android.view.View[@text='معلومات الاتصال بالكيان']");
     By editField = By.xpath("//android.widget.EditText");
-    By addNewBtn = By.xpath("//*[@text='+ Add a new address']");
-    By addNewAddressBtnArabic = By.xpath("//android.view.View[@text='+ أضف عنوانًا جديدًا']");
+    By addNewBtn = By.xpath("//android.view.View[@content-desc='Add a new address']");
+    By addNewAddressBtnArabic = By.xpath("//android.view.View[@content-desc='أضف عنوانا جديدا']");
     By addNewContactAddress = By.xpath("//*[@text='Registered']");
     By addNewContactAddressArabic = By.xpath("//android.view.View[@text='نوع العنوان *']");
     By searchField = By.xpath("//android.widget.EditText");
@@ -110,21 +110,21 @@ public class EntityContactPageObjects {
         editField.findElements(driver).get(4).click();
         editField.findElements(driver).get(4).clear();
         editField.findElements(driver).get(4).sendKeys(state);
-        editField.findElements(driver).get(2).click();
+        editField.findElements(driver).get(1).click();
     }
 
     public void enterCity(String city) {
         editField.findElements(driver).get(5).click();
         editField.findElements(driver).get(5).clear();
         editField.findElements(driver).get(5).sendKeys(city);
-        editField.findElements(driver).get(2).click();
+        editField.findElements(driver).get(1).click();
     }
 
     public void enterZip(String zip) {
         editField.findElements(driver).get(6).click();
         editField.findElements(driver).get(6).clear();
         editField.findElements(driver).get(6).sendKeys(zip);
-        editField.findElements(driver).get(2).click();
+        editField.findElements(driver).get(1).click();
     }
 
     public void enterPstBox(String postCode) {
