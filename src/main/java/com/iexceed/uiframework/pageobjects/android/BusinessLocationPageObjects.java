@@ -40,10 +40,10 @@ public class BusinessLocationPageObjects {
     By closBtn = By.xpath("//*[@text='Close']");
     By locationEditMsgArabic = By.xpath("//android.view.View[@text='تعديل ! تم تحرير موقع العمل بنجاح']");
     By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
-    By businessLocDeleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
-    By businessLocDeleteMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف العنوان من القائمة؟']");
-    By businessMarketDeleteMsg = By.xpath("//android.view.View[@text='Are  ghg you sure you want to delete the Address from the list ?']");
-    By businessMarketDeleteMsgArabic = By.xpath("//android.view.View[@text='Are ygggfou sure you want to delete the Address from the list ?']");
+    By businessLocDeleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Location of business operations ?']");
+    By businessLocDeleteMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف موقع العمليات التجارية؟']");
+    By businessMarketDeleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Business Market ?']");
+    By businessMarketDeleteMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف سوق الأعمال؟']");
     By confirmBtn = By.xpath("//android.view.View[@content-desc='Confirm']");
     By confirmBtnArabic = By.xpath("//android.view.View[@content-desc='يتأكد']");
     By okBtn = By.xpath("//android.view.View[@content-desc='Okay button']");

@@ -44,7 +44,11 @@ Feature: Validating Add A New Location screen in NM_CO
     And clicks on Confirm button
     Then proper error message should display under proportion field
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_156 |
+      | TestCase_157 |
+
 
   Scenario Outline: validating Add A New Business Market Screen Cancel button with Ok button
     And user in Login screen <testcase>
@@ -61,7 +65,9 @@ Feature: Validating Add A New Location screen in NM_CO
     And click on Ok button
     Then user lands on Dashboard
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
 
   Scenario Outline: validating Add A New Business Market Screen Cancel button with Cancel button
     And user in Login screen <testcase>
@@ -78,7 +84,9 @@ Feature: Validating Add A New Location screen in NM_CO
     And click on Cancel button
     Then user remains in Business Location and Operations screen
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
 
   Scenario Outline: validating Confirm button in Add A New Business Market screen
     And user in Login screen <testcase>
@@ -98,4 +106,6 @@ Feature: Validating Add A New Location screen in NM_CO
     And user displayed with Successfull addded Market snack bar Message
     Then user displayed with edited values in Business markets Section
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_155 |
+      | TestCase_158 |
