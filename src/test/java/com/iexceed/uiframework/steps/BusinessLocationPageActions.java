@@ -198,4 +198,18 @@ public class BusinessLocationPageActions {
             businessLocationPage.clickConfirmBtn();
         }
     }
+    public void clickEditButtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.clickEditBtn();
+        }
+    }
+    public void clickDeleteButtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.clickDeleteBtn();
+        }
+    }
 }

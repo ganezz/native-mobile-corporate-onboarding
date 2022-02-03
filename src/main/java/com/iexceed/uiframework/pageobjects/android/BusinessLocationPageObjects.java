@@ -60,7 +60,10 @@ public class BusinessLocationPageObjects {
     By addedBinessLocationMsgArabic=By.xpath("//android.view.View[@text='نجاح ! تمت إضافة موقع العمل بنجاح']");
     By addedBinessMarketMsg=By.xpath("//android.view.View[@text='Success ! Business Market added successfully']");
     By addedBinessMarketMsgArabic=By.xpath("//android.view.View[@text='نجاح ! تمت إضافة سوق الأعمال بنجاح']");
-
+    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
+    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تحرير الأيقونة']");
+    By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
+    By deleteButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='رمز الحذف']");
 
     public void selectBusinessLocationPage() throws Exception {
         androidUtility.swipingHamburgerMenu();
@@ -335,5 +338,24 @@ public class BusinessLocationPageObjects {
         }
     }
 
+    public void clickEditBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(editButton);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(editButton);
+        } else {
+            genericMethods.click(editButtonArabic);
+        }
+    }
+
+    public void clickDeleteBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(deleteButton);
+
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(deleteButton);
+        } else {
+            genericMethods.click(deleteButtonArabic);
+        }
+
+    }
 }
 

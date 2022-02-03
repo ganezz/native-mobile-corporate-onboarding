@@ -231,5 +231,13 @@ public class BusinessLocationStepDefinitions extends TestBase {
     public void user_displayed_with_successfull_addded_market_snack_bar_message() throws Exception {
         businessLocationPageActions.isAddedMaktValidationMsgPresent();
     }
+    @And("clicks on Edit button$")
+    public void clicks_on_edit_button() throws InterruptedException {
+        businessLocationPageActions.clickEditButtn();
+    }
+    @And("clicks on Delete button$")
+    public void clicks_on_delete_button() throws InterruptedException {
+        businessLocationPageActions.clickDeleteButtn();
+    }
 }
 

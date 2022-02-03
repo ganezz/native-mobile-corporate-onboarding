@@ -208,8 +208,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
-
-
+    
+    
   @1
   Scenario Outline: validating Is the country of domicile the same as the country of incorporation?, Mandatory Field
     And user in Login screen <testcase>
@@ -262,7 +262,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     Then user lands on Add A New Location screen
     And user entered Location is displayed in Location of business operations Section
-    And clicks Edit button
+    And clicks on Edit button
     And user lands on Modification Screen Add A New Location Screen with already given data
     And edits one or more fields in loation screen valid format <testcase>
     And click on Confirm button
@@ -290,7 +290,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     Then user lands on Add A New Location screen
     And user entered Location is displayed in Location of business operations Section
-    And clicks Delete button
+    And clicks on Delete button
     And user is Displayed with Delete Prompt
    And click on Ok button
     Then Location is removed from the list
@@ -315,7 +315,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     Then user lands on Add A New Location screen
     And user entered Location is displayed in Location of business operations Section
-    And clicks Delete button
+    And clicks on Delete button
     And user is Displayed with Delete Prompt
     And click on Cancel button
     Then Location is not removed from the list
@@ -355,7 +355,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     When user is in Business Location And Operations screen
     And user entered Business market is displayed in Business market Section
-    And clicks Edit button
+    And clicks on Edit button
     And user lands on Modification Screen Add A New Business market Screen with already given data
     And edits one or more fields in business market screen valid format <testcase>
     And click on Confirm button
@@ -383,7 +383,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     When user is in Business Location And Operations screen
     And user entered Business market is displayed in Business market Section
-    And clicks Delete button
+    And clicks on Delete button
     And user is Displayed with Delete Prompt
    And click on Ok button
     Then Business market is removed from the list
@@ -407,7 +407,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     When user is in Business Location And Operations screen
     And user entered Business market is displayed in Business market Section
-    And clicks Delete button
+    And clicks on Delete button
     And user is Displayed with Delete Prompt
     And click on Cancel button
     Then Business market is not removed from the list
