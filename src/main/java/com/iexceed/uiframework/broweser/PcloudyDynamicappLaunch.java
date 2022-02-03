@@ -53,7 +53,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
         appURL = temp1 + arr[1];
         log.debug(appURL);
-        String appURLtemp = "https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.18-02-02-2022-14:23.apk";
+        String appURLtemp = "https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.19-02-02-2022-21:16.apk";
         log.debug(appURLtemp);
         TestBase.pcloudyInitialization(appURL);
         Thread.sleep(15000);

@@ -5,7 +5,7 @@ Feature: Validating Add A New Location screen in NM_CO
     Given user opens the App batch1
 
   Scenario Outline: validating Country in Add A New Business Market screen, Drop down, Mandatory Field
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -30,7 +30,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | TestCase_158 |
 
   Scenario Outline: validating Proportion of Business(%), mandatory Numeric Field with limit 1 to 100
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -47,7 +47,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | testcase |
 
   Scenario Outline: validating Add A New Business Market Screen Cancel button with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -64,7 +64,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | testcase |
 
   Scenario Outline: validating Add A New Business Market Screen Cancel button with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -81,7 +81,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | testcase |
 
   Scenario Outline: validating Confirm button in Add A New Business Market screen
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button

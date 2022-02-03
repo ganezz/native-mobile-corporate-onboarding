@@ -5,7 +5,7 @@ Feature: Validating Dashboard screen in NM_CO
     Given user opens the App batch5
 
   Scenario Outline: validating change password option under overflow menu
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -18,7 +18,7 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_168 |
 
   Scenario Outline: validating logout option under overflow menu with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -34,7 +34,7 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_168 |
 
   Scenario Outline: validating logout option under overflow menu with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -51,7 +51,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @myapp
   Scenario Outline: validating My Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -65,7 +65,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @un
   Scenario Outline: validating Unclaimed Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -79,7 +79,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @com
   Scenario Outline: validating Completed Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -93,7 +93,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @ac
   Scenario Outline: validating Active Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -106,7 +106,7 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_168 |
 
   Scenario Outline: validating Date filter under Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -123,7 +123,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @se
   Scenario Outline: validating search option, accepts Alphanumeric
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -138,7 +138,7 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_168 |
 
   Scenario Outline: validating Release option under My Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -154,7 +154,7 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_168 |
 
   Scenario Outline: validating Acquire option under Unclaimed Applications section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -170,7 +170,7 @@ Feature: Validating Dashboard screen in NM_CO
       | TestCase_168 |
 
   Scenario Outline: validating Add New Application button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -184,7 +184,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @n
   Scenario Outline: validating Next page button, should be activated only if there are more than 10 applications
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -198,7 +198,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @p
   Scenario Outline: validating Previous page button, should not be activated for the first 10 applications
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -214,7 +214,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @f
   Scenario Outline: validating First page button, should not be activated in the first page
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -230,7 +230,7 @@ Feature: Validating Dashboard screen in NM_CO
 
   @l
   Scenario Outline: validating last page button, should not be activated in the last page
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button

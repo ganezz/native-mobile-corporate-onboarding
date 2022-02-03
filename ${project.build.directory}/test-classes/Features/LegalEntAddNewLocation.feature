@@ -5,7 +5,7 @@ Feature: Validating Add A New Location screen in NM_CO
     Given user opens the App batch1
 
   Scenario Outline: validating Country in Add A New Location screen, Drop down, Mandatory Field
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -30,7 +30,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | TestCase_158 |
 
   Scenario Outline: validating Type of operations, mandatory Field with Max 100 alphanumeric characters and special characters not allowed
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -48,7 +48,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | TestCase_166 |
 
   Scenario Outline: validating Add A New Location Screen Cancel button with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -64,7 +64,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | testcase |
 
   Scenario Outline: validating Add A New Location Screen Cancel button with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -80,7 +80,7 @@ Feature: Validating Add A New Location screen in NM_CO
       | testcase |
 
   Scenario Outline: validating Confirm button in Add A New Location screen
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button

@@ -3,7 +3,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   Background: User should be able launch and login into App
     Given user opens the App batch1
-#    And user in Home screen TestCase_021
+#    And user in Login screen TestCase_021
 #    When clicks Register Button
 #    Then user will landed on Legal Entity User Details
 #    And clicks Add A New User button
@@ -16,7 +16,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @1
   Scenario Outline: Validate Email Address, optional Field with Max 100 characters and should follow email regex and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -45,7 +45,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @2
   Scenario Outline: Validate Company Website, optional Field with Max 100 characters and should follow url regex and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -74,7 +74,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @3
   Scenario Outline: Validate + Add A New Address Button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -91,7 +91,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @4
   Scenario Outline: Validate Unit no/Building, optional Field with Max 100 characters and should follow url regex and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -120,7 +120,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @5
   Scenario Outline: Validate Street/Area optional Field with Max 100 characters and should follow url regex and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -147,7 +147,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @6
   Scenario Outline: Validate state,City and Post box optional Field with Max 100 characters and should follow url regex and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -176,7 +176,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @7
   Scenario Outline: Validate zip code optional Field with Max 100 characters and should follow url regex and Case insensitive
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -202,7 +202,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @8
   Scenario Outline: Validate country Field
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -224,7 +224,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @9
   Scenario Outline: validating Edit button in Address List
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -251,7 +251,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @10
   Scenario Outline: validating Delete icon with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -276,7 +276,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @11
   Scenario Outline: validating Delete icon with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -301,7 +301,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @12
   Scenario Outline: validating User Contact Information screen Cancel button with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -320,7 +320,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @13
   Scenario Outline: validating User Contact Information screen Cancel button with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -339,7 +339,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
 
   @14
   Scenario Outline: validating Continue button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button

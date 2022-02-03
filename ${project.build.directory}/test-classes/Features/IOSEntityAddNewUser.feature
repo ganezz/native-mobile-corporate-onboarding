@@ -2,7 +2,7 @@
 Feature: Validating Add New User screen in NM_CO
 
   Background: User should able to launch App
-    Given user opens the App batch1
+    Given user opens the App batch5
 
 
   @a

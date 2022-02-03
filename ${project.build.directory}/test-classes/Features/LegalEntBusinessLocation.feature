@@ -6,7 +6,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @1
   Scenario Outline: validating Is the country of domicile the same as the country of incorporation?, Mandatory Field
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -28,7 +28,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @2
   Scenario Outline: validating + Add A New Location Button, Mandatory section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -44,7 +44,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @3
   Scenario Outline: validating Edit button in Location of business operations section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -71,7 +71,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @4
   Scenario Outline: validating Delete icon of Location of business operations section with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -96,7 +96,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @5
   Scenario Outline: validating Delete icon of Location of business operations section with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -121,7 +121,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @6
   Scenario Outline: validating + Add A New Business Market Button, Mandatory section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -136,7 +136,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @7
   Scenario Outline: validating Edit button in Business markets section
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -164,7 +164,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @8
   Scenario Outline: validating Delete icon of Business markets section with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -188,7 +188,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
 @9
   Scenario Outline: validating Delete icon of Business markets section with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -212,7 +212,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
   @10
   Scenario Outline: validating Business Location and Operations screen with Cancel button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -230,7 +230,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
     @11
   Scenario Outline: validating Business Location and Operations screen Cancel button with Ok button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
@@ -248,7 +248,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
       @12
   Scenario Outline: validating Continue button
-    And user in Home screen <testcase>
+    And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
