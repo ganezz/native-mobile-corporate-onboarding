@@ -21,6 +21,7 @@ public class AndroidConnectionUtility extends TestBase {
         List<String> list = new ArrayList<>();
         list.add("SAMSUNG_GalaxyTabS6_Android_11.0.0_383e3");
         list.add("SAMSUNG_GalaxyTabS5e_Android_11.0.0_cb1ca");
+        list.add("SAMSUNG_GalaxyTabS6_Android_9.0.0_16c48");
         list.add("LENOVO_M10Plus_Android_10.0.0_2ba36");
         list.add("SAMSUNG_GalaxyTabS4_Android_10.0.0_2133b");
         list.add("SAMSUNG_GalaxyTabS6Lite_Android_10.0.0_5ffce");

@@ -29,6 +29,7 @@ public class IndustryPageObjects extends TestBase {
     By addIndustry = By.xpath("//android.view.View[@content-desc='Add a new industry']");
     By addIndustryArabic = By.xpath("//android.view.View[@content-desc='أضف صناعة جديدة']");
     By typeOfIndus = By.xpath("//android.widget.EditText[@text='Primary']");
+    By typeOfIndus2 = By.xpath("//android.widget.EditText[@text='Secondary']");
     By viewField = By.xpath("//android.view.View");
     By sectionDD = By.xpath("//android.view.View[@content-desc='Section']");
     By sectionDDArabic = By.xpath("//android.view.View[@content-desc='الجزء']");
@@ -72,8 +73,13 @@ public class IndustryPageObjects extends TestBase {
         }
     }
 
-    public void selectTypeOfIndustry(String industry) {
-        genericMethods.click(typeOfIndus);
+    public void selectTypeOfIndustry(String industry) throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(typeOfIndus);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(typeOfIndus);
+        } else {
+            genericMethods.click(typeOfIndus2);
+        }
         List<WebElement> tempIndustryList = driver.findElements(viewField);
         androidUtility.selectionOfDropdown(industry, tempIndustryList);
     }

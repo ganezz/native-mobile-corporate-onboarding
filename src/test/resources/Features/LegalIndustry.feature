@@ -78,7 +78,7 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_169 |
       | TestCase_170 |
 
-
+@group
   Scenario Outline: Validate Group, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -100,6 +100,7 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_169 |
       | TestCase_170 |
 
+    @class
   Scenario Outline: Validate Class, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -184,6 +185,7 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_169 |
       | TestCase_170 |
 
+    @edit
   Scenario Outline: validating Edit button in Industry List
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
