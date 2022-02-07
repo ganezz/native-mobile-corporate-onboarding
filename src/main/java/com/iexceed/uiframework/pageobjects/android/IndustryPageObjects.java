@@ -63,7 +63,7 @@ public class IndustryPageObjects extends TestBase {
     }
 
     public void isAddIndusScreen() throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(3);
         Boolean b = genericMethods.isElementPresent(sectionDD);
         if (Boolean.TRUE.equals(b)) {
             log.debug("user in add industry page");
