@@ -1,4 +1,4 @@
-@regression_apps  @regressionUserDetailsScreen
+@regression_apps  @regressionIOSUserDetailsScreen
 Feature: Validating User Contact Details screen in NM_CO
 
   Background: User should able to launch App
@@ -27,7 +27,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Then user will landed on Dashboard page
     And clicks on search field
     Then user is shown with a editable text field with a cancel button
-    And user enters text and clicks on cancel button
+#    And user enters text and clicks on cancel button
     Then search field becomes normal
     Examples:
       | testcase     |
@@ -43,7 +43,7 @@ Feature: Validating User Contact Details screen in NM_CO
     Then user will landed on Dashboard page
     And clicks on search field
     Then user is shown with a editable text field with a cancel button
-    And user enters text and clicks on cancel button
+#    And user enters text and clicks on cancel button
     Then search field becomes normal
     Examples:
       | testcase     |

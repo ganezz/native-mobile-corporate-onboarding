@@ -211,6 +211,7 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_171 |
       | TestCase_172 |
 
+      @delete
   Scenario Outline: validating Delete icon with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>

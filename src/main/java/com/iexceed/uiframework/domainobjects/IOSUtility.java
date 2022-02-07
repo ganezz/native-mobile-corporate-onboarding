@@ -1,6 +1,9 @@
 package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.GenericMethods;
+import com.iexceed.uiframework.pageobjects.ios.IosEntityDetailsPageObjects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -12,8 +15,9 @@ import java.util.List;
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class IOSUtility {
-
+    private static final Logger log = LogManager.getLogger(IosEntityDetailsPageObjects.class);
     GenericMethods genericMethods;
+    private String stringmsg;
     By keyboardDone = By.xpath("//*[@label='Done']");
 
 
@@ -60,9 +64,38 @@ public class IOSUtility {
             }
         }
     }
+    public void clearText(By element) {
+        driver.findElement(element).clear();
+    }
 
     public void hideKeyboard() {
         List<WebElement> done = driver.findElements(keyboardDone);
         done.get(0).click();
+    }
+
+    public int characterCount(String username) {
+        int count = 0;
+        for (int i = 0; i < username.length(); i++) {
+            if (username.charAt(i) != ' ')
+                count++;
+        }
+        return count;
+    }
+
+    public void selectionItemVisible(String itemType, List<WebElement> type) {
+        for (WebElement name : type) {
+            if (name.isDisplayed()) {
+                if ((name.getText()).contains(itemType)) {
+                    log.info(name.isDisplayed());
+                    stringmsg = String.format(" %s", itemType);
+                    log.debug("User details is visible {}", stringmsg);
+                    break;
+                }
+            } else {
+
+                log.debug("User details is not visible {}", stringmsg);
+
+            }
+        }
     }
 }

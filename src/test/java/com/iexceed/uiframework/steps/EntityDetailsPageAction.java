@@ -1,14 +1,17 @@
 package com.iexceed.uiframework.steps;
 
 import com.iexceed.uiframework.pageobjects.android.EntityDetailsPageObjects;
-import com.iexceed.uiframework.pageobjects.ios.IosEntityDetailsPage;
+import com.iexceed.uiframework.pageobjects.ios.IosEntityDetailsPageObjects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class EntityDetailsPageAction {
 
     EntityDetailsPageObjects entityDetailsPage = new EntityDetailsPageObjects();
-    IosEntityDetailsPage iEntityDetailsPage = new IosEntityDetailsPage();
+    IosEntityDetailsPageObjects iosEntityDetailsPageObjects=new IosEntityDetailsPageObjects();
     public String platForm;
+    private static final Logger log = LogManager.getLogger(EntityDetailsPageAction.class);
 
     public EntityDetailsPageAction(String platform) {
         this.platForm = platform;
@@ -18,7 +21,7 @@ public class EntityDetailsPageAction {
     public void hamBurgerSwipping() throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickAddNewuserBtn();
+            iosEntityDetailsPageObjects.ios_swipingHamburgerMenu();
         } else {
             entityDetailsPage.swipingHamburgerMenu();
         }
@@ -27,7 +30,7 @@ public class EntityDetailsPageAction {
     public void validateSearchField() throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickAddNewuserBtn();
+            iosEntityDetailsPageObjects.ios_isSearchField();
         } else {
             entityDetailsPage.isSearchField();
         }
@@ -35,7 +38,7 @@ public class EntityDetailsPageAction {
 
     public void clearSearchField() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickAddNewuserBtn();
+            iosEntityDetailsPageObjects.clearSearchField();
         } else {
             entityDetailsPage.clearSearchField();
         }
@@ -44,7 +47,7 @@ public class EntityDetailsPageAction {
     public void clickAddNewUSerBtn() {
 
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickAddNewuserBtn();
+            iosEntityDetailsPageObjects.ios_clickAddNewuserBtn();
         } else {
             entityDetailsPage.clickAddNewuserBtn();
         }
@@ -54,7 +57,7 @@ public class EntityDetailsPageAction {
     public void EnterUSerName(String username, String limit) throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iAddUserName(username, limit);
+            iosEntityDetailsPageObjects.ios_addUserName(username,limit);
         } else {
             entityDetailsPage.addUserName(username, limit);
 
@@ -65,7 +68,7 @@ public class EntityDetailsPageAction {
     public void EnterEmailid(String email, String limit) throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iEnterEmail(email, limit);
+            iosEntityDetailsPageObjects.ios_enterEmail(email);
         } else {
             entityDetailsPage.enterEmail(email);
         }
@@ -73,7 +76,7 @@ public class EntityDetailsPageAction {
 
     public void clickCOnfirmBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickConfirmBtn();
+            iosEntityDetailsPageObjects.ios_clickConfirmBtn();
         } else {
             entityDetailsPage.clickConfirmBtn();
 
@@ -82,7 +85,7 @@ public class EntityDetailsPageAction {
 
     public void verifyValidationMsg(String expectedMsg, String expectedMsg1) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iIsValidationMsgPresent();
+            iosEntityDetailsPageObjects.ios_isValidationMsgPresent(expectedMsg,expectedMsg1);
         } else {
             entityDetailsPage.isValidationMsgPresent(expectedMsg, expectedMsg1);
         }
@@ -90,7 +93,7 @@ public class EntityDetailsPageAction {
 
     public void selectCountryCode(String countryCode) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iEnterCountryCode(countryCode);
+            iosEntityDetailsPageObjects.ios_enterCountryCode(countryCode);
         } else {
             entityDetailsPage.enterCountryCode(countryCode);
         }
@@ -98,7 +101,7 @@ public class EntityDetailsPageAction {
 
     public void enterMobNum(String mobNum) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iEnterMobNum(mobNum);
+            iosEntityDetailsPageObjects.ios_enterMobNum(mobNum);
         } else {
             entityDetailsPage.enterMobNum(mobNum);
         }
@@ -106,7 +109,7 @@ public class EntityDetailsPageAction {
 
     public void clickCancelBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickCancelBtn();
+            iosEntityDetailsPageObjects.ios_clickCancelBtn();
         } else {
             entityDetailsPage.clickCancelBtn();
         }
@@ -114,7 +117,7 @@ public class EntityDetailsPageAction {
 
     public void YES_NO_messageConfirmantion() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iIsYesNoBtnPresentConfirmation();
+            iosEntityDetailsPageObjects.ios_isYesNoBtnPresentConfirmation();
         } else {
             entityDetailsPage.isYesNoBtnPresentConfirmation();
         }
@@ -122,7 +125,7 @@ public class EntityDetailsPageAction {
 
     public void ClickYesBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickYEsBtnValidation();
+            iosEntityDetailsPageObjects.ios_clickYEsBtnValidation();
         } else {
             entityDetailsPage.clickYEsBtnValidation();
         }
@@ -130,7 +133,7 @@ public class EntityDetailsPageAction {
 
     public void ClickNOBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClicNoBtnValidation();
+            iosEntityDetailsPageObjects.ios_clickCancelBtnValidation();
         } else {
             entityDetailsPage.clickCancelBtnValidation();
         }
@@ -138,7 +141,7 @@ public class EntityDetailsPageAction {
 
     public void validateBottomMessage() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iIsBottomValidationMsgPresent();
+            iosEntityDetailsPageObjects.ios_isBottomValidationMsgPresent();
         } else {
             entityDetailsPage.isBottomValidationMsgPresent();
         }
@@ -146,7 +149,7 @@ public class EntityDetailsPageAction {
 
     public void validateUserDetails(String username, String emil, String mobNum) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iValidateUserDetails(username, emil, mobNum);
+            iosEntityDetailsPageObjects.ios_validateUserDetails(username,emil,mobNum);
         } else {
             entityDetailsPage.validateUserDetails(username, emil, mobNum);
         }
@@ -154,7 +157,7 @@ public class EntityDetailsPageAction {
 
     public void clickEditButton() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickEditBtn();
+            iosEntityDetailsPageObjects.clickEditBtn();
         } else {
             entityDetailsPage.clickEditBtn();
         }
@@ -163,7 +166,7 @@ public class EntityDetailsPageAction {
 
     public void clickDeleteButton() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickDeleteBtn();
+            iosEntityDetailsPageObjects.ios_clickDeleteBtn();
         } else {
             entityDetailsPage.clickDeleteBtn();
         }
@@ -171,7 +174,7 @@ public class EntityDetailsPageAction {
 
     public void isAddNewScreenVisible() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iIsAddNewScreen();
+            iosEntityDetailsPageObjects.ios_isAddNewScreen();
         } else {
             entityDetailsPage.isAddNewScreen();
         }
@@ -179,7 +182,7 @@ public class EntityDetailsPageAction {
 
     public void clickcontinueBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iEntityDetailsPage.iClickContinueBtn();
+            iosEntityDetailsPageObjects.ios_clickContinueBtn();
         } else {
             entityDetailsPage.clickContinueBtn();
         }
