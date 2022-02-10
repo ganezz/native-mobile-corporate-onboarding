@@ -18,7 +18,6 @@ public class BusinessLocationPageObjects {
     WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(BusinessLocationPageObjects.class);
     AndroidUtility androidUtility;
-    static int count=0;
 
     public BusinessLocationPageObjects() {
         genericMethods = new GenericMethods(driver);
@@ -201,17 +200,8 @@ public class BusinessLocationPageObjects {
         genericMethods.isElementPresent(editField);
     }
 
-    public void fillCountry(String country) throws Exception {
-        if(count==0) {
-            genericMethods.click(editField);
-            waitUtility.waitForSeconds(1);
-            genericMethods.click(searchField);
-            genericMethods.sendKeys(searchField, country);
-            log.info(driver.findElements(countryList).size());
-            List<WebElement> tempCountryList = driver.findElements(countryList);
-            androidUtility.selectionOfDropdown(country, tempCountryList);
-            count++;
-        }else{
+    public void fillCountry(String country,String type) throws Exception {
+        if(type.equalsIgnoreCase("edit")) {
             genericMethods.click(editField);
             waitUtility.waitForSeconds(1);
             genericMethods.click(searchField);
@@ -219,7 +209,16 @@ public class BusinessLocationPageObjects {
             log.info(driver.findElements(countryList).size());
             List<WebElement> tempCountryList = driver.findElements(countryList);
             androidUtility.selectionOfDropdown("China", tempCountryList);
-            count++;
+
+        }else{
+            genericMethods.click(editField);
+            waitUtility.waitForSeconds(1);
+            genericMethods.click(searchField);
+            genericMethods.sendKeys(searchField, country);
+            log.info(driver.findElements(countryList).size());
+            List<WebElement> tempCountryList = driver.findElements(countryList);
+            androidUtility.selectionOfDropdown(country, tempCountryList);
+
         }
     }
 

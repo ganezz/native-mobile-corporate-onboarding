@@ -98,11 +98,11 @@ public class BusinessLocationPageActions {
         }
     }
 
-    public void fillCountryandOperation(String country, String operation) throws Exception {
+    public void fillCountryandOperation(String country, String operation,String type) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            businessLocationPage.fillCountry(country);
+            businessLocationPage.fillCountry(country,type);
             businessLocationPage.fillOperation(operation);
         }
     }
@@ -115,11 +115,11 @@ public class BusinessLocationPageActions {
         }
     }
 
-    public void fillCountryandProportion(String country, String proportion) throws Exception {
+    public void fillCountryandProportion(String country, String proportion,String type) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            businessLocationPage.fillCountry(country);
+            businessLocationPage.fillCountry(country,type);
             businessLocationPage.fillProportion(proportion);
         }
     }

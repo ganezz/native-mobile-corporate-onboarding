@@ -85,7 +85,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
     public void fills_valid_data_in_country_and_type_of_operations_fields(String testcase) throws Exception {
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
-        businessLocationPageActions.fillCountryandOperation(datalist.get("countryCode"),datalist.get("typeOfOperation"));
+        businessLocationPageActions.fillCountryandOperation(datalist.get("countryCode"),datalist.get("typeOfOperation"),"");
     }
 
     @And("user clicks on Type of operations field (.+)$")
@@ -123,7 +123,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
     @And("fills valid data in Country and Proportion of Business fields$")
     public void fills_valid_data_in_country_and_proportion_of_business_fields() throws Exception {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
-        businessLocationPageActions.fillCountryandProportion(datalist.get("countryCode"),datalist.get("proportion"));
+        businessLocationPageActions.fillCountryandProportion(datalist.get("countryCode"),datalist.get("proportion"),"");
     }
     @And("user clicks Proportion of Business field$")
     public void user_clicks_proportion_of_business_field(){
@@ -146,11 +146,16 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
     @And("edits one or more fields in loation screen valid format (.+)$")
     public void edits_one_or_more_fields_in_loation_screen_valid_format(String testcase) throws Exception {
-        fills_valid_data_in_country_and_type_of_operations_fields(testcase);
+        datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.fillCountryandOperation(datalist.get("countryCode"),datalist.get("typeOfOperation"),"edit");
+
     }
     @And("edits one or more fields in business market screen valid format (.+)$")
     public void edits_one_or_more_fields_in_business_market_screen_valid_format(String testcase) throws Exception {
-        fills_valid_data_in_country_and_proportion_of_business_fields();
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.fillCountryandProportion(datalist.get("countryCode"),datalist.get("proportion"),"edit");
+
     }
 
     @And("user displayed with Successfully Edited location snack bar Message$")
