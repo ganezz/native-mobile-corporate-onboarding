@@ -14,8 +14,9 @@ Feature: Validating Commercial License screen in NM_CO
     And user is in Commercial License screen
     And clicks on Commercial license number
     And user inputs invalid value
+    And enters details in other fields of Commercial license screen
     And clicks on other field
-    Then error message should be displayed under commercialLicene field
+    Then error message should be displayed under Entity name & type field
     Examples:
       | testcase |
 

@@ -136,10 +136,17 @@ public class BusinessLocationPageObjects {
     public void clickCancelBtnValidation() throws Exception {
         waitUtility.waitForSeconds(1);
         Boolean c = genericMethods.isElementPresent(cancelBtn);
-
+        Boolean c2 = genericMethods.isElementPresent(applicCancelBtn);
+        Boolean c3 = genericMethods.isElementPresent(applicCancelBtnArabic);
         if (Boolean.TRUE.equals(c)) {
             genericMethods.click(cancelBtn);
-        } else {
+        }
+        else if(Boolean.TRUE.equals(c2)) {
+            genericMethods.click(applicCancelBtn);
+        }
+        else if(Boolean.TRUE.equals(c3)) {
+            genericMethods.click(applicCancelBtnArabic);
+        }else {
             genericMethods.click(cancelBtnArabic);
         }
     }

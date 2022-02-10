@@ -4,7 +4,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
   Background: User should be able launch and login into App
     Given user opens the App batch1
 
-
+  @1
   Scenario Outline: validating Country in Add A New Location screen, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -30,6 +30,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
       | TestCase_158 |
 
+
+  @2
   Scenario Outline: validating Type of operations, mandatory Field with Max 100 alphanumeric characters and special characters not allowed
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -44,10 +46,17 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     Then proper error message should display under Type of operations field
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_165 |
       | TestCase_166 |
+      | TestCase_173 |
+      | TestCase_174 |
+      | TestCase_175 |
+      | TestCase_176 |
+      | TestCase_177 |
+      | TestCase_178 |
 
+  @3
   Scenario Outline: validating Add A New Location Screen Cancel button with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -57,15 +66,16 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
-    And click Application Cancel button
+    And click on Cancel button
     Then user will prompt to ask about confirmation
     And click on Ok button
-    Then user lands on Dashboard
+    Then user is in Business Location And Operations screen
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+  @4
   Scenario Outline: validating Add A New Location Screen Cancel button with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -78,12 +88,13 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click Application Cancel button
     Then user will prompt to ask about confirmation
     And click on Cancel button
-    Then user remains in Business Location and Operations screen
+    Then user remains in Add new Location and Operations screen
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+  @5
   Scenario Outline: validating Confirm button in Add A New Location screen
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -103,6 +114,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_155 |
       | TestCase_158 |
 
+
+  @6
   Scenario Outline: validating Country in Add A New Business Market screen, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -128,6 +141,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
       | TestCase_158 |
 
+  @a
   Scenario Outline: validating Proportion of Business(%), mandatory Numeric Field with limit 1 to 100
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -147,8 +161,14 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_155 |
       | TestCase_156 |
       | TestCase_157 |
+      | TestCase_173 |
+      | TestCase_174 |
+      | TestCase_175 |
+      | TestCase_176 |
+      | TestCase_177 |
+      | TestCase_178 |
 
-
+  @7
   Scenario Outline: validating Add A New Business Market Screen Cancel button with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -159,15 +179,16 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
     Then user lands on Add A New Business Markets screen
-    And click Application Cancel button
+    And click on Cancel button
     Then user will prompt to ask about confirmation
     And click on Ok button
-    Then user lands on Dashboard
+    Then user is in Business Location And Operations screen
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+  @8
   Scenario Outline: validating Add A New Business Market Screen Cancel button with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -181,12 +202,13 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click Application Cancel button
     Then user will prompt to ask about confirmation
     And click on Cancel button
-    Then user remains in Business Location and Operations screen
+    Then user remains in Business Market screen
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
+  @9
   Scenario Outline: validating Confirm button in Add A New Business Market screen
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -208,9 +230,9 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
-    
-    
-  @1
+
+
+  @10
   Scenario Outline: validating Is the country of domicile the same as the country of incorporation?, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -232,7 +254,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_091 |
       | TestCase_092 |
 
-  @2
+  @11
   Scenario Outline: validating + Add A New Location Button, Mandatory section
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -248,7 +270,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_012 |
       | TestCase_091 |
 
-  @3
+  @12
   Scenario Outline: validating Edit button in Location of business operations section
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -275,7 +297,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
       | TestCase_158 |
 
-  @4
+  @13
   Scenario Outline: validating Delete icon of Location of business operations section with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -292,7 +314,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And user entered Location is displayed in Location of business operations Section
     And clicks on Delete button
     And user is Displayed with Delete Prompt
-   And click on Ok button
+    And click on Ok button
     Then Location is removed from the list
     Examples:
       | testcase     |
@@ -300,7 +322,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
 
 
-  @5
+  @14
   Scenario Outline: validating Delete icon of Location of business operations section with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -325,7 +347,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
 
 
-  @6
+  @15
   Scenario Outline: validating + Add A New Business Market Button, Mandatory section
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -340,7 +362,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | testcase     |
       | TestCase_012 |
 
-  @7
+  @16
   Scenario Outline: validating Edit button in Business markets section
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -368,7 +390,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_157 |
       | TestCase_158 |
 
-  @8
+  @17
   Scenario Outline: validating Delete icon of Business markets section with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -385,14 +407,14 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And user entered Business market is displayed in Business market Section
     And clicks on Delete button
     And user is Displayed with Delete Prompt
-   And click on Ok button
+    And click on Ok button
     Then Business market is removed from the list
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
-@9
+  @18
   Scenario Outline: validating Delete icon of Business markets section with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -416,7 +438,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_155 |
       | TestCase_158 |
 
-  @10
+  @19
   Scenario Outline: validating Business Location and Operations screen with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -434,7 +456,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_155 |
       | TestCase_158 |
 
-    @11
+  @20
   Scenario Outline: validating Business Location and Operations screen Cancel button with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -445,14 +467,14 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When user is in Business Location And Operations screen
     And click Application Cancel button
     Then user will prompt to ask about confirmation
-   And click on Ok button
+    And click on Ok button
     Then user lands on Dashboard
     Examples:
       | testcase     |
       | TestCase_155 |
       | TestCase_158 |
 
-      @12
+  @21
   Scenario Outline: validating Continue button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -465,6 +487,6 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And clicks on Application Continue Button
     Then user lands on Industry screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_163 |
       | TestCase_164 |

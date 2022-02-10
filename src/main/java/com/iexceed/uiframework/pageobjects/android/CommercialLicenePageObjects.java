@@ -22,9 +22,40 @@ public class CommercialLicenePageObjects {
         androidUtility = new AndroidUtility();
     }
 
-    By businessLogicMenu = By.xpath("//*[@text='Business Location']");
+    By commercialLicenMenu = By.xpath("//android.view.View[@text='Commercial License']");
+    By commercialLiceNum = By.xpath("//android.view.View[@content-desc='Commercial licence number']");
+    By commercialLiceNumArabic = By.xpath("//android.view.View[@content-desc='رقم الرخصة التجارية']");
+    By commercialLiceIssueBy = By.xpath("//android.view.View[@content-desc='Commercial licence issued by']");
+    By commerLiceIssueByArabic = By.xpath("//android.view.View[@content-desc='الرخصة التجارية صادرة عن']");
+    By liceNumValidMsg = By.xpath("//android.view.View[@text='Please enter valid Commercial licence number']");
+    By issueByValidMsg = By.xpath("//android.view.View[@text='Please enter valid Commercial licence issued by']");
+    By businessActivity = By.xpath("//android.view.View[@content-desc='Business Activities']");
+    By businessActivityArabic = By.xpath("//android.view.View[@content-desc='الأنشطة التجارية']");
+    By businessValidMsg = By.xpath("//android.view.View[@text='Please enter valid Business Activities']");
+    By issueDate = By.xpath("//android.view.View[@content-desc='Commercial licence issue date']");
+    By issueDateArabic = By.xpath("//android.view.View[@content-desc='تاريخ اصدار الرخصة التجارية']");
+    By expiraryDate = By.xpath("//android.view.View[@content-desc='Commercial licence expiry date']");
+    By expiraryDateArabic = By.xpath("//android.view.View[@content-desc='تاريخ انتهاء الرخصة التجارية']");
 
+    public void selectCommercialLicense() throws Exception {
+        androidUtility.swipingHamburgerMenu();
+        genericMethods.click(commercialLicenMenu);
+    }
 
+    public void enterCommLicenseNum(String licenseNum) throws Exception {
+        waitUtility.waitForSeconds(2);
+        Boolean b = genericMethods.isElementPresent(commercialLiceNum);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(commercialLiceNum);
+            genericMethods.sendKeys(commercialLiceNum, licenseNum);
+            genericMethods.click(commercialLiceIssueBy);
+        } else {
+            genericMethods.click(commercialLiceNumArabic);
+            genericMethods.sendKeys(commercialLiceNumArabic, licenseNum);
+            genericMethods.click(commerLiceIssueByArabic);
+        }
+
+    }
 
 }
 
