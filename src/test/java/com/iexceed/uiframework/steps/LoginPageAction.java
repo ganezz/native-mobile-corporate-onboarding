@@ -75,7 +75,7 @@ public class LoginPageAction {
 
     }
 
-    public void validateLoginCredentials(String platform) {
+    public void validateLoginCredentials(String platform) throws InterruptedException {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_enterLoginCredentials();
         } else {

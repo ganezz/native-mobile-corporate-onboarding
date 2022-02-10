@@ -38,14 +38,14 @@ public class IosEntityDetailsPageObjects {
     By confirmBtn = By.xpath("//XCUIElementTypeButton[@name='Confirm Button']");
     By confirmBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Confirm Button']");
     By validationMSg = By.xpath("//*[contains(@label,'Please enter valid field')]");
-    By validationMSg1 =  By.xpath("//*[contains(@label,'Please enter this field')]");
+    By validationMSg1 = By.xpath("//*[contains(@label,'Please enter this field')]");
     By validationMSgArabic = By.xpath("//*[contains(@label,'الرجاء إدخال حقل صالح')]");
     By validationMSg1Arabic = By.xpath("//*[contains(@label,'الرجاء إدخال هذا الحقل')]");
 
     By countryField = By.xpath("//XCUIElementTypeButton[@name='Mobile Code Drop Down']");
     By countryFieldArabic = By.xpath("//XCUIElementTypeButton[@name='Mobile Code Drop Down']");
     By searchField = By.xpath("//XCUIElementTypeTextField[@name='SearchTextField']");
-    By countryList = By.xpath("//XCUIElementTypeOther");
+    By countryList = By.xpath("//XCUIElementTypeButton");
     By cancelBtn = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By cancelButton = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By cancelBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
@@ -53,11 +53,11 @@ public class IosEntityDetailsPageObjects {
     By confirmationMsg1 = By.xpath("//XCUIElementTypeStaticText[@name='Content Text']");
     By confirmationMsgArabic = By.xpath("//android.view.View[@text='هل تريد الالغاء ؟']");
     By confirmationMsg1Arabic = By.xpath("//XCUIElementTypeStaticText[@name='Content Text']");
-    By validateUseCreationMsg = By.xpath("//*[contains(@label,'Success ! You have successfully added the user to the list...')]");
+    By validateUseCreationMsg = By.xpath("//XCUIElementTypeStaticText[@name='Success ! You have successfully added the user to the list...']");
     By validateUseCreationMsgArabic = By.xpath("//*[contains(@label,'النجاح ! لقد نجحت في إضافة المستخدم إلى القائمة ...')]");
-    By closeBtn = By.xpath("//*[@text='Close']");
-    By closeBtnArabic = By.xpath("//android.view.View[@text='قريب']");
-    By viewDataDetails = By.xpath("//android.view.View");
+    By closeBtn = By.xpath("//XCUIElementTypeButton[@name='Close']");
+    By closeBtnArabic = By.xpath("//*[contains(@label,'اضغط على زر الإغلاق لإغلاق الخبز المحمص')]");
+    By viewDataDetails = By.xpath("//XCUIElementTypeStaticText");
     By editButton = By.xpath("//XCUIElementTypeButton[@name='Edit Button0']");
     By editButtonArabic = By.xpath("//XCUIElementTypeButton[@name='Edit Button0']");
     By deleteButton = By.xpath("//XCUIElementTypeButton[@name='Delete Button0']");
@@ -65,8 +65,8 @@ public class IosEntityDetailsPageObjects {
     By deleteConfirmationMsg = By.xpath("//XCUIElementTypeStaticText[@name='Content Text']");
     By deleteConfirmationMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='Content Text']");
     By okBtn = By.xpath("/XCUIElementTypeButton[@name='OK Button']");
-    By okButton = By.xpath("/XCUIElementTypeButton[@name='OK Button']");
-    By okBtnArabic = By.xpath("/XCUIElementTypeButton[@name='OK Button']");
+    By okButton = By.xpath("//*[contains(@label,'Press to accept.')]");
+    By okBtnArabic = By.xpath("//*[contains(@label,'اضغط لقبول')]");
     By okButtonArabic = By.xpath("/XCUIElementTypeButton[@name='OK Button']");
     By noButton = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By continueBtn = By.xpath("//XCUIElementTypeButton[@name='Continue Button']");
@@ -77,12 +77,12 @@ public class IosEntityDetailsPageObjects {
     By entityLegalNameArabic = By.xpath("//android.view.View[@text='الاسم القانوني للكيان *']");
     By entityLegalName = By.xpath("//android.view.View[@text='Entity Legal Name *']");
 
-    public void ios_clickAddNewuserBtn() {
-        try {
-            genericMethods.waitForVisibility(addNewUsrBtn);
+    public void ios_clickAddNewuserBtn() throws Exception {
+        waitUtility.waitForSeconds(2);
+        Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewUsrBtn);
-        } catch (Exception e) {
-            log.debug(e);
+        } else {
             genericMethods.waitForVisibility(addNewUsrBtnArabic);
             genericMethods.click(addNewUsrBtnArabic);
 
@@ -183,7 +183,7 @@ public class IosEntityDetailsPageObjects {
 
     public void ios_clickConfirmBtn() throws Exception {
         try {
-           iosUtility.hideKeyboard();
+            iosUtility.hideKeyboard();
         } catch (Exception e) {
             log.debug("keyboard is not alive");
         }
@@ -192,8 +192,7 @@ public class IosEntityDetailsPageObjects {
             genericMethods.click(confirmBtn);
         } else {
             genericMethods.click(confirmBtnArabic);
-            waitUtility.waitForSeconds(3);
-        }
+                   }
 
     }
 
@@ -238,31 +237,25 @@ public class IosEntityDetailsPageObjects {
 
 
     public void ios_enterCountryCode(String countryCode) throws Exception {
-        try {
-            genericMethods.isElementPresent(countryField);
+        Boolean b = genericMethods.isElementPresent(countryField);
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(countryField);
-            waitUtility.waitForSeconds(3);
             genericMethods.waitForVisibility(searchField);
             genericMethods.click(searchField);
             genericMethods.sendKeys(searchField, countryCode);
+            try {
+                iosUtility.hideKeyboard();
+            } catch (Exception e) {
+                log.debug(e);
+            }
             log.info(driver.findElements(countryList).size());
-            List<WebElement> temoCountryList = driver.findElements(countryList);
-            iosUtility.selectionOfDropdown(countryCode, temoCountryList);
-        } catch (Exception e) {
-            genericMethods.click(countryFieldArabic);
-            waitUtility.waitForSeconds(3);
-            genericMethods.click(searchField);
-            genericMethods.sendKeys(searchField, countryCode);
-            log.info(driver.findElements(countryList).size());
-            List<WebElement> temoCountryList = driver.findElements(countryList);
-            iosUtility.selectionOfDropdown(countryCode, temoCountryList);
+            iosUtility.selectionOfDropdown(countryCode, countryList);
         }
 
     }
 
     public void ios_enterMobNum(String mob) throws Exception {
         waitUtility.waitForSeconds(5);
-        Boolean b = genericMethods.isElementPresent(mobileNo);
         genericMethods.click(mobileNo);
         iosUtility.clearText(mobileNo);
         genericMethods.sendKeys(mobileNo, mob);
@@ -309,7 +302,6 @@ public class IosEntityDetailsPageObjects {
     }
 
     public void ios_clickYEsBtnValidation() throws Exception {
-        waitUtility.waitForSeconds(2);
         Boolean c = genericMethods.isElementPresent(okBtn);
         Boolean c1 = genericMethods.isElementPresent(okButton);
         Boolean c2 = genericMethods.isElementPresent(okButtonArabic);
@@ -341,22 +333,25 @@ public class IosEntityDetailsPageObjects {
     }
 
     public void ios_isBottomValidationMsgPresent() throws Exception {
-        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(validateUseCreationMsg);
         Boolean b1 = genericMethods.isElementPresent(validateUseCreationMsgArabic);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(validateUseCreationMsg);
-            genericMethods.click(closeBtn);
-        } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(validateUseCreationMsgArabic);
-            genericMethods.click(closeBtnArabic);
-        } else {
-            try {
+        try {
+            if (Boolean.TRUE.equals(b)) {
+                genericMethods.isElementPresent(validateUseCreationMsg);
                 genericMethods.click(closeBtn);
-            } catch (Exception e) {
+            } else if (Boolean.TRUE.equals(b1)) {
+                genericMethods.isElementPresent(validateUseCreationMsgArabic);
                 genericMethods.click(closeBtnArabic);
-
+            } else {
+                try {
+                    genericMethods.click(closeBtn);
+                } catch (Exception e) {
+                    genericMethods.click(closeBtnArabic);
+                    log.debug("close button need to be implement");
+                }
             }
+        }catch(Exception e){
+          log.debug(e);
         }
 
     }

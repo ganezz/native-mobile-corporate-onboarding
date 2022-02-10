@@ -18,8 +18,8 @@ public class IOSUtility {
     private static final Logger log = LogManager.getLogger(IosEntityDetailsPageObjects.class);
     GenericMethods genericMethods;
     private String stringmsg;
-    By keyboardDone = By.xpath("//*[@label='Done']");
-
+    By keyboardDone = By.xpath("//XCUIElementTypeButton[@name='Done']");
+    By keyboardDoneArabic = By.xpath("//XCUIElementTypeButton[@name='تم']");
 
     public IOSUtility() {
         genericMethods = genericMethods;
@@ -56,21 +56,33 @@ public class IOSUtility {
         js.executeScript("mobile: swipe", params);
     }
 
-    public void selectionOfDropdown(String itemType, List<WebElement> type) {
-        for (WebElement name : type) {
-            if ((name.getText()).contains(itemType)) {
-                name.click();
-                break;
+    public void selectionOfDropdown(String itemType,By countryList) {
+        List<WebElement> temoCountryList = driver.findElements(countryList);
+        for (WebElement count : temoCountryList) {
+            System.out.println(count.getAttribute("label"));
+            try {
+                if (count.getAttribute("label").contains(itemType)) {
+                    System.out.println("Element Clicked " + count.getAttribute("label"));
+                    count.click();
+                    break;
+                }
+            } catch (Exception e) {
+                log.debug(e);
             }
         }
     }
+
     public void clearText(By element) {
         driver.findElement(element).clear();
     }
 
-    public void hideKeyboard() {
-        List<WebElement> done = driver.findElements(keyboardDone);
-        done.get(0).click();
+    public void hideKeyboard() throws InterruptedException {
+      try {
+            driver.findElementByXPath(String.format("//XCUIElementTypeButton[@name='%s']", "Done")).click();
+        }catch(Exception  e){
+            driver.findElementByXPath(String.format("//XCUIElementTypeButton[@name='%s']", "تم")).click();
+
+        }
     }
 
     public int characterCount(String username) {

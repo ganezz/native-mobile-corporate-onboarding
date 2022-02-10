@@ -44,7 +44,7 @@ public class EntityDetailsPageAction {
         }
     }
 
-    public void clickAddNewUSerBtn() {
+    public void clickAddNewUSerBtn() throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
             iosEntityDetailsPageObjects.ios_clickAddNewuserBtn();

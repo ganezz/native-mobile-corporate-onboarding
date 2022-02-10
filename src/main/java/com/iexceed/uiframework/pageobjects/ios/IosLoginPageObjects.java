@@ -31,7 +31,7 @@ public class IosLoginPageObjects extends TestBase {
     By loginArabicBtn = By.xpath("//XCUIElementTypeButton[@name='LoginButton']");
     By dropDown = By.xpath("//XCUIElementTypeButton[@name='LanguageDropDown']");
     By userName=By.xpath("//XCUIElementTypeTextField[@name='UsernameTextField']");
-    By password=By.xpath("//XCUIElementTypeTextField[@name='PasswordTextField']");
+    By password=By.xpath("//XCUIElementTypeSecureTextField[@name='PasswordTextField']");
     By userNameErrorMsg = By.xpath("//*[contains(@label,'Please enter valid field')]");
     By userNameErrorMsgArabic = By.xpath("//*[contains(@label,'الرجاء إدخال حقل صالح')]");
     By passwordErrorMsg =  By.xpath("//*[contains(@label,'Please enter valid field')]");
@@ -159,16 +159,12 @@ public class IosLoginPageObjects extends TestBase {
         }
     }
 
-    public void ios_enterLoginCredentials() {
+    public void ios_enterLoginCredentials() throws InterruptedException {
         genericMethods.waitForVisibility(dropDown);
         genericMethods.waitForVisibility(userName);
         genericMethods.click(userName);
         genericMethods.sendKeys(userName,props.getProperty("iusername"));
-        try {
-            iosUtility.hideKeyboard();
-        } catch (Exception e) {
-            log.debug(e);
-        }
+        iosUtility.hideKeyboard();
         genericMethods.waitForVisibility(password);
         genericMethods.click(password);
         genericMethods.sendKeys(password,props.getProperty("ipassword"));

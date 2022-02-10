@@ -78,14 +78,13 @@ public class EntityDetailsPageObjects {
     By entityLegalNameArabic = By.xpath("//android.view.View[@text='الاسم القانوني للكيان *']");
     By entityLegalName = By.xpath("//android.view.View[@text='Entity Legal Name *']");
 
-    public void clickAddNewuserBtn() {
-        try {
-            genericMethods.waitForVisibility(addNewUsrBtn);
+    public void clickAddNewuserBtn() throws Exception {
+        waitUtility.waitForSeconds(3);
+        Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewUsrBtn);
-        } catch (Exception e) {
-            log.debug(e);
-            genericMethods.waitForVisibility(addNewUsrBtnArabic);
-            genericMethods.click(addNewUsrBtnArabic);
+        } else {
+             genericMethods.click(addNewUsrBtnArabic);
 
         }
     }
@@ -115,7 +114,7 @@ public class EntityDetailsPageObjects {
     }
 
     public void clearSearchField() throws Exception {
-       waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(clearField);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(clearField);
@@ -204,7 +203,6 @@ public class EntityDetailsPageObjects {
             genericMethods.click(confirmBtn);
         } else {
             genericMethods.click(confirmBtnArabic);
-            waitUtility.waitForSeconds(3);
         }
 
     }
@@ -338,15 +336,15 @@ public class EntityDetailsPageObjects {
         Boolean c = genericMethods.isElementPresent(okBtn);
         Boolean c1 = genericMethods.isElementPresent(okButton);
         Boolean c2 = genericMethods.isElementPresent(okButtonArabic);
-            if (Boolean.TRUE.equals(c)) {
-                genericMethods.click(okBtn);
-            } else if(Boolean.TRUE.equals(c1)){
-                genericMethods.click(okButton);
-            }else if(Boolean.TRUE.equals(c2)){
-                genericMethods.click(okButtonArabic);
-            }else {
-                genericMethods.click(okBtnArabic);
-            }
+        if (Boolean.TRUE.equals(c)) {
+            genericMethods.click(okBtn);
+        } else if (Boolean.TRUE.equals(c1)) {
+            genericMethods.click(okButton);
+        } else if (Boolean.TRUE.equals(c2)) {
+            genericMethods.click(okButtonArabic);
+        } else {
+            genericMethods.click(okBtnArabic);
+        }
 
     }
 

@@ -38,7 +38,7 @@ public class LoginPageDefinitions extends TestBase {
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
 //            androidAppURL=launchApp();
-            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.19-02-02-2022-21:16.apk";
+            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.20-09-02-2022-19:04.apk";
             ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
             testdata.setTestDataInMap(deviceConfig);
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
@@ -46,7 +46,7 @@ public class LoginPageDefinitions extends TestBase {
         }else{
             waitUtility.waitForSeconds(5);
 //            iosAppURL=launchApp();
-            iosAppURL="http://20.80.0.230:8082/artifactory/iOS-ipa/ao/manual/QARelease-1.0.0-01-02-2022-15:09/QARelease-1.0.0-01-02-2022-15:09.ipa";
+            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/QADebug-1.0.0-09-02-2022-13%3A01/QADebug-1.0.0-09-02-2022-13%3A01.ipa";
             String[] arr=iosAppURL.split("//");
             String temp1=arr[0]+"//readuser:Re@d@1234@";
             iosAppURL=temp1+arr[1];
@@ -124,7 +124,7 @@ public class LoginPageDefinitions extends TestBase {
     }
 
     @When("enter username and password (.+)$")
-    public void enter_username_and_password(String testcase){
+    public void enter_username_and_password(String testcase) throws InterruptedException {
         LoginPageAction LoginPageAction = new LoginPageAction();
         LoginPageAction.validateLoginCredentials(deviceConfig.get("platform"));
     }

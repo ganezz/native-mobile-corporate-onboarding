@@ -53,7 +53,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     }
 
     @And("clicks Add A New User button$")
-    public void clicks_add_a_new_user_button() {
+    public void clicks_add_a_new_user_button() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
         EntityDetailsPageAction.clickAddNewUSerBtn();
 
