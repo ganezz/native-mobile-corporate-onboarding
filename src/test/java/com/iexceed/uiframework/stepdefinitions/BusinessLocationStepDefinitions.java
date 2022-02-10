@@ -1,6 +1,7 @@
 package com.iexceed.uiframework.stepdefinitions;
 import com.iexceed.uiframework.core.TestBase;
 import com.iexceed.uiframework.steps.BusinessLocationPageActions;
+import com.iexceed.uiframework.steps.IndustryPageActions;
 import com.iexceed.uiframework.utilites.readexcel.ExcelHandler;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -70,6 +71,12 @@ public class BusinessLocationStepDefinitions extends TestBase {
        log.debug("clicks on Country field");
     }
 
+    @Then("user remains in Add new Location and Operations screen$")
+    public void user_remains_in_add_new_location_and_operations_screen() throws Exception {
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.addNewLocation();
+    }
+
     @Then("user is displayed with the selected value in Country field$")
     public void user_is_displayed_with_the_selected_value_in_country_field(){
        log.debug("user is displayed with the selected value in Country field");
@@ -106,6 +113,11 @@ public class BusinessLocationStepDefinitions extends TestBase {
     public void click_application_cancel_button() throws Exception {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         businessLocationPageActions.clickApplicationCancelBtn();
+    }
+
+    @Then("user remains in Business Market screen$")
+    public void user_remains_in_business_market_screen() throws InterruptedException {
+        businessLocationPageActions.addNewMarket();
     }
 
     @And("fills valid data in Country and Proportion of Business fields$")
@@ -205,8 +217,9 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
 
     @Then("user lands on Industry screen$")
-    public void user_lands_on_industry_screen(){
-        log.debug("user lands on Industry screen");
+    public void user_lands_on_industry_screen() throws Exception {
+        IndustryPageActions industryPageActions=new IndustryPageActions(deviceConfig.get("platform"));
+        industryPageActions.isIndustryPage();
     }
     @And("user fills all mandatory values (.+)$")
     public void user_fills_all_mandatory_values(String testcase) throws Exception {
