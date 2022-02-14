@@ -19,7 +19,7 @@ public class IndustryPageObjects extends TestBase {
     private final WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(IndustryPageObjects.class);
     AndroidUtility androidUtility;
-    static int count;
+
     public IndustryPageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
@@ -73,7 +73,7 @@ public class IndustryPageObjects extends TestBase {
         }
     }
 
-    public void selectTypeOfIndustry(String industry) throws InterruptedException {
+    public void selectTypeOfIndustry(String industry,String type) throws InterruptedException {
 
             Boolean b = genericMethods.isElementPresent(typeOfIndus);
             if (Boolean.TRUE.equals(b)) {
@@ -81,12 +81,12 @@ public class IndustryPageObjects extends TestBase {
             } else {
                 genericMethods.click(typeOfIndus2);
             }
-        if(count==0) {
-            List<WebElement> tempIndustryList = driver.findElements(viewField);
-            androidUtility.selectionOfDropdown(industry, tempIndustryList);
-        }else{
+        if(type.equalsIgnoreCase("edit")) {
             List<WebElement> tempIndustryList = driver.findElements(viewField);
             androidUtility.selectionOfDropdown("Primary", tempIndustryList);
+        }else{
+            List<WebElement> tempIndustryList = driver.findElements(viewField);
+            androidUtility.selectionOfDropdown(industry, tempIndustryList);
         }
     }
 

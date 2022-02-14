@@ -4,6 +4,7 @@ Feature: Validating Commercial License screen in NM_CO
   Background: User should be able launch and login into App
     Given user opens the App batch1
 
+  @1
   Scenario Outline: Validate Commercial licence number, mandatory field with Max 100 characters and special characters allowed
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -12,14 +13,23 @@ Feature: Validating Commercial License screen in NM_CO
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
-    And clicks on Commercial license number
+    And clicks on Commercial license number <testcase>
     And user inputs invalid value
-    And enters details in other fields of Commercial license screen
-    And clicks on other field
-    Then error message should be displayed under Entity name & type field
+    And clicks on other field in commercial screen
+    Then error message should be displayed under commercialLicene field
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_179 |
+      | TestCase_180 |
+      | TestCase_181 |
+      | TestCase_182 |
+      | TestCase_183 |
+      | TestCase_184 |
+      | TestCase_185 |
+      | TestCase_186 |
 
+
+  @2
   Scenario Outline: Validate Commercial licence issued by, mandatory field with Max 100 characters and special characters allowed
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -27,16 +37,23 @@ Feature: Validating Commercial License screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
-    When user clicks on seventh menu under Entity Details<testcase>
     And user is in Commercial License screen
-    And clicks on Commercial licence issued by
+    And clicks on Commercial licence issued by <testcase>
     And user inputs invalid value
-    And enters details in other fields of Commercial license screen
     And clicks on other field
-    Then error message should be displayed under Entity name & type field
+    Then error message should be displayed under commercial license issuedBy field
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_179 |
+      | TestCase_180 |
+      | TestCase_181 |
+      | TestCase_182 |
+      | TestCase_183 |
+      | TestCase_184 |
+      | TestCase_185 |
+      | TestCase_186 |
 
+  @3
   Scenario Outline: Validate Business activities, mandatory field with Max 100 characters and special characters allowed
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -44,16 +61,23 @@ Feature: Validating Commercial License screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
-    When user clicks on seventh menu under Entity Details<testcase>
     And user is in Commercial License screen
     And clicks on Business activities
     And user inputs invalid value
-    And enters details in other fields of Commercial license screen
     And clicks on other field
-    Then error message should be displayed under Entity name & type field
+    Then error message should be displayed under Business activity field
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_179 |
+      | TestCase_180 |
+      | TestCase_181 |
+      | TestCase_182 |
+      | TestCase_183 |
+      | TestCase_184 |
+      | TestCase_185 |
+      | TestCase_186 |
 
+  @4
   Scenario Outline: Validate Commercial licence issue date, mandatory date field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -61,15 +85,16 @@ Feature: Validating Commercial License screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
-    When user clicks on seventh menu under Entity Details<testcase>
     And user is in Commercial License screen
-    And clicks on Commercial licence issue date
-    Then user is shown with a calendar
-    And user selects a past date from the calendar
+    And clicks on Commercial licence issue date and selects a past date from the calendar
     Then user selected date should be displayed in the field
     Examples:
-      | testcase |
+      | testcase     |
+#      | TestCase_179 |
+      | TestCase_185 |
 
+
+  @5
   Scenario Outline: Validate Commercial licence expiry date, mandatory date field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>

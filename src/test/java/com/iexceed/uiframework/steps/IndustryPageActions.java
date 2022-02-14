@@ -39,11 +39,11 @@ public class IndustryPageActions {
         }
     }
 
-    public void selectIndustryType(String industry) throws InterruptedException {
+    public void selectIndustryType(String industry,String type) throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            industryPageObjects.selectTypeOfIndustry(industry);
+            industryPageObjects.selectTypeOfIndustry(industry,type);
         }
     }
 

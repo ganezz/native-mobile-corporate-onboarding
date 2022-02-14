@@ -161,6 +161,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
       | TestCase_155 |
       | TestCase_156 |
       | TestCase_157 |
+      | TestCase_158 |
       | TestCase_173 |
       | TestCase_174 |
       | TestCase_175 |

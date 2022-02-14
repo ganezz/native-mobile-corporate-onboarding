@@ -77,5 +77,17 @@ public class AndroidUtility {
     }
 
 
+    public Boolean selectionCalenderDropdown1 (String itemType, List <WebElement> type){
+        Boolean res=false;
+        for (WebElement name : type) {
+            if (name.getText().contains(itemType)) {
+                System.out.println(name.getText());
+                name.click();
+                res=true;
+                break;
+            }
+        }
+        return res;
+    }
 
 }

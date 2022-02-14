@@ -39,7 +39,7 @@ public class IndustryStepDefinition extends TestBase {
     @And("user clicks on any one of the values (.+)$")
     public void user_clicks_on_any_one_of_the_values(String testcase) throws Exception {
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
-        industryPageActions.selectIndustryType(datalist.get("TypeofIndustry"));
+        industryPageActions.selectIndustryType(datalist.get("TypeofIndustry"),"");
     }
     @And("user is displayed with the selected value in Type of Industry field$")
     public void user_is_displayed_with_the_selected_value_in_type_of_industry_field(){
@@ -135,7 +135,12 @@ public class IndustryStepDefinition extends TestBase {
     }
     @And("edits one or more industry fields in valid data (.+)$")
     public void edits_one_or_more_industry_fields_in_valid_data(String testcase) throws Exception {
-        fills_valid_data_in_type_of_industry_section_division_group_class(testcase);
+        datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
+        industryPageActions.selectIndustryType(datalist.get("TypeofIndustry"),"edit");
+        selects_value_from_type_of_section_field(testcase);
+        selects_value_from_division_field(testcase);
+        selects_value_from_group_field(testcase);
+        selects_value_from_class_field(testcase);
     }
     @Then("user displayed with edited values in Industry details screen$")
     public void user_displayed_with_edited_values_in_industry_details_screen(){
