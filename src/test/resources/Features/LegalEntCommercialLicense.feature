@@ -110,6 +110,7 @@ Feature: Validating Commercial License screen in NM_CO
       | TestCase_179 |
       | TestCase_185 |
 
+
   Scenario Outline: validating Commercial License screen Cancel button with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -117,14 +118,16 @@ Feature: Validating Commercial License screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
-    When user clicks on seventh menu under Entity Details <testcase>
-    And user is in Commercial License Screen
-    And clicks on Cancel Button
-    And user is displayed with Cancel Prompt
-    And clicks on Cancel button
+    And user is in Commercial License screen
+    And click Application Cancel button
+    Then user will prompt to ask about confirmation
+    And click on Cancel button
     Then user remains in Commercial License screen
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_179 |
+      | TestCase_185 |
+
 
   Scenario Outline: validating Commercial License screen Cancel button with Ok button
     And user in Login screen <testcase>

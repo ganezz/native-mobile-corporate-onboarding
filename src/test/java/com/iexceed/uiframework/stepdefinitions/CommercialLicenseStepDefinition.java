@@ -67,4 +67,14 @@ public class CommercialLicenseStepDefinition extends TestBase {
     public void user_selected_date_should_be_displayed_in_the_field(){
         log.debug("user selected date should be displayed in the field");
     }
+    @And("clicks on Commercial licence expiry date selects a future date from the calendar$")
+    public void clicks_on_commercial_licence_expiry_date_selects_a_future_date_from_the_calendar() throws Exception {
+        commercialLicense.validateExpirayDate();
+        log.debug("user selects a future date from the calendar");
+    }
+    @Then("user remains in Commercial License screen$")
+    public void user_remains_in_commercial_license_screen(){
+        log.debug("user remains in Commercial License screen");
+    }
+
 }
