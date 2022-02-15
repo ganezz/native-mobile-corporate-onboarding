@@ -110,4 +110,8 @@ public class EntityNameTypePageDefinitions extends TestBase {
     public void error_message_should_be_displayed_under_previously_trading_as_field() throws InterruptedException {
         legalEntityNameTypeAction.fieldValidations();
     }
+    @And("click on Application Continue Button$")
+    public void click_on_application_continue_button(){
+
+    }
 }

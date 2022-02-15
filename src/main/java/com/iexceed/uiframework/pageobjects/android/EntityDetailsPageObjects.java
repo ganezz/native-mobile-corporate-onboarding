@@ -419,17 +419,14 @@ public class EntityDetailsPageObjects {
     }
 
     public void clickContinueBtn() throws Exception {
-        waitUtility.waitForSeconds(5);
+        waitUtility.waitForSeconds(2);
         driver.hideKeyboard();
         try {
             genericMethods.click(continueBtn);
-            genericMethods.isElementPresent(entityLegalName);
         } catch (Exception e) {
-            waitUtility.waitForSeconds(4);
+            waitUtility.waitForSeconds(2);
             genericMethods.click(continueBtnArabic);
-            genericMethods.isElementPresent(entityLegalNameArabic);
-
-        }
+                   }
     }
 
 }

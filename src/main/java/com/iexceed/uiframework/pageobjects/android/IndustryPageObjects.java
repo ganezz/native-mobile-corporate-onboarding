@@ -73,12 +73,16 @@ public class IndustryPageObjects extends TestBase {
 
         public void isAddIndusScreen() throws Exception {
             waitUtility.waitForSeconds(3);
-            Boolean b = genericMethods.isElementPresent(sectionDD);
-            if (Boolean.TRUE.equals(b)) {
-                log.debug("user in add industry page");
-            } else {
-                genericMethods.isElementPresent(sectionDDArabic);
-                log.debug("user in ass industry page");
+            try {
+                Boolean b = genericMethods.isElementPresent(sectionDD);
+                if (Boolean.TRUE.equals(b)) {
+                    log.debug("user in add industry page");
+                } else {
+                    genericMethods.isElementPresent(sectionDDArabic);
+                    log.debug("user in ass industry page");
+                }
+            }catch(Exception e){
+                log.debug(e);
             }
         }
 
@@ -104,6 +108,7 @@ public class IndustryPageObjects extends TestBase {
         }
 
         public void chooseSection(String section) throws Exception {
+            waitUtility.waitForSeconds(2);
             Boolean b = genericMethods.isElementPresent(sectionDD);
             if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(sectionDD);

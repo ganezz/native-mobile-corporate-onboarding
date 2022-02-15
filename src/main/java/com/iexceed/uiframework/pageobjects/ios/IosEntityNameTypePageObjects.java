@@ -34,7 +34,7 @@ public class IosEntityNameTypePageObjects {
     By previoslyTradeAs = By.xpath("//XCUIElementTypeTextField[@name='Previously Trading as Text Field']");
     By typeDD = By.xpath("//XCUIElementTypeStaticText[@name='Please Select']");
     By typeDropDown=By.xpath("//XCUIElementTypeButton[@name='Entity Type Drop Down']");
-    By continueBtn = By.xpath("//*[@text='Continue']");
+    By continueBtn = By.xpath("//XCUIElementTypeButton[@name='Continue Button']");
     By entityTypeList = By.xpath("//XCUIElementTypeButton");
     By entityTypeField = By.xpath("//android.view.View[@text='Legal entity type *']");
 
@@ -119,6 +119,9 @@ public class IosEntityNameTypePageObjects {
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic1));
         }
     }
+    public void ios_clickContinueBtn() throws Exception {
+       genericMethods.click(continueBtn);
 
+    }
 
 }

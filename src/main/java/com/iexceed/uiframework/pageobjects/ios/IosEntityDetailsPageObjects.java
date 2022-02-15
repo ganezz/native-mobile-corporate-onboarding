@@ -49,9 +49,9 @@ public class IosEntityDetailsPageObjects {
     By cancelBtn = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By cancelButton = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By cancelBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
-    By confirmationMsg = By.xpath("//*[@text='Do you want to cancel ?']");
+    By confirmationMsg = By.xpath("//*[contains(@label,'Do you want to cancel the application?')]");
     By confirmationMsg1 = By.xpath("//XCUIElementTypeStaticText[@name='Content Text']");
-    By confirmationMsgArabic = By.xpath("//android.view.View[@text='هل تريد الالغاء ؟']");
+    By confirmationMsgArabic = By.xpath("//*[contains(@label,'هل تريد إلغاء التطبيق')]");
     By confirmationMsg1Arabic = By.xpath("//XCUIElementTypeStaticText[@name='Content Text']");
     By validateUseCreationMsg = By.xpath("//XCUIElementTypeStaticText[@name='Success ! You have successfully added the user to the list...']");
     By validateUseCreationMsgArabic = By.xpath("//*[contains(@label,'النجاح ! لقد نجحت في إضافة المستخدم إلى القائمة ...')]");
@@ -265,7 +265,7 @@ public class IosEntityDetailsPageObjects {
     }
 
     public void ios_clickCancelBtn() throws Exception {
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(cancelBtn);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(cancelBtn);
@@ -394,17 +394,8 @@ public class IosEntityDetailsPageObjects {
     }
 
     public void ios_clickContinueBtn() throws Exception {
-        waitUtility.waitForSeconds(5);
-        driver.hideKeyboard();
-        try {
-            genericMethods.click(continueBtn);
-            genericMethods.isElementPresent(entityLegalName);
-        } catch (Exception e) {
-            waitUtility.waitForSeconds(4);
-            genericMethods.click(continueBtnArabic);
-            genericMethods.isElementPresent(entityLegalNameArabic);
-
-        }
+        waitUtility.waitForSeconds(2);
+         genericMethods.click(continueBtn);
     }
 
 }
