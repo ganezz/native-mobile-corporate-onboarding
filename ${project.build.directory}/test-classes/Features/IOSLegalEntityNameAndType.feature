@@ -2,7 +2,7 @@
 Feature: Validating Entity Name And Type screen in NM_CO
 
   Background: User should be able launch and login into App
-    Given user opens the App batch1
+    Given user opens the App batch5
 #    And user in Login screen TestCase_021
 #    When clicks Register Button
 #    Then user will landed on Dashboard page

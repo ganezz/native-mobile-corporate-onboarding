@@ -155,16 +155,20 @@ public class IndustryPageObjects extends TestBase {
             try {
                 if (type.equalsIgnoreCase("edit")) {
                     genericMethods.sendKeys(searchBox, "Marine aquaculture");
+                    log.info(driver.findElements(viewField).size());
+                    List<WebElement> tempClassList = driver.findElements(viewField);
+                    androidUtility.selectionOfDropdown("Marine aquaculture", tempClassList);
                 } else {
                     genericMethods.sendKeys(searchBox, Class);
+                    log.info(driver.findElements(viewField).size());
+                    List<WebElement> tempClassList = driver.findElements(viewField);
+                    androidUtility.selectionOfDropdown(Class, tempClassList);
                 }
             }catch(Exception e){
                 log.debug(e);
             }
 
-            log.info(driver.findElements(viewField).size());
-            List<WebElement> tempClassList = driver.findElements(viewField);
-            androidUtility.selectionOfDropdown(Class, tempClassList);
+
         }
 
         public void validateEnteredDetails(String TypeofIndustry, String Section, String Division, String Group, String Class) throws Exception {
