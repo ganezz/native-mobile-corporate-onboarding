@@ -4,6 +4,7 @@ Feature: Validating Industry screen in NM_CO
   Background: User should be able launch and login into App
     Given user opens the App batch1
 
+  @1
   Scenario Outline: Validate + Add A New Industry Button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -34,7 +35,7 @@ Feature: Validating Industry screen in NM_CO
     And user is displayed with the selected value in Type of Industry field
 
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
@@ -53,7 +54,7 @@ Feature: Validating Industry screen in NM_CO
     And user is displayed with the selected value in Section field
 
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
@@ -74,11 +75,11 @@ Feature: Validating Industry screen in NM_CO
     And user is displayed with the selected value in Division field
 
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
-@group
+  @group
   Scenario Outline: Validate Group, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -96,11 +97,11 @@ Feature: Validating Industry screen in NM_CO
     And user is displayed with the selected value in Group field
 
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
-    @class
+  @class
   Scenario Outline: Validate Class, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -121,7 +122,7 @@ Feature: Validating Industry screen in NM_CO
     And click on Confirm button
     Then user lands on Industry screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
@@ -140,7 +141,7 @@ Feature: Validating Industry screen in NM_CO
     And click on Ok button
     Then user redirected to Industry screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
@@ -159,7 +160,7 @@ Feature: Validating Industry screen in NM_CO
     And click on Cancel button
     Then user remains in Add A New Industry screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
@@ -181,11 +182,11 @@ Feature: Validating Industry screen in NM_CO
     And click on Confirm button
     Then user lands on Industry screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_169 |
       | TestCase_170 |
 
-    @edit
+  @edit
   Scenario Outline: validating Edit button in Industry List
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -207,11 +208,11 @@ Feature: Validating Industry screen in NM_CO
     And user displayed with Successfully Edited Industry snack bar Message
     Then user displayed with edited values in Industry details screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_171 |
       | TestCase_172 |
 
-      @delete
+  @d1
   Scenario Outline: validating Delete icon with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -231,10 +232,11 @@ Feature: Validating Industry screen in NM_CO
     And click on Ok button
     Then Industry is removed from the list
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_171 |
       | TestCase_172 |
 
+  @d2
   Scenario Outline: validating Delete icon with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -254,12 +256,12 @@ Feature: Validating Industry screen in NM_CO
     And click on Cancel button
     Then Industry is not removed from the list
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_171 |
       | TestCase_172 |
 
 
-
+  @c1
   Scenario Outline: validating Industry screen Cancel button with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -273,10 +275,11 @@ Feature: Validating Industry screen in NM_CO
     And click on Cancel button
     Then user remains in Industry screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_171 |
       | TestCase_172 |
 
+  @c2
   Scenario Outline: validating Industry screen Cancel button with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -290,7 +293,7 @@ Feature: Validating Industry screen in NM_CO
     And click on Ok button
     Then user lands on Dashboard
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_171 |
       | TestCase_172 |
 
@@ -305,6 +308,6 @@ Feature: Validating Industry screen in NM_CO
     And clicks on Continue Button
     Then user lands on Incorporation screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_171 |
       | TestCase_172 |

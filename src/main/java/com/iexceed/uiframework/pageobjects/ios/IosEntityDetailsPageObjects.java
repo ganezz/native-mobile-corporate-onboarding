@@ -74,8 +74,10 @@ public class IosEntityDetailsPageObjects {
     By searchBar = By.xpath("//XCUIElementTypeSearchField[@name='SearchTextField']");
     By clearField = By.xpath("//android.view.View[@content-desc='Clear Field']");
     By clearFieldArabic = By.xpath("//android.view.View[@content-desc='الحقل خالى']");
-    By entityLegalNameArabic = By.xpath("//android.view.View[@text='الاسم القانوني للكيان *']");
-    By entityLegalName = By.xpath("//android.view.View[@text='Entity Legal Name *']");
+    By entityLegalNameArabic = By.xpath("//XCUIElementTypeTextField[@name='Legal Name Text Field']");
+    By entityLegalName = By.xpath("//XCUIElementTypeTextField[@name='Legal Name Text Field']");
+
+
 
     public void ios_clickAddNewuserBtn() throws Exception {
         waitUtility.waitForSeconds(2);

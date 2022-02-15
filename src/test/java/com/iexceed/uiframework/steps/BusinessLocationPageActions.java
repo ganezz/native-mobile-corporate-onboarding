@@ -133,7 +133,7 @@ public class BusinessLocationPageActions {
     }
 
 
-    public void validateAddNewLocationField(String country, String operation) {
+    public void validateAddNewLocationField(String country, String operation) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
@@ -141,7 +141,7 @@ public class BusinessLocationPageActions {
         }
     }
 
-    public void validateAddNewMarketField(String country, String proportion) {
+    public void validateAddNewMarketField(String country, String proportion) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {

@@ -18,6 +18,7 @@ public class AndroidUtility {
     private static final Logger log = LogManager.getLogger(AndroidUtility.class);
     private String stringmsg;
     WaitUtility waitUtility;
+
     public AndroidUtility() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
@@ -46,6 +47,7 @@ public class AndroidUtility {
             }
         }
     }
+
     public void swipingHamburgerMenu() throws Exception {
         waitUtility.waitForSeconds(4);
         genericMethods.click(hamBurgerMenu);
@@ -59,7 +61,7 @@ public class AndroidUtility {
         driver.findElement(element).clear();
     }
 
-    public void selectionItemVisible(String itemType, List<WebElement> type) {
+    public void selectionItemVisible(String itemType, List<WebElement> type) throws Exception {
         for (WebElement name : type) {
             if (name.isDisplayed()) {
                 if ((name.getText()).contains(itemType)) {
@@ -77,13 +79,13 @@ public class AndroidUtility {
     }
 
 
-    public Boolean selectionCalenderDropdown1 (String itemType, List <WebElement> type){
-        Boolean res=false;
+    public Boolean selectionCalenderDropdown1(String itemType, List<WebElement> type) {
+        Boolean res = false;
         for (WebElement name : type) {
             if (name.getText().contains(itemType)) {
                 System.out.println(name.getText());
                 name.click();
-                res=true;
+                res = true;
                 break;
             }
         }

@@ -76,5 +76,17 @@ public class CommercialLicenseStepDefinition extends TestBase {
     public void user_remains_in_commercial_license_screen(){
         log.debug("user remains in Commercial License screen");
     }
+    @Then("user lands on Source of Funds screen$")
+    public void user_lands_on_source_of_funds_screen(){
+        log.debug("user lands on Source of Funds screen");
+    }
+    @And("fills valid data in Commercial licence number, Commercial licence issued by, Business activities,Commercial licence issue date, Commercial licence expiry date (.+)$")
+    public void fills_valid_data_in_commercial_licence_number_commercial_licence_issued_by_business_activitiescommercial_licence_issue_date_commercial_licence_expiry_date(String testcase) throws Exception {
+        clicks_on_commercial_license_number(testcase);
+        clicks_on_commercial_licence_issued_by(testcase);
+        clicks_on_business_activities();
+        clicks_on_commercial_licence_issue_date_and_selects_a_past_date_from_the_calendar();
+        clicks_on_commercial_licence_expiry_date_selects_a_future_date_from_the_calendar();
+    }
 
-}
+    }

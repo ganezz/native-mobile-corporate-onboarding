@@ -159,7 +159,7 @@ public class CommercialLicenePageObjects {
         String date = dateArr[0];
         String month = dateArr[1];
         String year = dateArr[2];
-        editField.findElements(driver).get(4).click();
+        editField.findElements(driver).get(5).click();
         waitUtility.waitForSeconds(2);
         genericMethods.click(yearFrame);
         AndroidDriver drive = (AndroidDriver) driver;

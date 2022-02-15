@@ -23,6 +23,15 @@ public class IndustryPageActions {
         }
     }
 
+
+    public void industryPAge() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            industryPageObjects.isIndustryPage();
+        }
+    }
+
     public void clickAddIndustryBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -78,7 +87,7 @@ public class IndustryPageActions {
             industryPageObjects.chooseClass(Class);
         }
     }
-    public void validateEnteredDetails(String TypeofIndustry,String Section,String Division,String Group,String Class){
+    public void validateEnteredDetails(String TypeofIndustry,String Section,String Division,String Group,String Class) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {

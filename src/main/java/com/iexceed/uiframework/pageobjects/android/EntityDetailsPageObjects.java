@@ -406,7 +406,6 @@ public class EntityDetailsPageObjects {
 
     public void clickDeleteBtn() throws InterruptedException {
         Boolean b = genericMethods.isElementPresent(deleteButton);
-
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(deleteButton);
         } else {

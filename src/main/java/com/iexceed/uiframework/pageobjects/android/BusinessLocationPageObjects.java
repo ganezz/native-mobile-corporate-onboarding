@@ -235,7 +235,7 @@ public class BusinessLocationPageObjects {
     }
 
 
-    public void validateAddNewLocationField(String country, String operation) {
+    public void validateAddNewLocationField(String country, String operation) throws Exception {
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(country, tempDetails);
@@ -243,7 +243,7 @@ public class BusinessLocationPageObjects {
 
     }
 
-    public void validateAddNewMarketField(String country, String proportion) {
+    public void validateAddNewMarketField(String country, String proportion) throws Exception {
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(country, tempDetails);

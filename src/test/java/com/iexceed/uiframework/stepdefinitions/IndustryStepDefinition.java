@@ -126,7 +126,7 @@ public class IndustryStepDefinition extends TestBase {
         selects_value_from_class_field(testcase);
     }
     @And("user entered Industry is displayed in Industry details tab$")
-    public void user_entered_industry_is_displayed_in_industry_details_tab(){
+    public void user_entered_industry_is_displayed_in_industry_details_tab() throws Exception {
         industryPageActions.validateEnteredDetails(datalist.get("TypeofIndustry"),datalist.get("Section"),datalist.get("Division"),datalist.get("Group"),datalist.get("Class"));
     }
     @And("user lands on Modification Screen Add A New Industry Screen with already given data$")
@@ -143,7 +143,7 @@ public class IndustryStepDefinition extends TestBase {
         selects_value_from_class_field(testcase);
     }
     @Then("user displayed with edited values in Industry details screen$")
-    public void user_displayed_with_edited_values_in_industry_details_screen(){
+    public void user_displayed_with_edited_values_in_industry_details_screen() throws Exception {
         user_entered_industry_is_displayed_in_industry_details_tab();
     }
     @And("user displayed with Successfully Edited Industry snack bar Message$")
@@ -151,11 +151,11 @@ public class IndustryStepDefinition extends TestBase {
         industryPageActions.isEditMsgPresent();
     }
     @Then("Industry is removed from the list$")
-    public void industry_is_removed_from_the_list(){
+    public void industry_is_removed_from_the_list() throws Exception {
         user_displayed_with_edited_values_in_industry_details_screen();
     }
     @Then("Industry is not removed from the list$")
-    public void industry_is_not_removed_from_the_list(){
+    public void industry_is_not_removed_from_the_list() throws Exception {
         user_displayed_with_edited_values_in_industry_details_screen();
     }
     @Then("user remains in Industry screen$")

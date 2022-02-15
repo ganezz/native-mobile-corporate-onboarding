@@ -53,7 +53,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
 
     @And("user entered Business market is displayed in Business market Section$")
-    public void user_entered_business_market_is_displayed_in_business_market_section(){
+    public void user_entered_business_market_is_displayed_in_business_market_section() throws Exception {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         businessLocationPageActions.validateAddNewMarketField(datalist.get("countryCode"),datalist.get("proportion"));
     }
@@ -136,7 +136,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
 
     @And("user entered Location is displayed in Location of business operations Section$")
-    public void user_entered_location_is_displayed_in_location_of_business_operations_section() {
+    public void user_entered_location_is_displayed_in_location_of_business_operations_section() throws Exception {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
         businessLocationPageActions.validateAddNewLocationField(datalist.get("countryCode"),datalist.get("typeOfOperation"));
     }
@@ -171,11 +171,11 @@ public class BusinessLocationStepDefinitions extends TestBase {
     }
 
     @Then("user displayed with edited values in Location of business operations Section$")
-    public void user_displayed_with_edited_values_in_location_of_business_operations_section(){
+    public void user_displayed_with_edited_values_in_location_of_business_operations_section() throws Exception {
         user_entered_location_is_displayed_in_location_of_business_operations_section();
     }
     @Then("Location is removed from the list$")
-    public void location_is_removed_from_the_list(){
+    public void location_is_removed_from_the_list() throws Exception {
         user_entered_location_is_displayed_in_location_of_business_operations_section();
     }
 
@@ -189,7 +189,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
         businessLocationPageActions.isDeletePopupPresent();
     }
     @Then("Location is not removed from the list$")
-    public void location_is_not_removed_from_the_list(){
+    public void location_is_not_removed_from_the_list() throws Exception {
         user_entered_location_is_displayed_in_location_of_business_operations_section();
     }
     @And("clicks Add A New Business Markets button$")
@@ -205,15 +205,15 @@ public class BusinessLocationStepDefinitions extends TestBase {
         log.debug("user lands on Modification Screen Add A New Business market Screen with already given data");
     }
     @Then("user displayed with edited values in Business markets Section$")
-    public void user_displayed_with_edited_values_in_business_markets_section(){
+    public void user_displayed_with_edited_values_in_business_markets_section() throws Exception {
         user_entered_business_market_is_displayed_in_business_market_section();
     }
     @Then("Business market is removed from the list$")
-    public void business_market_is_removed_from_the_list(){
+    public void business_market_is_removed_from_the_list() throws Exception {
         user_entered_business_market_is_displayed_in_business_market_section();
     }
     @Then("Business market is not removed from the list$")
-    public void business_market_is_not_removed_from_the_list(){
+    public void business_market_is_not_removed_from_the_list() throws Exception {
         user_entered_business_market_is_displayed_in_business_market_section();
     }
     @Then("user remains in Business Location and Operations screen$")
@@ -224,7 +224,7 @@ public class BusinessLocationStepDefinitions extends TestBase {
     @Then("user lands on Industry screen$")
     public void user_lands_on_industry_screen() throws Exception {
         IndustryPageActions industryPageActions=new IndustryPageActions(deviceConfig.get("platform"));
-        industryPageActions.isIndustryPage();
+        industryPageActions.industryPAge();
     }
     @And("user fills all mandatory values (.+)$")
     public void user_fills_all_mandatory_values(String testcase) throws Exception {

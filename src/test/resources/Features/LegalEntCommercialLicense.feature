@@ -136,14 +136,16 @@ Feature: Validating Commercial License screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
-    When user clicks on seventh menu under Entity Details <testcase>
-    And user is in Commercial License Screen
-    And clicks on Cancel Button
-    And user is displayed with Cancel Prompt
-    And clicks on Ok button
-    Then user lands on Dashboard screen
+    And user is in Commercial License screen
+    And click Application Cancel button
+    Then user will prompt to ask about confirmation
+    And click on Ok button
+    Then user lands on Dashboard
     Examples:
       | testcase |
+      | TestCase_179 |
+      | TestCase_185 |
+
 
   Scenario Outline: validating Commercial License Continue button
     And user in Login screen <testcase>
@@ -152,10 +154,11 @@ Feature: Validating Commercial License screen in NM_CO
     And click login button
     Then user will landed on Dashboard page
     And swipes the side menu and select Commercial licence
-    When user clicks on seventh menu under Entity Details <testcase>
-    And user is in Commercial License Screen
-    And fills valid data in Commercial licence number, Commercial licence issued by, Business activities,Commercial licence issue date, Commercial licence expiry date
+    And user is in Commercial License screen
+    And fills valid data in Commercial licence number, Commercial licence issued by, Business activities,Commercial licence issue date, Commercial licence expiry date <testcase>
     And clicks on Continue Button
     Then user lands on Source of Funds screen
     Examples:
       | testcase |
+      | TestCase_187 |
+      | TestCase_188 |
