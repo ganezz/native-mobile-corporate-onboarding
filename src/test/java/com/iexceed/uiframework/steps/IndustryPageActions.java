@@ -48,11 +48,11 @@ public class IndustryPageActions {
         }
     }
 
-    public void selectIndustryType(String industry,String type) throws InterruptedException {
+    public void selectIndustryType(String industry) throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            industryPageObjects.selectTypeOfIndustry(industry,type);
+            industryPageObjects.selectTypeOfIndustry(industry);
         }
     }
 
@@ -80,11 +80,11 @@ public class IndustryPageActions {
         }
     }
 
-    public void selectClass(String Class) throws Exception {
+    public void selectClass(String Class,String type) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            industryPageObjects.chooseClass(Class);
+            industryPageObjects.chooseClass(Class,type);
         }
     }
     public void validateEnteredDetails(String TypeofIndustry,String Section,String Division,String Group,String Class) throws Exception {

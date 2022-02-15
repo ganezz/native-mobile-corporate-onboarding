@@ -70,7 +70,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     @And("user input invalid Name$")
     public void user_input_invalid_name() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
-        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"));
+        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"");
 
     }
 
@@ -209,7 +209,8 @@ public class EntityDetailsPageDefinitions extends TestBase {
 
     @And("enters all the details in Add A New User screen$")
     public void enters_all_the_details_in_add_a_new_user_screen() throws Exception {
-        user_input_invalid_name();
+        EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"edit");
         user_input_invalid_email_address();
         user_selects_country_code();
     }

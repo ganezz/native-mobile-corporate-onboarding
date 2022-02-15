@@ -1,4 +1,4 @@
-@regressionEntityNameAndType
+@IOSregressionEntityNameAndType
 Feature: Validating Entity Name And Type screen in NM_CO
 
   Background: User should be able launch and login into App

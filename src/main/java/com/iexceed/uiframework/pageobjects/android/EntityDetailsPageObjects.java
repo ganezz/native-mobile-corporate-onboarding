@@ -124,12 +124,16 @@ public class EntityDetailsPageObjects {
 
     }
 
-    public void addUserName(String userName, String limit) throws Exception {
+    public void addUserName(String userName, String limit,String type) throws Exception {
         String regex = "@@^[-!@#%&()']*$/";
         waitUtility.waitForSeconds(7);
         genericMethods.click(editField);
         androidUtility.clearText(editField);
-        genericMethods.sendKeys(editField, userName);
+        if(type.equalsIgnoreCase("edit")) {
+            genericMethods.sendKeys(editField, "jackyChan");
+        }else{
+            genericMethods.sendKeys(editField, userName);
+        }
         String userNameTxt = genericMethods.getText(editField);
         int count = androidUtility.characterCount(userNameTxt);
         log.info(count);

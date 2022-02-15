@@ -86,26 +86,16 @@ public class IndustryPageObjects extends TestBase {
             }
         }
 
-        public void selectTypeOfIndustry(String industry,String type) throws InterruptedException {
+        public void selectTypeOfIndustry(String industry) throws InterruptedException {
             Boolean b = genericMethods.isElementPresent(typeOfIndus);
-            try {
-            if (Boolean.TRUE.equals(b)) {
+                        if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(typeOfIndus);
             } else {
                 genericMethods.click(typeOfIndus2);
             }
-
-                if (type.equalsIgnoreCase("edit")) {
-                    List<WebElement> tempIndustryList = driver.findElements(viewField);
-                    androidUtility.selectionOfDropdown("Primary", tempIndustryList);
-                } else {
                     List<WebElement> tempIndustryList1 = driver.findElements(viewField);
                     androidUtility.selectionOfDropdown(industry, tempIndustryList1);
-                }
-            }catch(Exception e){
-                log.debug(e);
-            }
-        }
+                    }
 
         public void chooseSection(String section) throws Exception {
             waitUtility.waitForSeconds(2);
@@ -153,7 +143,7 @@ public class IndustryPageObjects extends TestBase {
             androidUtility.selectionOfDropdown(group, tempGroupList);
         }
 
-        public void chooseClass(String Class) throws Exception {
+        public void chooseClass(String Class,String type) throws Exception {
             Boolean b = genericMethods.isElementPresent(classDD);
             if (Boolean.TRUE.equals(b)) {
                 genericMethods.click(classDD);
@@ -162,7 +152,16 @@ public class IndustryPageObjects extends TestBase {
             }
             waitUtility.waitForSeconds(1);
             genericMethods.click(searchBox);
-            genericMethods.sendKeys(searchBox, Class);
+            try {
+                if (type.equalsIgnoreCase("edit")) {
+                    genericMethods.sendKeys(searchBox, "Marine aquaculture");
+                } else {
+                    genericMethods.sendKeys(searchBox, Class);
+                }
+            }catch(Exception e){
+                log.debug(e);
+            }
+
             log.info(driver.findElements(viewField).size());
             List<WebElement> tempClassList = driver.findElements(viewField);
             androidUtility.selectionOfDropdown(Class, tempClassList);

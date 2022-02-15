@@ -131,12 +131,16 @@ public class IosEntityDetailsPageObjects {
 
     }
 
-    public void ios_addUserName(String userName, String limit) throws Exception {
+    public void ios_addUserName(String userName, String limit,String type) throws Exception {
         String regex = "@@^[-!@#%&()']*$/";
         waitUtility.waitForSeconds(7);
         genericMethods.click(username);
         iosUtility.clearText(username);
-        genericMethods.sendKeys(username, userName);
+        if(type.equalsIgnoreCase("edit")) {
+            genericMethods.sendKeys(username, "jackyChan");
+        }else{
+            genericMethods.sendKeys(username, userName);
+        }
         String userNameTxt = genericMethods.getText(username);
         int count = iosUtility.characterCount(userNameTxt);
         log.info(count);
