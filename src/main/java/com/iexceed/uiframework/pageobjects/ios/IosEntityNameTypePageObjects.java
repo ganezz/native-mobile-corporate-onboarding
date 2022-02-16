@@ -6,7 +6,10 @@ import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.List;
 
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
@@ -33,7 +36,7 @@ public class IosEntityNameTypePageObjects {
     By previouslyKnow = By.xpath("//XCUIElementTypeTextField[@name='Previously Known as Text Field']");
     By previoslyTradeAs = By.xpath("//XCUIElementTypeTextField[@name='Previously Trading as Text Field']");
     By typeDD = By.xpath("//XCUIElementTypeStaticText[@name='Please Select']");
-    By typeDropDown=By.xpath("//XCUIElementTypeButton[@name='Entity Type Drop Down']");
+    By typeDropDown = By.xpath("//XCUIElementTypeButton[@name='Entity Type Drop Down']");
     By continueBtn = By.xpath("//XCUIElementTypeButton[@name='Continue Button']");
     By entityTypeList = By.xpath("//XCUIElementTypeButton");
     By entityTypeField = By.xpath("//android.view.View[@text='Legal entity type *']");
@@ -92,12 +95,18 @@ public class IosEntityNameTypePageObjects {
             log.debug(e);
         }
         log.info(driver.findElements(entityTypeList).size());
-         iosUtility.selectionOfDropdown(entityType, entityTypeList);
+        iosUtility.selectionOfDropdown(entityType, entityTypeList);
     }
 
     public void validateEntityTye(String entityType) throws Exception {
+        String values = null;
         waitUtility.waitForSeconds(2);
-        Assert.assertEquals(entityType,genericMethods.getText(typeDropDown));
+        List<WebElement> temoCountryList = driver.findElements(entityTypeList);
+        for (WebElement count : temoCountryList) {
+            System.out.println(count.getAttribute("label"));
+           values=count.getAttribute("label");
+        }
+        Assert.assertEquals(entityType,values);
     }
 
     public void clickOtherField() {
@@ -108,19 +117,23 @@ public class IosEntityNameTypePageObjects {
         Boolean b = genericMethods.isElementPresent(fieldValidationMsg);
         Boolean b1 = genericMethods.isElementPresent(fieldValidationMsg1);
         Boolean b2 = genericMethods.isElementPresent(fieldValidationMsgArabic);
+        Boolean b3=genericMethods.isElementPresent(fieldValidationMsgArabic1);
         if (Boolean.TRUE.equals(b)) {
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsg));
         } else if (Boolean.TRUE.equals(b1)) {
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsg1));
         } else if (Boolean.TRUE.equals(b2)) {
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic));
-        } else {
+        } else if(Boolean.TRUE.equals(b3)){
             genericMethods.isElementPresent(fieldValidationMsgArabic1);
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic1));
+        }else{
+            log.debug("entered valid fields");
         }
     }
+
     public void ios_clickContinueBtn() throws Exception {
-       genericMethods.click(continueBtn);
+        genericMethods.click(continueBtn);
 
     }
 
