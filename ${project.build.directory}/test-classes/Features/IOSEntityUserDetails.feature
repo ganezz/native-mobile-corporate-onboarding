@@ -4,10 +4,6 @@ Feature: Validating User Contact Details screen in NM_CO
   Background: User should able to launch App
     Given user opens the App batch5
 
-
-
-
-
   @a
   Scenario Outline: Validate Gesture in side menu
     And user in Login screen <testcase>

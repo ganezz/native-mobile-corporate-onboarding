@@ -78,7 +78,6 @@ public class IosEntityDetailsPageObjects {
     By entityLegalName = By.xpath("//XCUIElementTypeTextField[@name='Legal Name Text Field']");
 
 
-
     public void ios_clickAddNewuserBtn() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(addNewUsrBtn);
@@ -131,14 +130,14 @@ public class IosEntityDetailsPageObjects {
 
     }
 
-    public void ios_addUserName(String userName, String limit,String type) throws Exception {
+    public void ios_addUserName(String userName, String limit, String type) throws Exception {
         String regex = "@@^[-!@#%&()']*$/";
         waitUtility.waitForSeconds(7);
         genericMethods.click(username);
         iosUtility.clearText(username);
-        if(type.equalsIgnoreCase("edit")) {
+        if (type.equalsIgnoreCase("edit")) {
             genericMethods.sendKeys(username, "jackyChan");
-        }else{
+        } else {
             genericMethods.sendKeys(username, userName);
         }
         String userNameTxt = genericMethods.getText(username);
@@ -198,7 +197,7 @@ public class IosEntityDetailsPageObjects {
             genericMethods.click(confirmBtn);
         } else {
             genericMethods.click(confirmBtnArabic);
-                   }
+        }
 
     }
 
@@ -356,21 +355,23 @@ public class IosEntityDetailsPageObjects {
                     log.debug("close button need to be implement");
                 }
             }
-        }catch(Exception e){
-          log.debug(e);
+        } catch (Exception e) {
+            log.debug(e);
         }
 
     }
 
     public void ios_validateUserDetails(String userName, String email, String mobNum) throws Exception {
-
-        waitUtility.waitForSeconds(2);
-        log.info(driver.findElements(viewDataDetails).size());
-        List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
-        iosUtility.selectionItemVisible(userName, tempUserDetails);
-        iosUtility.selectionItemVisible(email, tempUserDetails);
-        iosUtility.selectionItemVisible(mobNum, tempUserDetails);
-
+        try {
+            waitUtility.waitForSeconds(2);
+            log.info(driver.findElements(viewDataDetails).size());
+            List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
+            iosUtility.selectionItemVisible(userName, tempUserDetails);
+            iosUtility.selectionItemVisible(email, tempUserDetails);
+            iosUtility.selectionItemVisible(mobNum, tempUserDetails);
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void clickEditBtn() throws InterruptedException {
@@ -399,7 +400,7 @@ public class IosEntityDetailsPageObjects {
 
     public void ios_clickContinueBtn() throws Exception {
         waitUtility.waitForSeconds(2);
-         genericMethods.click(continueBtn);
+        genericMethods.click(continueBtn);
     }
 
 }
