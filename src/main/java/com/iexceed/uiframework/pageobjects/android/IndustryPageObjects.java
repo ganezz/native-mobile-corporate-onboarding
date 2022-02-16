@@ -172,6 +172,12 @@ public class IndustryPageObjects extends TestBase {
         }
 
         public void validateEnteredDetails(String TypeofIndustry, String Section, String Division, String Group, String Class) throws Exception {
+            try {
+                isEditIndustryMsgPresent();
+            }catch(Exception e){
+              log.debug(e);
+            }
+            genericMethods.waitForVisibility(viewField);
             log.info(driver.findElements(viewField).size());
             List<WebElement> tempDetails = driver.findElements(viewField);
             androidUtility.selectionItemVisible(TypeofIndustry, tempDetails);
