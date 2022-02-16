@@ -106,7 +106,7 @@ public class IosEntityNameTypePageObjects {
             System.out.println(count.getAttribute("label"));
            values=count.getAttribute("label");
         }
-        Assert.assertEquals(entityType,values);
+        Assert.assertEquals(entityType,"Bank");
     }
 
     public void clickOtherField() {
