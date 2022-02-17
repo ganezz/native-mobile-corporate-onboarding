@@ -10,7 +10,7 @@ public class EntityDetailsPageAction {
 
     EntityDetailsPageObjects entityDetailsPage = new EntityDetailsPageObjects();
     IosEntityDetailsPageObjects iosEntityDetailsPageObjects=new IosEntityDetailsPageObjects();
-    public String platForm;
+    public static String platForm;
     private static final Logger log = LogManager.getLogger(EntityDetailsPageAction.class);
 
     public EntityDetailsPageAction(String platform) {
@@ -54,7 +54,7 @@ public class EntityDetailsPageAction {
     }
 
 
-    public void EnterUSerName(String username, String limit,String type) throws Exception {
+    public void EnterUSerName(String username, String limit, String type) throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {
             iosEntityDetailsPageObjects.ios_addUserName(username,limit,type);

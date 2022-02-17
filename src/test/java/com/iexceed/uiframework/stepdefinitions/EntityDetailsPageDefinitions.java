@@ -210,7 +210,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     @And("enters all the details in Add A New User screen$")
     public void enters_all_the_details_in_add_a_new_user_screen() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
-        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"edit");
+        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"");
         user_input_invalid_email_address();
         user_selects_country_code();
     }
@@ -254,7 +254,10 @@ public class EntityDetailsPageDefinitions extends TestBase {
 
     @And("user fills all new user details$")
     public void user_fills_all_new_user_details() throws Exception {
-        enters_all_the_details_in_add_a_new_user_screen();
+        EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"edit");
+        user_input_invalid_email_address();
+        user_selects_country_code();
         clicks_on_confirm_button();
         message_will_be_appear_on_the_bottom();
         user_will_land_on_user_contact_details();

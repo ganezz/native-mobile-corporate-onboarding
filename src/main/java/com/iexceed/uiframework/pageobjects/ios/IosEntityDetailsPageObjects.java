@@ -84,7 +84,6 @@ public class IosEntityDetailsPageObjects {
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewUsrBtn);
         } else {
-            genericMethods.waitForVisibility(addNewUsrBtnArabic);
             genericMethods.click(addNewUsrBtnArabic);
 
         }
@@ -131,8 +130,7 @@ public class IosEntityDetailsPageObjects {
     }
 
     public void ios_addUserName(String userName, String limit, String type) throws Exception {
-        String regex = "@@^[-!@#%&()']*$/";
-        waitUtility.waitForSeconds(7);
+        waitUtility.waitForSeconds(2);
         genericMethods.click(username);
         iosUtility.clearText(username);
         if (type.equalsIgnoreCase("edit")) {
@@ -140,31 +138,7 @@ public class IosEntityDetailsPageObjects {
         } else {
             genericMethods.sendKeys(username, userName);
         }
-        String userNameTxt = genericMethods.getText(username);
-        int count = iosUtility.characterCount(userNameTxt);
-        log.info(count);
-
-
-        if (userName.isEmpty()) {
-            log.info("user name is empty");
-            genericMethods.click(email);
-        } else {
-            if (count <= Integer.parseInt(limit)) {
-                log.info("username is not empty");
-                if (userName.contains(regex)) {
-                    log.info("Invalid character in Name field");
-                    genericMethods.click(email);
-                } else {
-                    log.info("user enter valid name");
-                    genericMethods.click(email);
-                }
-            } else {
-                log.info("user name is more then limit value");
-                genericMethods.click(email);
-            }
-        }
         try {
-
             iosUtility.hideKeyboard();
         } catch (Exception e) {
             log.info("keyborad ia not alive");
@@ -192,13 +166,7 @@ public class IosEntityDetailsPageObjects {
         } catch (Exception e) {
             log.debug("keyboard is not alive");
         }
-        Boolean b = genericMethods.isElementPresent(confirmBtn);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.click(confirmBtn);
-        } else {
-            genericMethods.click(confirmBtnArabic);
-        }
-
+        genericMethods.click(confirmBtn);
     }
 
 
@@ -245,7 +213,7 @@ public class IosEntityDetailsPageObjects {
         Boolean b = genericMethods.isElementPresent(countryField);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(countryField);
-            genericMethods.waitForVisibility(searchField);
+            waitUtility.waitForSeconds(2);
             genericMethods.click(searchField);
             genericMethods.sendKeys(searchField, countryCode);
             try {
@@ -269,12 +237,7 @@ public class IosEntityDetailsPageObjects {
 
     public void ios_clickCancelBtn() throws Exception {
         waitUtility.waitForSeconds(2);
-        Boolean b = genericMethods.isElementPresent(cancelBtn);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.click(cancelBtn);
-        } else {
-            genericMethods.click(cancelBtnArabic);
-        }
+        genericMethods.click(cancelBtnArabic);
     }
 
 
