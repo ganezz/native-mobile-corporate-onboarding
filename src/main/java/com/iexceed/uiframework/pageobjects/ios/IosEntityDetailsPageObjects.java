@@ -224,7 +224,11 @@ public class IosEntityDetailsPageObjects {
             log.info(driver.findElements(countryList).size());
             iosUtility.selectionOfDropdown(countryCode, countryList);
         }
-
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void ios_enterMobNum(String mob) throws Exception {

@@ -151,7 +151,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     public void user_will_land_on_user_contact_details() throws Exception {
         log.info("user will land on User Contact Details");
         LoginPageDefinitions loginPageDefinitions = new LoginPageDefinitions();
-        loginPageDefinitions.user_will_landed_on_dashboard_page();
+        loginPageDefinitions.click_add_new_application();
     }
 
     @Then("proper error message should display under mobile field$")
@@ -187,7 +187,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     @Then("user will stay on User Contact Details screen$")
     public void user_will_stay_on_user_contact_details_screen() throws Exception {
         log.info("user will stay on User Contact Details screen ");
-        loginPageDefinitions.user_will_landed_on_dashboard_page();
+        loginPageDefinitions.click_add_new_application();
     }
 
     @And("clicks Yes button (.+)$")
@@ -204,13 +204,13 @@ public class EntityDetailsPageDefinitions extends TestBase {
 
     @Then("user will stay on Add A New User screen$")
     public void user_will_stay_on_add_a_new_user_screen() throws Exception {
-        loginPageDefinitions.user_will_landed_on_dashboard_page();
+        loginPageDefinitions.click_add_new_application();
     }
 
     @And("enters all the details in Add A New User screen$")
     public void enters_all_the_details_in_add_a_new_user_screen() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
-        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"");
+        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"edit");
         user_input_invalid_email_address();
         user_selects_country_code();
     }
@@ -255,7 +255,7 @@ public class EntityDetailsPageDefinitions extends TestBase {
     @And("user fills all new user details$")
     public void user_fills_all_new_user_details() throws Exception {
         EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
-        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"edit");
+        EntityDetailsPageAction.EnterUSerName(datalist.get("userName"), datalist.get("limitCheck"),"");
         user_input_invalid_email_address();
         user_selects_country_code();
         clicks_on_confirm_button();

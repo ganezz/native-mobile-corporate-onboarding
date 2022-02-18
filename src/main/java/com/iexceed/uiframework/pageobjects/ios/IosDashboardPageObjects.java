@@ -101,8 +101,6 @@ public class IosDashboardPageObjects extends TestBase {
             log.info("user in dashboardPage");
         } else if (Boolean.TRUE.equals(b1)) {
             log.info("user in dashboardPage");
-        } else {
-            log.debug("dashboard page is not launched");
         }
 
     }

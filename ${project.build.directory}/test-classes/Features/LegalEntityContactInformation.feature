@@ -11,7 +11,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -33,14 +34,14 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | TestCase_090 |
 
 
-
   @2
   Scenario Outline: Validate Company Website, optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -69,7 +70,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -86,7 +88,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -115,7 +118,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -142,7 +146,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -171,7 +176,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -197,7 +203,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -219,7 +226,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -246,7 +254,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -271,7 +280,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -296,7 +306,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -315,7 +326,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
@@ -334,7 +346,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>

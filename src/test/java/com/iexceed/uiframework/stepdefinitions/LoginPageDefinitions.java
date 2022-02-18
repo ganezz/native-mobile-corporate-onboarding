@@ -135,8 +135,8 @@ public class LoginPageDefinitions extends TestBase {
     }
 
 
-    @Then("user will landed on Dashboard page$")
-    public void user_will_landed_on_dashboard_page() throws Exception {
+    @Then("click add New Application$")
+    public void click_add_new_application() throws Exception {
         LoginPageAction LoginPageAction = new LoginPageAction();
         LoginPageAction.verifyPageNavigation(deviceConfig.get("platform"));
         log.info("user will landed on Legal Entity User Details");

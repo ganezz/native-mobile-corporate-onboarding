@@ -9,7 +9,8 @@ Feature: Validating buttons in Login screen of APZ_NMCO_ONB
     And user in Login screen <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     Examples:
       | testcase |
       | TestCase_001 |

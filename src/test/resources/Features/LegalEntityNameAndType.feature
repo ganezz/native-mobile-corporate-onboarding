@@ -20,7 +20,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks on Entity Legal Name field <testcase>
@@ -48,7 +49,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks on Trade Name field <testcase>
@@ -76,7 +78,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And enters details in other fields of Entity name and type screen <testcase>
@@ -106,7 +109,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And enters details in other fields of Entity name and type screen <testcase>
@@ -126,7 +130,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks on Previously trading as field <testcase>
@@ -151,7 +156,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks Cancel in New User
@@ -169,7 +175,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And clicks Cancel in Entity name & type screen
@@ -187,7 +194,8 @@ Feature: Validating Entity Name And Type screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on Continue Button
     When user is in Entity name & type screen <testcase>
     And enters all mandatory fields <testcase>

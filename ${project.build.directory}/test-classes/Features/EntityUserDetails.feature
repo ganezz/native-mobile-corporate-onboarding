@@ -10,7 +10,8 @@ Feature: Validating User Contact Details screen in NM_CO
     And user in Login screen <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
@@ -22,12 +23,12 @@ Feature: Validating User Contact Details screen in NM_CO
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
-    And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
-      | testcase     |
+      | testcase      |
       | TestCase_0001 |
 
   @c
@@ -36,7 +37,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And user input invalid Name
@@ -61,7 +63,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And user input invalid Email Address
@@ -87,13 +90,12 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all details in Add A New User screen
     And user selects Country Code
-    And lands on new screen with the drop down values and search option
-    And selects a value
     Then user is displayed with the selected value in Code field
     And clicks on Confirm button
     Then user will land on User Contact Details
@@ -111,7 +113,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all details in Add A New User screen
@@ -135,7 +138,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And clicks Cancel in New User
@@ -155,7 +159,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And clicks Cancel in New User
@@ -173,7 +178,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all the details in Add A New User screen
@@ -187,14 +193,14 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_100 |
 
 
-
   @1
   Scenario Outline: Validate + Add A New User Button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     Then user will landed on the New User screen
     Examples:
@@ -208,7 +214,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on search field
     Then user is shown with a editable text field with a cancel button
     And user enters text and clicks on cancel button
@@ -224,7 +231,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks on search field
     Then user is shown with a editable text field with a cancel button
     And user enters text and clicks on cancel button
@@ -238,7 +246,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu
     Then user able to do swipe left and right side drawer menu
     Examples:
@@ -246,13 +255,14 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_003 |
       | TestCase_102 |
 
-@e
+  @e
   Scenario Outline: Validate Edit button in User List
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And enters all the details in Add A New User screen
     And clicks on Confirm button
@@ -270,7 +280,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And enters all the details in Add A New User screen
     And clicks on Confirm button
@@ -284,13 +295,14 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_021 |
       | TestCase_103 |
 
-@g
+  @g
   Scenario Outline: Validate Delete button in User List and click No button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And enters all the details in Add A New User screen
     And clicks on Confirm button
@@ -309,7 +321,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Cancel button
     Then user will prompt to ask about confirmation
     And clicks Yes button <testcase>
@@ -325,7 +338,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Cancel button
     Then user will prompt to ask about confirmation
     And clicks No button
@@ -341,7 +355,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user will landed on the New User screen
     And enters all the details in Add A New User screen
@@ -360,7 +375,8 @@ Feature: Validating User Contact Details screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And clicks Add A New User button
     And user fills all new user details
     And clicks Edit button

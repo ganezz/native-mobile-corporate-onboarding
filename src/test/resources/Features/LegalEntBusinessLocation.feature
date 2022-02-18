@@ -10,7 +10,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -37,7 +38,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -62,7 +64,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -81,7 +84,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -100,7 +104,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -121,7 +126,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -147,7 +153,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -175,7 +182,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -195,7 +203,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -215,7 +224,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -239,7 +249,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks on toggle
@@ -261,7 +272,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -277,7 +289,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     And clicks Add A New Location button
     Then user lands on Add A New Location screen
@@ -304,7 +317,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -329,7 +343,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Location button
@@ -354,7 +369,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -369,7 +385,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -397,7 +414,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -421,7 +439,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
@@ -445,7 +464,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And click Application Cancel button
@@ -463,7 +483,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And click Application Cancel button
@@ -481,7 +502,8 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
     And user fills all mandatory values <testcase>

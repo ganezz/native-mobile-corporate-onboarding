@@ -10,7 +10,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -20,13 +21,14 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_169 |
       | TestCase_170 |
 
-    @2
+  @2
   Scenario Outline: Validate Type of Industry, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -40,13 +42,14 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_169 |
       | TestCase_170 |
 
-      @3
+  @3
   Scenario Outline: Validate Section, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -61,13 +64,14 @@ Feature: Validating Industry screen in NM_CO
       | TestCase_170 |
 
 
-        @4
+  @4
   Scenario Outline: Validate Division, Drop down, Mandatory Field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -88,7 +92,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -110,7 +115,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -134,7 +140,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -153,7 +160,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -172,7 +180,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -195,7 +204,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -221,7 +231,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen Screen <testcase>
     And clicks Add A New Industry button
@@ -245,7 +256,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks Add A New Industry button
@@ -270,7 +282,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And click Application Cancel button
@@ -288,7 +301,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And click Application Cancel button
@@ -305,7 +319,8 @@ Feature: Validating Industry screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Industry
     When user is in Industry screen <testcase>
     And clicks on Continue Button

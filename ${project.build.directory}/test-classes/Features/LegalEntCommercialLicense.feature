@@ -10,7 +10,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And clicks on Commercial license number <testcase>
@@ -35,7 +36,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And clicks on Commercial licence issued by <testcase>
@@ -59,7 +61,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And clicks on Business activities
@@ -83,7 +86,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And clicks on Commercial licence issue date and selects a past date from the calendar
@@ -100,7 +104,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And clicks on Commercial licence expiry date selects a future date from the calendar
@@ -116,7 +121,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And click Application Cancel button
@@ -134,7 +140,8 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And click Application Cancel button
@@ -142,7 +149,7 @@ Feature: Validating Commercial License screen in NM_CO
     And click on Ok button
     Then user lands on Dashboard
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_179 |
       | TestCase_185 |
 
@@ -152,13 +159,14 @@ Feature: Validating Commercial License screen in NM_CO
     When clicks language dropDown choose language <testcase>
     When enter username and password <testcase>
     And click login button
-    Then user will landed on Dashboard page
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes the side menu and select Commercial licence
     And user is in Commercial License screen
     And fills valid data in Commercial licence number, Commercial licence issued by, Business activities,Commercial licence issue date, Commercial licence expiry date <testcase>
     And clicks on Continue Button
     Then user lands on Source of Funds screen
     Examples:
-      | testcase |
+      | testcase     |
       | TestCase_187 |
       | TestCase_188 |
