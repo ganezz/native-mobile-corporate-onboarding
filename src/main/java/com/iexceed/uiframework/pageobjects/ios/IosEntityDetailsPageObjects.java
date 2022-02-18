@@ -164,7 +164,7 @@ public class IosEntityDetailsPageObjects {
         try {
             iosUtility.hideKeyboard();
         } catch (Exception e) {
-            log.debug("keyboard is not alive");
+          log.debug(e);
         }
         genericMethods.click(confirmBtn);
     }
@@ -236,7 +236,11 @@ public class IosEntityDetailsPageObjects {
         genericMethods.click(mobileNo);
         iosUtility.clearText(mobileNo);
         genericMethods.sendKeys(mobileNo, mob);
-
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void ios_clickCancelBtn() throws Exception {
