@@ -102,9 +102,9 @@ Feature: Validating User Contact Details screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_012 |
-#      | TestCase_017 |
-#      | TestCase_091 |
-#      | TestCase_092 |
+      | TestCase_017 |
+      | TestCase_091 |
+      | TestCase_092 |
 
 
   @mob

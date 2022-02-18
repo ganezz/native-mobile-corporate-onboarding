@@ -425,12 +425,13 @@ public class EntityDetailsPageObjects {
     public void clickContinueBtn() throws Exception {
         waitUtility.waitForSeconds(2);
         driver.hideKeyboard();
-        try {
+        Boolean b = genericMethods.isElementPresent(continueBtn);
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(continueBtn);
-        } catch (Exception e) {
-            waitUtility.waitForSeconds(2);
+        } else {
             genericMethods.click(continueBtnArabic);
-                   }
+        }
+
     }
 
 }

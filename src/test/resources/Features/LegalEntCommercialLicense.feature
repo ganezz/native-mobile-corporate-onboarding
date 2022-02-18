@@ -153,7 +153,7 @@ Feature: Validating Commercial License screen in NM_CO
       | TestCase_179 |
       | TestCase_185 |
 
-
+@continue
   Scenario Outline: validating Commercial License Continue button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>

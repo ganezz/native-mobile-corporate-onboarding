@@ -89,13 +89,8 @@ public class IosEntityDetailsPageObjects {
         }
     }
 
-    public void ios_swipingHamburgerMenu() throws InterruptedException {
-        try {
-            genericMethods.waitForVisibility(addNewUsrBtn);
-        } catch (Exception e) {
-            log.debug(e);
-            genericMethods.waitForVisibility(addNewUsrBtnArabic);
-        }
+    public void ios_swipingHamburgerMenu() throws Exception {
+        waitUtility.waitForSeconds(3);
         genericMethods.click(hamBurgerMenu);
         Boolean b = genericMethods.isElementPresent(menuList);
         if (Boolean.TRUE.equals(b)) {
@@ -164,7 +159,7 @@ public class IosEntityDetailsPageObjects {
         try {
             iosUtility.hideKeyboard();
         } catch (Exception e) {
-          log.debug(e);
+            log.debug(e);
         }
         genericMethods.click(confirmBtn);
     }
@@ -251,27 +246,24 @@ public class IosEntityDetailsPageObjects {
 
     public void ios_isYesNoBtnPresentConfirmation() throws InterruptedException {
         try {
+            waitUtility.waitForSeconds(3);
             Boolean b = genericMethods.isElementPresent(confirmationMsg);
             Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsg);
             if (Boolean.TRUE.equals(b)) {
-                genericMethods.waitForVisibility(confirmationMsg);
-                log.info(genericMethods.isElementPresent(confirmationMsg));
+                genericMethods.isElementPresent(confirmationMsg);
             } else if (Boolean.TRUE.equals(b1)) {
                 genericMethods.isElementPresent(deleteConfirmationMsg);
             } else {
-                genericMethods.waitForVisibility(confirmationMsg1);
                 genericMethods.isElementPresent(confirmationMsg1);
             }
         } catch (Exception e) {
             Boolean c = genericMethods.isElementPresent(confirmationMsgArabic);
             Boolean c1 = genericMethods.isElementPresent(deleteConfirmationMsgArabic);
             if (Boolean.TRUE.equals(c)) {
-                genericMethods.waitForVisibility(confirmationMsgArabic);
                 log.info(genericMethods.isElementPresent(confirmationMsgArabic));
             } else if (Boolean.TRUE.equals(c1)) {
                 genericMethods.isElementPresent(deleteConfirmationMsgArabic);
             } else {
-                genericMethods.waitForVisibility(confirmationMsg1Arabic);
                 genericMethods.isElementPresent(confirmationMsg1Arabic);
             }
         }
