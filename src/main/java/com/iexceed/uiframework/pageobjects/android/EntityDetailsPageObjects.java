@@ -84,7 +84,7 @@ public class EntityDetailsPageObjects {
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewUsrBtn);
         } else {
-             genericMethods.click(addNewUsrBtnArabic);
+            genericMethods.click(addNewUsrBtnArabic);
 
         }
     }
@@ -124,14 +124,14 @@ public class EntityDetailsPageObjects {
 
     }
 
-    public void addUserName(String userName, String limit,String type) throws Exception {
+    public void addUserName(String userName, String limit, String type) throws Exception {
         String regex = "@@^[-!@#%&()']*$/";
         waitUtility.waitForSeconds(7);
         genericMethods.click(editField);
         androidUtility.clearText(editField);
-        if(type.equalsIgnoreCase("edit")) {
+        if (type.equalsIgnoreCase("edit")) {
             genericMethods.sendKeys(editField, "jackyChan");
-        }else{
+        } else {
             genericMethods.sendKeys(editField, userName);
         }
         String userNameTxt = genericMethods.getText(editField);
@@ -424,7 +424,11 @@ public class EntityDetailsPageObjects {
 
     public void clickContinueBtn() throws Exception {
         waitUtility.waitForSeconds(2);
-        driver.hideKeyboard();
+        try {
+            driver.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
         Boolean b = genericMethods.isElementPresent(continueBtn);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(continueBtn);
