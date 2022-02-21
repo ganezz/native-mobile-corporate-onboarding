@@ -58,7 +58,11 @@ public class IosEntityNameTypePageObjects {
         genericMethods.click(entityLegalName);
         driver.findElement(entityLegalName).clear();
         genericMethods.sendKeys(entityLegalName, entityName);
-
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
 
     }
 
@@ -66,7 +70,11 @@ public class IosEntityNameTypePageObjects {
         genericMethods.click(tradeName);
         driver.findElement(tradeName).clear();
         genericMethods.sendKeys(tradeName, tradename);
-
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void ios_enterPreviouslyKnown(String previouslyKnown) {
@@ -81,7 +89,11 @@ public class IosEntityNameTypePageObjects {
         genericMethods.click(previoslyTradeAs);
         driver.findElement(previoslyTradeAs).clear();
         genericMethods.sendKeys(previoslyTradeAs, previouslyTrade);
-
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void enterLegalEntityType(String entityType) throws Exception {
@@ -107,10 +119,20 @@ public class IosEntityNameTypePageObjects {
            values=count.getAttribute("label");
         }
         Assert.assertEquals(entityType,"Bank");
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void clickOtherField() {
         genericMethods.click(searchField);
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void ios_fieldValidationMsg() throws InterruptedException {
@@ -129,6 +151,11 @@ public class IosEntityNameTypePageObjects {
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic1));
         }else{
             log.debug("entered valid fields");
+        }
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
         }
     }
 
