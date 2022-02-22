@@ -14,63 +14,63 @@ Feature: Validating Entity Name And Type screen in NM_CO
 #    And clicks on Continue Button
 
 
-#  @1
-#  Scenario Outline: Validate Entity Legal Name, mandatory field with Max 100 characters and special characters allowed
-#    And user in Login screen <testcase>
-#    When clicks language dropDown choose language <testcase>
-#    When enter username and password <testcase>
-#    And click login button
-#    Then user lands on Dashboard
-#    Then click add New Application
-#    And clicks on Continue Button
-#    When user is in Entity name & type screen <testcase>
-#    And clicks on Entity Legal Name field <testcase>
-#    And user inputs invalid Name
-#    And clicks on other field
-#    Then error message should be displayed under Entity name & type field
-#    Examples:
-#      | testcase     |
-#      | TestCase_025 |
-#      | TestCase_026 |
-#      | TestCase_027 |
-#      | TestCase_028 |
-#      | TestCase_029 |
-#      | TestCase_030 |
-#      | TestCase_105 |
-#      | TestCase_106 |
-#      | TestCase_107 |
-#      | TestCase_108 |
-#      | TestCase_109 |
-#      | TestCase_110 |
-#
-#  @2
-#  Scenario Outline: Validate Trade Name(s), optional field with Max 100 characters and special characters allowed
-#    And user in Login screen <testcase>
-#    When clicks language dropDown choose language <testcase>
-#    When enter username and password <testcase>
-#    And click login button
-#    Then user lands on Dashboard
-#    Then click add New Application
-#    And clicks on Continue Button
-#    When user is in Entity name & type screen <testcase>
-#    And clicks on Trade Name field <testcase>
-#    And user inputs invalid Name
-#    And clicks on other field
-#    Then error message should be displayed under Trade Name field
-#    Examples:
-#      | testcase     |
-#      | TestCase_031 |
-#      | TestCase_032 |
-#      | TestCase_033 |
-#      | TestCase_034 |
-#      | TestCase_035 |
-#      | TestCase_036 |
-#      | TestCase_111 |
-#      | TestCase_112 |
-#      | TestCase_113 |
-#      | TestCase_114 |
-#      | TestCase_115 |
-#      | TestCase_116 |
+  @1
+  Scenario Outline: Validate Entity Legal Name, mandatory field with Max 100 characters and special characters allowed
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
+    And clicks on Continue Button
+    When user is in Entity name & type screen <testcase>
+    And clicks on Entity Legal Name field <testcase>
+    And user inputs invalid Name
+    And clicks on other field
+    Then error message should be displayed under Entity name & type field
+    Examples:
+      | testcase     |
+      | TestCase_025 |
+      | TestCase_026 |
+      | TestCase_027 |
+      | TestCase_028 |
+      | TestCase_029 |
+      | TestCase_030 |
+      | TestCase_105 |
+      | TestCase_106 |
+      | TestCase_107 |
+      | TestCase_108 |
+      | TestCase_109 |
+      | TestCase_110 |
+
+  @2
+  Scenario Outline: Validate Trade Name(s), optional field with Max 100 characters and special characters allowed
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
+    And clicks on Continue Button
+    When user is in Entity name & type screen <testcase>
+    And clicks on Trade Name field <testcase>
+    And user inputs invalid Name
+    And clicks on other field
+    Then error message should be displayed under Trade Name field
+    Examples:
+      | testcase     |
+      | TestCase_031 |
+      | TestCase_032 |
+      | TestCase_033 |
+      | TestCase_034 |
+      | TestCase_035 |
+      | TestCase_036 |
+      | TestCase_111 |
+      | TestCase_112 |
+      | TestCase_113 |
+      | TestCase_114 |
+      | TestCase_115 |
+      | TestCase_116 |
 
   @3
   Scenario Outline: Validate Previously known as, optional field with Max 100 characters and special characters allowed
