@@ -26,6 +26,7 @@ public class IosEntityNameTypePageObjects {
     }
 
     By searchField = By.xpath("//XCUIElementTypeSearchField[@name='SearchTextField']");
+    By searchFieldList = By.xpath("//XCUIElementTypeTextField[@name='SearchTextField']");
     By fieldValidationMsg = By.xpath("//XCUIElementTypeStaticText[@name='Please enter this field']");
     By fieldValidationMsg1 = By.xpath("//XCUIElementTypeStaticText[@name='Please enter valid field']");
     By fieldValidationMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='الرجاء إدخال هذا الحقل']");
@@ -98,9 +99,9 @@ public class IosEntityNameTypePageObjects {
 
     public void enterLegalEntityType(String entityType) throws Exception {
         genericMethods.click(typeDropDown);
-        waitUtility.waitForSeconds(1);
-        genericMethods.click(searchField);
-        genericMethods.sendKeys(searchField, entityType);
+        waitUtility.waitForSeconds(2);
+        genericMethods.click(searchFieldList);
+        genericMethods.sendKeys(searchFieldList, entityType);
         try {
             iosUtility.hideKeyboard();
         } catch (Exception e) {
