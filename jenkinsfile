@@ -54,7 +54,7 @@ spec: '''{
 "files": [
 {
 "pattern": "Native_Mobile_Automation.zip",
-"target": "native_mobile/1.0.0/automation/"
+"target": "native_mobile/1.0.0/"
 }
 
 ]
