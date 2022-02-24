@@ -39,7 +39,7 @@ stage('prepare release bundle'){
                                         sh 'rm -rf .git'
                                         sh 'rm -rf .gitignore'
                                         sh 'rm -rf jenkinsfile'
-                                        sh 'cp  jfrog/com/iexceed/appzillon-automation-framework/1.0-SNAPSHOT /var/snap/jenkins/2126/workspace/SME-Onboarding-ReleaseBundleCreation_Automation/AAF-jar-with-dependencies.jar'
+                                        sh 'cp  jfrog/com/iexceed/appzillon-automation-framework/1.0-SNAPSHOT /var/snap/jenkins/2126/workspace/Native_Mobile_Corporate_Onboard_BundleCreation/AAF-jar-with-dependencies.jar'
                                         sh 'rm -rf jfrog'
                                         sh 'zip -r Native_Mobile_Automation.zip *'
                                         }
