@@ -48,6 +48,7 @@ stage('prepare release bundle'){
 stage ('Upload jar file') {
 steps {
 
+
 rtUpload (
 serverId: 'jfrog-artifactory',
 spec: '''{
