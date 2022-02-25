@@ -43,7 +43,7 @@ public class SourceofFundPageObjects {
     By snackBarMsgArabic = By.xpath("//android.view.View[@text='نجاح ! تمت إضافة مصدر الأموال بنجاح']");
     By closeBtn = By.xpath("//android.view.View[@text='Close']");
     By closeBtnArabic = By.xpath("//android.view.View[@text='قريب']");
-    By snackBarEditMsg = By.xpath("//android.view.View[@text='Edit ! Source of Funds edited successfully'] Source of Funds added successfully']");
+    By snackBarEditMsg = By.xpath("//android.view.View[@text='Edit ! Source of Funds edited successfully']");
     By snackBarEditMsgArabic = By.xpath("//android.view.View[@text='يحرر ! تم تحرير مصدر الأموال بنجاح']");
     By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit']");
     By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تعديل']");
@@ -85,12 +85,16 @@ public class SourceofFundPageObjects {
         genericMethods.click(searchBox);
         if(edit.equalsIgnoreCase("edit")) {
             genericMethods.sendKeys(searchBox, "Shareholders account");
+            log.info(driver.findElements(viewField).size());
+            List<WebElement> tempSectionList = driver.findElements(viewField);
+            androidUtility.selectionOfDropdown("Shareholders account", tempSectionList);
         }else{
             genericMethods.sendKeys(searchBox, fund);
+            log.info(driver.findElements(viewField).size());
+            List<WebElement> tempSectionList = driver.findElements(viewField);
+            androidUtility.selectionOfDropdown(fund, tempSectionList);
         }
-        log.info(driver.findElements(viewField).size());
-        List<WebElement> tempSectionList = driver.findElements(viewField);
-        androidUtility.selectionOfDropdown(fund, tempSectionList);
+
     }
 
     public void chooseCountry(String country) throws Exception {
@@ -110,7 +114,15 @@ public class SourceofFundPageObjects {
     }
 
     public void enterReasonForFund(String reason) throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(1);
+        Boolean b = genericMethods.isElementPresent(fundReason);
+        if (Boolean.TRUE.equals(b)) {
+            driver.findElement(fundReason).click();
+            driver.findElement(fundReason).clear();
+        } else  {
+            driver.findElement(fundReasonArabic).click();
+            driver.findElement(fundReasonArabic).clear();
+        }
         editField.findElements(driver).get(2).click();
         editField.findElements(driver).get(2).sendKeys(reason);
     }
@@ -146,7 +158,8 @@ public class SourceofFundPageObjects {
         }
     }
 
-    public void isEditSnackBarMsgPresent() throws InterruptedException {
+    public void isEditSnackBarMsgPresent() throws Exception {
+        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(snackBarEditMsg);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(closeBtn);

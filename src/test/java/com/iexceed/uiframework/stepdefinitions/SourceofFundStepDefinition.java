@@ -101,7 +101,6 @@ public class SourceofFundStepDefinition extends TestBase {
     @And("edits one or more fields in source screen$")
     public void edits_one_or_more_fields_in_source_screen() throws Exception {
         sourceofFundPageActions.chooseSourceOfFund(datalist.get("SourceOfFunds"),"edit");
-        sourceofFundPageActions.chooseCountry(datalist.get("countryCode"));
         sourceofFundPageActions.enterSourcFundReason(datalist.get("ElabrationReason"));
     }
     @Then("user displayed with edited values in Source of funds details screen$")
@@ -110,7 +109,7 @@ public class SourceofFundStepDefinition extends TestBase {
     }
 
     @And("user displayed with Successfully Edited source snack bar Message$")
-    public void user_displayed_with_successfully_edited_source_snack_bar_message() throws InterruptedException {
+    public void user_displayed_with_successfully_edited_source_snack_bar_message() throws Exception {
         sourceofFundPageActions.isEditSnackMsgPresent();
     }
     @And("user lands on Source of funds screen$")

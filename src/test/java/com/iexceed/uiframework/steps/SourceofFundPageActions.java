@@ -94,7 +94,7 @@ public class SourceofFundPageActions {
             sourceofFundPageObjects.isEnteredDetailsPresent(sourceFund,country,reason);
         }
     }
-    public void isEditSnackMsgPresent() throws InterruptedException {
+    public void isEditSnackMsgPresent() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
