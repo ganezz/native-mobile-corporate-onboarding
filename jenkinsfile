@@ -54,7 +54,7 @@ serverId: 'jfrog-artifactory',
 spec: '''{
 "files": [
 {
-"pattern": "Native_Mobile_Automation.zip",
+"pattern": "Native_Mobile_Automation1.0.0.zip",
 "target": "native-mobile"
 }
 
