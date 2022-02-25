@@ -68,7 +68,7 @@ spec: '''{
 
 stage ('Test') {
 steps {
-sh 'mvn clean compile -Dcucumber.filter.tags="@regressionLoginPage" -Dapp.url=${app.url}'
+sh 'mvn clean compile'
 }
 
 }
