@@ -68,7 +68,7 @@ spec: '''{
 
 stage ('Test') {
 steps {
-sh 'mvn test verify -Dcucumber.filter.tags="@regressionLoginPage"'
+sh 'mvn compile verify -Dcucumber.filter.tags="@regressionLoginPage" -Dapp.url=https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.21-24-02-2022-13:09.apk '
 }
 
 }
