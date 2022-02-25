@@ -41,7 +41,7 @@ stage('prepare release bundle'){
                                         sh 'rm -rf jenkinsfile'
                                         sh 'cp  jfrog/com/iexceed/appzillon-automation-framework/1.0-SNAPSHOT /var/snap/jenkins/2126/workspace/Native_Mobile_Corporate_Onboard_BundleCreation/AAF-jar-with-dependencies.jar'
                                         sh 'rm -rf jfrog'
-                                        sh 'zip -r Native_Mobile_Automation.zip *'
+                                        sh 'zip -r Native_Mobile_Automation1-0-0.zip *'
                                         }
                                         }
 
@@ -54,7 +54,7 @@ serverId: 'jfrog-artifactory',
 spec: '''{
 "files": [
 {
-"pattern": "Native_Mobile_Automation1-0-0.zip",
+"pattern": "Native_Mobile_Automation.zip",
 "target": "native-mobile"
 }
 

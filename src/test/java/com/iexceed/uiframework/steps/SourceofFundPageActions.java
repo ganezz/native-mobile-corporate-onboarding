@@ -102,4 +102,23 @@ public class SourceofFundPageActions {
         }
     }
 
+
+    public void clickSourceFundEditBtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            sourceofFundPageObjects.clickEditBtn();
+        }
+    }
+
+    public void clickSourceFundDeleteIcon() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            sourceofFundPageObjects.clickDeleteBtn();
+        }
+    }
+
+
+
 }

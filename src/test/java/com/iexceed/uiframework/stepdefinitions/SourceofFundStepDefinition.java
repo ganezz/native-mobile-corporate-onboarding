@@ -135,8 +135,14 @@ public class SourceofFundStepDefinition extends TestBase {
     public void user_lands_on_source_of_wealth_screen(){
        log.debug("user lands on Source of wealth screen");
     }
-
-
+    @And("clicks on sourcrfund Edit button$")
+    public void clicks_on_sourcrfund_edit_button() throws InterruptedException {
+        sourceofFundPageActions.clickSourceFundEditBtn();
+    }
+    @And("clicks on sourceFund Delete button$")
+    public void clicks_on_sourcefund_delete_button() throws InterruptedException {
+        sourceofFundPageActions.clickSourceFundDeleteIcon();
+    }
 }
 
 

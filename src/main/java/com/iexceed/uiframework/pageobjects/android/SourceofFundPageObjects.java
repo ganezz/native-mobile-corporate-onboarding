@@ -45,7 +45,10 @@ public class SourceofFundPageObjects {
     By closeBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By snackBarEditMsg = By.xpath("//android.view.View[@text='Edit ! Source of Funds edited successfully'] Source of Funds added successfully']");
     By snackBarEditMsgArabic = By.xpath("//android.view.View[@text='يحرر ! تم تحرير مصدر الأموال بنجاح']");
-
+    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit']");
+    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تعديل']");
+    By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete']");
+    By deleteButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='حذف']");
 
     public void selectSourceOfFund() throws Exception {
         androidUtility.swipingHamburgerMenu();
@@ -161,4 +164,26 @@ public class SourceofFundPageObjects {
             androidUtility.selectionItemVisible(reason, tempUserDetails);
 
     }
+    public void clickEditBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(editButton);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(editButton);
+        } else {
+            genericMethods.click(editButtonArabic);
+        }
+    }
+
+    public void clickDeleteBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(deleteButton);
+
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(deleteButton);
+        } else {
+            genericMethods.click(deleteButtonArabic);
+        }
+
+    }
+
+
+
 }
