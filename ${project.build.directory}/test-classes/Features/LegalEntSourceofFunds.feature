@@ -81,9 +81,9 @@ Feature: Validating Source of funds screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_191 |
-      | TestCase_192 |
-      | TestCase_193 |
+      | TestCase_196 |
       | TestCase_194 |
+      | TestCase_195 |
 
   @5
   Scenario Outline: validating Add A New Source of Funds Screen Cancel button with Ok button
