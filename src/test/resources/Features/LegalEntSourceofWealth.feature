@@ -123,6 +123,7 @@ Feature: Validating Source of Wealth screen in NM_CO
       | TestCase_192 |
       | TestCase_193 |
 
+    @edit
   Scenario Outline: validating Edit button in Source of Wealth List
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>

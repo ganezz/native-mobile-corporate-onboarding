@@ -79,7 +79,7 @@ public class SourceofWealthPageObjects {
             genericMethods.sendKeys(searchBox, "Employment income");
             log.info(driver.findElements(viewField).size());
             List<WebElement> tempSectionList = driver.findElements(viewField);
-            androidUtility.selectionOfDropdown("Shareholders account", tempSectionList);
+            androidUtility.selectionOfDropdown("Employment income", tempSectionList);
         }else{
             genericMethods.sendKeys(searchBox, fund);
             log.info(driver.findElements(viewField).size());
@@ -116,8 +116,15 @@ public class SourceofWealthPageObjects {
     }
     public void enterReasonForFund(String reason) throws Exception {
         waitUtility.waitForSeconds(1);
-        editField.findElements(driver).get(1).clear();
-        editField.findElements(driver).get(1).click();
+        Boolean b = genericMethods.isElementPresent(sourceWealthReason);
+        if (Boolean.TRUE.equals(b)) {
+            driver.findElement(sourceWealthReason).click();
+            driver.findElement(sourceWealthReason).clear();
+        } else  {
+            driver.findElement(sourceWealthReasonArabic).click();
+            driver.findElement(sourceWealthReasonArabic).clear();
+        }
+         editField.findElements(driver).get(1).click();
         editField.findElements(driver).get(1).sendKeys(reason);
     }
 
