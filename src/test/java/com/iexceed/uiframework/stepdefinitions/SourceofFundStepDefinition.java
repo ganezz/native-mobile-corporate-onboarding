@@ -102,6 +102,7 @@ public class SourceofFundStepDefinition extends TestBase {
     public void edits_one_or_more_fields_in_source_screen() throws Exception {
         sourceofFundPageActions.chooseSourceOfFund(datalist.get("SourceOfFunds"),"edit");
         sourceofFundPageActions.enterSourcFundReason(datalist.get("ElabrationReason"));
+        sourceofFundPageActions.enterSourcFundReason(datalist.get("ElabrationReason"));
     }
     @Then("user displayed with edited values in Source of funds details screen$")
     public void user_displayed_with_edited_values_in_source_of_funds_details_screen() throws Exception {
