@@ -57,7 +57,6 @@ Feature: Validating Source of Wealth screen in NM_CO
     Then proper error message should display under Please elaborate on source of wealth screen
     Examples:
       | testcase     |
-      | testcase     |
       | TestCase_191 |
       | TestCase_196 |
       | TestCase_194 |
@@ -245,8 +244,6 @@ Feature: Validating Source of Wealth screen in NM_CO
     Then click add New Application
     And swipes the side menu and select SourceofWealth
     And user is in Source of Wealth screen
-    And fills valid data in Source of wealth field and Please elaborate
-    And clicks on Confirm button
     And clicks on Continue Button
     Then user lands on Product user management screen
     Examples:

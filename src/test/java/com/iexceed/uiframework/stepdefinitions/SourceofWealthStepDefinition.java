@@ -50,7 +50,7 @@ public class SourceofWealthStepDefinition extends TestBase {
     @And("clicks on Please elaborate on source of wealth screen (.+)$")
     public void clicks_on_please_elaborate_on_source_of_wealth_screen(String testcase) throws Exception {
         datalist = ExcelHandler.getTestDataInMap(props.getProperty("appSheetPath"), props.getProperty("appSheetName"), testcase);
-        sourceofFundPageActions.enterSourcFundReason(datalist.get("ElabrationReason"));
+        sourceofWealthPageActions.enterWealthReason(datalist.get("ElabrationReason"));
     }
 
     @Then("proper error message should display under Please elaborate on source of wealth screen$")
@@ -70,7 +70,7 @@ public class SourceofWealthStepDefinition extends TestBase {
     @And("fills valid data in Source of wealth field and Please elaborate$")
     public void fills_valid_data_in_source_of_wealth_field_and_please_elaborate() throws Exception {
         sourceofWealthPageActions.selectSourceWealth(datalist.get("SourceOfWealth"),"");
-        sourceofFundPageActions.enterSourcFundReason(datalist.get("ElabrationReason"));
+        sourceofWealthPageActions.enterWealthReason(datalist.get("ElabrationReason"));
     }
     @And("user displayed with Successfulsource wealth snack bar Message$")
     public void user_displayed_with_successfulsource_wealth_snack_bar_message() throws InterruptedException {
@@ -94,7 +94,7 @@ public class SourceofWealthStepDefinition extends TestBase {
     @And("edits one or more fields source wealth screen in valid format$")
     public void edits_one_or_more_fields_source_wealth_screen_in_valid_format() throws Exception {
         sourceofWealthPageActions.selectSourceWealth(datalist.get("SourceOfWealth"),"edit");
-        sourceofFundPageActions.enterSourcFundReason(datalist.get("ElabrationReason"));
+        sourceofWealthPageActions.enterWealthReason(datalist.get("ElabrationReason"));
     }
     @And("user displayed with source wealth Successfully Edited snack bar Message$")
     public void user_displayed_with_source_wealth_successfully_edited_snack_bar_message() throws Exception {

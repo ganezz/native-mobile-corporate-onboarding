@@ -70,4 +70,12 @@ public class SourceofWealthPageActions {
         }
     }
 
+    public void enterWealthReason(String reason) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            sourceofWealthPageObjects.enterReasonForFund(reason);
+        }
+    }
+
 }

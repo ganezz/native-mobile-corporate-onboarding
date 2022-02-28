@@ -114,5 +114,18 @@ public class SourceofWealthPageObjects {
          androidUtility.selectionItemVisible(reason, tempUserDetails);
 
     }
+    public void enterReasonForFund(String reason) throws Exception {
+        waitUtility.waitForSeconds(1);
+        Boolean b = genericMethods.isElementPresent(sourceWealthReason);
+        if (Boolean.TRUE.equals(b)) {
+            driver.findElement(sourceWealthReason).click();
+            driver.findElement(sourceWealthReason).clear();
+        } else  {
+            driver.findElement(sourceWealthReasonArabic).click();
+            driver.findElement(sourceWealthReasonArabic).clear();
+        }
+        editField.findElements(driver).get(1).click();
+        editField.findElements(driver).get(1).sendKeys(reason);
+    }
 
 }
