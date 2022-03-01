@@ -34,6 +34,13 @@ public class EntityNameTypePageObjects {
     By searchField = By.xpath("//android.widget.EditText");
     By entityTypeList = By.xpath("//android.view.View");
     By entityTypeField = By.xpath("//android.view.View[@text='Legal entity type *']");
+    By entityTypeNameMenu = By.xpath("//android.view.View[@text='Entity Name and Type']");
+
+
+    public void selectEntityNameTypePage() throws Exception {
+        androidUtility.swipingHamburgerMenu();
+        genericMethods.click(entityTypeNameMenu);
+    }
 
     public void isEntityLegalPage() throws Exception {
         waitUtility.waitForSeconds(3);

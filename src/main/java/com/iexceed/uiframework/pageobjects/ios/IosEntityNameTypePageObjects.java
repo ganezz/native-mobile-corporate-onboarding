@@ -41,6 +41,20 @@ public class IosEntityNameTypePageObjects {
     By continueBtn = By.xpath("//XCUIElementTypeButton[@name='Continue Button']");
     By entityTypeList = By.xpath("//XCUIElementTypeButton");
     By entityTypeField = By.xpath("//android.view.View[@text='Legal entity type *']");
+    By entityNameTypeMenu=By.xpath("//XCUIElementTypeButton[@name='Entity Name & Type']");
+
+
+    public void selectEntityNameTypeField() throws Exception {
+     iosUtility.ios_swipingHamburgerMenu();
+     waitUtility.waitForSeconds(1);
+     genericMethods.isElementPresent(entityNameTypeMenu);
+     try{
+     genericMethods.click(entityNameTypeMenu);}
+     catch(Exception e) {
+
+     }
+
+    }
 
     public void ios_isEntityLegalPage() throws Exception {
         waitUtility.waitForSeconds(3);

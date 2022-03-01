@@ -1,8 +1,8 @@
-@regressionEntityContactInformation
+@regressionIOSEntityContactInformation
 Feature: Validating Entity Contact Information screen in NM_CO
 
   Background: User should be able launch and login into App
-    Given user opens the App batch1
+    Given user opens the App batch5
 
 
   @1
@@ -13,7 +13,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks on Email Address field
     And user inputs invalid data
@@ -41,7 +42,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks on Company Website
     And user inputs invalid data
@@ -70,7 +72,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     Then user lands on Add A New Address screen
@@ -87,7 +90,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     And clicks on Unit no
@@ -116,7 +120,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     And clicks on Street field
@@ -143,7 +148,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     And clicks on city and post box
@@ -172,7 +178,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     And clicks on zipcode
@@ -198,7 +205,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     And clicks on County
@@ -220,7 +228,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     Then user lands on Add A New Address screen
@@ -247,7 +256,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     Then user lands on Add A New Address screen
@@ -272,7 +282,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Add A New Address button
     Then user lands on Add A New Address screen
@@ -297,7 +308,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Cancel button
     Then user will prompt to ask about confirmation
@@ -316,7 +328,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks Cancel button
     Then user will prompt to ask about confirmation
@@ -335,7 +348,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And swipes the side menu and select Entity contact
+    And clicks on Continue Button
+    And clicks on Continue Button
     When user is in Entity Contact Information screen <testcase>
     And clicks on Continue Button
     Then user lands on Business Location screen

@@ -14,6 +14,14 @@ public class EntityContactPageAction {
 
     }
 
+    public void selectEntityContactInfo() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            entityContactPage.selectEntityContactPage();
+        }
+    }
+
     public void isEntityContactInfoPage() throws Exception {
 
         if (platForm.equalsIgnoreCase("ios")) {

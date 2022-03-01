@@ -2,6 +2,7 @@ package com.iexceed.uiframework.domainobjects;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.pageobjects.ios.IosEntityDetailsPageObjects;
+import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -20,9 +21,15 @@ public class IOSUtility {
     private String stringmsg;
     By keyboardDone = By.xpath("//XCUIElementTypeButton[@name='Done']");
     By keyboardDoneArabic = By.xpath("//XCUIElementTypeButton[@name='تم']");
+    By hamBurgerMenu = By.xpath("//XCUIElementTypeButton[@name='DrawerButton']");
+    By menuList = By.xpath("//XCUIElementTypeButton[@name='User Contact Details. It is selected.']");
+    By menuListAbic = By.xpath("//XCUIElementTypeButton[@name='User Contact Details. تم تحديده.']");
+    WaitUtility waitUtility;
 
     public IOSUtility() {
-        genericMethods = genericMethods;
+
+        waitUtility = new WaitUtility();
+        genericMethods = new GenericMethods(driver);
     }
 
     public void scrollToElement(By elm) {
@@ -110,4 +117,18 @@ public class IOSUtility {
             }
         }
     }
+
+    public void ios_swipingHamburgerMenu() throws Exception {
+       waitUtility.waitForSeconds(1);
+        genericMethods.click(hamBurgerMenu);
+        Boolean b = genericMethods.isElementPresent(menuList);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("menu is swipped");
+        } else {
+            Boolean b1 = genericMethods.isElementPresent(menuListAbic);
+            log.debug(Boolean.TRUE.equals(b));
+        }
+
+    }
+
 }

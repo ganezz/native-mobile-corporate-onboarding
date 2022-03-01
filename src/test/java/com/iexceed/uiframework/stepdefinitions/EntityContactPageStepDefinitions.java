@@ -17,6 +17,11 @@ public class EntityContactPageStepDefinitions extends TestBase {
     EntityContactPageAction EntityContactPageActions = new EntityContactPageAction(deviceConfig.get("platform"));
     public static Logger log = LogManager.getLogger(EntityContactPageStepDefinitions.class);
 
+    @And("swipes the side menu and select Entity contact$")
+    public void swipes_the_side_menu_and_select_entity_contact() throws Exception {
+        EntityContactPageActions.selectEntityContactInfo();
+    }
+
     @Then("user lands on Entity Contact information screen$")
     public void user_lands_on_entity_contact_information_screen() throws Exception {
         EntityContactPageActions.isEntityContactInfoPage();

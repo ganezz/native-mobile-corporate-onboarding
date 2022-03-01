@@ -17,6 +17,11 @@ public class EntityNameTypePageDefinitions extends TestBase {
     EntityNameTypeAction legalEntityNameTypeAction =new EntityNameTypeAction(deviceConfig.get("platform"));
     public static Logger log = LogManager.getLogger(EntityNameTypePageDefinitions.class);
 
+    @And("swipes the side menu and select EntityNameType$")
+    public void swipes_the_side_menu_and_select_entitynametype() throws Exception {
+        legalEntityNameTypeAction.selectEntityNameTypeField();
+    }
+
     @When("user is in Entity name & type screen (.+)$")
     public void user_is_in_entity_name_type_screen(String testcase) throws Exception {
         legalEntityNameTypeAction.isEntityLegalPage();

@@ -1,7 +1,8 @@
-package com.iexceed.uiframework.pageobjects.android;
+package com.iexceed.uiframework.pageobjects.ios;
 
 import com.iexceed.uiframework.appium.GenericMethods;
 import com.iexceed.uiframework.domainobjects.AndroidUtility;
+import com.iexceed.uiframework.domainobjects.IOSUtility;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,16 +13,17 @@ import java.util.List;
 
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
-public class EntityContactPageObjects {
+public class IosEntityContactPageObjects {
     GenericMethods genericMethods;
     WaitUtility waitUtility;
-    private static final Logger log = LogManager.getLogger(EntityContactPageObjects.class);
+    private static final Logger log = LogManager.getLogger(IosEntityContactPageObjects.class);
+    IOSUtility iosUtility;
     AndroidUtility androidUtility;
-
-    public EntityContactPageObjects() {
+    public IosEntityContactPageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
-        androidUtility = new AndroidUtility();
+        iosUtility = new IOSUtility();
+
     }
 
     By entityContactInfoPage = By.xpath("//android.view.View[@text='Entity contact information']");
@@ -40,13 +42,7 @@ public class EntityContactPageObjects {
     By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By deleteConfirmationMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
     By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
-    By entityContactMenu = By.xpath("//android.view.View[@text='Entity Contact Info']");
 
-
-    public void selectEntityContactPage() throws Exception {
-        androidUtility.swipingHamburgerMenu();
-        genericMethods.click(entityContactMenu);
-    }
 
 
     public void isEntityContactPage() throws Exception {

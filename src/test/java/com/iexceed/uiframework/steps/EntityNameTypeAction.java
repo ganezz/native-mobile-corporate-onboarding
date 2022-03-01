@@ -15,6 +15,14 @@ public class EntityNameTypeAction {
         this.platForm = platform;
 
     }
+
+    public void selectEntityNameTypeField() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosEntityPage.selectEntityNameTypeField();
+        } else {
+            legalEntityNameTypePage.selectEntityNameTypePage();
+        }
+    }
     public void validateEntityName(String legalName)  {
         if (platForm.equalsIgnoreCase("ios")) {
             iosEntityPage.ios_enterLegalEntityName(legalName);
