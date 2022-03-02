@@ -18,7 +18,7 @@ public class EntityNameTypeAction {
 
     public void selectEntityNameTypeField() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
-            iosEntityPage.selectEntityNameTypeField();
+            iosEntityPage.selectEntityNameType();
         } else {
             legalEntityNameTypePage.selectEntityNameTypePage();
         }

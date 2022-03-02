@@ -98,11 +98,22 @@ public class EntityContactPageObjects {
 
     }
 
-    public void enterUnitNo(String unitno) {
-        editField.findElements(driver).get(1).click();
-        editField.findElements(driver).get(1).clear();
-        editField.findElements(driver).get(1).sendKeys(unitno);
-        editField.findElements(driver).get(2).click();
+    public void enterUnitNo(String unitno,String edit) {
+
+        if(edit.equalsIgnoreCase("edit")) {
+            editField.findElements(driver).get(1).click();
+            editField.findElements(driver).get(1).clear();
+            editField.findElements(driver).get(1).sendKeys("hogwards");
+            editField.findElements(driver).get(2).click();
+
+        }else{
+            editField.findElements(driver).get(1).click();
+            editField.findElements(driver).get(1).clear();
+            editField.findElements(driver).get(1).sendKeys(unitno);
+            editField.findElements(driver).get(2).click();
+
+        }
+
     }
 
     public void enterStreet(String street) {

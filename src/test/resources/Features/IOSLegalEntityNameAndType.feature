@@ -22,7 +22,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And clicks on Entity Legal Name field <testcase>
     And user inputs invalid Name
@@ -51,7 +51,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And clicks on Trade Name field <testcase>
     And user inputs invalid Name
@@ -80,7 +80,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And enters details in other fields of Entity name and type screen <testcase>
     And clicks on the Legal entity type field <testcase>
@@ -111,7 +111,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And enters details in other fields of Entity name and type screen <testcase>
     And clicks on the Legal entity type field <testcase>
@@ -132,7 +132,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And clicks on Previously trading as field <testcase>
     And user inputs invalid Name
@@ -158,7 +158,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And clicks Cancel in New User
     Then user will prompt to ask about confirmation
@@ -177,7 +177,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And clicks Cancel in Entity name & type screen
     Then user will prompt to ask about confirmation
@@ -196,7 +196,7 @@ Feature: Validating Entity Name And Type screen in NM_CO
     And click login button
     Then user lands on Dashboard
     Then click add New Application
-    And clicks on Continue Button
+    And swipes the side menu and select EntityNameType
     When user is in Entity name & type screen <testcase>
     And enters all mandatory fields <testcase>
     And clicks on Continue Button

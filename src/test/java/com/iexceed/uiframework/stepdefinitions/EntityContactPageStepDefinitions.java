@@ -39,7 +39,7 @@ public class EntityContactPageStepDefinitions extends TestBase {
 
 
     @And("clicks on Email Address field$")
-    public void clicks_on_email_address_field() {
+    public void clicks_on_email_address_field() throws Exception {
         EntityContactPageActions.validateEmailId(datalist.get("emailId"));
     }
 
@@ -53,7 +53,7 @@ public class EntityContactPageStepDefinitions extends TestBase {
         legalEntityNameTypeAction.fieldValidations();
     }
     @And("clicks on Company Website$")
-    public void clicks_on_company_website(){
+    public void clicks_on_company_website() throws Exception {
         EntityContactPageActions.validateWbsite(datalist.get("Website"));
     }
     @Then("error message should be displayed under Company Website field$")
@@ -71,8 +71,8 @@ public class EntityContactPageStepDefinitions extends TestBase {
         EntityContactPageActions.isAddNewContactAddressPage();
     }
     @And("clicks on Unit no$")
-    public void clicks_on_unit_no(){
-        EntityContactPageActions.validateUnitNo(datalist.get("Unitno"));
+    public void clicks_on_unit_no() throws Exception {
+        EntityContactPageActions.validateUnitNo(datalist.get("Unitno"),"");
     }
     @Then("error message should be displayed under field$")
     public void error_message_should_be_displayed_under_field() throws InterruptedException {
@@ -81,18 +81,18 @@ public class EntityContactPageStepDefinitions extends TestBase {
     }
 
     @And("clicks on Street field$")
-    public void clicks_on_street_field(){
+    public void clicks_on_street_field() throws Exception {
         EntityContactPageActions.validateStreet(datalist.get("Street"));
     }
     @And("clicks on city and post box$")
-    public void clicks_on_city_and_post_box(){
+    public void clicks_on_city_and_post_box() throws Exception {
         EntityContactPageActions.validateCity(datalist.get("city"));
         EntityContactPageActions.validatePBOX(datalist.get("postbox"));
         EntityContactPageActions.validateState(datalist.get("State"));
     }
 
     @And("clicks on zipcode$")
-    public void clicks_on_zipcode(){
+    public void clicks_on_zipcode() throws Exception {
         EntityContactPageActions.validateZip(datalist.get("zipCode"));
     }
     @And("fills valid data in AddressType, UnitNo,Building name,street,Area, Country, State, town,city, zip,postalCode, PO Box$")
@@ -119,8 +119,8 @@ public class EntityContactPageStepDefinitions extends TestBase {
         EntityContactPageActions.isAddNewContactAddressPage();
     }
     @And("edits one or more fields in valid format$")
-    public void edits_one_or_more_fields_in_valid_format(){
-        clicks_on_unit_no();
+    public void edits_one_or_more_fields_in_valid_format() throws Exception {
+        EntityContactPageActions.validateUnitNo(datalist.get("Unitno"),"edit");
         clicks_on_zipcode();
     }
     @And("user displayed with Successfully Edited snack bar Message$")
@@ -142,11 +142,11 @@ public class EntityContactPageStepDefinitions extends TestBase {
     }
     @Then("user lands on Business Location screen$")
     public void user_lands_on_business_location_screen(){
-        log.debug(" develpment is in progeress");
+        log.debug("user lands on Business Location screen");
     }
 
     @Then("user will prompt to ask about Delete confirmation$")
-    public void user_will_prompt_to_ask_about_delete_confirmation() throws InterruptedException {
+    public void user_will_prompt_to_ask_about_delete_confirmation() throws Exception {
         EntityContactPageActions.contactDeleteMsgValidation();
     }
 }

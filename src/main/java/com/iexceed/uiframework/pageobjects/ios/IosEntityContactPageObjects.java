@@ -1,13 +1,13 @@
 package com.iexceed.uiframework.pageobjects.ios;
 
 import com.iexceed.uiframework.appium.GenericMethods;
-import com.iexceed.uiframework.domainobjects.AndroidUtility;
 import com.iexceed.uiframework.domainobjects.IOSUtility;
 import com.iexceed.uiframework.utilites.WaitUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class IosEntityContactPageObjects {
     WaitUtility waitUtility;
     private static final Logger log = LogManager.getLogger(IosEntityContactPageObjects.class);
     IOSUtility iosUtility;
-    AndroidUtility androidUtility;
+
     public IosEntityContactPageObjects() {
         genericMethods = new GenericMethods(driver);
         waitUtility = new WaitUtility();
@@ -26,24 +26,75 @@ public class IosEntityContactPageObjects {
 
     }
 
-    By entityContactInfoPage = By.xpath("//android.view.View[@text='Entity contact information']");
-    By entityContactInfoPageArabic = By.xpath("//android.view.View[@text='معلومات الاتصال بالكيان']");
-    By editField = By.xpath("//android.widget.EditText");
-    By addNewBtn = By.xpath("//android.view.View[@content-desc='Add a new address']");
-    By addNewAddressBtnArabic = By.xpath("//android.view.View[@content-desc='أضف عنوانا جديدا']");
-    By addNewContactAddress = By.xpath("//*[@text='Registered']");
-    By addNewContactAddressArabic = By.xpath("//android.view.View[@text='نوع العنوان *']");
-    By searchField = By.xpath("//android.widget.EditText");
-    By countryList = By.xpath("//android.view.View");
-    By viewDataDetails = By.xpath("//android.view.View");
-    By editValidationMsg = By.xpath("//android.view.View[@text='Address edited successfully']");
-    By editValidationMsgArabic = By.xpath("//android.view.View[@text='تم تحرير العنوان بنجاح']");
-    By closBtn = By.xpath("//*[@text='Close']");
-    By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
-    By deleteConfirmationMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
-    By deleteConfirmationMsgArabic = By.xpath("//android.view.View[@text='Are you sure you want to delete the Address from the list ?']");
+    By countryField = By.xpath("//XCUIElementTypeButton[@name='Country Drop Down']");
+    By searchField = By.xpath("//XCUIElementTypeTextField[@name='SearchTextField']");
+    By countryList = By.xpath("//XCUIElementTypeButton");
+    By fieldValidationMsg = By.xpath("//XCUIElementTypeStaticText[@name='Please enter this field']");
+    By fieldValidationMsg1 = By.xpath("//XCUIElementTypeStaticText[@name='Please enter valid field']");
+    By fieldValidationMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='الرجاء إدخال هذا الحقل']");
+    By fieldValidationMsgArabic1 = By.xpath("//XCUIElementTypeStaticText[@name='الرجاء إدخال حقل صالح']");
+    By entityContactInfoPage = By.xpath("//XCUIElementTypeStaticText[@name='Entity contact information']");
+    By entityContactInfoPageArabic = By.xpath("//XCUIElementTypeStaticText[@name='معلومات الاتصال بالكيان']");
+    By emailId = By.xpath("//XCUIElementTypeTextField[@name='Email Text Field']");
+    By websiteFiled = By.xpath("//XCUIElementTypeTextField[@name='Website Text Field']");
+    By unitNo = By.xpath("//XCUIElementTypeTextField[@name='Unit No Text Field']");
+    By streetNo = By.xpath("//XCUIElementTypeTextField[@name='Street Text Field']");
+    By stateField = By.xpath("//XCUIElementTypeTextField[@name='State Text Field']");
+    By cityField = By.xpath("//XCUIElementTypeTextField[@name='City Text Field']");
+    By poBoxField = By.xpath("//XCUIElementTypeTextField[@name='PO Box Text Field']");
+    By zipCode = By.xpath("//XCUIElementTypeTextField[@name='Postal Code Text Field']");
+    By addNewBtn = By.xpath("//XCUIElementTypeButton[@name='Add a New Address Button']");
+    By addNewAddressBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Add a New Address Button']");
+    By addNewContactAddress = By.xpath("//XCUIElementTypeStaticText[@name='Registered']");
+    By addNewContactAddressArabic = By.xpath("//XCUIElementTypeStaticText[@name='Registered']");
+    By viewDataDetails = By.xpath("//XCUIElementTypeStaticText");
+    By recordAddedMsg = By.xpath("//XCUIElementTypeStaticText[@name='Address added successfully']");
+    By recordAddedMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='تمت إضافة العنوان بنجاح']");
+    By editValidationMsg = By.xpath("//XCUIElementTypeStaticText[@name='Address edited successfully']");
+    By editValidationMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='تم تحرير العنوان بنجاح']");
+    By closeBtn = By.xpath("//XCUIElementTypeButton[@name='Close']");
+    By closeBtnArabic = By.xpath("//*[contains(@label,'اضغط على زر الإغلاق لإغلاق الخبز المحمص')]");
+    By deleteConfirmationMsg = By.xpath("//*[contains(@label,'Are you sure you want to delete the Address from the list?')]");
+    By deleteConfirmationMsgArabic = By.xpath("//*[contains(@label,'هل أنت متأكد أنك تريد حذف العنوان من القائمة')]");
+    By entityContactMenu = By.xpath("//XCUIElementTypeButton[@name='Entity Contact Info. It is incomplete.']");
+    By entityContactMenuArabic = By.xpath("//XCUIElementTypeButton[@name='Entity Contact Info. إنه غير مكتمل.']");
 
 
+    public void selectEntityContactPage() throws Exception {
+        iosUtility.ios_swipingHamburgerMenu();
+        waitUtility.waitForSeconds(1);
+        Boolean b=genericMethods.isElementPresent(entityContactMenu);
+        System.out.println(b);
+        if(Boolean.TRUE.equals(b)){
+            genericMethods.click(entityContactMenu);
+        }else{
+            genericMethods.click(entityContactMenuArabic);
+        }
+    }
+
+    public void contactfieldValidationMsg() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(fieldValidationMsg);
+        Boolean b1 = genericMethods.isElementPresent(fieldValidationMsg1);
+        Boolean b2 = genericMethods.isElementPresent(fieldValidationMsgArabic);
+        Boolean b3 = genericMethods.isElementPresent(fieldValidationMsgArabic1);
+        if (Boolean.TRUE.equals(b)) {
+            Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsg));
+        } else if (Boolean.TRUE.equals(b1)) {
+            Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsg1));
+        } else if (Boolean.TRUE.equals(b2)) {
+            Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic));
+        } else if (Boolean.TRUE.equals(b3)) {
+            genericMethods.isElementPresent(fieldValidationMsgArabic1);
+            Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic1));
+        } else {
+            log.debug("entered valid fields");
+        }
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
+    }
 
     public void isEntityContactPage() throws Exception {
         waitUtility.waitForSeconds(4);
@@ -58,27 +109,26 @@ public class IosEntityContactPageObjects {
 
     }
 
-    public void enterEmaild(String email) {
-        genericMethods.waitForVisibility(editField);
-        editField.findElements(driver).get(1).click();
-        editField.findElements(driver).get(1).clear();
-        editField.findElements(driver).get(1).sendKeys(email);
-        genericMethods.click(editField);
+    public void enterEmaild(String email) throws Exception {
+        waitUtility.waitForSeconds(2);
+        genericMethods.click(emailId);
+        iosUtility.clearText(emailId);
+        genericMethods.sendKeys(emailId, email);
+
     }
 
-    public void enterCompanyWebsite(String website) {
-        genericMethods.waitForVisibility(editField);
-        editField.findElements(driver).get(2).click();
-        editField.findElements(driver).get(2).clear();
-        editField.findElements(driver).get(2).sendKeys(website);
-        genericMethods.click(editField);
+    public void enterCompanyWebsite(String website) throws Exception {
+        waitUtility.waitForSeconds(2);
+        genericMethods.click(websiteFiled);
+        iosUtility.clearText(websiteFiled);
+        genericMethods.sendKeys(websiteFiled, website);
     }
 
     public void clickAddnewBtn() throws InterruptedException {
         Boolean b = genericMethods.isElementPresent(addNewBtn);
-        if(Boolean.TRUE.equals(b)) {
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addNewBtn);
-        }else{
+        } else {
             genericMethods.click(addNewAddressBtnArabic);
         }
     }
@@ -86,110 +136,133 @@ public class IosEntityContactPageObjects {
     public void isEntityaddNewAddress() throws Exception {
         waitUtility.waitForSeconds(5);
         Boolean b = genericMethods.isElementPresent(addNewContactAddress);
-        if(Boolean.TRUE.equals(b)) {
+        if (Boolean.TRUE.equals(b)) {
             log.debug(b);
-        }else{
+        } else {
             log.debug(genericMethods.isElementPresent(addNewContactAddressArabic));
         }
 
     }
 
-    public void enterUnitNo(String unitno) {
-        editField.findElements(driver).get(1).click();
-        editField.findElements(driver).get(1).clear();
-        editField.findElements(driver).get(1).sendKeys(unitno);
-        editField.findElements(driver).get(2).click();
+    public void enterUnitNo(String unitno, String edit) throws Exception {
+        if (edit.equalsIgnoreCase("edit")) {
+            waitUtility.waitForSeconds(1);
+            genericMethods.click(unitNo);
+            iosUtility.clearText(unitNo);
+            genericMethods.sendKeys(unitNo, "hogwards");
+        } else {
+            waitUtility.waitForSeconds(1);
+            genericMethods.click(unitNo);
+            iosUtility.clearText(unitNo);
+            genericMethods.sendKeys(unitNo, unitno);
+        }
     }
 
-    public void enterStreet(String street) {
-        editField.findElements(driver).get(2).click();
-        editField.findElements(driver).get(2).clear();
-        editField.findElements(driver).get(2).sendKeys(street);
-        editField.findElements(driver).get(1).click();
+    public void enterStreet(String street) throws Exception {
+        waitUtility.waitForSeconds(1);
+        genericMethods.click(streetNo);
+        iosUtility.clearText(streetNo);
+        genericMethods.sendKeys(streetNo, street);
     }
 
-    public void enterState(String state) {
-        editField.findElements(driver).get(4).click();
-        editField.findElements(driver).get(4).clear();
-        editField.findElements(driver).get(4).sendKeys(state);
-        editField.findElements(driver).get(1).click();
+    public void enterState(String state) throws Exception {
+        waitUtility.waitForSeconds(1);
+        genericMethods.click(stateField);
+        iosUtility.clearText(stateField);
+        genericMethods.sendKeys(stateField, state);
     }
 
-    public void enterCity(String city) {
-        editField.findElements(driver).get(5).click();
-        editField.findElements(driver).get(5).clear();
-        editField.findElements(driver).get(5).sendKeys(city);
-        editField.findElements(driver).get(1).click();
+    public void enterCity(String city) throws Exception {
+        waitUtility.waitForSeconds(1);
+        genericMethods.click(cityField);
+        iosUtility.clearText(cityField);
+        genericMethods.sendKeys(cityField, city);
     }
 
-    public void enterZip(String zip) {
-        editField.findElements(driver).get(6).click();
-        editField.findElements(driver).get(6).clear();
-        editField.findElements(driver).get(6).sendKeys(zip);
-        editField.findElements(driver).get(1).click();
+    public void enterZip(String zip) throws Exception {
+        waitUtility.waitForSeconds(1);
+        genericMethods.click(zipCode);
+        iosUtility.clearText(zipCode);
+        genericMethods.sendKeys(zipCode, zip);
     }
 
-    public void enterPstBox(String postCode) {
-        editField.findElements(driver).get(7).click();
-        editField.findElements(driver).get(7).clear();
-        editField.findElements(driver).get(7).sendKeys(postCode);
-        editField.findElements(driver).get(2).click();
+    public void enterPstBox(String postCode) throws Exception {
+        waitUtility.waitForSeconds(1);
+        genericMethods.click(poBoxField);
+        iosUtility.clearText(poBoxField);
+        genericMethods.sendKeys(poBoxField, postCode);
     }
 
     public void validateCountry(String countryCode) throws Exception {
-        editField.findElements(driver).get(3).click();
-        waitUtility.waitForSeconds(2);
-        genericMethods.click(searchField);
-        genericMethods.sendKeys(searchField, countryCode);
-        log.info(driver.findElements(countryList).size());
-        List<WebElement> temoCountryList = driver.findElements(countryList);
-        androidUtility.selectionOfDropdown(countryCode, temoCountryList);
+        Boolean b = genericMethods.isElementPresent(countryField);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(countryField);
+            waitUtility.waitForSeconds(2);
+            genericMethods.click(searchField);
+            genericMethods.sendKeys(searchField, countryCode);
+            try {
+                iosUtility.hideKeyboard();
+            } catch (Exception e) {
+                log.debug(e);
+            }
+            log.info(driver.findElements(countryList).size());
+            iosUtility.selectionOfDropdown(countryCode, countryList);
+        }
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void validateUserDetails(String addressType, String state, String city, String zipcode, String postBox) throws Exception {
-        waitUtility.waitForSeconds(2);
-        log.info(driver.findElements(viewDataDetails).size());
-        String addressDetails = state + "," + city;
-        List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
-        androidUtility.selectionItemVisible(addressType, tempUserDetails);
-        androidUtility.selectionItemVisible(addressDetails, tempUserDetails);
-        androidUtility.selectionItemVisible(zipcode, tempUserDetails);
-        androidUtility.selectionItemVisible(postBox, tempUserDetails);
-
+        try {
+            waitUtility.waitForSeconds(1);
+            log.info(driver.findElements(viewDataDetails).size());
+            List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
+            iosUtility.selectionItemVisible(addressType, tempUserDetails);
+            iosUtility.selectionItemVisible(state, tempUserDetails);
+            iosUtility.selectionItemVisible(city, tempUserDetails);
+            iosUtility.selectionItemVisible(zipcode, tempUserDetails);
+            iosUtility.selectionItemVisible(postBox, tempUserDetails);
+        } catch (Exception e) {
+            log.debug(e);
+        }
     }
 
     public void isEditValidationMsgPresent() throws Exception {
-        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(editValidationMsg);
-        Boolean b1 = genericMethods.isElementPresent(editValidationMsg);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(editValidationMsg);
-            genericMethods.click(closBtn);
-        } else if(Boolean.TRUE.equals(b1)){
-            genericMethods.isElementPresent(editValidationMsgArabic);
-            genericMethods.click(closBtnArabic);
-        }else {
-            try {
-                genericMethods.click(closBtn);
-            }catch(Exception e){
-                genericMethods.click(closBtnArabic);
+        Boolean b1 = genericMethods.isElementPresent(editValidationMsgArabic);
+        try {
+            if (Boolean.TRUE.equals(b)) {
+                genericMethods.isElementPresent(editValidationMsg);
+                genericMethods.click(closeBtn);
+            } else if (Boolean.TRUE.equals(b1)) {
+                genericMethods.isElementPresent(editValidationMsgArabic);
+                genericMethods.click(closeBtnArabic);
+            } else {
+                try {
+                    genericMethods.click(closeBtn);
+                } catch (Exception e) {
+                    genericMethods.click(closeBtnArabic);
+                    log.debug("close button need to be implement");
+                }
             }
+        } catch (Exception e) {
+            log.debug(e);
         }
 
     }
 
-    public void deletePromtConfirmation() throws InterruptedException {
+    public void deletePromtConfirmation() throws Exception {
         Boolean b = genericMethods.isElementPresent(deleteConfirmationMsg);
         Boolean b1 = genericMethods.isElementPresent(deleteConfirmationMsgArabic);
-
         if (Boolean.TRUE.equals(b)) {
-            genericMethods.waitForVisibility(deleteConfirmationMsg);
+            waitUtility.waitForSeconds(2);
             log.info(genericMethods.isElementPresent(deleteConfirmationMsg));
-        } else if(Boolean.TRUE.equals(b1)){
-            genericMethods.waitForVisibility(deleteConfirmationMsgArabic);
+        } else if (Boolean.TRUE.equals(b1)) {
+            waitUtility.waitForSeconds(2);
             log.info(genericMethods.isElementPresent(deleteConfirmationMsgArabic));
-        }else {
-            log.debug("delete confirmation popup is not shown");
         }
     }
 

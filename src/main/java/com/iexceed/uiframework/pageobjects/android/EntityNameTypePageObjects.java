@@ -149,7 +149,6 @@ public class EntityNameTypePageObjects {
         }else if(Boolean.TRUE.equals(b1)){
             Assert.assertTrue(genericMethods.isElementPresent(fieldValidationMsgArabic));
         } else {
-
             log.debug("entered valid fields");
         }
     }
