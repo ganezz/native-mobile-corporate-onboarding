@@ -46,7 +46,7 @@ public class LoginPageDefinitions extends TestBase {
         }else{
             waitUtility.waitForSeconds(5);
 //            iosAppURL=launchApp();
-            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/QADebug-1.0.0-28-02-2022-20%3A53/QADebug-1.0.0-28-02-2022-20%3A53.ipa";
+            iosAppURL="https://artifactory.appzillon.com/artifactory/iOS-ipa/ao/automated/QADebug-1.0.0-02-03-2022-18:50/QADebug-1.0.0-02-03-2022-18:50.ipa";
             String[] arr=iosAppURL.split("//");
             String temp1=arr[0]+"//readuser:Re@d@1234@";
             iosAppURL=temp1+arr[1];

@@ -22,7 +22,7 @@ public class IOSConnectionUtility extends TestBase {
 
     private static final Logger log = LogManager.getLogger(IOSConnectionUtility.class);
 
-    public static void iosConnectionUtilities( String bundleID, String applicationName, By targetCompanyName, By trustCompanyName, By trustBtn) {
+    public static void iosConnectionUtilities(String bundleID, String applicationName, By targetCompanyName, By trustCompanyName, By trustBtn) {
         List<String> listIOS = new ArrayList<>();
 
         listIOS.add("APPLE_iPad7_iOS_14.0.1_7de055");
@@ -39,12 +39,14 @@ public class IOSConnectionUtility extends TestBase {
                     DesiredCapabilities capabilities = new DesiredCapabilities();
                     capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
                     capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
-                    capabilities.setCapability("pCloudy_DurationInMinutes", 200);
+                    capabilities.setCapability("pCloudy_DurationInMinutes", 500);
                     capabilities.setCapability("newCommandTimeout", 600);
                     capabilities.setCapability("launchTimeout", 90000);
                     capabilities.setCapability("pCloudy_DeviceFullName", DeviceName);
                     capabilities.setCapability("platformVersion", "13.1.3");
                     capabilities.setCapability("platformName", "ios");
+                    capabilities.setCapability("unicodeKeyboard", true);
+                    capabilities.setCapability("resetKeyboard", true);
                     capabilities.setCapability("acceptAlerts", true);
                     capabilities.setCapability("automationName", "XCUITest");
                     capabilities.setCapability("pCloudy_WildNet", "true");
@@ -55,10 +57,10 @@ public class IOSConnectionUtility extends TestBase {
                     try {
                         driver = new IOSDriver<>(new URL("https://us.pcloudy.com/appiumcloud/wd/hub"), capabilities);
                         log.debug("driver connceted Device:{}", DeviceName);
-                    }catch(Exception e){
-                     log.debug(e);
+                    } catch (Exception e) {
+                        log.debug(e);
                     }
-                    if(driver!=null) {
+                    if (driver != null) {
                         appiumDriver = driver;
                         launchApp(bundleID, applicationName, targetCompanyName, trustCompanyName, trustBtn);
                     }

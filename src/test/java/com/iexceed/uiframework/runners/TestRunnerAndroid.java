@@ -10,9 +10,9 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features",
+        features = "src/test/resources/Features/IOSLegalEntityContactInformation.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@4",
+        tags= "@10 or @11",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",

@@ -25,7 +25,10 @@ public class IosEntityContactPageObjects {
         iosUtility = new IOSUtility();
 
     }
-
+    By deleteButton = By.xpath("//XCUIElementTypeButton[@name='Delete Button 0']");
+    By deleteButtonArabic = By.xpath("//XCUIElementTypeButton[@name='Delete Button 0']");
+    By editButton = By.xpath("//XCUIElementTypeButton[@name='Edit Button 0']");
+    By editButtonArabic = By.xpath("//XCUIElementTypeButton[@name='Edit Button 0']");
     By countryField = By.xpath("//XCUIElementTypeButton[@name='Country Drop Down']");
     By searchField = By.xpath("//XCUIElementTypeTextField[@name='SearchTextField']");
     By countryList = By.xpath("//XCUIElementTypeButton");
@@ -63,11 +66,11 @@ public class IosEntityContactPageObjects {
     public void selectEntityContactPage() throws Exception {
         iosUtility.ios_swipingHamburgerMenu();
         waitUtility.waitForSeconds(1);
-        Boolean b=genericMethods.isElementPresent(entityContactMenu);
+        Boolean b = genericMethods.isElementPresent(entityContactMenu);
         System.out.println(b);
-        if(Boolean.TRUE.equals(b)){
+        if (Boolean.TRUE.equals(b)) {
             genericMethods.click(entityContactMenu);
-        }else{
+        } else {
             genericMethods.click(entityContactMenuArabic);
         }
     }
@@ -102,8 +105,7 @@ public class IosEntityContactPageObjects {
         if (Boolean.TRUE.equals(b)) {
             log.debug("user in entity contact page");
         } else {
-            Boolean b1 = genericMethods.isElementPresent(entityContactInfoPageArabic);
-            log.debug(b1);
+            genericMethods.isElementPresent(entityContactInfoPageArabic);
             log.debug("user in entity contact page");
         }
 
@@ -146,14 +148,12 @@ public class IosEntityContactPageObjects {
 
     public void enterUnitNo(String unitno, String edit) throws Exception {
         if (edit.equalsIgnoreCase("edit")) {
-            waitUtility.waitForSeconds(1);
+
             genericMethods.click(unitNo);
             iosUtility.clearText(unitNo);
             genericMethods.sendKeys(unitNo, "hogwards");
         } else {
-            waitUtility.waitForSeconds(1);
             genericMethods.click(unitNo);
-            iosUtility.clearText(unitNo);
             genericMethods.sendKeys(unitNo, unitno);
         }
     }
@@ -166,31 +166,49 @@ public class IosEntityContactPageObjects {
     }
 
     public void enterState(String state) throws Exception {
-        waitUtility.waitForSeconds(1);
+        iosUtility.scrollUp();
         genericMethods.click(stateField);
         iosUtility.clearText(stateField);
         genericMethods.sendKeys(stateField, state);
+        try{
+        iosUtility.hideKeyboard();}catch(Exception e){
+          log.debug(e);
+          System.out.println(e);
+        }
     }
 
     public void enterCity(String city) throws Exception {
-        waitUtility.waitForSeconds(1);
         genericMethods.click(cityField);
-        iosUtility.clearText(cityField);
+        iosUtility.clearText(stateField);
         genericMethods.sendKeys(cityField, city);
+        try{
+            iosUtility.hideKeyboard();}catch(Exception e){
+            log.debug(e);
+            System.out.println(e);
+        }
     }
 
     public void enterZip(String zip) throws Exception {
-        waitUtility.waitForSeconds(1);
+        iosUtility.scrollUp();
         genericMethods.click(zipCode);
         iosUtility.clearText(zipCode);
         genericMethods.sendKeys(zipCode, zip);
+        try{
+            iosUtility.hideKeyboard();}catch(Exception e){
+            log.debug(e);
+            System.out.println(e);
+        }
     }
 
     public void enterPstBox(String postCode) throws Exception {
-        waitUtility.waitForSeconds(1);
+        iosUtility.scrollUp();
         genericMethods.click(poBoxField);
-        iosUtility.clearText(poBoxField);
         genericMethods.sendKeys(poBoxField, postCode);
+        try{
+            iosUtility.hideKeyboard();}catch(Exception e){
+            log.debug(e);
+            System.out.println(e);
+        }
     }
 
     public void validateCountry(String countryCode) throws Exception {
@@ -216,18 +234,14 @@ public class IosEntityContactPageObjects {
     }
 
     public void validateUserDetails(String addressType, String state, String city, String zipcode, String postBox) throws Exception {
-        try {
-            waitUtility.waitForSeconds(1);
-            log.info(driver.findElements(viewDataDetails).size());
-            List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
-            iosUtility.selectionItemVisible(addressType, tempUserDetails);
-            iosUtility.selectionItemVisible(state, tempUserDetails);
-            iosUtility.selectionItemVisible(city, tempUserDetails);
-            iosUtility.selectionItemVisible(zipcode, tempUserDetails);
-            iosUtility.selectionItemVisible(postBox, tempUserDetails);
-        } catch (Exception e) {
-            log.debug(e);
-        }
+        log.info(driver.findElements(viewDataDetails).size());
+        List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
+        iosUtility.selectionItemVisible(addressType, tempUserDetails);
+        iosUtility.selectionItemVisible(state, tempUserDetails);
+        iosUtility.selectionItemVisible(city, tempUserDetails);
+        iosUtility.selectionItemVisible(zipcode, tempUserDetails);
+        iosUtility.selectionItemVisible(postBox, tempUserDetails);
+
     }
 
     public void isEditValidationMsgPresent() throws Exception {
@@ -265,5 +279,22 @@ public class IosEntityContactPageObjects {
             log.info(genericMethods.isElementPresent(deleteConfirmationMsgArabic));
         }
     }
+    public void clickEditBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(editButton);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(editButton);
+        } else {
+            genericMethods.click(editButtonArabic);
+        }
+    }
+    public void ios_clickDeleteBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(deleteButton);
 
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(deleteButton);
+        } else {
+            genericMethods.click(deleteButtonArabic);
+        }
+
+    }
 }

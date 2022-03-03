@@ -100,16 +100,25 @@ public class EntityContactPageStepDefinitions extends TestBase {
         clicks_on_unit_no();
         clicks_on_street_field();
         clicks_on_county();
-        clicks_on_city_and_post_box();
+        EntityContactPageActions.validateState(datalist.get("State"));
+        EntityContactPageActions.validateCity(datalist.get("city"));
+        EntityContactPageActions.validatePBOX(datalist.get("postbox"));
         clicks_on_zipcode();
 
     }
 
+    @And("clicks Edit button in EntityName Screen$")
+    public void clicks_edit_button_in_entityname_screen() throws InterruptedException {
+        EntityContactPageActions.clickEditBtn();
+    }
     @And("clicks on County$")
     public void clicks_on_county() throws Exception {
         EntityContactPageActions.validateCountry(datalist.get("countryCode"));
     }
-
+    @And("clicks Delete button in EntityName Screen$")
+    public void clicks_delete_button_in_entityname_screen() throws InterruptedException {
+        EntityContactPageActions.clickDeleteBtn();
+    }
     @And("user entered address is displayed in address details tab$")
     public void user_entered_address_is_displayed_in_address_details_tab() throws Exception {
         EntityContactPageActions.validateEnteredAddress("Registered",datalist.get("State"),datalist.get("city"),datalist.get("zipCode"),datalist.get("postbox"));
@@ -121,7 +130,7 @@ public class EntityContactPageStepDefinitions extends TestBase {
     @And("edits one or more fields in valid format$")
     public void edits_one_or_more_fields_in_valid_format() throws Exception {
         EntityContactPageActions.validateUnitNo(datalist.get("Unitno"),"edit");
-        clicks_on_zipcode();
+
     }
     @And("user displayed with Successfully Edited snack bar Message$")
     public void user_displayed_with_successfully_edited_snack_bar_message() throws Exception {
@@ -142,7 +151,7 @@ public class EntityContactPageStepDefinitions extends TestBase {
     }
     @Then("user lands on Business Location screen$")
     public void user_lands_on_business_location_screen(){
-        log.debug("user lands on Business Location screen");
+        log.debug(" user lands on Business Location screen");
     }
 
     @Then("user will prompt to ask about Delete confirmation$")

@@ -228,7 +228,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And clicks on Confirm button
     And user lands on Entity Contact information screen
     And user entered address is displayed in address details tab
-    And clicks Edit button
+    And clicks Edit button in EntityName Screen
     And user lands on Modification Screen Add A New Address Screen with already given data
     And edits one or more fields in valid format
     And clicks on Confirm button
@@ -236,8 +236,8 @@ Feature: Validating Entity Contact Information screen in NM_CO
     Then user displayed with edited values in address details screen
     Examples:
       | testcase     |
-      | TestCase_081 |
-      | TestCase_154 |
+      | TestCase_197 |
+      | TestCase_198 |
 
   @10
   Scenario Outline: validating Delete icon with Ok button
@@ -255,14 +255,14 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And clicks on Confirm button
     And user lands on Entity Contact information screen
     And user entered address is displayed in address details tab
-    And clicks Delete button
+    And clicks Delete button in EntityName Screen
     Then user will prompt to ask about Delete confirmation
     And clicks Yes button <testcase>
     Then address is removed from the list
     Examples:
       | testcase     |
-      | TestCase_081 |
-      | TestCase_154 |
+      | TestCase_197 |
+      | TestCase_198 |
 
   @11
   Scenario Outline: validating Delete icon with Cancel button
@@ -280,14 +280,14 @@ Feature: Validating Entity Contact Information screen in NM_CO
     And clicks on Confirm button
     And user lands on Entity Contact information screen
     And user entered address is displayed in address details tab
-    And clicks Delete button
+    And clicks Delete button in EntityName Screen
     Then user will prompt to ask about Delete confirmation
     And clicks No button
     And user given details will display on Entity Contact Details screen
     Examples:
       | testcase     |
-      | TestCase_081 |
-      | TestCase_154 |
+      | TestCase_197 |
+      | TestCase_198 |
 
   @12
   Scenario Outline: validating User Contact Information screen Cancel button with Cancel button

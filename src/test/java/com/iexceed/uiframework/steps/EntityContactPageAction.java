@@ -125,6 +125,22 @@ public class EntityContactPageAction {
         }
 
     }
+    public void clickEditBtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosEntityContactPageObjects.clickEditBtn();
+        } else {
+           log.debug("android");
+        }
+    }
+
+    public void clickDeleteBtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosEntityContactPageObjects.ios_clickDeleteBtn();
+        } else {
+            log.debug("android");
+        }
+    }
+
     public void validateCountry(String country) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             iosEntityContactPageObjects.validateCountry(country);
