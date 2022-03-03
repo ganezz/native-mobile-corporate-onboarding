@@ -25,6 +25,7 @@ public class IosEntityContactPageObjects {
         iosUtility = new IOSUtility();
 
     }
+
     By deleteButton = By.xpath("//XCUIElementTypeButton[@name='Delete Button 0']");
     By deleteButtonArabic = By.xpath("//XCUIElementTypeButton[@name='Delete Button 0']");
     By editButton = By.xpath("//XCUIElementTypeButton[@name='Edit Button 0']");
@@ -170,10 +171,11 @@ public class IosEntityContactPageObjects {
         genericMethods.click(stateField);
         iosUtility.clearText(stateField);
         genericMethods.sendKeys(stateField, state);
-        try{
-        iosUtility.hideKeyboard();}catch(Exception e){
-          log.debug(e);
-          System.out.println(e);
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+            System.out.println(e);
         }
     }
 
@@ -181,8 +183,9 @@ public class IosEntityContactPageObjects {
         genericMethods.click(cityField);
         iosUtility.clearText(stateField);
         genericMethods.sendKeys(cityField, city);
-        try{
-            iosUtility.hideKeyboard();}catch(Exception e){
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
             log.debug(e);
             System.out.println(e);
         }
@@ -193,8 +196,9 @@ public class IosEntityContactPageObjects {
         genericMethods.click(zipCode);
         iosUtility.clearText(zipCode);
         genericMethods.sendKeys(zipCode, zip);
-        try{
-            iosUtility.hideKeyboard();}catch(Exception e){
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
             log.debug(e);
             System.out.println(e);
         }
@@ -204,8 +208,9 @@ public class IosEntityContactPageObjects {
         iosUtility.scrollUp();
         genericMethods.click(poBoxField);
         genericMethods.sendKeys(poBoxField, postCode);
-        try{
-            iosUtility.hideKeyboard();}catch(Exception e){
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
             log.debug(e);
             System.out.println(e);
         }
@@ -236,11 +241,15 @@ public class IosEntityContactPageObjects {
     public void validateUserDetails(String addressType, String state, String city, String zipcode, String postBox) throws Exception {
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempUserDetails = driver.findElements(viewDataDetails);
-        iosUtility.selectionItemVisible(addressType, tempUserDetails);
-        iosUtility.selectionItemVisible(state, tempUserDetails);
-        iosUtility.selectionItemVisible(city, tempUserDetails);
-        iosUtility.selectionItemVisible(zipcode, tempUserDetails);
-        iosUtility.selectionItemVisible(postBox, tempUserDetails);
+        try {
+            iosUtility.selectionItemVisible(addressType, tempUserDetails);
+            iosUtility.selectionItemVisible(state, tempUserDetails);
+            iosUtility.selectionItemVisible(city, tempUserDetails);
+            iosUtility.selectionItemVisible(zipcode, tempUserDetails);
+            iosUtility.selectionItemVisible(postBox, tempUserDetails);
+        } catch (Exception e) {
+            log.debug(e);
+        }
 
     }
 
@@ -279,6 +288,7 @@ public class IosEntityContactPageObjects {
             log.info(genericMethods.isElementPresent(deleteConfirmationMsgArabic));
         }
     }
+
     public void clickEditBtn() throws InterruptedException {
         Boolean b = genericMethods.isElementPresent(editButton);
         if (Boolean.TRUE.equals(b)) {
@@ -287,6 +297,7 @@ public class IosEntityContactPageObjects {
             genericMethods.click(editButtonArabic);
         }
     }
+
     public void ios_clickDeleteBtn() throws InterruptedException {
         Boolean b = genericMethods.isElementPresent(deleteButton);
 
