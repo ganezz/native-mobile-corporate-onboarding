@@ -26,8 +26,8 @@ public class IOSConnectionUtility extends TestBase {
         List<String> listIOS = new ArrayList<>();
 
         listIOS.add("APPLE_iPad7_iOS_14.0.1_7de055");
-        listIOS.add("APPLE_iPadPro3_iOS_14.7.1_c7375");
         listIOS.add("APPLE_iPad8thGen_iOS_14.4.2_d5dd0");
+        listIOS.add("APPLE_iPadPro3_iOS_14.7.1_c7375");
         listIOS.add("APPLE_iPad_iOS_14.6.0_18525");
         listIOS.add("APPLE_iPad9.7_iOS_14.3.0_a13e3");
         listIOS.add("APPLE_iPad_iOS_13.7.0_c08f6");
