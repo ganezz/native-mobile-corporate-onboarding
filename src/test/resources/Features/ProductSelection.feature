@@ -16,64 +16,84 @@ Feature: Validating Product Selection screen in NM_CO
     And clicks Add a new product button
     Then user lands on Add A Product screen
     Examples:
-      | testcase |
+      | testcase     |
+      | TestCase_199 |
+      | TestCase_200 |
+
+
 
   Scenario Outline: validating Trade Finance radio Button
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks on Trade Finance button
     And user clicks confirm
-    And Trade Finance is displayed in the Product selection screen
+    And Trade Finance is displayed in the Product selection screen <testcase>
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating delete icon of Trade Finance with Cancel button
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks on Trade Finance button
-    And No data should be displayed down
     And user clicks confirm
-    And Trade Finance is displayed in the Product selection screen
+    And Trade Finance is displayed in the Product selection screen <testcase>
     And user clicks on delete button
-    Then user prompted with Delete pop up
+    Then user prompted with Trade Delete pop up
     And clicks on cancel button
     And user lands on product selection screen with trade finance not being deleted
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating delete icon of Trade Finance with Ok button
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks on Trade Finance button
-    And No data should be displayed down
-    And user clicks confirm
-    And Trade Finance is displayed in the Product selection screen
+     And user clicks confirm
+    And Trade Finance is displayed in the Product selection screen <testcase>
     And user clicks on delete button
-    Then user prompted with Delete pop up
+    Then user prompted with Trade Delete pop up
     And clicks on Ok button
     And user lands on product selection screen with trade finance deleted
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating Corporate Account radio Button
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
@@ -82,42 +102,63 @@ Feature: Validating Product Selection screen in NM_CO
     And user displayed with multiple unfilled fields
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating Preferred operating account name field, Mandatory alphanumeric field with Max 100 characters
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks Corporate account radio button
-    And clicks on Preferred operating account name field
+    And clicks on Preferred operating account name field <testcase>
     And user inputs invalid Name
     And clicks on other fields
     Then error message should be displayed under Preferred operating account name field
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
+      | TestCase_199 |
+      | TestCase_200 |
+      | TestCase_199 |
+      | TestCase_200 |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating Purpose of account field, Mandatory dropdown field
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks Corporate account radio button
-    And clicks on Purpose of account field
+    And clicks on Purpose of account field <testcase>
     And selects a value
     Then user is displayed with the selected value in Purpose of account field
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating Additional details on intended use, Mandatory alphanumeric field with Max 100 characters
-    When user is in Dashboard <testcase>
-    And clicks on Add a new application button
-    Then user lands User contact details
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
@@ -125,10 +166,11 @@ Feature: Validating Product Selection screen in NM_CO
     And clicks Corporate account radio button
     And clicks on Additional details on intended use field
     And user inputs invalid value
-    And clicks on other fields
     Then error message should be displayed under Additional details on intended use field
     Examples:
       | testcase |
+      | TestCase_199 |
+      | TestCase_200 |
 
   Scenario Outline: validating Currency field, Mandatory dropdown field
     When user is in Dashboard <testcase>

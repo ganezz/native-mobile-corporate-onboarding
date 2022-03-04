@@ -33,7 +33,7 @@ public class AndroidConnectionUtility extends TestBase {
                     DesiredCapabilities capabilities = new DesiredCapabilities();
                     capabilities.setCapability("pCloudy_Username", "sriganesh.d@i-exceed.com");
                     capabilities.setCapability("pCloudy_ApiKey", "bkx8w6zydrxh6kj7xxw5t4kr");
-                    capabilities.setCapability("pCloudy_DurationInMinutes", 300);
+                    capabilities.setCapability("pCloudy_DurationInMinutes", 600);
                     capabilities.setCapability("newCommandTimeout", 600);
                     capabilities.setCapability("launchTimeout", 90000);
                     capabilities.setCapability("pCloudy_DeviceFullName", appName);

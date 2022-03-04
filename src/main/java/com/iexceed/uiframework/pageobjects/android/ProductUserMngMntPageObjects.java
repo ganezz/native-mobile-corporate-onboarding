@@ -1,0 +1,176 @@
+package com.iexceed.uiframework.pageobjects.android;
+
+import com.iexceed.uiframework.appium.GenericMethods;
+import com.iexceed.uiframework.domainobjects.AndroidUtility;
+import com.iexceed.uiframework.utilites.WaitUtility;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
+
+public class ProductUserMngMntPageObjects {
+    GenericMethods genericMethods;
+    WaitUtility waitUtility;
+    private static final Logger log = LogManager.getLogger(BusinessLocationPageObjects.class);
+    AndroidUtility androidUtility;
+
+    public ProductUserMngMntPageObjects() {
+        genericMethods = new GenericMethods(driver);
+        waitUtility = new WaitUtility();
+        androidUtility = new AndroidUtility();
+    }
+
+    By productMngMntScreen = By.xpath("//android.view.View[@text='Product & User Management']");
+    By addNewProductBtn = By.xpath("//android.view.View[@content-desc='Add a new product']");
+    By addNewProductBtnArabic = By.xpath("//android.view.View[@content-desc='أضف منتج جديد']");
+    By editField = By.xpath("//android.widget.EditText");
+    By tradeFinance = By.xpath("//android.view.View[@content-desc='Trade finance']");
+    By tradeFinanceArabic = By.xpath("//android.view.View[@content-desc='تمويل التجارة']");
+    By confirmBtn = By.xpath("//android.view.View[@content-desc='Confirm']");
+    By confirmArabic = By.xpath("//android.view.View[@content-desc='يتأكد']");
+    By viewDataDetails = By.xpath("//android.view.View");
+    By deleteBtn = By.xpath("//android.widget.ImageView[@content-desc='Delete']");
+    By deleteBtnArabi = By.xpath("//android.widget.ImageView[@content-desc='حذف']");
+    By deleteTradeMg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Trade Finance ?']");
+    By deleteTradeMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف تمويل التجارة؟");
+    By cancelBtn = By.xpath("//android.view.View[@content-desc='Cancel button']");
+    By cancelBtnArabic = By.xpath("//android.view.View[@content-desc='زرالإلغاء']");
+    By okBtn = By.xpath("//android.view.View[@content-desc='Okay button']");
+    By okBtnArabic = By.xpath("//android.view.View[@content-desc='زر موافق']");
+    By accNameErrorMsg = By.xpath("//android.view.View[@text='Please enter valid Preferred operating account name']");
+    By accNameErrorMsgArabic = By.xpath("//android.view.View[@text='الرجاء إدخال اسم حساب تشغيل مفضل صالح']");
+    By viewList = By.xpath("//android.view.View");
+    By additionFieldErrorMsg = By.xpath("//android.view.View[@text='Please enter valid Additional details on intended use']");
+    By additionFieldErrorMsgArabic = By.xpath("//android.view.View[@text='الرجاء إدخال تفاصيل إضافية صالحة عن الاستخدام المقصود']");
+
+
+    public void seletUserManageMnt() throws Exception {
+        androidUtility.swipingHamburgerMenu();
+        genericMethods.click(productMngMntScreen);
+    }
+
+    public void isProductMngMntScreen() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(addNewProductBtn);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("User in product management screen");
+        } else {
+            genericMethods.isElementPresent(addNewProductBtnArabic);
+            log.debug("User in product management screen");
+        }
+    }
+
+    public void clickAddNewProductBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(addNewProductBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(addNewProductBtn);
+        } else {
+            genericMethods.click(addNewProductBtnArabic);
+        }
+    }
+
+    public void clikTradeFinanceBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(tradeFinance);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(tradeFinance);
+        } else {
+            genericMethods.click(tradeFinanceArabic);
+        }
+    }
+
+    public void clikConfirmBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(confirmBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(confirmBtn);
+        } else {
+            genericMethods.click(confirmArabic);
+        }
+    }
+
+    public void validateTradeFinanceDetails(String trade) throws Exception {
+        log.info(driver.findElements(viewDataDetails).size());
+        List<WebElement> tempDetails = driver.findElements(viewDataDetails);
+        androidUtility.selectionItemVisible(trade, tempDetails);
+    }
+
+    public void clickDeleteBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(deleteBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(deleteBtn);
+        } else {
+            genericMethods.click(deleteBtnArabi);
+        }
+    }
+
+    public void deleteTradeMsgValidation() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(deleteTradeMg);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(deleteTradeMg);
+        } else {
+            genericMethods.click(deleteTradeMsgArabic);
+        }
+    }
+
+    public void clickCancelBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(cancelBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(cancelBtn);
+        } else {
+            genericMethods.click(cancelBtnArabic);
+        }
+    }
+
+    public void clickOkBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(okBtn);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(okBtn);
+        } else {
+            genericMethods.click(okBtnArabic);
+        }
+    }
+
+    public void enterAccntName(String accName) {
+        genericMethods.click(editField);
+        driver.findElement(editField).clear();
+        genericMethods.sendKeys(editField, accName);
+    }
+
+    public void clickOtherField() {
+        editField.findElements(driver).get(2).click();
+    }
+
+    public void validateAccNumErrorMsg() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(accNameErrorMsg);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("error message is present");
+        } else {
+            genericMethods.isElementPresent(accNameErrorMsgArabic);
+        }
+    }
+
+    public void selectPurposeOfAccount(String purposeOffAcc) {
+        editField.findElements(driver).get(1).click();
+        List<WebElement> tempdropDownList = driver.findElements(viewList);
+        androidUtility.selectionOfDropdown(purposeOffAcc, tempdropDownList);
+    }
+
+    public void enterAdditionalIntededField(String additionfield) {
+        editField.findElements(driver).get(2).click();
+        editField.findElements(driver).get(2).clear();
+        editField.findElements(driver).get(2).sendKeys(additionfield);
+    }
+
+    public void additionalFieldErrorMsgPresent() throws InterruptedException {
+        genericMethods.click(editField);
+        Boolean b = genericMethods.isElementPresent(additionFieldErrorMsg);
+        if (Boolean.TRUE.equals(b)) {
+            log.debug("error message is present");
+        } else {
+            genericMethods.isElementPresent(additionFieldErrorMsgArabic);
+        }
+    }
+
+}
