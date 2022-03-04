@@ -8,6 +8,7 @@ import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -24,6 +25,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
     static String renamedAppPath;
      static int countApp = 0;
     private static final Logger log = LogManager.getLogger(PcloudyDynamicappLaunch.class);
+    public static WebDriver chromeDriver;
 
     static String appDownloadFilePath = props.getProperty("downloadFilepath");
     private static final WaitUtility waitUtility = new WaitUtility();
@@ -53,13 +55,13 @@ public class PcloudyDynamicappLaunch extends TestBase {
         String temp1 = arr[0] + "//readuser:Re@d@1234@";
         appURL = temp1 + arr[1];
         log.debug(appURL);
-        String appURLtemp = "https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.21-24-02-2022-13:09.apk";
+        String appURLtemp = "https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.22-03-03-2022-18:41.apk";
         log.debug(appURLtemp);
-        TestBase.pcloudyInitialization(appURL);
+        chromeDriver=TestBase.pcloudyInitialization(appURL);
         Thread.sleep(15000);
         waitUntilFileToDownload(appDownloadFilePath);
         fileRenaming();
-
+        chromeDriver.quit();
     }
 
 
@@ -93,7 +95,7 @@ public class PcloudyDynamicappLaunch extends TestBase {
 
 
     public static void fileRenaming() throws Exception, NullPointerException {
-        f2 = new File("Automation-1-0-21-24-02-2022");
+        f2 = new File("Automation-1-0-22-3-3-2022");
         renamedFilePath = f2.getName();
         log.debug("Renamed f2 file path :{}", renamedFilePath);
         waitUtility.waitForSeconds(3);

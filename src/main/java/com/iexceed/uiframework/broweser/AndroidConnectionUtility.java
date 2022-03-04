@@ -40,7 +40,7 @@ public class AndroidConnectionUtility extends TestBase {
                     capabilities.setCapability("platformVersion", "11.0.0");
                     capabilities.setCapability("platformName", "Android");
                     capabilities.setCapability("automationName", "uiautomator2");
-                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-21-24-02-2022.apk");
+                    capabilities.setCapability("pCloudy_ApplicationName", "Automation-1-0-22-3-3-2022.apk");
                     capabilities.setCapability("appPackage", "com.iexceed.assistedonboardingapp.qa");
                     capabilities.setCapability("appActivity", "com.iexceed.assistedonboardingapp.assistedonboarding.AssistedOnboardingActivity");
                     capabilities.setCapability("pCloudy_WildNet", "true");
