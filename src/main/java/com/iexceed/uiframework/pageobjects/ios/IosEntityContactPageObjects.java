@@ -101,7 +101,7 @@ public class IosEntityContactPageObjects {
     }
 
     public void isEntityContactPage() throws Exception {
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(3);
         Boolean b = genericMethods.isElementPresent(entityContactInfoPage);
         if (Boolean.TRUE.equals(b)) {
             log.debug("user in entity contact page");
@@ -137,7 +137,7 @@ public class IosEntityContactPageObjects {
     }
 
     public void isEntityaddNewAddress() throws Exception {
-        waitUtility.waitForSeconds(5);
+        waitUtility.waitForSeconds(3);
         Boolean b = genericMethods.isElementPresent(addNewContactAddress);
         if (Boolean.TRUE.equals(b)) {
             log.debug(b);
