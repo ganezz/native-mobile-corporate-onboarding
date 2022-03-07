@@ -79,6 +79,14 @@ public class AndroidUtility {
     }
 
 
+    public void hideKeyBoard(){
+        try{
+           driver.hideKeyboard();
+        }catch(Exception e){
+            log.debug(e);
+        }
+    }
+
     public Boolean selectionCalenderDropdown1(String itemType, List<WebElement> type) {
         Boolean res = false;
         for (WebElement name : type) {

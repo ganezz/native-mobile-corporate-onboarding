@@ -453,120 +453,92 @@ Feature: Validating Product Selection screen in NM_CO
     Then user displayed with edited values in Product selection screen
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |
 
   Scenario Outline: validating Delete button in Product List with Cancel button
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user lands on Dashboard
-    Then click add New Application
+    When user is in Dashboard <testcase>
+    And clicks on Add a new application button
+    Then user lands User contact details
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks Corporate account radio button
-    And fills all product management screen valid data in all the Mandatory fields
+    And fills valid data in all the Mandatory fields
     And clicks on Confirm button
     Then user lands on Product Selection screen
     And Product Details entered is displayed in Product selection screen
-    And user clicks on delete button
-    And user is Displayed with product Delete Prompt
-    And click on Cancel button
+    And clicks on delete icon
+    And user is Displayed with Delete Prompt
+    And clicks on Cancel button
     Then Product is not removed from the list
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |
-
 
   Scenario Outline: validating Delete button in Product List with Ok button
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user lands on Dashboard
-    Then click add New Application
+    When user is in Dashboard <testcase>
+    And clicks on Add a new application button
+    Then user lands User contact details
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks Corporate account radio button
-    And fills all product management screen valid data in all the Mandatory fields
+    And fills valid data in all the Mandatory fields
     And clicks on Confirm button
     Then user lands on Product Selection screen
     And Product Details entered is displayed in Product selection screen
-    And user clicks on delete button
+    And clicks on delete icon
     And user is Displayed with Delete Prompt
     And clicks on Ok button
     Then Product is removed from the list
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |
 
   Scenario Outline: validating Product selection screen Cancel button with Cancel button
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user lands on Dashboard
-    Then click add New Application
+    When user is in Dashboard <testcase>
+    And clicks on Add a new application button
+    Then user lands User contact details
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
-    And click Application Cancel button
-    Then user will prompt to ask about confirmation
-    And click on Cancel button
+    And clicks on Cancel Button
+    And user is displayed with Cancel Prompt
+    And clicks on Cancel button
     Then user remains in Product selection screen
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |
 
   Scenario Outline: validating Product selection screen Cancel button with Ok button
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user lands on Dashboard
-    Then click add New Application
+    When user is in Dashboard <testcase>
+    And clicks on Add a new application button
+    Then user lands User contact details
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
-    And click Application Cancel button
-    Then user will prompt to ask about confirmation
+    And clicks on Cancel Button
+    And user is displayed with Cancel Prompt
     And clicks on Ok button
-    Then user lands on Dashboard
+    Then user lands on Dashboard screen
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |
 
   Scenario Outline: validating Product selection screen Continue button
-    And user in Login screen <testcase>
-    When clicks language dropDown choose language <testcase>
-    When enter username and password <testcase>
-    And click login button
-    Then user lands on Dashboard
-    Then click add New Application
+    When user is in Dashboard <testcase>
+    And clicks on Add a new application button
+    Then user lands User contact details
     And swipes side menu and selects Product and User Management
     Then user lands on Product Selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks on Trade Finance button
     And user clicks confirm
-    And Trade Finance is displayed in the Product selection screen <testcase>
+    And Trade Finance is displayed in the Product selection screen
     And clicks Add a new product button
     Then user lands on Add A Product screen
     And clicks Corporate account radio button
-    And fills all product management screen valid data in all the Mandatory fields
+    And fills valid data in all the Mandatory fields
     And clicks on Confirm button
     Then user lands on Product Selection screen
     And Product Details entered is displayed in Product selection screen
-    And clicks on Application Continue Button
+    And clicks on continue button
     Then user lands on Administration details screen
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |

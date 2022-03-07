@@ -79,64 +79,204 @@ public class ProductUserMngMntPageActions {
             productUserMngMntPageObjects.deleteTradeMsgValidation();
         }
     }
-   public void clickCancelBtn() throws InterruptedException {
-       if (platForm.equalsIgnoreCase("ios")) {
-           log.debug("ios");
-       } else {
-           productUserMngMntPageObjects.clickCancelBtn();
-       }
-   }
 
-   public void clickOkBtn() throws InterruptedException {
-       if (platForm.equalsIgnoreCase("ios")) {
-           log.debug("ios");
-       } else {
-           productUserMngMntPageObjects.clickOkBtn();
-       }
-   }
-   public void enteraccName(String accname){
-       if (platForm.equalsIgnoreCase("ios")) {
-           log.debug("ios");
-       } else {
-           productUserMngMntPageObjects.enterAccntName(accname);
-       }
-   }
-
-   public void clickOtherField(){
-       if (platForm.equalsIgnoreCase("ios")) {
-           log.debug("ios");
-       } else {
-           productUserMngMntPageObjects.clickOtherField();
-       }
-   }
-   public void isAccNameErrorMsgPresent() throws InterruptedException {
-       if (platForm.equalsIgnoreCase("ios")) {
-           log.debug("ios");
-       } else {
-           productUserMngMntPageObjects.validateAccNumErrorMsg();
-       }
-   }
-
-   public void selectPurposeOfAcount(String purpose){
-       if (platForm.equalsIgnoreCase("ios")) {
-           log.debug("ios");
-       } else {
-           productUserMngMntPageObjects.selectPurposeOfAccount(purpose);
-       }
+    public void clickCancelBtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.clickCancelBtn();
+        }
     }
 
-    public void enterAdditionIntentFiled(String purpose){
+    public void clickOkBtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.clickOkBtn();
+        }
+    }
+
+    public void enteraccName(String accname,String type) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.enterAccntName(accname,type);
+        }
+    }
+
+    public void clickOtherField() {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.clickOtherField();
+        }
+    }
+
+    public void isAccNameErrorMsgPresent() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.validateAccNumErrorMsg();
+        }
+    }
+
+    public void selectPurposeOfAcount(String purpose) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.selectPurposeOfAccount(purpose);
+        }
+    }
+
+    public void enterAdditionIntentFiled(String purpose) {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
             productUserMngMntPageObjects.enterAdditionalIntededField(purpose);
         }
     }
+
     public void isAddiionFieldErrorMsgPresent() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
             productUserMngMntPageObjects.additionalFieldErrorMsgPresent();
+        }
+    }
+
+    public void selectCurrency(String currency) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.selectCurrency(currency);
+        }
+    }
+
+    public void moneyTurnOver(String money) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.taotalMoneyTurnOver(money);
+        }
+    }
+
+    public void turnOverFieldErrorValidation() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.turnOverErrorMsgPresent();
+        }
+    }
+
+    public void selectCountry(String country) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.selectCountry(country);
+        }
+    }
+
+    public void monthIncomeTransaction(String income) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.enterMonthIncomeTransaction(income);
+        }
+    }
+
+    public void incomeTransactionErrorMsgValidation() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.MonthIncomeTransactionErrorMsgPresent();
+        }
+    }
+
+    public void monthIncomeValue(String income) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.enterMonthIncomeValue(income);
+        }
+    }
+
+
+    public void incomeValueErrorMsgValidation() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.MonthIncomeValueErrorMsgPresent();
+        }
+    }
+
+    public void monthOutgoingTransaction(String outcome) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.enterMonthOutgoingTransaction(outcome);
+        }
+    }
+
+    public void OutGoingTransactionErrorMsgValidation() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.MonthOutgoingTransactionErrorMsgPresent();
+        }
+    }
+
+    public void OutGoingValueErrorMsgValidation() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.MonthOutgoingValueErrorMsgPresent();
+        }
+    }
+
+    public void monthOutgoingValue(String outcome) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.enterMonthOutgoingValue(outcome);
+        }
+    }
+
+    public void addAnotherCountry() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.addAnotheCountry();
+        }
+    }
+
+    public void isAddedProductMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.isAddedProductMsgPresent();
+        }
+    }
+
+    public void isEditedSnackMsgPresent() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.isEditedProductMsgPresent();
+        }
+    }
+    public void addedDetailsValidation(String acName, String purposeOfAccount, String currency) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.isAddedDetailsVisible(acName, purposeOfAccount, currency);
+        }
+    }
+
+    public void isDeleteromtPresent() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.isDeleteMsgPresent();
         }
     }
 
