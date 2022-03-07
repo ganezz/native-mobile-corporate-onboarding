@@ -101,8 +101,7 @@ public class IosEntityContactPageObjects {
     }
 
     public void isEntityContactPage() throws Exception {
-        waitUtility.waitForSeconds(3);
-        Boolean b = genericMethods.isElementPresent(entityContactInfoPage);
+         Boolean b = genericMethods.isElementPresent(entityContactInfoPage);
         if (Boolean.TRUE.equals(b)) {
             log.debug("user in entity contact page");
         } else {

@@ -134,7 +134,7 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | TestCase_140 |
       | TestCase_141 |
       | TestCase_142 |
-
+#
   @6
   Scenario Outline: Validate state,City and Post box optional Field with Max 100 characters and should follow url regex and Case insensitive
     And user in Login screen <testcase>
@@ -157,12 +157,12 @@ Feature: Validating Entity Contact Information screen in NM_CO
       | TestCase_072 |
 #      | TestCase_073 |
 #      | TestCase_074 |
-#      | TestCase_143 |
-#      | TestCase_144 |
+      | TestCase_143 |
+      | TestCase_144 |
       | TestCase_145 |
-      | TestCase_146 |
-      | TestCase_147 |
-      | TestCase_148 |
+#      | TestCase_146 |
+#      | TestCase_147 |
+#      | TestCase_148 |
 
   @7
   Scenario Outline: Validate zip code optional Field with Max 100 characters and should follow url regex and Case insensitive
