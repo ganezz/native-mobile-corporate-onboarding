@@ -36,7 +36,7 @@ public class ProductUserMngMntPageObjects {
     By deleteBtn = By.xpath("//android.widget.ImageView[@content-desc='Delete']");
     By deleteBtnArabi = By.xpath("//android.widget.ImageView[@content-desc='حذف']");
     By deleteTradeMg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Trade Finance ?']");
-    By deleteTradeMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف تمويل التجارة؟");
+    By deleteTradeMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف تمويل التجارة؟']");
     By cancelBtn = By.xpath("//android.view.View[@content-desc='Cancel button']");
     By cancelBtnArabic = By.xpath("//android.view.View[@content-desc='زرالإلغاء']");
     By okBtn = By.xpath("//android.view.View[@content-desc='Okay button']");
@@ -59,7 +59,7 @@ public class ProductUserMngMntPageObjects {
     By outGoingValueErrorMsgArabic = By.xpath("//android.view.View[@text='الرجاء إدخال قيمة صادرة صالحة شهريًا (بالدولار الأمريكي)']");
     By addAnotherCountry = By.xpath("//android.view.View[@content-desc='Add another country']");
     By addAnotherCountryArabic = By.xpath("//android.view.View[@content-desc='أضف دولة أخرى']");
-    By closBtn = By.xpath("//*[@text='Close']");
+    By closBtn = By.xpath("//android.view.View[@text='Close']");
     By closBtnArabic = By.xpath("//android.view.View[@text='قريب']");
     By addProductMsg = By.xpath("//android.view.View[@text='Success ! Corporate Account added successfully']");
     By addProductMsgArabic = By.xpath("//android.view.View[@text='Edit ! Corporate Account edited successfully']");
@@ -67,6 +67,20 @@ public class ProductUserMngMntPageObjects {
     By editProductMsgArabic = By.xpath("//android.view.View[@text='Edit ! Corporate Account edited successfully']");
     By deleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Corporate Account ?']");
     By deletemsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف حساب الشركة؟']");
+    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit']");
+    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تعديل']");
+
+
+
+    public void clickEditBtn() throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(editButton);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(editButton);
+        } else {
+            genericMethods.click(editButtonArabic);
+        }
+    }
+
 
     public void seletUserManageMnt() throws Exception {
         androidUtility.swipingHamburgerMenu();
@@ -340,19 +354,23 @@ public class ProductUserMngMntPageObjects {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(editProductMsg);
         Boolean b1 = genericMethods.isElementPresent(editProductMsgArabic);
+        try{
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(editProductMsg);
             genericMethods.click(closBtn);
         } else if (Boolean.TRUE.equals(b1)) {
             genericMethods.isElementPresent(editProductMsgArabic);
             genericMethods.click(closBtnArabic);
-        } else {
+        }
+        }catch(Exception e){
             try {
                 genericMethods.click(closBtn);
-            } catch (Exception e) {
+            } catch (Exception e1) {
                 genericMethods.click(closBtnArabic);
             }
         }
+
+
     }
 
     public void isAddedDetailsVisible(String acName, String purposeOfAccount, String currency) throws Exception {

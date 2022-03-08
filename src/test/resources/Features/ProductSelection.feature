@@ -41,6 +41,8 @@ Feature: Validating Product Selection screen in NM_CO
       | TestCase_199 |
       | TestCase_200 |
 
+
+    @Delete
   Scenario Outline: validating delete icon of Trade Finance with Cancel button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -64,6 +66,7 @@ Feature: Validating Product Selection screen in NM_CO
       | TestCase_199 |
       | TestCase_200 |
 
+      @del2
   Scenario Outline: validating delete icon of Trade Finance with Ok button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -429,6 +432,7 @@ Feature: Validating Product Selection screen in NM_CO
       | TestCase_199 |
       | TestCase_200 |
 
+    @edit
   Scenario Outline: validating Edit button in Product List in Product selection screen
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -445,7 +449,7 @@ Feature: Validating Product Selection screen in NM_CO
     And clicks on Confirm button
     Then user lands on Product Selection screen
     And Product Details entered is displayed in Product selection screen
-    And clicks on Edit button
+    And clicks on Product Edit button
     And user lands on Modification Screen Add a product Screen with already given data
     And edits one or more fields product details in valid format
     And clicks on Confirm button

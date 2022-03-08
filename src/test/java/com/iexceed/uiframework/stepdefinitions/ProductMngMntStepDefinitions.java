@@ -206,6 +206,11 @@ public class ProductMngMntStepDefinitions extends TestBase {
     public void product_details_entered_is_displayed_in_product_selection_screen() throws Exception {
         productUserMngMntPageActions.addedDetailsValidation(datalist.get("accName"),datalist.get("purposeOfAccount"),datalist.get("Currency"));
     }
+
+    @And("clicks on Product Edit button$")
+    public void clicks_on_product_edit_button() throws InterruptedException {
+        productUserMngMntPageActions.clickEditBtn();
+    }
     @And("user lands on Modification Screen Add a product Screen with already given data$")
     public void user_lands_on_modification_screen_add_a_product_screen_with_already_given_data(){
        log.debug("user lands on Modification Screen Add a product Screen with already given data");

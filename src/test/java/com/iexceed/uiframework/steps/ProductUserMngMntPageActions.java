@@ -16,6 +16,14 @@ public class ProductUserMngMntPageActions {
 
     }
 
+    public void clickEditBtn() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            productUserMngMntPageObjects.clickEditBtn();
+        }
+    }
+
     public void selectproductScreen() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
