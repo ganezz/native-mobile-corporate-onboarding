@@ -391,3 +391,17 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_022 |
       | TestCase_104 |
 
+  Scenario Outline: Modify User and check the modified user is listed
+    And user in Login screen <testcase>
+    When clicks language dropDown choose language <testcase>
+    When enter username and password <testcase>
+    And click login button
+    Then user lands on Dashboard
+    Then click add New Application
+    And clicks Add A New User button
+
+    Examples:
+      | testcase     |
+      | TestCase_022 |
+
+

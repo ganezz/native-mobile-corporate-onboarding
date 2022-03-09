@@ -32,9 +32,10 @@ public class EntityDetailsPageObjects {
     By addNewUsrBtnArabic = By.xpath("//android.view.View[@content-desc='إضافة مستخدم جديد']");
     By editField = By.className("android.widget.EditText");
     By editField1 = By.xpath("//android.widget.EditText");
-    By userName = By.xpath("//*[@text='User Name *']");
-    By emailAddress = By.xpath("//android.view.View[@content-desc=\"UserContactDetailsView\"]/android.widget.ScrollView/android.view.View/android.widget.EditText[2]");
-    By email = By.xpath("//*[@text='Email *']");
+    By userNameLAble = By.xpath("//android.view.View[@content-desc='username']");
+    By emailLable = By.xpath("//android.view.View[@content-desc='email']");
+    By mobileLable = By.xpath("//android.view.View[@content-desc='mobile number']");
+    By codeLable = By.xpath("//android.view.View[@content-desc='mobile code']");
     By confirmBtn = By.xpath("//android.view.View[@content-desc='Confirm']");
     By confirmBtnArabic = By.xpath("//android.view.View[@content-desc='يتأكد']");
     By validationMSg = By.xpath("//*[@text='Please enter valid field']");
@@ -125,6 +126,8 @@ public class EntityDetailsPageObjects {
     }
 
     public void addUserName(String userName, String limit, String type) throws Exception {
+
+
         String regex = "@@^[-!@#%&()']*$/";
         waitUtility.waitForSeconds(7);
         genericMethods.click(editField);
@@ -435,6 +438,16 @@ public class EntityDetailsPageObjects {
         } else {
             genericMethods.click(continueBtnArabic);
         }
+
+    }
+
+    public void lableValidation() {
+        System.out.println(genericMethods.getText(userNameLAble));
+        System.out.println(genericMethods.getText(emailLable));
+        System.out.println(genericMethods.getText(mobileLable));
+        System.out.println(genericMethods.getText(codeLable));
+
+
 
     }
 
