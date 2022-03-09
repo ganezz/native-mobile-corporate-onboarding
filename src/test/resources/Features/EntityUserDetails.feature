@@ -391,6 +391,7 @@ Feature: Validating User Contact Details screen in NM_CO
       | TestCase_022 |
       | TestCase_104 |
 
+    @lable
   Scenario Outline: Modify User and check the modified user is listed
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>
@@ -399,8 +400,8 @@ Feature: Validating User Contact Details screen in NM_CO
     Then user lands on Dashboard
     Then click add New Application
     And clicks Add A New User button
-
-    Examples:
+    And check the lable name present in the data field
+      Examples:
       | testcase     |
       | TestCase_022 |
 

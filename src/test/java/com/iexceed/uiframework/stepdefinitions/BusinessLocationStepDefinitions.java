@@ -67,8 +67,10 @@ public class BusinessLocationStepDefinitions extends TestBase {
         log.debug("user lands on Add A New Location screen");
     }
     @And("clicks on Country field$")
-    public void clicks_on_country_field(){
+    public void clicks_on_country_field() throws Exception {
        log.debug("clicks on Country field");
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.selectCountry(datalist.get("countryCode"),"");
     }
 
     @Then("user remains in Add new Location and Operations screen$")

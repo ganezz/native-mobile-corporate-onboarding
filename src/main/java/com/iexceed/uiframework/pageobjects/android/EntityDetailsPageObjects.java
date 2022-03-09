@@ -205,6 +205,7 @@ public class EntityDetailsPageObjects {
         } catch (Exception e) {
             log.debug("keyboard is not alive");
         }
+        waitUtility.waitForSeconds(1);
         Boolean b = genericMethods.isElementPresent(confirmBtn);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(confirmBtn);

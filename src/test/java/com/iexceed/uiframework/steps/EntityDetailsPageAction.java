@@ -188,4 +188,12 @@ public class EntityDetailsPageAction {
         }
     }
 
+    public void validateLableValue(){
+        if (platForm.equalsIgnoreCase("ios")) {
+          log.debug("ios");
+        } else {
+            entityDetailsPage.lableValidation();
+        }
+    }
+
 }

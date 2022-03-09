@@ -279,7 +279,7 @@ Feature: Validating Product Selection screen in NM_CO
       | TestCase_200 |
       | TestCase_201 |
       | TestCase_205 |
-
+@incomeV
   Scenario Outline: validating Incoming value per month (USD), Mandatory numeric field
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>

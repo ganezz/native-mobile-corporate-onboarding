@@ -98,6 +98,15 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void selectCountry(String country,String type) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            businessLocationPage.fillCountry(country,type);
+
+        }
+    }
+
     public void fillCountryandOperation(String country, String operation,String type) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");

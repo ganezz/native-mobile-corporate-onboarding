@@ -274,6 +274,11 @@ public class EntityDetailsPageDefinitions extends TestBase {
        log.debug("user lands on entity legal screen ");
     }
 
+    @And("check the lable name present in the data field$")
+    public void check_the_lable_name_present_in_the_data_field(){
+        EntityDetailsPageAction EntityDetailsPageAction = new EntityDetailsPageAction(deviceConfig.get("platform"));
+        EntityDetailsPageAction.validateLableValue();
+    }
 
 
 }

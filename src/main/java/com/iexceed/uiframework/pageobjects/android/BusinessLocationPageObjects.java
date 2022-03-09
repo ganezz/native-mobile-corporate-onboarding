@@ -112,13 +112,23 @@ public class BusinessLocationPageObjects {
     }
 
     public void selectCountry(String country) throws Exception {
-        editField.findElements(driver).get(1).click();
-        waitUtility.waitForSeconds(1);
-        genericMethods.click(searchField);
-        genericMethods.sendKeys(searchField, country);
-        log.info(driver.findElements(countryList).size());
-        List<WebElement> tempCountryList = driver.findElements(countryList);
-        androidUtility.selectionOfDropdown(country, tempCountryList);
+      try {
+          editField.findElements(driver).get(1).click();
+          waitUtility.waitForSeconds(1);
+          genericMethods.click(searchField);
+          genericMethods.sendKeys(searchField, country);
+          log.info(driver.findElements(countryList).size());
+          List<WebElement> tempCountryList = driver.findElements(countryList);
+          androidUtility.selectionOfDropdown(country, tempCountryList);
+      }catch(Exception e){
+         genericMethods.click(editField);
+          waitUtility.waitForSeconds(1);
+          genericMethods.click(searchField);
+          genericMethods.sendKeys(searchField, country);
+          log.info(driver.findElements(countryList).size());
+          List<WebElement> tempCountryList = driver.findElements(countryList);
+          androidUtility.selectionOfDropdown(country, tempCountryList);
+        }
     }
 
     public void clickOkBtnValidation() throws Exception {
