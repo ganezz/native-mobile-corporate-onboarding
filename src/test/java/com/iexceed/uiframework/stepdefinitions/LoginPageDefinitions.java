@@ -38,7 +38,7 @@ public class LoginPageDefinitions extends TestBase {
             testdata.setTestDataInMap(deviceConfig);
             testdata.setTestDataInMap(datalist);
 //            androidAppURL=launchApp();
-            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.22-08-03-2022-16:32.apk";
+            androidAppURL="https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.22-10-03-2022-16:52.apk";
             ExcelHandler.UpdateTestDataToExcel(props.getProperty("appSheetPath"), props.getProperty("deviceSheetName"),"oldAppURL",androidAppURL,props.getProperty(testcase));
             testdata.setTestDataInMap(deviceConfig);
           log.debug("updated url:"+deviceConfig.get("oldAppURL"));
