@@ -56,6 +56,7 @@ Feature: Validating End to End features for andriod
     And message will be appear on the bottom
     And clicks on Continue Button
     Then user lands on Source of wealth screen
+    And user is in Source of Wealth screen
     And clicks Add A New Source of Wealth button
     And fills valid data in Source of wealth field and Please elaborate
     And clicks on Confirm button

@@ -45,12 +45,9 @@ public class IosLoginPageObjects extends TestBase {
 
     public void ios_isHomePageVisible() throws Exception {
         waitUtility.waitForSeconds(4);
-        Boolean b = genericMethods.isElementPresent(dropDown);
-        if (Boolean.TRUE.equals(b)) {
-            log.info("user in home page");
-        }  else {
-            log.debug("home page is not launched");
-        }
+      genericMethods.isElementPresent(dropDown);
+                   log.info("user in home page");
+
     }
 
 

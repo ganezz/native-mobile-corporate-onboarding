@@ -122,8 +122,9 @@ public class SourceofWealthStepDefinition extends TestBase {
         sourceofWealthPageActions.isSourceWealthScreen();
     }
     @Then("user lands on Product user management screen$")
-    public void user_lands_on_product_user_management_screen(){
+    public void user_lands_on_product_user_management_screen() throws InterruptedException {
     log.debug("user lands on Product & user management screen");
+    Thread.sleep(2000);
     }
 }
 

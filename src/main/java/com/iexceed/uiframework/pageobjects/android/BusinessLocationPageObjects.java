@@ -112,7 +112,7 @@ public class BusinessLocationPageObjects {
     }
 
     public void selectCountry(String country) throws Exception {
-      try {
+      if(editField.findElements(driver).get(1).isDisplayed()){
           editField.findElements(driver).get(1).click();
           waitUtility.waitForSeconds(1);
           genericMethods.click(searchField);
@@ -120,7 +120,7 @@ public class BusinessLocationPageObjects {
           log.info(driver.findElements(countryList).size());
           List<WebElement> tempCountryList = driver.findElements(countryList);
           androidUtility.selectionOfDropdown(country, tempCountryList);
-      }catch(Exception e){
+      }else{
          genericMethods.click(editField);
           waitUtility.waitForSeconds(1);
           genericMethods.click(searchField);
