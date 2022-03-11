@@ -84,6 +84,7 @@ public class ProductUserMngMntPageObjects {
 
 
     public void seletUserManageMnt() throws Exception {
+        waitUtility.waitForSeconds(2);
         androidUtility.swipingHamburgerMenu();
         genericMethods.click(productMngMntScreen);
     }
@@ -344,7 +345,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void isAddedProductMsgPresent() throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(1);
         Boolean b = genericMethods.isElementPresent(addProductMsg);
         Boolean b1 = genericMethods.isElementPresent(addProductMsgArabic);
         if (Boolean.TRUE.equals(b)) {
@@ -387,14 +388,13 @@ public class ProductUserMngMntPageObjects {
 
     public void isAddedDetailsVisible(String acName, String purposeOfAccount, String currency) throws Exception {
         try {
-            genericMethods.click(closBtn);
-        } catch (Exception e) {
-            genericMethods.click(closBtnArabic);
+            List<WebElement> tempDetails = driver.findElements(viewDataDetails);
+            androidUtility.selectionItemVisible(acName, tempDetails);
+            androidUtility.selectionItemVisible(purposeOfAccount, tempDetails);
+            androidUtility.selectionItemVisible(currency, tempDetails);
+        }catch(Exception e){
+            log.debug(e);
         }
-        List<WebElement> tempDetails = driver.findElements(viewDataDetails);
-        androidUtility.selectionItemVisible(acName, tempDetails);
-        androidUtility.selectionItemVisible(purposeOfAccount, tempDetails);
-        androidUtility.selectionItemVisible(currency, tempDetails);
 
     }
 

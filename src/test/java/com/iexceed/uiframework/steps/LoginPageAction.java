@@ -24,7 +24,7 @@ public class LoginPageAction {
 
     }
 
-    public void chooseLanguage(String platform, String language)  {
+    public void chooseLanguage(String platform, String language) throws Exception {
         if (platform.equalsIgnoreCase("ios")) {
             ihomePageObjects.ios_chooseLanguage(language);
         } else {

@@ -79,8 +79,8 @@ public class LoginPageObjects extends TestBase {
 
     }
 
-    public void chooseLanguage(String language) {
-        genericMethods.waitForVisibility(dropDown);
+    public void chooseLanguage(String language) throws Exception {
+       waitUtility.waitForSeconds(3);
         genericMethods.click(dropDown);
         List<WebElement> tempdropDownList = driver.findElements(dropDownList);
         androidUtility.selectionOfDropdown(language, tempdropDownList);
