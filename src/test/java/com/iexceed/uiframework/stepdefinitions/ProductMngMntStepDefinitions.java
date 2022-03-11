@@ -229,7 +229,7 @@ public class ProductMngMntStepDefinitions extends TestBase {
         productUserMngMntPageActions.isEditedSnackMsgPresent();
     }
     @And("user is Displayed with product Delete Prompt$")
-    public void user_is_displayed_with_product_delete_prompt() throws InterruptedException {
+    public void user_is_displayed_with_product_delete_prompt() throws Exception {
         productUserMngMntPageActions.isDeleteromtPresent();
     }
     @Then("Product is not removed from the list$")

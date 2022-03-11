@@ -280,7 +280,7 @@ public class ProductUserMngMntPageActions {
         }
     }
 
-    public void isDeleteromtPresent() throws InterruptedException {
+    public void isDeleteromtPresent() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {

@@ -72,7 +72,8 @@ public class ProductUserMngMntPageObjects {
 
 
 
-    public void clickEditBtn() throws InterruptedException {
+    public void clickEditBtn() throws Exception {
+       waitUtility.waitForSeconds(1);
         Boolean b = genericMethods.isElementPresent(editButton);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(editButton);
@@ -260,6 +261,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void MonthIncomeTransactionErrorMsgPresent() throws InterruptedException {
+        androidUtility.hideKeyBoard();
         genericMethods.click(editField);
         Boolean b = genericMethods.isElementPresent(incomeTransactionErrorMsgArabic);
         if (Boolean.TRUE.equals(b)) {
@@ -270,6 +272,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void enterMonthIncomeValue(String incomeMonth) {
+        androidUtility.hideKeyBoard();
         editField.findElements(driver).get(7).click();
         editField.findElements(driver).get(7).clear();
         editField.findElements(driver).get(7).sendKeys(incomeMonth);
@@ -277,6 +280,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void MonthIncomeValueErrorMsgPresent() throws InterruptedException {
+        androidUtility.hideKeyBoard();
         genericMethods.click(editField);
         Boolean b = genericMethods.isElementPresent(incomeValueErrorMsg);
         if (Boolean.TRUE.equals(b)) {
@@ -287,6 +291,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void enterMonthOutgoingTransaction(String outGoingMonth) {
+        androidUtility.hideKeyBoard();
         editField.findElements(driver).get(8).click();
         editField.findElements(driver).get(8).clear();
         editField.findElements(driver).get(8).sendKeys(outGoingMonth);
@@ -294,6 +299,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void MonthOutgoingTransactionErrorMsgPresent() throws InterruptedException {
+        androidUtility.hideKeyBoard();
         genericMethods.click(editField);
         Boolean b = genericMethods.isElementPresent(outgoingTransErrorMsg);
         if (Boolean.TRUE.equals(b)) {
@@ -321,7 +327,7 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void addAnotheCountry() throws InterruptedException {
-
+        androidUtility.hideKeyBoard();
         Boolean b = genericMethods.isElementPresent(addAnotherCountry);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(addAnotherCountry);
@@ -383,7 +389,8 @@ public class ProductUserMngMntPageObjects {
 
 
 
-    public void isDeleteMsgPresent() throws InterruptedException {
+    public void isDeleteMsgPresent() throws Exception {
+       waitUtility.waitForSeconds(1);
         Boolean b = genericMethods.isElementPresent(deleteMsg);
         Boolean b1 = genericMethods.isElementPresent(deletemsgArabic);
         if (Boolean.TRUE.equals(b)) {
