@@ -10,7 +10,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features/ProductSelection.feature",
+        features = "src/test/resources/Features",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
         tags= "@regressionProductSelection",
         plugin= {"pretty",
