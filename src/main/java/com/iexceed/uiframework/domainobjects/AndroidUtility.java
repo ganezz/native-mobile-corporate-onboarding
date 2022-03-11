@@ -71,7 +71,6 @@ public class AndroidUtility {
                     break;
                 }
             } else {
-
                 log.debug("User details is not visible {}", stringmsg);
 
             }

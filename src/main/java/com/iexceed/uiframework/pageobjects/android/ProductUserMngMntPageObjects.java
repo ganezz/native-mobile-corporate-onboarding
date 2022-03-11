@@ -116,19 +116,25 @@ public class ProductUserMngMntPageObjects {
         }
     }
 
-    public void clikConfirmBtn() throws InterruptedException {
+    public void clikConfirmBtn() throws Exception {
         Boolean b = genericMethods.isElementPresent(confirmBtn);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.click(confirmBtn);
         } else {
             genericMethods.click(confirmArabic);
         }
+        waitUtility.waitForSeconds(1);
     }
 
     public void validateTradeFinanceDetails(String trade) throws Exception {
+        try {
+            genericMethods.click(closBtn);
+        } catch (Exception e) {
+            genericMethods.click(closBtnArabic);
+        }
         log.info(driver.findElements(viewDataDetails).size());
         List<WebElement> tempDetails = driver.findElements(viewDataDetails);
-        androidUtility.selectionItemVisible(trade, tempDetails);
+        androidUtility.selectionItemVisible(trade,tempDetails);
     }
 
     public void clickDeleteBtn() throws InterruptedException {
@@ -380,6 +386,11 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void isAddedDetailsVisible(String acName, String purposeOfAccount, String currency) throws Exception {
+        try {
+            genericMethods.click(closBtn);
+        } catch (Exception e) {
+            genericMethods.click(closBtnArabic);
+        }
         List<WebElement> tempDetails = driver.findElements(viewDataDetails);
         androidUtility.selectionItemVisible(acName, tempDetails);
         androidUtility.selectionItemVisible(purposeOfAccount, tempDetails);

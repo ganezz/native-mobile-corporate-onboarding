@@ -33,7 +33,7 @@ public class ProductMngMntStepDefinitions extends TestBase {
        log.debug("user lands on Add A Product screen");
     }
     @And("user clicks confirm$")
-    public void user_clicks_confirm() throws InterruptedException {
+    public void user_clicks_confirm() throws Exception {
         productUserMngMntPageActions.clickConfirmBtn();
     }
 

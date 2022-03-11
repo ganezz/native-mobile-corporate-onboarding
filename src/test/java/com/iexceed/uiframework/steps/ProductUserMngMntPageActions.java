@@ -56,7 +56,7 @@ public class ProductUserMngMntPageActions {
         }
     }
 
-    public void clickConfirmBtn() throws InterruptedException {
+    public void clickConfirmBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {

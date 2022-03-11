@@ -21,7 +21,7 @@ Feature: Validating Product Selection screen in NM_CO
       | TestCase_200 |
 
 
-
+@tf
   Scenario Outline: validating Trade Finance radio Button
     And user in Login screen <testcase>
     When clicks language dropDown choose language <testcase>

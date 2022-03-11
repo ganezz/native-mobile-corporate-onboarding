@@ -192,6 +192,11 @@ public class LoginPageObjects extends TestBase {
 
 
     public void clickLogin() throws InterruptedException {
+        try {
+            driver.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
+        }
         Boolean b = genericMethods.isElementPresent(loginBtn);
         Boolean b1 = genericMethods.isElementPresent(loginArabicBtn);
         if (Boolean.TRUE.equals(b)) {
