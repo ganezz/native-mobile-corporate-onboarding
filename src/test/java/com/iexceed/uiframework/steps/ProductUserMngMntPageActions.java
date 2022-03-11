@@ -16,7 +16,7 @@ public class ProductUserMngMntPageActions {
 
     }
 
-    public void clickEditBtn() throws InterruptedException {
+    public void clickEditBtn() throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {

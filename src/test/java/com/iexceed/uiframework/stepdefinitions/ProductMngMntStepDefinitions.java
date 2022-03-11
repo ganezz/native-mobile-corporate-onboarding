@@ -208,7 +208,7 @@ public class ProductMngMntStepDefinitions extends TestBase {
     }
 
     @And("clicks on Product Edit button$")
-    public void clicks_on_product_edit_button() throws InterruptedException {
+    public void clicks_on_product_edit_button() throws Exception {
         productUserMngMntPageActions.clickEditBtn();
     }
     @And("user lands on Modification Screen Add a product Screen with already given data$")
