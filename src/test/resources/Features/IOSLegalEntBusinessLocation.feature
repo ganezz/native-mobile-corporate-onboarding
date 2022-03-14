@@ -1,8 +1,8 @@
-@regressionBusinessLocationAndOperations
+@regressionIOSBusinessOperations
 Feature: Validating Business Location And Operations screen in NM_CO
 
   Background: User should be able launch and login into App
-    Given user opens the App batch1
+    Given user opens the App batch5
 
   @1
   Scenario Outline: validating Country in Add A New Location screen, Drop down, Mandatory Field
