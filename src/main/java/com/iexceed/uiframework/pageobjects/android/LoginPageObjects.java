@@ -114,7 +114,7 @@ public class LoginPageObjects extends TestBase {
             genericMethods.click(addNewAppliBtnArabic);
             log.info("page is navigating arabic");
         }
-        waitUtility.waitForSeconds(3);
+        waitUtility.waitForSeconds(4);
 
     }
 

@@ -40,25 +40,25 @@ public class IosBusinessLocationPageObjects {
     By countryDD=By.xpath("//XCUIElementTypeButton[@name='Country Drop Down']");
     By countryList = By.xpath("//XCUIElementTypeButton");
     By viewDataDetails = By.xpath("//XCUIElementTypeStaticText");
-    By locationEditMsg = By.xpath("//android.view.View[@text='Edit ! Business Location edited successfully']");
-    By marketEditMsg = By.xpath("//android.view.View[@text='Edit ! Business Market edited successfully']");
-    By marketEditMsgArabic = By.xpath("//android.view.View[@text='تعديل ! تم تحرير سوق العمل بنجاح']");
+    By locationEditMsg = By.xpath("//XCUIElementTypeStaticText[@name='Edit ! Business Location edited successfully']");
+    By marketEditMsg = By.xpath("//XCUIElementTypeStaticText[@name='Edit ! Business Market edited successfully']");
+    By marketEditMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='تم تحرير تحرير سوق العمل بنجاح']");
     By closBtn = By.xpath("//XCUIElementTypeButton[@name='Close']");
-    By locationEditMsgArabic = By.xpath("//android.view.View[@text='تعديل ! تم تحرير موقع العمل بنجاح']");
+    By locationEditMsgArabic = By.xpath("//XCUIElementTypeStaticText[@name='تم تحرير تحرير موقع العمل بنجاح']");
     By closBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Close']");
-    By businessLocDeleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Location of business operations ?']");
-    By businessLocDeleteMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف موقع العمليات التجارية؟']");
-    By businessMarketDeleteMsg = By.xpath("//android.view.View[@text='Are you sure you want to delete the Business Market ?']");
-    By businessMarketDeleteMsgArabic = By.xpath("//android.view.View[@text='هل أنت متأكد أنك تريد حذف سوق الأعمال؟']");
+    By businessLocDeleteMsg = By.xpath("//*[contains(@label,'Are you sure you want to delete the Business Location from the list?')]");
+    By businessLocDeleteMsgArabic = By.xpath("//*[contains(@label,'هل أنت متأكد أنك تريد حذف موقع العمل من القائمة')]");
+    By businessMarketDeleteMsg = By.xpath("//*[contains(@label,'Are you sure you want to delete the Business Market from the list?')]");
+    By businessMarketDeleteMsgArabic = By.xpath("//*[contains(@label,'هل أنت متأكد أنك تريد حذف سوق الأعمال من القائمة')]");
     By confirmBtn = By.xpath("//XCUIElementTypeButton[@name='Confirm Button']");
     By confirmBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Confirm Button']");
-    By okBtn = By.xpath("//android.view.View[@content-desc='Okay button']");
-    By okBtnArabic = By.xpath("//android.view.View[@content-desc='زر موافق']");
+    By okBtn = By.xpath("//XCUIElementTypeButton[@name='OK Button']");
+    By okBtnArabic = By.xpath("//XCUIElementTypeButton[@name='OK Button']");
     By cancelBtn = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By cancelBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By applicCancelBtn = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
     By applicCancelBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Cancel Button']");
-    By continueBtn = By.xpath("//android.view.View[@content-desc='Continue']");
+    By continueBtn = By.xpath("//XCUIElementTypeButton[@name='Continue Button']");
     By continueBtnArabic = By.xpath("//android.view.View[@content-desc='يكمل']");
     By errorFieldValidation = By.xpath("//XCUIElementTypeStaticText[@name='Please enter this field']");
     By errorFieldValidationArabic = By.xpath("//XCUIElementTypeStaticText[@name='الرجاء إدخال هذا الحقل']");
@@ -68,10 +68,10 @@ public class IosBusinessLocationPageObjects {
     By addedBinessLocationMsgArabic=By.xpath("//XCUIElementTypeStaticText[@name='تمت إضافة موقع العمل بنجاح']");
     By addedBinessMarketMsg=By.xpath("//XCUIElementTypeStaticText[@name='Success ! Business Market added successfully']");
     By addedBinessMarketMsgArabic=By.xpath("//XCUIElementTypeStaticText[@name='تمت إضافة سوق الأعمال الناجحة بنجاح']");
-    By editButton = By.xpath("//android.widget.ImageView[@content-desc='Edit Icon']");
-    By editButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='تحرير الأيقونة']");
-    By deleteButton = By.xpath("//android.widget.ImageView[@content-desc='Delete Icon']");
-    By deleteButtonArabic = By.xpath("//android.widget.ImageView[@content-desc='رمز الحذف']");
+    By editButtonLocation = By.xpath("//XCUIElementTypeButton[@name='Business Location Edit Button 0']");
+    By editButtonMarket = By.xpath("//XCUIElementTypeButton[@name='Business Market Edit Button 0']");
+    By deleteButtonLocation = By.xpath("//XCUIElementTypeButton[@name='Business Location Delete Button 0']");
+    By deleteButtonMarket = By.xpath("//XCUIElementTypeButton[@name='Business Market Delete Button 0']");
 
 
     public void selectBusinessLocationPage() throws Exception {
@@ -135,29 +135,22 @@ public class IosBusinessLocationPageObjects {
     }
 
     public void selectCountry(String country) throws Exception {
-      if(editField.findElements(driver).get(1).isDisplayed()){
-          editField.findElements(driver).get(1).click();
-          waitUtility.waitForSeconds(1);
-          genericMethods.click(searchField);
-          genericMethods.sendKeys(searchField, country);
-          log.info(driver.findElements(countryList).size());
-          List<WebElement> tempCountryList = driver.findElements(countryList);
-          androidUtility.selectionOfDropdown(country, tempCountryList);
-      }else{
-         genericMethods.click(editField);
-          waitUtility.waitForSeconds(1);
-          genericMethods.click(searchField);
-          genericMethods.sendKeys(searchField, country);
-          log.info(driver.findElements(countryList).size());
-          List<WebElement> tempCountryList = driver.findElements(countryList);
-          androidUtility.selectionOfDropdown(country, tempCountryList);
+        genericMethods.click(countryDD);
+        waitUtility.waitForSeconds(1);
+        genericMethods.click(searchField);
+        genericMethods.sendKeys(searchField, country);
+        try {
+            iosUtility.hideKeyboard();
+        } catch (Exception e) {
+            log.debug(e);
         }
+        log.info(driver.findElements(countryList).size());
+        iosUtility.selectionOfDropdown(country, countryList);
     }
 
     public void clickOkBtnValidation() throws Exception {
         waitUtility.waitForSeconds(2);
         Boolean c = genericMethods.isElementPresent(okBtn);
-
         if (Boolean.TRUE.equals(c)) {
             genericMethods.click(okBtn);
         } else {
@@ -186,7 +179,6 @@ public class IosBusinessLocationPageObjects {
     public void clickApplicationCancelBtnValidation() throws Exception {
         waitUtility.waitForSeconds(1);
         Boolean c = genericMethods.isElementPresent(applicCancelBtn);
-
         if (Boolean.TRUE.equals(c)) {
             genericMethods.click(applicCancelBtn);
         } else {
@@ -198,9 +190,7 @@ public class IosBusinessLocationPageObjects {
         waitUtility.waitForSeconds(1);
         driver.hideKeyboard();
         try {
-
             genericMethods.click(continueBtn);
-
         } catch (Exception e) {
             waitUtility.waitForSeconds(1);
             genericMethods.click(continueBtnArabic);
@@ -340,8 +330,7 @@ public class IosBusinessLocationPageObjects {
 
 
     public void isEditLocationValidationMsgPresent() throws Exception {
-        waitUtility.waitForSeconds(2);
-        Boolean b = genericMethods.isElementPresent(locationEditMsg);
+         Boolean b = genericMethods.isElementPresent(locationEditMsg);
         Boolean b1 = genericMethods.isElementPresent(locationEditMsgArabic);
         if (Boolean.TRUE.equals(b)) {
             genericMethods.isElementPresent(locationEditMsg);
@@ -407,21 +396,21 @@ public class IosBusinessLocationPageObjects {
     }
 
     public void clickEditBtn() throws InterruptedException {
-        Boolean b = genericMethods.isElementPresent(editButton);
+        Boolean b = genericMethods.isElementPresent(editButtonLocation);
         if (Boolean.TRUE.equals(b)) {
-            genericMethods.click(editButton);
+            genericMethods.click(editButtonLocation);
         } else {
-            genericMethods.click(editButtonArabic);
+            genericMethods.click(editButtonMarket);
         }
     }
 
     public void clickDeleteBtn() throws InterruptedException {
-        Boolean b = genericMethods.isElementPresent(deleteButton);
+        Boolean b = genericMethods.isElementPresent(deleteButtonLocation);
 
         if (Boolean.TRUE.equals(b)) {
-            genericMethods.click(deleteButton);
+            genericMethods.click(deleteButtonLocation);
         } else {
-            genericMethods.click(deleteButtonArabic);
+            genericMethods.click(deleteButtonMarket);
         }
 
     }

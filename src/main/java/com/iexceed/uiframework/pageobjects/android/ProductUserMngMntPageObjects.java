@@ -84,7 +84,7 @@ public class ProductUserMngMntPageObjects {
 
 
     public void seletUserManageMnt() throws Exception {
-        waitUtility.waitForSeconds(5);
+        waitUtility.waitForSeconds(7);
         androidUtility.swipingHamburgerMenu();
         genericMethods.click(productMngMntScreen);
     }
