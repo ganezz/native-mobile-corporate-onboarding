@@ -126,14 +126,13 @@ Feature: Validating Product Selection screen in NM_CO
     Then error message should be displayed under Preferred operating account name field
     Examples:
       | testcase |
-      | TestCase_199 |
-      | TestCase_200 |
-      | TestCase_199 |
-      | TestCase_200 |
-      | TestCase_199 |
-      | TestCase_200 |
-      | TestCase_199 |
-      | TestCase_200 |
+      | TestCase_201 |
+      | TestCase_202 |
+      | TestCase_203 |
+      | TestCase_204 |
+      | TestCase_205 |
+      | TestCase_206 |
+      | TestCase_207 |
 
   Scenario Outline: validating Purpose of account field, Mandatory dropdown field
     And user in Login screen <testcase>
@@ -154,6 +153,12 @@ Feature: Validating Product Selection screen in NM_CO
       | testcase |
       | TestCase_199 |
       | TestCase_200 |
+      | TestCase_201 |
+      | TestCase_202 |
+      | TestCase_203 |
+      | TestCase_205 |
+      | TestCase_206 |
+      | TestCase_207 |
 
   Scenario Outline: validating Additional details on intended use, Mandatory alphanumeric field with Max 100 characters
     And user in Login screen <testcase>
@@ -174,6 +179,12 @@ Feature: Validating Product Selection screen in NM_CO
       | testcase |
       | TestCase_199 |
       | TestCase_200 |
+      | TestCase_201 |
+      | TestCase_202 |
+      | TestCase_203 |
+      | TestCase_205 |
+      | TestCase_206 |
+      | TestCase_207 |
 
   Scenario Outline: validating Currency field, Mandatory dropdown field
     And user in Login screen <testcase>

@@ -84,7 +84,7 @@ public class ProductUserMngMntPageObjects {
 
 
     public void seletUserManageMnt() throws Exception {
-        waitUtility.waitForSeconds(2);
+        waitUtility.waitForSeconds(5);
         androidUtility.swipingHamburgerMenu();
         genericMethods.click(productMngMntScreen);
     }
@@ -345,22 +345,25 @@ public class ProductUserMngMntPageObjects {
     }
 
     public void isAddedProductMsgPresent() throws Exception {
-        waitUtility.waitForSeconds(1);
         Boolean b = genericMethods.isElementPresent(addProductMsg);
         Boolean b1 = genericMethods.isElementPresent(addProductMsgArabic);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(addProductMsg);
-            genericMethods.click(closBtn);
-        } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(addProductMsgArabic);
-            genericMethods.click(closBtnArabic);
-        } else {
-            try {
-                genericMethods.click(closBtn);
-            } catch (Exception e) {
-                genericMethods.click(closBtnArabic);
-            }
-        }
+       try {
+           if (Boolean.TRUE.equals(b)) {
+               genericMethods.isElementPresent(addProductMsg);
+               genericMethods.click(closBtn);
+           } else if (Boolean.TRUE.equals(b1)) {
+               genericMethods.isElementPresent(addProductMsgArabic);
+               genericMethods.click(closBtnArabic);
+           } else {
+               try {
+                   genericMethods.click(closBtn);
+               } catch (Exception e) {
+                   genericMethods.click(closBtnArabic);
+               }
+           }
+       }catch(Exception e){
+           log.debug(e);
+       }
     }
 
     public void isEditedProductMsgPresent() throws Exception {
