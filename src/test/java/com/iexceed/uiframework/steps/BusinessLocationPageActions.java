@@ -43,6 +43,14 @@ public class BusinessLocationPageActions {
         }
     }
 
+    public void clickAddYEsToggle() {
+        if (platForm.equalsIgnoreCase("ios")) {
+            iosLocationPageObjects.clickYEsToggle();
+        } else {
+            log.debug("android");
+        }
+    }
+
     public void selectCountry(String country) throws Exception {
         if (platForm.equalsIgnoreCase("ios")) {
             iosLocationPageObjects.selectCountry(country);

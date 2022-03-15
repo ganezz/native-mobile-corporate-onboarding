@@ -73,7 +73,7 @@ public class IosBusinessLocationPageObjects {
     By editButtonMarket = By.xpath("//XCUIElementTypeButton[@name='Business Market Edit Button 0']");
     By deleteButtonLocation = By.xpath("//XCUIElementTypeButton[@name='Business Location Delete Button 0']");
     By deleteButtonMarket = By.xpath("//XCUIElementTypeButton[@name='Business Market Delete Button 0']");
-
+    By toggleYEs=By.xpath("//XCUIElementTypeButton[@name='Yes Radio Button']");
 
     public void selectBusinessLocationPage() throws Exception {
         iosUtility.ios_swipingHamburgerMenu();
@@ -85,6 +85,10 @@ public class IosBusinessLocationPageObjects {
         } else {
             genericMethods.click(businessLogicMenuArabic);
         }
+    }
+
+    public void clickYEsToggle(){
+        genericMethods.click(toggleYEs);
     }
 
     public void isErrorMsgDisplayed() throws Exception {
@@ -354,22 +358,23 @@ public class IosBusinessLocationPageObjects {
     }
 
     public void isEditMarketValidationMsgPresent() throws Exception {
-        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(marketEditMsg);
         Boolean b1 = genericMethods.isElementPresent(marketEditMsgArabic);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(marketEditMsg);
-            genericMethods.click(closBtn);
-        } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(marketEditMsgArabic);
-            genericMethods.click(closBtnArabic);
-        } else {
-            try {
-                genericMethods.click(closBtn);
-            } catch (Exception e) {
-                genericMethods.click(closBtnArabic);
-            }
-        }
+       try {
+           if (Boolean.TRUE.equals(b)) {
+               genericMethods.click(closBtn);
+           } else if (Boolean.TRUE.equals(b1)) {
+               genericMethods.click(closBtnArabic);
+           }else {
+               try {
+                   genericMethods.click(closBtn);
+               } catch (Exception e) {
+                   genericMethods.click(closBtnArabic);
+               }
+           }
+       }catch(Exception e){
+          log.debug(e);
+       }
 
     }
 

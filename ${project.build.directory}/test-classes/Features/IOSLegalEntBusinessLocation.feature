@@ -252,7 +252,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then click add New Application
     And swipes the side menu and select Business Location
     When user is in Business Location And Operations screen
-    And clicks on toggle
+    And clicks on toggleYES
     And user displayed with a Country of domicile dropdown field <testcase>
     And lands on new screen with the drop down values and search option
     And selects a value
@@ -377,6 +377,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_012 |
+      | TestCase_157 |
 
   @16
   Scenario Outline: validating Edit button in Business markets section
@@ -402,10 +403,10 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user displayed with edited values in Business markets Section
     Examples:
       | testcase     |
-      | TestCase_155 |
-      | TestCase_156 |
-      | TestCase_157 |
-      | TestCase_158 |
+      | TestCase_209 |
+      | TestCase_210 |
+      | TestCase_211 |
+      | TestCase_212 |
 
   @17
   Scenario Outline: validating Delete icon of Business markets section with Ok button
@@ -430,7 +431,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_155 |
-      | TestCase_158 |
+      | TestCase_157 |
 
   @18
   Scenario Outline: validating Delete icon of Business markets section with Cancel button
@@ -455,7 +456,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_155 |
-      | TestCase_158 |
+      | TestCase_157 |
 
   @19
   Scenario Outline: validating Business Location and Operations screen with Cancel button
@@ -510,5 +511,5 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user lands on Industry screen
     Examples:
       | testcase     |
-      | TestCase_163 |
-      | TestCase_164 |
+      | TestCase_213 |
+      | TestCase_214 |

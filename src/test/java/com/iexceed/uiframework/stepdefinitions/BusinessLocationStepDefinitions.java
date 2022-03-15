@@ -30,6 +30,13 @@ public class BusinessLocationStepDefinitions extends TestBase {
     public void clicks_on_toggle(){
       log.debug("click country dropdwon");
     }
+
+    @And("clicks on toggleYES$")
+    public void clicks_on_toggleyes(){
+        BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
+        businessLocationPageActions.clickAddYEsToggle();
+
+    }
     @And("user displayed with a Country of domicile dropdown field (.+)$")
     public void user_displayed_with_a_country_of_domicile_dropdown_field(String testcase) throws Exception {
         BusinessLocationPageActions businessLocationPageActions =new BusinessLocationPageActions(deviceConfig.get("platform"));
