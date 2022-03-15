@@ -119,7 +119,7 @@ public class BusinessLocationPageActions {
         }
     }
 
-    public void fillTypeOfOperation(String operation) {
+    public void fillTypeOfOperation(String operation) throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             iosLocationPageObjects.fillOperation(operation);
         } else {

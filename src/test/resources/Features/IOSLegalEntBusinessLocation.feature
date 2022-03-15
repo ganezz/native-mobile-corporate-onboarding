@@ -116,7 +116,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_155 |
-      | TestCase_158 |
+      | TestCase_157 |
 
 
   @6
@@ -141,10 +141,10 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user displayed with edited values in Business markets Section
     Examples:
       | testcase     |
-      | TestCase_155 |
-      | TestCase_156 |
-      | TestCase_157 |
-      | TestCase_158 |
+      | TestCase_209 |
+      | TestCase_210 |
+      | TestCase_211 |
+      | TestCase_212 |
 
   @a
   Scenario Outline: validating Proportion of Business(%), mandatory Numeric Field with limit 1 to 100
@@ -231,8 +231,6 @@ Feature: Validating Business Location And Operations screen in NM_CO
     When user is in Business Location And Operations screen
     And clicks Add A New Business Markets button
     Then user lands on Add A New Business Markets screen
-    And clicks Add A New Business Markets button
-    Then user lands on Add A New Business Markets screen
     And fills valid data in Country and Proportion of Business fields
     And click on Confirm button
     When user is in Business Location And Operations screen
@@ -241,7 +239,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Examples:
       | testcase     |
       | TestCase_155 |
-      | TestCase_158 |
+      | TestCase_157 |
 
 
   @10
@@ -262,10 +260,10 @@ Feature: Validating Business Location And Operations screen in NM_CO
 
     Examples:
       | testcase     |
-      | TestCase_012 |
-      | TestCase_017 |
-      | TestCase_091 |
-      | TestCase_092 |
+      | TestCase_209 |
+      | TestCase_210 |
+      | TestCase_211 |
+      | TestCase_212 |
 
   @11
   Scenario Outline: validating + Add A New Location Button, Mandatory section
@@ -307,10 +305,10 @@ Feature: Validating Business Location And Operations screen in NM_CO
     Then user displayed with edited values in Location of business operations Section
     Examples:
       | testcase     |
-      | TestCase_155 |
-      | TestCase_156 |
-      | TestCase_157 |
-      | TestCase_158 |
+      | TestCase_209 |
+      | TestCase_210 |
+      | TestCase_211 |
+      | TestCase_212 |
 
   @13
   Scenario Outline: validating Delete icon of Location of business operations section with Ok button

@@ -103,18 +103,18 @@ public class LoginPageObjects extends TestBase {
 
 
     public void verifyPageLanding() throws Exception {
-        waitUtility.waitForSeconds(5);
+        waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(addNewAppliBtn);
         Boolean b1 = genericMethods.isElementPresent(addNewAppliBtnArabic);
 
         if (Boolean.TRUE.equals(b)) {
             log.info("page is navigating");
             genericMethods.click(addNewAppliBtn);
-        } else if (Boolean.TRUE.equals(b1)) {
+        } else {
             genericMethods.click(addNewAppliBtnArabic);
             log.info("page is navigating arabic");
         }
-        waitUtility.waitForSeconds(4);
+        waitUtility.waitForSeconds(6);
 
     }
 

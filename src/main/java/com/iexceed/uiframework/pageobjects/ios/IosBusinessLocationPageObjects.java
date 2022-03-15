@@ -32,6 +32,7 @@ public class IosBusinessLocationPageObjects {
     By addNewLocationBtn = By.xpath("//XCUIElementTypeButton[@name='Add a New Location Button']");
     By addNewLocationBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Add a New Location Button']");
     By typeOFOperation=By.xpath("//XCUIElementTypeTextField[@name='Type Of Operation Text Field']");
+    By typeOFOperationArabic=By.xpath("//*[contains(@label,'نوع العمليات')]");
     By proportion=By.xpath("//XCUIElementTypeTextField[@name='Proportion Text Field']");
     By addNewMarketBtn = By.xpath("//XCUIElementTypeButton[@name='Add a New Business Market Button']");
     By addNewMarketBtnArabic = By.xpath("//XCUIElementTypeButton[@name='Add a New Business Market Button']");
@@ -251,10 +252,17 @@ public class IosBusinessLocationPageObjects {
 
     }
 
-    public void fillOperation(String operation) {
-        genericMethods.click(typeOFOperation);
-        iosUtility.clearText(typeOFOperation);
-        genericMethods.sendKeys(typeOFOperation,operation);
+    public void fillOperation(String operation) throws InterruptedException {
+        Boolean b = genericMethods.isElementPresent(typeOFOperation);
+        if (Boolean.TRUE.equals(b)) {
+            genericMethods.click(typeOFOperation);
+            iosUtility.clearText(typeOFOperation);
+            genericMethods.sendKeys(typeOFOperation, operation);
+        }else{
+            genericMethods.click(typeOFOperationArabic);
+            iosUtility.clearText(typeOFOperationArabic);
+            genericMethods.sendKeys(typeOFOperationArabic, operation);
+        }
     }
 
     public void fillProportion(String proportions) {
@@ -307,7 +315,7 @@ public class IosBusinessLocationPageObjects {
             try {
                 genericMethods.click(closBtn);
             } catch (Exception e1) {
-                genericMethods.click(closBtnArabic);
+               log.debug(e1);
             }
         }
     }
@@ -315,18 +323,13 @@ public class IosBusinessLocationPageObjects {
         waitUtility.waitForSeconds(2);
         Boolean b = genericMethods.isElementPresent(addedBinessMarketMsg);
         Boolean b1 = genericMethods.isElementPresent(addedBinessMarketMsgArabic);
+        try{
         if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(addedBinessMarketMsg);
             genericMethods.click(closBtn);
         } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(addedBinessMarketMsgArabic);
-            genericMethods.click(closBtnArabic);
-        } else {
-            try {
-                genericMethods.click(closBtn);
-            } catch (Exception e) {
-                genericMethods.click(closBtnArabic);
-            }
+           genericMethods.click(closBtnArabic);
+        }}catch (Exception e){
+          log.debug(e);
         }
     }
 

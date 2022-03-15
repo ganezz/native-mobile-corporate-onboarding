@@ -183,11 +183,11 @@ public class ProductUserMngMntPageObjects {
         driver.findElement(editField).clear();
         if (type.equalsIgnoreCase("edit")) {
             genericMethods.sendKeys(editField, "Money market");
-            androidUtility.hideKeyBoard();
-        } else {
+             } else {
             genericMethods.sendKeys(editField, accName);
             androidUtility.hideKeyBoard();
         }
+        androidUtility.hideKeyBoard();
     }
 
     public void clickOtherField() {
