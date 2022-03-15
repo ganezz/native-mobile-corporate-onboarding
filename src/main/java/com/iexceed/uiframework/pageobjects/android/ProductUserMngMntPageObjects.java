@@ -133,9 +133,13 @@ public class ProductUserMngMntPageObjects {
         } catch (Exception e) {
             genericMethods.click(closBtnArabic);
         }
-        log.info(driver.findElements(viewDataDetails).size());
-        List<WebElement> tempDetails = driver.findElements(viewDataDetails);
-        androidUtility.selectionItemVisible(trade,tempDetails);
+        try {
+            log.info(driver.findElements(viewDataDetails).size());
+            List<WebElement> tempDetails = driver.findElements(viewDataDetails);
+            androidUtility.selectionItemVisible(trade, tempDetails);
+        }catch(Exception e1){
+            log.debug(e1);
+        }
     }
 
     public void clickDeleteBtn() throws InterruptedException {

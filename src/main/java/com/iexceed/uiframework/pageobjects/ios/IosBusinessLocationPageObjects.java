@@ -293,18 +293,20 @@ public class IosBusinessLocationPageObjects {
     }
 
     public void isAddedValidationMsgPresent() throws Exception {
-        Boolean b = genericMethods.isElementPresent(addedBinessLocationMsg);
-        Boolean b1 = genericMethods.isElementPresent(addedBinessLocationMsgArabic);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(addedBinessLocationMsg);
-            genericMethods.click(closBtn);
-        } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(addedBinessLocationMsgArabic);
-            genericMethods.click(closBtnArabic);
-        } else {
+        try {
+            Boolean b = genericMethods.isElementPresent(addedBinessLocationMsg);
+            Boolean b1 = genericMethods.isElementPresent(addedBinessLocationMsgArabic);
+            if (Boolean.TRUE.equals(b)) {
+                genericMethods.isElementPresent(addedBinessLocationMsg);
+                genericMethods.click(closBtn);
+            } else if (Boolean.TRUE.equals(b1)) {
+                genericMethods.isElementPresent(addedBinessLocationMsgArabic);
+                genericMethods.click(closBtnArabic);
+            }
+        } catch (Exception e) {
             try {
                 genericMethods.click(closBtn);
-            } catch (Exception e) {
+            } catch (Exception e1) {
                 genericMethods.click(closBtnArabic);
             }
         }
