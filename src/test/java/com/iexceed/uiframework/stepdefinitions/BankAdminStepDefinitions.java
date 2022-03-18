@@ -43,10 +43,7 @@ public class BankAdminStepDefinitions extends TestBase {
     public void clicks_on_first_name_field(){
         bankAdminPageActions.enterFirstNAMe(datalist.get("firstName"));
     }
-    @And("user inputs invalid value$")
-    public void user_inputs_invalid_value(){
-        log.debug("user inputs invalid value");
-    }
+
     @Then("error message should be displayed under First name field$")
     public void error_message_should_be_displayed_under_first_name_field(){
       log.debug("error message should be displayed under First name field");

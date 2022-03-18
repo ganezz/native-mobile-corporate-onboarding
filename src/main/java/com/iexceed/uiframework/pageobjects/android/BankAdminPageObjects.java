@@ -67,6 +67,17 @@ public class BankAdminPageObjects {
         androidUtility.hideKeyBoard();
     }
 
+    public void isErrorMsgDisplayed() throws InterruptedException {
+
+        Boolean b = genericMethods.isElementPresent(errorMsg);
+        if (Boolean.TRUE.equals(b)) {
+           log.debug("error message is displayed");
+        } else {
+            genericMethods.isElementPresent(errorMsgArabic);
+
+        }
+    }
+
     public void enterMiddleName(String middleNAme){
         editField.findElements(driver).get(2).click();
         editField.findElements(driver).get(2).clear();

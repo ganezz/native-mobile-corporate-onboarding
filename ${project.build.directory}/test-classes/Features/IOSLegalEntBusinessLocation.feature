@@ -22,7 +22,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And fills valid data in Country and Type of operations fields <testcase>
     And click on Confirm button
     And user displayed with Successfull addded snack bar Message
-    Then user displayed with edited values in Location of business operations Section
+    And user entered Location is displayed in Location of business operations Section
     Examples:
       | testcase     |
       | TestCase_155 |
@@ -112,7 +112,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     Then user lands on Add A New Location screen
     And user displayed with Successfull addded snack bar Message
-    Then user displayed with edited values in Location of business operations Section
+    And user entered Location is displayed in Location of business operations Section
     Examples:
       | testcase     |
       | TestCase_155 |
@@ -138,7 +138,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And fills valid data in Country and Proportion of Business fields
     And click on Confirm button
     And user displayed with Successfull addded Market snack bar Message
-    Then user displayed with edited values in Business markets Section
+    And user entered Business market is displayed in Business market Section
     Examples:
       | testcase     |
       | TestCase_209 |
@@ -235,7 +235,7 @@ Feature: Validating Business Location And Operations screen in NM_CO
     And click on Confirm button
     When user is in Business Location And Operations screen
     And user displayed with Successfull addded Market snack bar Message
-    Then user displayed with edited values in Business markets Section
+    And user entered Business market is displayed in Business market Section
     Examples:
       | testcase     |
       | TestCase_155 |
