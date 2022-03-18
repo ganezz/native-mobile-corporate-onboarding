@@ -45,8 +45,73 @@ public class BankAdminStepDefinitions extends TestBase {
     }
 
     @Then("error message should be displayed under First name field$")
-    public void error_message_should_be_displayed_under_first_name_field(){
+    public void error_message_should_be_displayed_under_first_name_field() throws InterruptedException {
+        bankAdminPageActions.isErrorMsgDisplayed();
       log.debug("error message should be displayed under First name field");
     }
+    @And("clicks on Middle name field$")
+    public void clicks_on_middle_name_field(){
+        bankAdminPageActions.enterMiddleNAMe(datalist.get("middleNAme"));
+    }
+    @Then("error message should be displayed under Middle name field$")
+    public void error_message_should_be_displayed_under_middle_name_field() throws InterruptedException {
+        bankAdminPageActions.isErrorMsgDisplayed();
+        log.debug("error message should be displayed under Middle name field");
+    }
+
+    @And("clicks on last name field$")
+    public void clicks_on_last_name_field(){
+        bankAdminPageActions.enterLastNAMe(datalist.get("lastNAme"));
+    }
+
+    @Then("error message should be displayed under last name field$")
+    public void error_message_should_be_displayed_under_last_name_field() throws InterruptedException {
+        bankAdminPageActions.isErrorMsgDisplayed();
+        log.debug("error message should be displayed under Last name field");
+    }
+    @And("clicks on Code field and select value$")
+    public void clicks_on_code_field_and_select_value() throws Exception {
+        bankAdminPageActions.chooseCountryCode(datalist.get("countryCode"));
+    }
+    @Then("user is displayed with the selected value in code field$")
+    public void user_is_displayed_with_the_selected_value_in_code_field(){
+       log.debug("user is displayed with the selected value in code field");
+    }
+    @And("clicks on Mobile field$")
+    public void clicks_on_mobile_field(){
+        bankAdminPageActions.enterMobileNumber(datalist.get("mobNum"));
+    }
+    @Then("error message should be displayed under Mobile field$")
+    public void error_message_should_be_displayed_under_mobile_field() throws InterruptedException {
+        bankAdminPageActions.isErrorMsgDisplayed();
+        log.debug("error message should be displayed under mobile number field");
+    }
+
+    @And("clicks on Email field$")
+    public void clicks_on_email_field(){
+        bankAdminPageActions.enterEmailId(datalist.get("emailId"));
+    }
+    @Then("error message should be displayed under Email field$")
+    public void error_message_should_be_displayed_under_email_field(){
+        log.debug("error message should be displayed under Email field");
+    }
+    @And("clicks on Nationality and select values$")
+    public void clicks_on_nationality_and_select_values() throws Exception {
+        bankAdminPageActions.selectNationlity(datalist.get("countryCode"));
+    }
+    @Then("user is displayed with the selected values in Nationality field$")
+    public void user_is_displayed_with_the_selected_values_in_nationality_field(){
+        log.debug("user is displayed with the selected values in Nationality field");
+    }
+
+    @And("clicks on Date of birth selects a past date from the calendar$")
+    public void clicks_on_date_of_birth_selects_a_past_date_from_the_calendar() throws Exception {
+        bankAdminPageActions.selectDOB();
+    }
+    @Then("user selected date should be displayed in the Date of birth field$")
+    public void user_selected_date_should_be_displayed_in_the_date_of_birth_field(){
+        log.debug("user selected date should be displayed in the Date of birth field");
+    }
+
 }
 

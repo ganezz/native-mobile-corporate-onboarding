@@ -341,18 +341,23 @@ public class IosBusinessLocationPageObjects {
     public void isEditLocationValidationMsgPresent() throws Exception {
          Boolean b = genericMethods.isElementPresent(locationEditMsg);
         Boolean b1 = genericMethods.isElementPresent(locationEditMsgArabic);
-        if (Boolean.TRUE.equals(b)) {
-            genericMethods.isElementPresent(locationEditMsg);
-            genericMethods.click(closBtn);
-        } else if (Boolean.TRUE.equals(b1)) {
-            genericMethods.isElementPresent(locationEditMsgArabic);
-            genericMethods.click(closBtnArabic);
-        } else {
-            try {
+
+        try {
+            if (Boolean.TRUE.equals(b)) {
+                genericMethods.isElementPresent(locationEditMsg);
                 genericMethods.click(closBtn);
-            } catch (Exception e) {
+            } else if (Boolean.TRUE.equals(b1)) {
+                genericMethods.isElementPresent(locationEditMsgArabic);
                 genericMethods.click(closBtnArabic);
+            } else {
+                try {
+                    genericMethods.click(closBtn);
+                } catch (Exception e) {
+                    genericMethods.click(closBtnArabic);
+                }
             }
+        }catch(Exception e){
+            log.debug(e);
         }
 
     }

@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class BankAdminPageActions {
 
-   BankAdminPageObjects bankAdminPageObjects=new BankAdminPageObjects();
+    BankAdminPageObjects bankAdminPageObjects = new BankAdminPageObjects();
     private static final Logger log = LogManager.getLogger(BankAdminPageActions.class);
     public String platForm;
 
@@ -30,6 +30,7 @@ public class BankAdminPageActions {
             bankAdminPageObjects.clikAddBAnkAdminBtn();
         }
     }
+
     public void isAdminScreen() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
@@ -46,25 +47,75 @@ public class BankAdminPageActions {
         }
     }
 
-    public void enterFirstNAMe(String fNAMe){
+    public void enterFirstNAMe(String fNAMe) {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
             bankAdminPageObjects.enterFirstName(fNAMe);
         }
     }
-    public void enterMiddleNAMe(String mNAMe){
+
+    public void isErrorMsgDisplayed() throws InterruptedException {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            bankAdminPageObjects.enterFirstName(mNAMe);
+            bankAdminPageObjects.isErrorMsgDisplayed();
         }
     }
-    public void enterLastNAMe(String lNAMe){
+
+    public void enterMiddleNAMe(String mNAMe) {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            bankAdminPageObjects.enterFirstName(lNAMe);
+            bankAdminPageObjects.enterMiddleName(mNAMe);
+        }
+    }
+
+    public void enterLastNAMe(String lNAMe) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.enterLastName(lNAMe);
+        }
+    }
+
+    public void chooseCountryCode(String code) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.enterCountryCode(code);
+        }
+    }
+
+    public void enterMobileNumber(String mobileNum) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.enterMpbileNumber(mobileNum);
+        }
+    }
+
+    public void enterEmailId(String email) {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.enterEmail(email);
+        }
+    }
+
+    public void selectNationlity(String nationlity) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.selectNationality(nationlity);
+        }
+    }
+
+    public void selectDOB() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.selectDOB();
         }
     }
 

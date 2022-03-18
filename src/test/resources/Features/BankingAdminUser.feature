@@ -56,6 +56,14 @@ Feature: Validating Banking Admin user screen in NM_CO
       | testcase |
       | TestCase_215 |
       | TestCase_216 |
+      | TestCase_217 |
+      | TestCase_218 |
+      | TestCase_218 |
+      | TestCase_219 |
+      | TestCase_220 |
+      | TestCase_221 |
+      | TestCase_222 |
+
 
   Scenario Outline: validating Middle name, optional alphabet field with Max 100 characters
     And user in Login screen <testcase>
@@ -70,10 +78,18 @@ Feature: Validating Banking Admin user screen in NM_CO
     Then user lands on Add a new administrator screen
     And clicks on Middle name field
     And user inputs invalid value
-    And clicks on other fields
     Then error message should be displayed under Middle name field
     Examples:
       | testcase |
+      | TestCase_215 |
+      | TestCase_216 |
+      | TestCase_217 |
+      | TestCase_218 |
+      | TestCase_218 |
+      | TestCase_219 |
+      | TestCase_220 |
+      | TestCase_221 |
+      | TestCase_222 |
 
   Scenario Outline: validating last name, Mandatory alphabet field with Max 100 characters
     And user in Login screen <testcase>
@@ -88,10 +104,19 @@ Feature: Validating Banking Admin user screen in NM_CO
     Then user lands on Add a new administrator screen
     And clicks on last name field
     And user inputs invalid value
-    And clicks on other fields
     Then error message should be displayed under last name field
     Examples:
       | testcase |
+      | TestCase_215 |
+      | TestCase_216 |
+      | TestCase_217 |
+      | TestCase_218 |
+      | TestCase_218 |
+      | TestCase_219 |
+      | TestCase_220 |
+      | TestCase_221 |
+      | TestCase_222 |
+
 
   Scenario Outline: validating Code field, Mandatory dropdown field
     And user in Login screen <testcase>
@@ -104,11 +129,13 @@ Feature: Validating Banking Admin user screen in NM_CO
     Then user clicks Banking Admin user
     And clicks Add a new administrator button
     Then user lands on Add a new administrator screen
-    And clicks on Code field
-    And selects a value
+    And clicks on Code field and select value
     Then user is displayed with the selected value in code field
     Examples:
       | testcase |
+      | TestCase_215 |
+      | TestCase_226 |
+
 
   Scenario Outline: validating Mobile, mandatory Numeric Field with Max and Min are with respect to Country Code
     And user in Login screen <testcase>
@@ -122,11 +149,14 @@ Feature: Validating Banking Admin user screen in NM_CO
     And clicks Add a new administrator button
     Then user lands on Add a new administrator screen
     And clicks on Mobile field
-    And user input invalid Mobile Number
-    And clicks on other fields
+    And user inputs invalid value
     Then error message should be displayed under Mobile field
     Examples:
       | testcase |
+      | TestCase_215 |
+      | TestCase_226 |
+      | TestCase_219 |
+      | TestCase_220 |
 
   Scenario Outline: validating Email, mandatory Field with Max 100 characters and should follow email regex and Case insensitive
     And user in Login screen <testcase>
@@ -140,11 +170,19 @@ Feature: Validating Banking Admin user screen in NM_CO
     And clicks Add a new administrator button
     Then user lands on Add a new administrator screen
     And clicks on Email field
-    And user input invalid Email
-    And clicks on other fields
+    And user inputs invalid value
     Then error message should be displayed under Email field
     Examples:
       | testcase |
+      | TestCase_008 |
+      | TestCase_009 |
+      | TestCase_010 |
+      | TestCase_011 |
+      | TestCase_086 |
+      | TestCase_087 |
+      | TestCase_088 |
+      | TestCase_089 |
+
 
   Scenario Outline: validating Nationality / Nationalities field, Mandatory dropdown field
     And user in Login screen <testcase>
@@ -157,11 +195,12 @@ Feature: Validating Banking Admin user screen in NM_CO
     Then user clicks Banking Admin user
     And clicks Add a new administrator button
     Then user lands on Add a new administrator screen
-    And clicks on Nationality / Nationalities field
-    And selects one or more values
-    Then user is displayed with the selected values in Nationality / Nationalities field
+    And clicks on Nationality and select values
+    Then user is displayed with the selected values in Nationality field
     Examples:
       | testcase |
+      | TestCase_215 |
+      | TestCase_226 |
 
   Scenario Outline: Validate Date of birth, mandatory date field
     And user in Login screen <testcase>
@@ -174,12 +213,12 @@ Feature: Validating Banking Admin user screen in NM_CO
     Then user clicks Banking Admin user
     And clicks Add a new administrator button
     Then user lands on Add a new administrator screen
-    And clicks on Date of birth
-    Then user is shown with a calendar
-    And selects a past date from the calendar
+    And clicks on Date of birth selects a past date from the calendar
     Then user selected date should be displayed in the Date of birth field
     Examples:
       | testcase |
+      | TestCase_215 |
+      | TestCase_226 |
 
   Scenario Outline: validating Place of birth, optional alphanumeric field with Max 100 characters
     And user in Login screen <testcase>
