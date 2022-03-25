@@ -41,7 +41,7 @@ public class BankAdminStepDefinitions extends TestBase {
 
     @And("clicks on First name field$")
     public void clicks_on_first_name_field(){
-        bankAdminPageActions.enterFirstNAMe(datalist.get("firstName"));
+        bankAdminPageActions.enterFirstNAMe(datalist.get("firstName"),"");
     }
 
     @Then("error message should be displayed under First name field$")
@@ -112,6 +112,130 @@ public class BankAdminStepDefinitions extends TestBase {
     public void user_selected_date_should_be_displayed_in_the_date_of_birth_field(){
         log.debug("user selected date should be displayed in the Date of birth field");
     }
+    @And("clicks on Place of birth field inputs invalid value$")
+    public void clicks_on_place_of_birth_field_inputs_invalid_value(){
+        bankAdminPageActions.enterBirthPlace(datalist.get("birthPlace"));
+    }
+    @Then("error message should be displayed under Place of birth field$")
+    public void error_message_should_be_displayed_under_place_of_birth_field(){
+        log.debug("error message should be displayed under Place of birth field");
+    }
+    @And("clicks on Passport number field inputs invalid value$")
+    public void clicks_on_passport_number_field_inputs_invalid_value(){
+        bankAdminPageActions.enterPAssportNum(datalist.get("passportNumber"));
+    }
+    @Then("error message should be displayed under Passport number field$")
+    public void error_message_should_be_displayed_under_passport_number_field(){
+        log.debug("error message should be displayed under Passport number field");
+    }
 
+    @And("clicks on Passport expiry date selects a future date from the calendar$")
+    public void clicks_on_passport_expiry_date_selects_a_future_date_from_the_calendar() throws Exception {
+        bankAdminPageActions.selectExpiryDate();
+    }
+    @Then("user selected date should be displayed in the Passport expiry date field$")
+    public void user_selected_date_should_be_displayed_in_the_passport_expiry_date_field(){
+        log.debug("user selected date should be displayed in the Passport expiry date field");
+    }
+
+
+    @And("clicks on Passport issuing country field and select a value$")
+    public void clicks_on_passport_issuing_country_field_and_select_a_value()throws Exception {
+        bankAdminPageActions.selectPassportIssueCountry(datalist.get("countryCode"));
+    }
+    @Then("user is displayed with the selected value in Passport issuing country field$")
+    public void user_is_displayed_with_the_selected_value_in_passport_issuing_country_field(){
+      log.debug("user is displayed with the selected value in Passport issuing country field");
+    }
+    @And("clicks on Country of residence field and select a value$")
+    public void clicks_on_country_of_residence_field_and_select_a_value() throws Exception {
+        bankAdminPageActions.selectResidencyCountry(datalist.get("countryCode"));
+    }
+
+    @Then("user is displayed with the selected value in Country of residence field$")
+    public void user_is_displayed_with_the_selected_value_in_country_of_residence_field(){
+        log.debug("user is displayed with the selected value in Country of residence field");
+    }
+    @Then("user redirected to Banking Admin user screen$")
+    public void user_redirected_to_banking_admin_user_screen(){
+        log.debug("user redirected to Banking Admin user screen");
+    }
+
+    @Then("user remains in the same Banking Admin user screen$")
+    public void user_remains_in_the_same_banking_admin_user_screen(){
+     log.debug("user remains in the same Banking Admin user screen");
+    }
+    @And("fills valid data in all the Mandatory fields in Bank admin screen$")
+    public void fills_valid_data_in_all_the_mandatory_fields_in_bank_admin_screen() throws Exception {
+        bankAdminPageActions.selectTitle(datalist.get("Title"));
+        bankAdminPageActions.enterFirstNAMe(datalist.get("firstName"),"");
+        bankAdminPageActions.enterMiddleNAMe(datalist.get("middleNAme"));
+        bankAdminPageActions.enterLastNAMe(datalist.get("lastNAme"));
+        bankAdminPageActions.chooseCountryCode(datalist.get("countryCode"));
+        bankAdminPageActions.enterMobileNumber(datalist.get("mobNum"));
+        bankAdminPageActions.enterEmailId(datalist.get("emailId"));
+        bankAdminPageActions.selectNationlity(datalist.get("countryCode"));
+        bankAdminPageActions.selectDOB();
+        bankAdminPageActions.enterBirthPlace(datalist.get("birthPlace"));
+        bankAdminPageActions.enterPAssportNum(datalist.get("passportNumber"));
+        bankAdminPageActions.selectExpiryDate();
+        bankAdminPageActions.selectPassportIssueCountry(datalist.get("countryCode"));
+        bankAdminPageActions.selectResidencyCountry(datalist.get("countryCode"));
+    }
+    @Then("user lands on Banking Admin User screen$")
+    public void user_lands_on_banking_admin_user_screen(){
+        log.debug("user lands on Banking Admin User screen");
+    }
+    @And("user displayed with Successful bank admin snack bar Message$")
+    public void user_displayed_with_successful_bank_admin_snack_bar_message() throws InterruptedException {
+        bankAdminPageActions.bankAdminAddDetailsMsg();
+    }
+
+    @And("Administrator details entered is displayed in Banking Admin User screen$")
+    public void administrator_details_entered_is_displayed_in_banking_admin_user_screen() throws Exception {
+        bankAdminPageActions.isAddedBankAdminDetailsVisible(datalist.get("Title"),datalist.get("firstName"),datalist.get("lastNAme")
+        ,datalist.get("emailId"));
+    }
+    @And("clicks on Edit button in bank details$")
+    public void clicks_on_edit_button_in_bank_details() throws Exception {
+        bankAdminPageActions.clickEditBtn();
+    }
+    @And("user lands on Modification Screen add a new administrator Screen with already given data$")
+    public void user_lands_on_modification_screen_add_a_new_administrator_screen_with_already_given_data(){
+    log.debug("user lands on Modification Screen add a new administrator Screen with already given data");
+    }
+
+    @And("edits one or more fields in bank admin screen with valid format$")
+    public void edits_one_or_more_fields_in_bank_admin_screen_with_valid_format(){
+        bankAdminPageActions.enterFirstNAMe(datalist.get("firstName"),"edit");
+    }
+
+    @And("user displayed with Successfully bank admin Edited Floating Message$")
+    public void user_displayed_with_successfully_bank_admin_edited_floating_message() throws Exception {
+        bankAdminPageActions.bankAdminEditDetailsMsg();
+    }
+    @Then("user displayed with edited values in Banking Admin User screen$")
+    public void user_displayed_with_edited_values_in_banking_admin_user_screen(){
+       log.debug("user displayed with edited values in Banking Admin User screen");
+    }
+
+    @Then("Administrator details is not removed from the list$")
+    public void administrator_details_is_not_removed_from_the_list(){
+        log.debug("Administrator details is not removed from the list");
+    }
+
+    @Then("Administrator details is removed from the list$")
+    public void administrator_details_is_removed_from_the_list(){
+     log.debug("Administrator details is removed from the list");
+    }
+
+    @Then("user remains in Banking admin user screen$")
+    public void user_remains_in_banking_admin_user_screen() throws InterruptedException {
+        bankAdminPageActions.isAdminScreen();
+    }
+    @Then("user lands on Ownership details screen$")
+    public void user_lands_on_ownership_details_screen(){
+        log.debug("user lands on Ownership details screen");
+    }
 }
 

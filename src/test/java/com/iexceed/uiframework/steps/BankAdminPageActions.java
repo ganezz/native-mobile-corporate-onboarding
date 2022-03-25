@@ -47,11 +47,11 @@ public class BankAdminPageActions {
         }
     }
 
-    public void enterFirstNAMe(String fNAMe) {
+    public void enterFirstNAMe(String fNAMe,String type) {
         if (platForm.equalsIgnoreCase("ios")) {
             log.debug("ios");
         } else {
-            bankAdminPageObjects.enterFirstName(fNAMe);
+            bankAdminPageObjects.enterFirstName(fNAMe,type);
         }
     }
 
@@ -118,5 +118,79 @@ public class BankAdminPageActions {
             bankAdminPageObjects.selectDOB();
         }
     }
+    public void enterBirthPlace(String birthplace){
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.enterPlaceOfBirth(birthplace);
+        }
+    }
+    public void enterPAssportNum(String passportnum){
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.enterPassportNum(passportnum);
+        }
+    }
+    public void selectExpiryDate() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.selectExpiryDate();
+        }
+    }
+
+    public void selectPassportIssueCountry(String country){
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.passPortIssueCountry(country);
+        }
+    }
+    public void selectResidencyCountry(String country){
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.residencyCountry(country);
+        }
+    }
+    public void bankAdminAddDetailsMsg() throws InterruptedException {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.addBankAdminMsg();
+        }
+    }
+    public void bankAdminEditDetailsMsg() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.editAddbankAdminMsg();
+        }
+    }
+
+    public void isAddedBankAdminDetailsVisible(String title, String fName, String lasNAme,String email) throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.isAddedBankDetailsVisible(title,fName,lasNAme,email);
+        }
+    }
+
+    public void clickEditBtn() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.clickEditBtn();
+        }
+    }
+    public void clickDeleteBtn() throws Exception {
+        if (platForm.equalsIgnoreCase("ios")) {
+            log.debug("ios");
+        } else {
+            bankAdminPageObjects.clickDeleteBtn();
+        }
+    }
+
 
 }
