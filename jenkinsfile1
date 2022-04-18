@@ -1,0 +1,76 @@
+pipeline {
+agent any
+environment{
+LOG_FILE = '/var/lib/jenkins/workspace/'
+}
+
+
+
+tools {
+maven 'maven'
+
+}
+stages {
+stage ('Initialize') {
+steps {
+echo "PATH = ${PATH}"
+echo "M2_HOME = ${M2_HOME}"
+}
+}
+stage('copy automation framework jar'){
+                           steps{
+                                        sh 'rm -rf jfrog'
+
+rtDownload (
+                                              serverId: 'jfrog-artifactory',
+                                              spec: '''{
+                                              "files": [
+                                                  {
+                                                "pattern": "libs-release-local/com/iexceed/appzillon-automation-framework/1.0-SNAPSHOT/appzillon-automation-framework-1.0-20220201.144720-67.jar",
+                                                "target": "jfrog"
+                                                  }
+                                              ]
+                                              }'''
+                                          )
+										  }
+										  }
+stage('prepare release bundle'){
+                           steps{
+                                        sh 'rm -rf .git'
+                                        sh 'rm -rf .gitignore'
+                                        sh 'rm -rf jenkinsfile'
+                                        sh 'cp  jfrog/com/iexceed/appzillon-automation-framework/1.0-SNAPSHOT /var/snap/jenkins/2126/workspace/Native_Mobile_Corporate_Onboard_BundleCreation/AAF-jar-with-dependencies.jar'
+                                        sh 'rm -rf jfrog'
+                                        sh 'zip -r Native_Mobile_Automationv2.zip *'
+                                        }
+                                        }
+
+stage ('Upload jar file') {
+steps {
+
+
+rtUpload (
+serverId: 'jfrog-artifactory',
+spec: '''{
+"files": [
+{
+"pattern": "Native_Mobile_Automationv2.zip",
+"target": "native-mobile"
+}
+
+]
+}'''
+)
+}
+}
+
+
+
+stage ('Test') {
+steps {
+sh 'mvn compile verify -Dcucumber.filter.tags="@regressionLoginPage" -Dapp.url=https://artifactory.appzillon.com/artifactory/android-apk/ao/automation/qaDebug-1.0.21-24-02-2022-13:09.apk '
+}
+
+}
+}
+}

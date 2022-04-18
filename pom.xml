@@ -18,7 +18,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <java.version>1.8</java.version>
+        <java.version>1.17</java.version>
         <sonar.language>java</sonar.language>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
@@ -107,7 +107,17 @@
             <scope>test</scope>
         </dependency>
 
-    </dependencies>
+
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.20.1</version>
+        </dependency>
+
+
+
+
+</dependencies>
     <repositories>
 
         <repository>
@@ -146,10 +156,10 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <!--                    <suiteXmlFiles>-->
-                    <!--                        &lt;!&ndash; TestNG suite XML files &ndash;&gt;-->
-                    <!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
-                    <!--                    </suiteXmlFiles>-->
+                                        <suiteXmlFiles>
+                                            <!-- TestNG suite XML files -->
+                                            <suiteXmlFile>testngPly.xml</suiteXmlFile>
+                                        </suiteXmlFiles>
                 </configuration>
             </plugin>
 
@@ -173,7 +183,7 @@
 
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>3.9.0</version>
             </plugin>
 
             <plugin>

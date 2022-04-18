@@ -21,10 +21,12 @@ public class Hooks extends TestBase {
     private final WaitUtility waitUtility= new WaitUtility();
 
 
+
+
+
     @Before()
     public  void init(){
         System.out.println("Starting scenario");
-
     }
 
 

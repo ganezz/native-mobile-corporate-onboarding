@@ -5,14 +5,18 @@ import com.iexceed.uiframework.utilites.WaitUtility;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
+import lombok.SneakyThrows;
+import org.testng.annotations.AfterClass;
+
+import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 //@RunWith(Cucumber.class)
 
 @CucumberOptions(
 
         features = "src/test/resources/Features",
-        glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@regressionLoginPage",
+        glue = {"com.iexceed.uiframework.stepdefinitions.PlyWriteStepDef"},
+        tags= "@ply",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",
@@ -21,9 +25,25 @@ import io.cucumber.testng.TestNGCucumberRunner;
 
 )
 
-public class TestRunnerAndroid extends AbstractTestNGCucumberTests {
+public class TestRunnerPly extends AbstractTestNGCucumberTests {
         private TestNGCucumberRunner testNGCucumberRunner;
         private final WaitUtility waitUtility= new WaitUtility();
+
+
+        @SneakyThrows
+        @AfterClass(alwaysRun = true)
+        public void tearDownClass() {
+
+                try {
+                        driver.quit();
+                        System.out.println("driver is closed now");
+                        waitUtility.waitForSeconds(77);
+//                testNGCucumberRunner.finish();
+                }catch(Exception e){
+
+                }
+        }
+
 
 
 //        @BeforeClass(alwaysRun = true)

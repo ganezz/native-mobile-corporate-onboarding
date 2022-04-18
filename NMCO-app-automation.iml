@@ -278,5 +278,9 @@
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:6.8.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.cucumber:cucumber-java:6.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.microsoft.playwright:playwright:1.20.1" level="project" />
+    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.microsoft.playwright:driver:1.20.1" level="project" />
+    <orderEntry type="library" name="Maven: com.microsoft.playwright:driver-bundle:1.20.1" level="project" />
   </component>
 </module>
