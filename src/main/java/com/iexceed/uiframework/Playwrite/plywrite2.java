@@ -45,6 +45,7 @@ public class plywrite2 extends TestBase{
     }
 
     public void clickInput() throws Exception {
+        waitUtility.waitForSeconds(2);
         commonElements.click(community);
         waitUtility.waitForSeconds(2);
         commonElements.click(search);
