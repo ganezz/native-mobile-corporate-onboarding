@@ -12,5 +12,12 @@ public class PlyWriteActions {
         plywrite.clickInput();
     }
 
+    public void launchChromium(){
+        plywrite.plywrirLogin();
+    }
 
+
+    public void launchChrome() throws InterruptedException {
+        plywrite.plywrirLoginC();
+    }
     }

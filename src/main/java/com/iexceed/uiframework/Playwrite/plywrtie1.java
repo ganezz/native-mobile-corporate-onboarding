@@ -12,7 +12,7 @@ public class plywrtie1 {
             // Open new page
             Page page = context.newPage();
 
-            // Go to https://reactjs.org/
+            // Go to https://reactjs.orplywritBDDg/
             page.navigate("https://reactjs.org/");
 
             // Click a:has-text("Docs")

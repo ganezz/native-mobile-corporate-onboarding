@@ -14,9 +14,9 @@ import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 @CucumberOptions(
 
-        features = "src/test/resources/Features",
+        features = "src/test/resources/Features/PlyWrite.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions.PlyWriteStepDef"},
-        tags= "@ply",
+        tags= "@chrome",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",

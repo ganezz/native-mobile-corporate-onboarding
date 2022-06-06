@@ -58,10 +58,6 @@ public class plywrite2 extends TestBase{
        driver1.findElement(tut).click();
     }
 
-
-
-
-
     public void plywrirLogin(){
         try (Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
@@ -103,9 +99,25 @@ public class plywrite2 extends TestBase{
             // Click text=React has a community of millions of developers. On this page we’ve listed some
             page.locator("text=React has a community of millions of developers. On this page we’ve listed some ").click();
         }
-
-
     }
+
+
+
+    public void plywrirLoginC() throws InterruptedException {
+        Playwright playwrite = Playwright.create();
+        BrowserType chrome = playwrite.chromium();
+        // Set headless mode to false for GUI execution
+        BrowserType.LaunchOptions options = new BrowserType.LaunchOptions();
+        options.setHeadless(false);
+        Browser browser = chrome.launch(options);
+        // Launch AUT in Chrome Browser
+        Page page = browser.newPage();
+        page.navigate("https://google.com");
+        Thread.sleep(5000);
+        // Close the Browser
+        browser.close();
+    }
+
 
 }
 
