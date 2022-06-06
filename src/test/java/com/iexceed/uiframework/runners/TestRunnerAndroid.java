@@ -52,7 +52,6 @@ public class TestRunnerAndroid extends AbstractTestNGCucumberTests {
 //                waitUtility.waitForSeconds(64);
 ////                testNGCucumberRunner.finish();
 //        }
-
 //        @BeforeTest
 //        @Parameters("deviceName")
 //        public void parameterTest(String deviceName) {
