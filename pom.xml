@@ -154,13 +154,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                                        <suiteXmlFiles>
-                                            <!-- TestNG suite XML files -->
-                                            <suiteXmlFile>testngPly.xml</suiteXmlFile>
-                                        </suiteXmlFiles>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
+<!--                                        <suiteXmlFiles>-->
+<!--                                            &lt;!&ndash; TestNG suite XML files &ndash;&gt;-->
+<!--                                            <suiteXmlFile>testngPly.xml</suiteXmlFile>-->
+<!--                                        </suiteXmlFiles>-->
+<!--                </configuration>-->
             </plugin>
 
             <plugin>
