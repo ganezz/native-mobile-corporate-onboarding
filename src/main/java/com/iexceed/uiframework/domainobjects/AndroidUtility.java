@@ -54,6 +54,7 @@ public class AndroidUtility {
         Boolean b = genericMethods.isElementPresent(businessLogicMenu);
         if (Boolean.TRUE.equals(b)) {
             log.debug("menu is swipped");
+
         }
     }
 

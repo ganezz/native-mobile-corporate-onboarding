@@ -7,12 +7,11 @@ import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.TestNGCucumberRunner;
 
 //@RunWith(Cucumber.class)
-
 @CucumberOptions(
 
-        features = "src/test/resources/Features",
+        features = "src/test/resources/Features/check.feature",
         glue = {"com.iexceed.uiframework.stepdefinitions"},
-        tags= "@regressionLoginPage",
+        tags= "@mobileEle",
         plugin= {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/jsonReports/cucumber-reports.json","html:target/cucumber-ui-reports.html",

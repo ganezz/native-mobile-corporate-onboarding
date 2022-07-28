@@ -14,7 +14,6 @@ import org.testng.annotations.AfterClass;
 
 import java.io.File;
 import java.io.IOException;
-
 import static com.iexceed.uiframework.domainobjects.ConnectionObjects.driver;
 
 public class Hooks extends TestBase {
@@ -37,8 +36,7 @@ public class Hooks extends TestBase {
     }
     @AfterStep()
     public  void af(Scenario scenario) throws IOException {
-
-        File src =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File src =((TakesScreenshot)TestBase.getDriver()).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = FileUtils.readFileToByteArray(src);
         scenario.attach(fileContent,"image/png","screenshot");
     }
